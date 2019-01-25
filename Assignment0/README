@@ -1,0 +1,3 @@
+A project that usess a 3 by 3 kernel to find line on a grayscale image.
+
+It then "enhances" those lines and produces an output file showing the original image with more defined lines.

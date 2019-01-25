@@ -1,0 +1,4 @@
+ 1/18/19 Go through image and assign borders of out to 0
+ 1/19/19 Use kernels to compute interior values
+ 1/19/19 Change types to obtain correct values
+ 1/23/19 Change input to be taken from command line
