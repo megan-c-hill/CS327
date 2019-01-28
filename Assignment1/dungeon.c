@@ -32,10 +32,9 @@ void drawRoom (char dungeon[21][80], int x, int y, int width, int height){
     int i, j;
     for(i = y; i < y + height; i++){
         for (j = x; j < x +width; j++){
-            dungeon[i][j] = '*';
+            dungeon[i][j] = '.';
         }
     }
-    printDungeon(dungeon);
 }
 
 void placeRoom(char dungeon[21][80], int rooms[6][4], int roomNumber){
@@ -45,8 +44,7 @@ void placeRoom(char dungeon[21][80], int rooms[6][4], int roomNumber){
     int height = rand() % 4 + 3;
     
     if(isLegalPlacement(dungeon, x, y, width, height)) {
-        printf("x: %d, y: %d, width: %d, height: %d\n", x, y, width, height);
-       drawRoom(dungeon, x, y, width, height);
+        drawRoom(dungeon, x, y, width, height);
         rooms[roomNumber][0] = x;
         rooms[roomNumber][1] = y;
         rooms[roomNumber][2] = width;
@@ -61,7 +59,7 @@ int main(int argc, char *argv[]) {
     int MAX_ROOMS = 6;
     int rooms[MAX_ROOMS][4];
     int seed = time(NULL);
-    printf("Seed: %d", seed);
+    printf("Seed: %d\n", seed);
     srand(seed);
 
     int i, j;
@@ -79,4 +77,5 @@ int main(int argc, char *argv[]) {
     for(int i = 0; i< MAX_ROOMS; i++){
         placeRoom(dungeon, rooms, i);
     }
+    printDungeon(dungeon);
 }
