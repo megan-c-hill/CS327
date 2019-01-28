@@ -58,21 +58,27 @@ void connectRooms(char dungeon[21][80], int rooms[6][4]){
         int y0 = rooms[room][1];
         int y1 = rooms[room + 1][1];
 
-        int x, y;
-        int minY, maxX;
-        minY = min(y0, y1);
-        maxX = max(x0, x1);
+        int x = x0;
+        int xDirection = (x1 - x0) / abs(x1 - x0);
+        int yDirection = (y1 - y0) / abs(y1 - y0);
+        int y = y0;
+        int count;
+        printf("x1: %d, x0: %d, abs(x1 - x0): %d\n", x1, x0, abs(x1 - x0));
+
+        for(count = 0; count < abs(x1 - x0); count++){
+            if(dungeon[y0][x] == ' '){
+                dungeon[y0][x] = '#';
+            }
+            x = x + xDirection;
+        }
+
+        for(count = 0; count < abs(y1 - y0); count ++){
+            if(dungeon[y][x] == ' '){
+                dungeon[y][x] = '#';
+            }
+            y = y + yDirection;
+        }
         
-        for(x = min(x0, x1); x < maxX; x++){
-            if(dungeon[minY][x] == ' '){
-                dungeon[minY][x] = '#';
-            }
-        }
-        for(y = minY; y < max(y0, y1); y++){
-            if(dungeon[y][maxX] == ' '){
-                dungeon[y][maxX] = '#';
-            }
-        }
     }
 }
 
