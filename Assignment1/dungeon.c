@@ -3,20 +3,6 @@
 #include <time.h>
 #include <stdbool.h>
 
-int min(int a, int b){
-    if(a > b) {
-        return b;
-    } 
-    return a;
-}
-
-int max (int a, int b) {
-    if(a > b) {
-        return a;
-    }
-    return b;
-}
-
 void printDungeon(char dungeon[21][80]){
       int i, j;
       for(int i = 0; i<21; i++){
@@ -63,7 +49,6 @@ void connectRooms(char dungeon[21][80], int rooms[6][4]){
         int yDirection = (y1 - y0) / abs(y1 - y0);
         int y = y0;
         int count;
-        printf("x1: %d, x0: %d, abs(x1 - x0): %d\n", x1, x0, abs(x1 - x0));
 
         for(count = 0; count < abs(x1 - x0); count++){
             if(dungeon[y0][x] == ' '){
@@ -103,6 +88,7 @@ int main(int argc, char *argv[]) {
     char dungeon[21][80];
     int MAX_ROOMS = 6;
     int rooms[MAX_ROOMS][4];
+    //Interesting seeds 1548705209
     int seed = time(NULL);
     printf("Seed: %d\n", seed);
     srand(seed);
