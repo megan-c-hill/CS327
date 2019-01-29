@@ -37,6 +37,26 @@ void drawRoom (char dungeon[21][80], int x, int y, int width, int height){
     }
 }
 
+void placeStairs(char dungeon[21][80]) {
+    int x = rand() % 78 + 1;
+    int y = rand() % 19 + 1;
+    int i = 0;
+    while(i < 2 ){
+        if(dungeon[y][x] == '.' || dungeon[y][x] == '#'){
+            if(i == 0) {
+                printf("y: %d, x: %d\n", y, x);
+                dungeon[y][x] =  '>';
+            } else {
+                dungeon[y][x] = '<';
+            }
+            i ++;
+        } else {
+            x = rand() % 78 + 1;
+            y = rand() % 19 + 1;
+        }
+    }
+}
+
 void connectRooms(char dungeon[21][80], int rooms[6][4]){
     for(int room = 0; room < 5; room++){
         int x0 = rooms[room][0];
@@ -109,5 +129,6 @@ int main(int argc, char *argv[]) {
         placeRoom(dungeon, rooms, i);
     }
     connectRooms(dungeon, rooms);
+    placeStairs(dungeon);
     printDungeon(dungeon);
 }
