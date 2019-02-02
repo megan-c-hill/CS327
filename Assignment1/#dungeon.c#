@@ -125,7 +125,7 @@ void generateRandomFloor() {
     for (i = 0; i < TOTAL_HEIGHT; i++) {
         for (j = 0; j < TOTAL_WIDTH; j++) {
             char value = ' ';
-            int hardness = rand() % 255 + 1;
+            int hardness = rand() % 254 + 1;
             if (i == 0 || i == TOTAL_HEIGHT - 1) {
                 value = '-';
                 hardness = 255;
