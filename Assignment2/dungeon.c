@@ -16,7 +16,7 @@ struct position {
 };
 
 struct position dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
-int rooms[MAX_ROOMS][4];
+uint8_t rooms[][4];
 
 void printDungeon() {
     int i, j;
@@ -153,23 +153,50 @@ void loadDungeon(){
     char marker[13];
     uint32_t version;
     uint32_t size;
+    uint8_t playerPos[2];
+    uint8_t hardness[TOTAL_HEIGHT][TOTAL_WIDTH];
+    uint8_t numRooms;
+    uint8_t numUp;
+    uint8_t numDown;
+
     char filePath[100] = "";
     strcat(filePath, getenv("HOME"));
     strcat(filePath, "/.rlg327/01.rlg327");
 
     printf("File Path: %s\n", filePath);
 
-printf("%d\n", strlen(marker));
+    FILE *file = fopen(filePath, "rb");
+    fread(marker, sizeof(char), 12, file);
+    fread(&version, 4, 1, file);
+    version = be32toh(version);
+    fread(&size, 4, 1, file);
+    size = be32toh(size);
+    fread(playerPos, 1, 2, file);
+    fread(hardness, 1, 1680, file);
+    fread(&numRooms, 1, 1, file);
+    fread(rooms, 1, numRooms * 4, file);
+    fread(&numUp, 1, 1, file);
+    uint8_t ups[numUp][2];
+    fread(ups, 1, numUp * 2, file);
+    fread(&numDown, 1, 1, file);
+    uint8_t downs[numDown][2];
+    fread(downs, 1, numDown * 2, file);
 
-     FILE *file = fopen(filePath, "rb");
-     fread(marker, sizeof(char), 12, file);
-printf("%d\n", strlen(marker));
-printf("%s\n", marker);
-     fread(&version, 4, 1, file);
-     fread(&size, 4, 1, file);
-     fclose(file);
-     printf("%d\n", strlen(marker));
-     printf("Marker: %s, version: %d, size: %d\n", marker, be32toh(version), be32toh(size));
+
+    fclose(file);
+    printf("%d\n", strlen(marker));
+    printf("Marker: %s, version: %d, size: %d\n", marker, version, size);
+    printf("Player: x: %d, y:%d\n", playerPos[0], playerPos[1]);
+    printf("numRooms:%d\n", numRooms);
+    for(int i = 0; i<numRooms; i++){
+        printf("Room: x:%d, y:%d, width:%d, height: %d\n", rooms[i][0], rooms[i][1], rooms[i][2], rooms[i][3]);
+    }
+    for(int j = 0; j<numUp; j++){
+        printf("UpStairs: x:%d, y:%d\n", ups[j][0], ups[j][1]);
+    }
+    for(int k = 0; k<numUp; k++){
+        printf("downStairs: x:%d, y:%d\n", downs[k][0], downs[k][1]);
+    }
 }
 
 int main(int argc, char *argv[]) {
