@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include <string.h>
+#include <endian.h>
 
 #define MAX_ROOMS 8
 #define TOTAL_HEIGHT 21
@@ -50,7 +53,7 @@ void drawRoom(int roomNumber) {
     }
 }
 
-void placeStairs() {
+void placeStairsAndPlayer() {
     int x, y;
     int i = 0;
     while (i < 2) {
@@ -59,8 +62,10 @@ void placeStairs() {
         if (dungeon[y][x].hardness == 0) {
             if (i == 0) {
                 dungeon[y][x].symbol = '>';
-            } else {
+            } else if(i == 1){
                 dungeon[y][x].symbol = '<';
+            } else {
+                dungeon[y][x].symbol = '@';
             }
             i++;
         }
@@ -141,10 +146,38 @@ void generateRandomFloor() {
         placeRoom(i);
     }
     connectRooms();
-    placeStairs();
+    placeStairsAndPlayer();
+}
+
+void loadDungeon(){
+    char marker[13];
+    uint32_t version;
+    uint32_t size;
+    char filePath[100] = "";
+    strcat(filePath, getenv("HOME"));
+    strcat(filePath, "/.rlg327/01.rlg327");
+
+    printf("File Path: %s\n", filePath);
+
+printf("%d\n", strlen(marker));
+
+     FILE *file = fopen(filePath, "rb");
+     fread(marker, sizeof(char), 12, file);
+printf("%d\n", strlen(marker));
+printf("%s\n", marker);
+     fread(&version, 4, 1, file);
+     fread(&size, 4, 1, file);
+     fclose(file);
+     printf("%d\n", strlen(marker));
+     printf("Marker: %s, version: %d, size: %d\n", marker, be32toh(version), be32toh(size));
 }
 
 int main(int argc, char *argv[]) {
-    generateRandomFloor();
-    printDungeon();
+    loadDungeon();
+    // generateRandomFloor();
+    //printDungeon();
 }
+
+//00000000  52 4c 47 33 32 37 2d 53  32 30 31 39 00 00 00 00  |RLG327-S2019....|
+//00000010  00 00 06 c7 10 0c ff ff  ff ff ff ff ff ff ff ff  |...Ç..ÿÿÿÿÿÿÿÿÿÿ|
+
