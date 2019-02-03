@@ -16,7 +16,7 @@ struct position {
 };
 
 struct position dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
-uint8_t rooms[][4];
+uint8_t rooms[6][4];
 
 void printDungeon() {
     int i, j;
@@ -174,7 +174,8 @@ void loadDungeon(){
     fread(playerPos, 1, 2, file);
     fread(hardness, 1, 1680, file);
     fread(&numRooms, 1, 1, file);
-    fread(rooms, 1, numRooms * 4, file);
+    uint8_t tempRooms[numRooms][4];
+    fread(tempRooms, 1, 4 * numRooms, file);
     fread(&numUp, 1, 1, file);
     uint8_t ups[numUp][2];
     fread(ups, 1, numUp * 2, file);
@@ -182,29 +183,77 @@ void loadDungeon(){
     uint8_t downs[numDown][2];
     fread(downs, 1, numDown * 2, file);
 
+    for(int y = 0; y<TOTAL_HEIGHT; y++){
+        for(int x = 0; x<TOTAL_WIDTH; x++) {
+            dungeon[y][x].hardness = hardness[y][x];
+            if (y == 0 || y == TOTAL_HEIGHT - 1) {
+                dungeon[y][x].symbol = '-';
+            } else if (x == 0 || x == TOTAL_WIDTH - 1) {
+                dungeon[y][x].symbol = '|';
+            } else {
+                dungeon[y][x].symbol = ' ';
+            }
+        }
+    }
+
+    for(int index = 0; index < numRooms; index++){
+        printf("tempRoom: x:%d, y:%d, width:%d, height:%d\n", tempRooms[index][0], tempRooms[index][1], tempRooms[index][2], tempRooms[index][3]);
+        rooms[index][0] = tempRooms[index][0];
+        rooms[index][1] = tempRooms[index][1];
+        rooms[index][2] = tempRooms[index][2];
+        rooms[index][3] = tempRooms[index][3];
+        printf("Room: x:%d, y:%d, width:%d, height:%d\n", rooms[index][0], rooms[index][1], rooms[index][2], rooms[index][3]);
+    }
 
     fclose(file);
+    for(int i = 0; i<numRooms; i++){
+        drawRoom(i);
+printf("Room: x:%d, y:%d, width:%d, height:%d\n", rooms[i][0], rooms[i][1], rooms[i][2], rooms[i][3]);
+    }
+    for(int j = 0; j<numUp; j++){
+        dungeon[ups[j][1]][ups[j][0]].symbol = '<';
+    }
+    for(int k = 0; k<numDown; k++){
+        dungeon[downs[k][1]][downs[k][0]].symbol = '>';
+    }
+    dungeon[playerPos[1]][playerPos[0]].symbol = '@';
+
     printf("%d\n", strlen(marker));
     printf("Marker: %s, version: %d, size: %d\n", marker, version, size);
     printf("Player: x: %d, y:%d\n", playerPos[0], playerPos[1]);
     printf("numRooms:%d\n", numRooms);
-    for(int i = 0; i<numRooms; i++){
-        printf("Room: x:%d, y:%d, width:%d, height: %d\n", rooms[i][0], rooms[i][1], rooms[i][2], rooms[i][3]);
+    for (int i1 = 0; i1 < numRooms; i1++) {
+        printf("Room: x:%d, y:%d, width:%d, height:%d\n", rooms[i1][0], rooms[i1][1], rooms[i1][2], rooms[i1][3]);
     }
-    for(int j = 0; j<numUp; j++){
-        printf("UpStairs: x:%d, y:%d\n", ups[j][0], ups[j][1]);
+    printf("numUp: %d\n", numUp);
+    for (int j1 = 0; j1 < numUp; j1++) {
+        printf("UpStairs: x:%d, y:%d\n", ups[j1][0], ups[j1][1]);
     }
-    for(int k = 0; k<numUp; k++){
-        printf("downStairs: x:%d, y:%d\n", downs[k][0], downs[k][1]);
+    printf("numDown: %d\n", numDown);
+    for (int k1 = 0; k1 < numDown; k1++) {
+        printf("downStairs: x:%d, y:%d\n", downs[k1][0], downs[k1][1]);
     }
 }
 
 int main(int argc, char *argv[]) {
     loadDungeon();
     // generateRandomFloor();
-    //printDungeon();
+    printDungeon();
 }
 
 //00000000  52 4c 47 33 32 37 2d 53  32 30 31 39 00 00 00 00  |RLG327-S2019....|
 //00000010  00 00 06 c7 10 0c ff ff  ff ff ff ff ff ff ff ff  |...Ç..ÿÿÿÿÿÿÿÿÿÿ|
+
+
+//000006a0  ff ff ff ff ff ff 06 10  0c 04 06 0e 02 09 06 30  |ÿÿÿÿÿÿ.........0|
+//000006b0  0a 08 04 09 08 04 04 18  02 08 04 23 08 04 03 01  |...........#....|
+//000006c0  18 03 02 1c 02 1f 04
+
+//numRooms:6
+//Room: x:69, y:4, width:6, height:3
+//Room: x:25, y:3, width:6, height:4
+//Room: x:12, y:9, width:11, height:6
+//Room: x:33, y:6, width:10, height:4
+//Room: x:68, y:12, width:5, height:3
+//Room: x:44, y:11, width:7, height:7
 
