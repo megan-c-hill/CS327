@@ -1,0 +1,4 @@
+A program that randomly generates a dungeon with several rooms that are all connected.
+These rooms are represented by `.`, and the corridors that connect them are represented by '#'.
+These are all confined within an 80x21 whose borders (included in count) are denoted with either `|` or `-`.
+There are also 2 staircases (one up and one down) somewhere in the dungeon that is accessible (so either in a room or a corridor
