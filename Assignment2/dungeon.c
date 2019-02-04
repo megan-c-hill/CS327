@@ -62,7 +62,7 @@ void placeStairsAndPlayer() {
         if (dungeon[y][x].hardness == 0) {
             if (i == 0) {
                 dungeon[y][x].symbol = '>';
-            } else if(i == 1){
+            } else if (i == 1) {
                 dungeon[y][x].symbol = '<';
             } else {
                 dungeon[y][x].symbol = '@';
@@ -149,7 +149,7 @@ void generateRandomFloor() {
     placeStairsAndPlayer();
 }
 
-void loadDungeon(){
+void loadDungeon(char *fileName) {
     char marker[13];
     uint32_t version;
     uint32_t size;
@@ -161,7 +161,8 @@ void loadDungeon(){
 
     char filePath[100] = "";
     strcat(filePath, getenv("HOME"));
-    strcat(filePath, "/.rlg327/01.rlg327");
+    strcat(filePath, "/.rlg327/");
+    strcat(filePath, fileName);
 
     FILE *file = fopen(filePath, "rb");
     fread(marker, sizeof(char), 12, file);
@@ -180,13 +181,15 @@ void loadDungeon(){
     uint8_t downs[numDown][2];
     fread(downs, 1, numDown * 2, file);
 
-    for(int y = 0; y<TOTAL_HEIGHT; y++){
-        for(int x = 0; x<TOTAL_WIDTH; x++) {
+    for (int y = 0; y < TOTAL_HEIGHT; y++) {
+        for (int x = 0; x < TOTAL_WIDTH; x++) {
             dungeon[y][x].hardness = hardness[y][x];
             if (y == 0 || y == TOTAL_HEIGHT - 1) {
                 dungeon[y][x].symbol = '-';
             } else if (x == 0 || x == TOTAL_WIDTH - 1) {
                 dungeon[y][x].symbol = '|';
+            } else if (hardness[y][x] == 0) {
+                dungeon[y][x].symbol = '#';
             } else {
                 dungeon[y][x].symbol = ' ';
             }
@@ -194,20 +197,32 @@ void loadDungeon(){
     }
 
     fclose(file);
-    for(int i = 0; i<numRooms; i++){
+    for (
+            int i = 0;
+            i < numRooms;
+            i++) {
         drawRoom(i);
     }
-    for(int j = 0; j<numUp; j++){
-        dungeon[ups[j][1]][ups[j][0]].symbol = '<';
+    for (
+            int j = 0;
+            j < numUp;
+            j++) {
+        dungeon[ups[j][1]][ups[j][0]].
+                symbol = '<';
     }
-    for(int k = 0; k<numDown; k++){
-        dungeon[downs[k][1]][downs[k][0]].symbol = '>';
+    for (
+            int k = 0;
+            k < numDown;
+            k++) {
+        dungeon[downs[k][1]][downs[k][0]].
+                symbol = '>';
     }
-    dungeon[playerPos[1]][playerPos[0]].symbol = '@';
+    dungeon[playerPos[1]][playerPos[0]].
+            symbol = '@';
 }
 
 int main(int argc, char *argv[]) {
-    loadDungeon();
+    loadDungeon(argv[1]);
     // generateRandomFloor();
     printDungeon();
 }
