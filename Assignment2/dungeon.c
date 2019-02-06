@@ -10,6 +10,8 @@
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80
 
+//CHECK WHY 7 doesn't work (segmentation fault)
+
 struct position {
     char symbol;
     int hardness;
@@ -155,9 +157,9 @@ void loadDungeon(char *fileName) {
     uint32_t size;
     uint8_t playerPos[2];
     uint8_t hardness[TOTAL_HEIGHT][TOTAL_WIDTH];
-    uint8_t numRooms;
-    uint8_t numUp;
-    uint8_t numDown;
+    uint16_t numRooms;
+    uint16_t numUp;
+    uint16_t numDown;
 
     char filePath[100] = "";
     strcat(filePath, getenv("HOME"));
@@ -166,20 +168,32 @@ void loadDungeon(char *fileName) {
 
     FILE *file = fopen(filePath, "rb");
     fread(marker, sizeof(char), 12, file);
+    
     fread(&version, 4, 1, file);
     version = be32toh(version);
+
     fread(&size, 4, 1, file);
     size = be32toh(size);
+
     fread(playerPos, 1, 2, file);
+
     fread(hardness, 1, 1680, file);
-    fread(&numRooms, 1, 1, file);
+    
+    fread(&numRooms, 2, 1, file);
+    numRooms = be16toh(numRooms);
     fread(rooms, 1, 4 * numRooms, file);
-    fread(&numUp, 1, 1, file);
+
+    fread(&numUp, 2, 1, file);
+    numUp = be16toh(numUp);
     uint8_t ups[numUp][2];
     fread(ups, 1, numUp * 2, file);
-    fread(&numDown, 1, 1, file);
+
+    fread(&numDown, 2, 1, file);
+    numDown = be16toh(numDown);
     uint8_t downs[numDown][2];
     fread(downs, 1, numDown * 2, file);
+
+    fclose(file);
 
     for (int y = 0; y < TOTAL_HEIGHT; y++) {
         for (int x = 0; x < TOTAL_WIDTH; x++) {
@@ -196,29 +210,16 @@ void loadDungeon(char *fileName) {
         }
     }
 
-    fclose(file);
-    for (
-            int i = 0;
-            i < numRooms;
-            i++) {
+    for (int i = 0; i < numRooms; i++) {
         drawRoom(i);
     }
-    for (
-            int j = 0;
-            j < numUp;
-            j++) {
-        dungeon[ups[j][1]][ups[j][0]].
-                symbol = '<';
+    for (int j = 0; j < numUp; j++) {
+        dungeon[ups[j][1]][ups[j][0]].symbol = '<';
     }
-    for (
-            int k = 0;
-            k < numDown;
-            k++) {
-        dungeon[downs[k][1]][downs[k][0]].
-                symbol = '>';
+    for (int k = 0; k < numDown; k++) {
+        dungeon[downs[k][1]][downs[k][0]].symbol = '>';
     }
-    dungeon[playerPos[1]][playerPos[0]].
-            symbol = '@';
+    dungeon[playerPos[1]][playerPos[0]].symbol = '@';
 }
 
 int main(int argc, char *argv[]) {
