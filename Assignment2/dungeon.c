@@ -151,49 +151,23 @@ void generateRandomFloor() {
     placeStairsAndPlayer();
 }
 
-void loadDungeon(char *fileName) {
+void readBasicInfo(FILE *file) {
     char marker[13];
     uint32_t version;
     uint32_t size;
-    uint8_t playerPos[2];
     uint8_t hardness[TOTAL_HEIGHT][TOTAL_WIDTH];
-    uint16_t numRooms;
-    uint16_t numUp;
-    uint16_t numDown;
 
-    char filePath[100] = "";
-    strcat(filePath, getenv("HOME"));
-    strcat(filePath, "/.rlg327/");
-    strcat(filePath, fileName);
-
-    FILE *file = fopen(filePath, "rb");
     fread(marker, sizeof(char), 12, file);
-    
+
     fread(&version, 4, 1, file);
     version = be32toh(version);
 
     fread(&size, 4, 1, file);
     size = be32toh(size);
 
-    fread(playerPos, 1, 2, file);
+    fseek(file, 2, SEEK_CUR);
 
     fread(hardness, 1, 1680, file);
-    
-    fread(&numRooms, 2, 1, file);
-    numRooms = be16toh(numRooms);
-    fread(rooms, 1, 4 * numRooms, file);
-
-    fread(&numUp, 2, 1, file);
-    numUp = be16toh(numUp);
-    uint8_t ups[numUp][2];
-    fread(ups, 1, numUp * 2, file);
-
-    fread(&numDown, 2, 1, file);
-    numDown = be16toh(numDown);
-    uint8_t downs[numDown][2];
-    fread(downs, 1, numDown * 2, file);
-
-    fclose(file);
 
     for (int y = 0; y < TOTAL_HEIGHT; y++) {
         for (int x = 0; x < TOTAL_WIDTH; x++) {
@@ -210,6 +184,32 @@ void loadDungeon(char *fileName) {
         }
     }
 
+}
+
+void readRoomsAndStairs(FILE *file) {
+    uint8_t playerPos[2];
+    uint16_t numRooms;
+    uint16_t numUp;
+    uint16_t numDown;
+
+    fseek(file, 20, SEEK_SET);
+    fread(playerPos, 1, 2, file);
+
+    fseek(file, 1702, SEEK_SET);
+    fread(&numRooms, 2, 1, file);
+    numRooms = be16toh(numRooms);
+    fread(rooms, 1, 4 * numRooms, file);
+
+    fread(&numUp, 2, 1, file);
+    numUp = be16toh(numUp);
+    uint8_t ups[numUp][2];
+    fread(ups, 1, numUp * 2, file);
+
+    fread(&numDown, 2, 1, file);
+    numDown = be16toh(numDown);
+    uint8_t downs[numDown][2];
+    fread(downs, 1, numDown * 2, file);
+
     for (int i = 0; i < numRooms; i++) {
         drawRoom(i);
     }
@@ -219,7 +219,24 @@ void loadDungeon(char *fileName) {
     for (int k = 0; k < numDown; k++) {
         dungeon[downs[k][1]][downs[k][0]].symbol = '>';
     }
+
     dungeon[playerPos[1]][playerPos[0]].symbol = '@';
+}
+
+FILE * openFile(char *fileName, char *openType){
+    char filePath[100] = "";
+    strcat(filePath, getenv("HOME"));
+    strcat(filePath, "/.rlg327/");
+    strcat(filePath, fileName);
+
+    FILE *file = fopen(filePath, openType);
+}
+
+void loadDungeon(char *fileName) {
+    FILE *file = openFile(fileName, "rb");
+    readBasicInfo(file);
+    readRoomsAndStairs(file);
+    fclose(file);
 }
 
 int main(int argc, char *argv[]) {
