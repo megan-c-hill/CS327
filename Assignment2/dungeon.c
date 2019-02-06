@@ -10,15 +10,30 @@
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80
 
-//CHECK WHY 7 doesn't work (segmentation fault)
+//ENHANCEMENT Generate Random Number of stairs
+//ENHANCEMENT Generate random number of rooms
+//ENHANCEMENT Unit tests
+//TECH DEBT This file is getting pretty long
+//ENHANCEMENT Validation on marker, version, number of rooms, presence of stairs?
+//TECH DEBT Figure out how to split functionality into different files w/o loosing shared variables
+//TECH DEBT Dynamically allocate size for room, upStairs and downStairs
+//REMAINING FUNCTIONALITY Use switches to toggle between load and save or both
+//BUG Always use dungeon.rlg327 instead of passing in values
+//ENHACEMENT Use dungeon.rlg327 as default but allow other values to be passed in
 
 struct position {
     char symbol;
-    int hardness;
+    uint8_t hardness;
 };
 
 struct position dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
-uint8_t rooms[][4];
+uint8_t rooms[650000][4];
+uint8_t upStairs[650000][2];
+uint8_t downStairs[650000][2];
+uint8_t playerPosition[2];
+uint16_t numberOfRooms = 8;
+uint16_t numberOfUpstairs = 1;
+uint16_t numberOfDownstairs = 1;
 
 void printDungeon() {
     int i, j;
@@ -46,9 +61,8 @@ bool isLegalPlacement(int x, int y, int width, int height) {
 }
 
 void drawRoom(int roomNumber) {
-    int i, j;
-    for (i = rooms[roomNumber][1]; i < rooms[roomNumber][1] + rooms[roomNumber][3]; i++) {
-        for (j = rooms[roomNumber][0]; j < rooms[roomNumber][0] + rooms[roomNumber][2]; j++) {
+    for (int i = rooms[roomNumber][1]; i < rooms[roomNumber][1] + rooms[roomNumber][3]; i++) {
+        for (int j = rooms[roomNumber][0]; j < rooms[roomNumber][0] + rooms[roomNumber][2]; j++) {
             dungeon[i][j].symbol = '.';
             dungeon[i][j].hardness = 0;
         }
@@ -56,17 +70,25 @@ void drawRoom(int roomNumber) {
 }
 
 void placeStairsAndPlayer() {
-    int x, y;
+    uint8_t x, y;
     int i = 0;
     while (i < 2) {
         x = rand() % 78 + 1;
         y = rand() % 19 + 1;
         if (dungeon[y][x].hardness == 0) {
             if (i == 0) {
+                numberOfDownstairs = 1;
+                downStairs[0][0] = x;
+                downStairs[0][1] = y;
                 dungeon[y][x].symbol = '>';
             } else if (i == 1) {
+                numberOfUpstairs = 1;
+                upStairs[0][0] = x;
+                upStairs[0][1] = y;
                 dungeon[y][x].symbol = '<';
             } else {
+                playerPosition[0] = x;
+                playerPosition[1] = y;
                 dungeon[y][x].symbol = '@';
             }
             i++;
@@ -111,6 +133,7 @@ void placeRoom(int roomNumber) {
     int y = rand() % (TOTAL_HEIGHT - 4) + 1;
     int width = rand() % 8 + 4;
     int height = rand() % 6 + 3;
+    numberOfRooms = roomNumber;
 
     if (isLegalPlacement(x, y, width, height)) {
         rooms[roomNumber][0] = x;
@@ -132,7 +155,7 @@ void generateRandomFloor() {
     for (i = 0; i < TOTAL_HEIGHT; i++) {
         for (j = 0; j < TOTAL_WIDTH; j++) {
             char value = ' ';
-            int hardness = rand() % 255 + 1;
+            uint8_t hardness = rand() % 255 + 1;
             if (i == 0 || i == TOTAL_HEIGHT - 1) {
                 value = '-';
                 hardness = 255;
@@ -187,40 +210,33 @@ void readBasicInfo(FILE *file) {
 }
 
 void readRoomsAndStairs(FILE *file) {
-    uint8_t playerPos[2];
-    uint16_t numRooms;
-    uint16_t numUp;
-    uint16_t numDown;
-
     fseek(file, 20, SEEK_SET);
-    fread(playerPos, 1, 2, file);
+    fread(playerPosition, 1, 2, file);
 
     fseek(file, 1702, SEEK_SET);
-    fread(&numRooms, 2, 1, file);
-    numRooms = be16toh(numRooms);
-    fread(rooms, 1, 4 * numRooms, file);
+    fread(&numberOfRooms, 2, 1, file);
+    numberOfRooms = be16toh(numberOfRooms);
+    fread(rooms, 1, 4 * numberOfRooms, file);
 
-    fread(&numUp, 2, 1, file);
-    numUp = be16toh(numUp);
-    uint8_t ups[numUp][2];
-    fread(ups, 1, numUp * 2, file);
+    fread(&numberOfUpstairs, 2, 1, file);
+    numberOfUpstairs = be16toh(numberOfUpstairs);
+    fread(upStairs, 1, numberOfUpstairs * 2, file);
 
-    fread(&numDown, 2, 1, file);
-    numDown = be16toh(numDown);
-    uint8_t downs[numDown][2];
-    fread(downs, 1, numDown * 2, file);
+    fread(&numberOfDownstairs, 2, 1, file);
+    numberOfDownstairs = be16toh(numberOfDownstairs);
+    fread(downStairs, 1, numberOfDownstairs * 2, file);
 
-    for (int i = 0; i < numRooms; i++) {
+    for (int i = 0; i < numberOfRooms; i++) {
         drawRoom(i);
     }
-    for (int j = 0; j < numUp; j++) {
-        dungeon[ups[j][1]][ups[j][0]].symbol = '<';
+    for (int j = 0; j < numberOfUpstairs; j++) {
+        dungeon[upStairs[j][1]][upStairs[j][0]].symbol = '<';
     }
-    for (int k = 0; k < numDown; k++) {
-        dungeon[downs[k][1]][downs[k][0]].symbol = '>';
+    for (int k = 0; k < numberOfDownstairs; k++) {
+        dungeon[downStairs[k][1]][downStairs[k][0]].symbol = '>';
     }
 
-    dungeon[playerPos[1]][playerPos[0]].symbol = '@';
+    dungeon[playerPosition[1]][playerPosition[0]].symbol = '@';
 }
 
 FILE * openFile(char *fileName, char *openType){
@@ -230,6 +246,7 @@ FILE * openFile(char *fileName, char *openType){
     strcat(filePath, fileName);
 
     FILE *file = fopen(filePath, openType);
+    return file;
 }
 
 void loadDungeon(char *fileName) {
@@ -239,8 +256,46 @@ void loadDungeon(char *fileName) {
     fclose(file);
 }
 
+void saveDungeon() {
+    char filePath[100] = "";
+    strcat(filePath, getenv("HOME"));
+    strcat(filePath, "/.rlg327/dungeon");
+
+    uint8_t hardness[TOTAL_HEIGHT][TOTAL_WIDTH];
+
+    FILE *file = fopen(filePath, "wb");
+
+    for(int i = 0 ; i < TOTAL_HEIGHT; i++) {
+        for(int j = 0; j < TOTAL_WIDTH; j++) {
+            hardness[i][j] = dungeon[i][j].hardness;
+        }
+    }
+
+    fwrite("RLG327-S2019", 1, 12, file); //Marker
+    int32_t versionToWrite = htobe32(0);
+    fwrite(&versionToWrite, 4, 1, file); //Version
+    uint32_t size = 1708 + 4 * numberOfRooms + 2 * numberOfUpstairs + 2 * numberOfDownstairs;
+    uint32_t sizeToWrite = htobe32(size);
+    fwrite(&sizeToWrite, 4, 1, file);
+    fwrite(playerPosition, 1, 2, file);
+    fwrite(hardness, 1, 1680, file);
+    uint16_t numberOfRoomsToWrite = htobe16(numberOfRooms);
+    fwrite(&numberOfRoomsToWrite, 1, 2, file);
+    fwrite(rooms, 1, 4 * numberOfRooms, file);
+    uint16_t numberOfUpstairsToWrite = htobe16(numberOfUpstairs);
+    fwrite(&numberOfUpstairsToWrite, 1, 2, file);
+    fwrite(upStairs, 1, 2 * numberOfUpstairs, file);
+    uint16_t numberOfDownstairsToWrite = htobe16(numberOfDownstairs);
+    fwrite(&numberOfDownstairsToWrite, 1, 2, file);
+    fwrite(downStairs, 1, 2 * numberOfDownstairs, file);
+
+    fclose(file);
+}
+
 int main(int argc, char *argv[]) {
     loadDungeon(argv[1]);
+    saveDungeon();
+    loadDungeon("dungeon");
     // generateRandomFloor();
     printDungeon();
 }
