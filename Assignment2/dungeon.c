@@ -4,7 +4,16 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+#ifdef __APPLE__
+
+#include <libkern/OSByteOrder.h>
+#define htobe16(x) OSSwapHostToBigInt16(x)
+#define be16toh(x) OSSwapBigToHostInt16(x)
+#define htobe32(x) OSSwapHostToBigInt32(x)
+#define be32toh(x) OSSwapBigToHostInt32(x)
+#else
 #include <endian.h>
+#endif
 
 #define MAX_ROOMS 8
 #define TOTAL_HEIGHT 21
@@ -13,13 +22,13 @@
 //ENHANCEMENT Generate Random Number of stairs
 //ENHANCEMENT Generate random number of rooms
 //ENHANCEMENT Unit tests
+//ENHANCEMENT make corridors more random and have less of them
 //TECH DEBT This file is getting pretty long
 //ENHANCEMENT Validation on marker, version, number of rooms, presence of stairs?
 //TECH DEBT Figure out how to split functionality into different files w/o loosing shared variables
 //TECH DEBT Dynamically allocate size for room, upStairs and downStairs
 //REMAINING FUNCTIONALITY Use switches to toggle between load and save or both
-//BUG Always use dungeon.rlg327 instead of passing in values
-//ENHACEMENT Use dungeon.rlg327 as default but allow other values to be passed in
+//ENHACEMENT Use dungeon as default but allow other values to be passed in
 
 struct position {
     char symbol;
@@ -72,7 +81,7 @@ void drawRoom(int roomNumber) {
 void placeStairsAndPlayer() {
     uint8_t x, y;
     int i = 0;
-    while (i < 2) {
+    while (i < 3) {
         x = rand() % 78 + 1;
         y = rand() % 19 + 1;
         if (dungeon[y][x].hardness == 0) {
@@ -133,7 +142,7 @@ void placeRoom(int roomNumber) {
     int y = rand() % (TOTAL_HEIGHT - 4) + 1;
     int width = rand() % 8 + 4;
     int height = rand() % 6 + 3;
-    numberOfRooms = roomNumber;
+    numberOfRooms = roomNumber + 1;
 
     if (isLegalPlacement(x, y, width, height)) {
         rooms[roomNumber][0] = x;
@@ -239,7 +248,7 @@ void readRoomsAndStairs(FILE *file) {
     dungeon[playerPosition[1]][playerPosition[0]].symbol = '@';
 }
 
-FILE * openFile(char *fileName, char *openType){
+FILE *openFile(char *fileName, char *openType) {
     char filePath[100] = "";
     strcat(filePath, getenv("HOME"));
     strcat(filePath, "/.rlg327/");
@@ -256,17 +265,18 @@ void loadDungeon(char *fileName) {
     fclose(file);
 }
 
-void saveDungeon() {
+void saveDungeon(char *fileName) {
     char filePath[100] = "";
     strcat(filePath, getenv("HOME"));
-    strcat(filePath, "/.rlg327/dungeon");
+    strcat(filePath, "/.rlg327/");
+    strcat(filePath, fileName);
 
     uint8_t hardness[TOTAL_HEIGHT][TOTAL_WIDTH];
 
     FILE *file = fopen(filePath, "wb");
 
-    for(int i = 0 ; i < TOTAL_HEIGHT; i++) {
-        for(int j = 0; j < TOTAL_WIDTH; j++) {
+    for (int i = 0; i < TOTAL_HEIGHT; i++) {
+        for (int j = 0; j < TOTAL_WIDTH; j++) {
             hardness[i][j] = dungeon[i][j].hardness;
         }
     }
@@ -293,9 +303,29 @@ void saveDungeon() {
 }
 
 int main(int argc, char *argv[]) {
-    loadDungeon(argv[1]);
-    saveDungeon();
-    loadDungeon("dungeon");
-    // generateRandomFloor();
+    bool shouldSave = false;
+    bool shouldLoad = false;
+    char fileName[100] = "dungeon";
+
+    for (int argIndex = 1; argIndex < argc; argIndex++) {
+        if (strcmp(argv[argIndex], "--save") == 0) {
+            shouldSave = true;
+        } else if (strcmp(argv[argIndex], "--load") == 0) {
+            shouldLoad = true;
+        } else {
+            strcpy(fileName, argv[argIndex]);
+        }
+    }
+
+    if (shouldLoad) {
+        loadDungeon(fileName);
+    } else {
+        generateRandomFloor();
+    }
+
+    if (shouldSave) {
+        saveDungeon(fileName);
+    }
+
     printDungeon();
 }
