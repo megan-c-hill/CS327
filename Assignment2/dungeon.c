@@ -35,8 +35,15 @@ struct position {
     uint8_t hardness;
 };
 
+struct room {
+    uint8_t x;
+    uint8_t y;
+    uint8_t width;
+    uint8_t height;
+};
+
 struct position dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
-uint8_t rooms[650000][4];
+struct room rooms[650000];
 uint8_t upStairs[650000][2];
 uint8_t downStairs[650000][2];
 uint8_t playerPosition[2];
@@ -70,8 +77,8 @@ bool isLegalPlacement(int x, int y, int width, int height) {
 }
 
 void drawRoom(int roomNumber) {
-    for (int i = rooms[roomNumber][1]; i < rooms[roomNumber][1] + rooms[roomNumber][3]; i++) {
-        for (int j = rooms[roomNumber][0]; j < rooms[roomNumber][0] + rooms[roomNumber][2]; j++) {
+    for (int i = rooms[roomNumber].y; i < rooms[roomNumber].y + rooms[roomNumber].height; i++) {
+        for (int j = rooms[roomNumber].x; j < rooms[roomNumber].x + rooms[roomNumber].width; j++) {
             dungeon[i][j].symbol = '.';
             dungeon[i][j].hardness = 0;
         }
@@ -107,10 +114,10 @@ void placeStairsAndPlayer() {
 
 void connectRooms() {
     for (int room = 0; room < MAX_ROOMS - 1; room++) {
-        int x0 = rooms[room][0];
-        int x1 = rooms[room + 1][0];
-        int y0 = rooms[room][1];
-        int y1 = rooms[room + 1][1];
+        int x0 = rooms[room].x;
+        int x1 = rooms[room + 1].x;
+        int y0 = rooms[room].y;
+        int y1 = rooms[room + 1].y;
 
         int x = x0;
         int y = y0;
@@ -138,17 +145,17 @@ void connectRooms() {
 }
 
 void placeRoom(int roomNumber) {
-    int x = rand() % (TOTAL_WIDTH - 5) + 1;
-    int y = rand() % (TOTAL_HEIGHT - 4) + 1;
-    int width = rand() % 8 + 4;
-    int height = rand() % 6 + 3;
+    uint8_t x = rand() % (TOTAL_WIDTH - 5) + 1;
+    uint8_t y = rand() % (TOTAL_HEIGHT - 4) + 1;
+    uint8_t width = rand() % 8 + 4;
+    uint8_t height = rand() % 6 + 3;
     numberOfRooms = roomNumber + 1;
 
     if (isLegalPlacement(x, y, width, height)) {
-        rooms[roomNumber][0] = x;
-        rooms[roomNumber][1] = y;
-        rooms[roomNumber][2] = width;
-        rooms[roomNumber][3] = height;
+        rooms[roomNumber].x = x;
+        rooms[roomNumber].y = y;
+        rooms[roomNumber].width = width;
+        rooms[roomNumber].height = height;
         drawRoom(roomNumber);
     } else {
         placeRoom(roomNumber);
