@@ -24,11 +24,8 @@
 //ENHANCEMENT Unit tests
 //ENHANCEMENT make corridors more random and have less of them
 //TECH DEBT This file is getting pretty long
-//ENHANCEMENT Validation on marker, version, number of rooms, presence of stairs?
+//ENHANCEMENT Validation version, number of rooms, presence of stairs?
 //TECH DEBT Figure out how to split functionality into different files w/o loosing shared variables
-//TECH DEBT Dynamically allocate size for room, upStairs and downStairs
-//REMAINING FUNCTIONALITY Use switches to toggle between load and save or both
-//ENHACEMENT Use dungeon as default but allow other values to be passed in
 
 struct dungeonPosition {
     char symbol;
@@ -207,6 +204,11 @@ void readBasicInfo(FILE *file) {
 
     fread(marker, sizeof(char), 12, file);
 
+    if(strcmp(marker, "RLG327-S2019") != 0){
+        fprintf(stderr, "The marker does not match the expected value\n");
+        exit(-1);
+    }
+
     fread(&version, 4, 1, file);
     version = be32toh(version);
 
@@ -345,7 +347,7 @@ int main(int argc, char *argv[]) {
     if (shouldSave) {
         saveDungeon(fileName);
     }
-    
+
     free(rooms);
     free(upStairs);
     free(downStairs);
