@@ -30,7 +30,7 @@
 //REMAINING FUNCTIONALITY Use switches to toggle between load and save or both
 //ENHACEMENT Use dungeon as default but allow other values to be passed in
 
-struct position {
+struct dungeonPosition {
     char symbol;
     uint8_t hardness;
 };
@@ -42,10 +42,15 @@ struct room {
     uint8_t height;
 };
 
-struct position dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
+struct position {
+    uint8_t x;
+    uint8_t y;
+};
+
+struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room rooms[650000];
-uint8_t upStairs[650000][2];
-uint8_t downStairs[650000][2];
+struct position upStairs[650000];
+struct position downStairs[650000];
 uint8_t playerPosition[2];
 uint16_t numberOfRooms = 8;
 uint16_t numberOfUpstairs = 1;
@@ -94,13 +99,13 @@ void placeStairsAndPlayer() {
         if (dungeon[y][x].hardness == 0) {
             if (i == 0) {
                 numberOfDownstairs = 1;
-                downStairs[0][0] = x;
-                downStairs[0][1] = y;
+                downStairs[0].x = x;
+                downStairs[0].y = y;
                 dungeon[y][x].symbol = '>';
             } else if (i == 1) {
                 numberOfUpstairs = 1;
-                upStairs[0][0] = x;
-                upStairs[0][1] = y;
+                upStairs[0].x = x;
+                upStairs[0].y = y;
                 dungeon[y][x].symbol = '<';
             } else {
                 playerPosition[0] = x;
@@ -246,10 +251,10 @@ void readRoomsAndStairs(FILE *file) {
         drawRoom(i);
     }
     for (int j = 0; j < numberOfUpstairs; j++) {
-        dungeon[upStairs[j][1]][upStairs[j][0]].symbol = '<';
+        dungeon[upStairs[j].y][upStairs[j].x].symbol = '<';
     }
     for (int k = 0; k < numberOfDownstairs; k++) {
-        dungeon[downStairs[k][1]][downStairs[k][0]].symbol = '>';
+        dungeon[downStairs[k].y][downStairs[k].x].symbol = '>';
     }
 
     dungeon[playerPosition[1]][playerPosition[0]].symbol = '@';
