@@ -48,9 +48,9 @@ struct position {
 };
 
 struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
-struct room rooms[650000];
-struct position upStairs[650000];
-struct position downStairs[650000];
+struct room *rooms;
+struct position *upStairs;
+struct position *downStairs;
 uint8_t playerPosition[2];
 uint16_t numberOfRooms = 8;
 uint16_t numberOfUpstairs = 1;
@@ -188,9 +188,13 @@ void generateRandomFloor() {
             dungeon[i][j].hardness = hardness;
         }
     }
+
+    rooms = malloc(sizeof(struct room) * numberOfRooms);
     for (i = 0; i < MAX_ROOMS; i++) {
         placeRoom(i);
     }
+    upStairs = malloc(sizeof(struct position) * numberOfUpstairs);
+    downStairs = malloc(sizeof(struct position) * numberOfDownstairs);
     connectRooms();
     placeStairsAndPlayer();
 }
@@ -237,14 +241,17 @@ void readRoomsAndStairs(FILE *file) {
     fseek(file, 1702, SEEK_SET);
     fread(&numberOfRooms, 2, 1, file);
     numberOfRooms = be16toh(numberOfRooms);
+    rooms = malloc(sizeof(struct room) * numberOfRooms);
     fread(rooms, 1, 4 * numberOfRooms, file);
 
     fread(&numberOfUpstairs, 2, 1, file);
     numberOfUpstairs = be16toh(numberOfUpstairs);
+    upStairs = malloc(sizeof(struct room) * numberOfUpstairs);
     fread(upStairs, 1, numberOfUpstairs * 2, file);
 
     fread(&numberOfDownstairs, 2, 1, file);
     numberOfDownstairs = be16toh(numberOfDownstairs);
+    downStairs = malloc(sizeof(struct room) * numberOfDownstairs);
     fread(downStairs, 1, numberOfDownstairs * 2, file);
 
     for (int i = 0; i < numberOfRooms; i++) {
@@ -338,6 +345,10 @@ int main(int argc, char *argv[]) {
     if (shouldSave) {
         saveDungeon(fileName);
     }
+    
+    free(rooms);
+    free(upStairs);
+    free(downStairs);
 
     printDungeon();
 }
