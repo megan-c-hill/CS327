@@ -29,3 +29,22 @@ uint8_t playerPosition[2];
 uint16_t numberOfRooms = 8;
 uint16_t numberOfUpstairs = 1;
 uint16_t numberOfDownstairs = 1;
+
+void drawRoom(int roomNumber) {
+	for (int i = rooms[roomNumber].y; i < rooms[roomNumber].y + rooms[roomNumber].height; i++) {
+		for (int j = rooms[roomNumber].x; j < rooms[roomNumber].x + rooms[roomNumber].width; j++) {
+			dungeon[i][j].symbol = '.';
+			dungeon[i][j].hardness = 0;
+		}
+	}
+}
+
+void printDungeon() {
+	int i, j;
+	for (i = 0; i < TOTAL_HEIGHT; i++) {
+		for (j = 0; j < TOTAL_WIDTH; j++) {
+			printf("%c", dungeon[i][j].symbol);
+		}
+		printf("\n");
+	}
+}
