@@ -1,4 +1,4 @@
-dungeon: dungeon.c
+dungeon: dungeon.c shared-components.c
 	 gcc dungeon.c -o dungeon
 
  clean:

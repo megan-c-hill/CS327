@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+#include "shared-components.c"
 #ifdef __APPLE__
 
 #include <libkern/OSByteOrder.h>
@@ -21,37 +22,9 @@
 
 //ENHANCEMENT Generate Random Number of stairs
 //ENHANCEMENT Generate random number of rooms
-//ENHANCEMENT Unit tests
+//TECH DEBT / ENHANCEMENT Unit tests
 //ENHANCEMENT make corridors more random and have less of them
-//TECH DEBT This file is getting pretty long
 //ENHANCEMENT Validation version, number of rooms, presence of stairs?
-//TECH DEBT Figure out how to split functionality into different files w/o loosing shared variables
-
-struct dungeonPosition {
-    char symbol;
-    uint8_t hardness;
-};
-
-struct room {
-    uint8_t x;
-    uint8_t y;
-    uint8_t width;
-    uint8_t height;
-};
-
-struct position {
-    uint8_t x;
-    uint8_t y;
-};
-
-struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
-struct room *rooms;
-struct position *upStairs;
-struct position *downStairs;
-uint8_t playerPosition[2];
-uint16_t numberOfRooms = 8;
-uint16_t numberOfUpstairs = 1;
-uint16_t numberOfDownstairs = 1;
 
 void printDungeon() {
     int i, j;
