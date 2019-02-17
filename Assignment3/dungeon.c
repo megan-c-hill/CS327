@@ -1,8 +1,10 @@
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include "generate-dungeon.c"
 #include "load-dungeon.c"
 #include "save-dungeon.c"
+#include "dijkstra.c"
 
 //TECH DEBT / ENHANCEMENT Unit tests
 
@@ -36,4 +38,6 @@ int main(int argc, char *argv[]) {
     free(downStairs);
 
     printDungeon();
+
+    nonTunnelingDistance();
 }
