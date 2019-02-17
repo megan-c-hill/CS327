@@ -2,15 +2,6 @@
 #define DIJKSTA
 
 #include "shared-components.c"
-
-struct distancePosition {
-	char symbol;
-	int distance;
-};
-
-struct distancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
-struct distancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
-
 #include "heap.c"
 
 uint8_t MAX_INT = 255;

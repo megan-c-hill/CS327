@@ -23,7 +23,15 @@ struct position {
 	uint8_t x;
 	uint8_t y;
 };
+
+struct distancePosition {
+	char symbol;
+	int distance;
+};
+
 struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
+struct distancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+struct distancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room *rooms;
 struct position *upStairs;
 struct position *downStairs;

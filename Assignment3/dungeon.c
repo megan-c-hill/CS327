@@ -2,8 +2,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include "generate-dungeon.c"
-#include "load-dungeon.c"
-#include "save-dungeon.c"
+#include "load-and-save-dungeon.c"
 #include "dijkstra.c"
 
 //TECH DEBT / ENHANCEMENT Unit tests

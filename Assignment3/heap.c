@@ -1,5 +1,5 @@
-// C code to implement Priority Queue 
-// using Linked List taken from https://www.geeksforgeeks.org/priority-queue-using-linked-list/
+// C code to implement Priority Queue using Linked List
+// taken from https://www.geeksforgeeks.org/priority-queue-using-linked-list/
 // pretty drastically modified, but I still feel like I should give credit just to be safe
 #ifndef HEAP
 #define HEAP
@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <limits.h>
 #include "shared-components.c"
-#include "dijkstra.c"
 
 // Node 
 typedef struct node {
