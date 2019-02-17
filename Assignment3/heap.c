@@ -1,6 +1,6 @@
 // C code to implement Priority Queue 
 // using Linked List taken from https://www.geeksforgeeks.org/priority-queue-using-linked-list/
-// pretty drastically modified, by I still feel like I should give credit just to be safe
+// pretty drastically modified, but I still feel like I should give credit just to be safe
 #ifndef HEAP
 #define HEAP
 #include <stdio.h>
@@ -40,12 +40,6 @@ Heap * newHeap(Node *head){
 	return temp;
 }
 
-// Return the value at head 
-int peek(Heap *h)
-{
-	return nonTunnelDistance[h->head->y][h->head->x].distance;
-}
-
 // Removes the element with the 
 // highest priority form the list 
 Node * pop(Heap *h)
@@ -58,7 +52,7 @@ Node * pop(Heap *h)
 }
 
 // Function to push according to priority 
-void push(Heap *h, int x, int y)
+void push(Heap *h, int x, int y, struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH])
 {
 	// Create new Node
 	Node* temp = newNode(x, y);
@@ -72,7 +66,7 @@ void push(Heap *h, int x, int y)
 	// Special Case: The head of list has lesser
 	// priority than new node. So insert new
 	// node before head node and change head node.
-	if (nonTunnelDistance[h->head->y][h->head->x].distance > nonTunnelDistance[y][x].distance) {
+	if (distanceArr[h->head->y][h->head->x].distance > distanceArr[y][x].distance) {
 		// Insert New Node before head
 		temp->next = h -> head;
 		h -> head = temp;
@@ -81,7 +75,7 @@ void push(Heap *h, int x, int y)
 
 		// Traverse the list and find a
 		// position to insert new node
-		while (start->next != NULL && nonTunnelDistance[start->next->y][start->next->x].distance < nonTunnelDistance[y][x].distance) {
+		while (start->next != NULL && distanceArr[start->next->y][start->next->x].distance < distanceArr[y][x].distance) {
 			start = start->next;
 		}
 
