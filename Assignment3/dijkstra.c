@@ -1,165 +1,81 @@
-#ifndef SHARED_COMPONENTS
-#define SHARED_COMPONENTS
+#ifndef DIJKSTA
+#define DIJKSTA
 
-#include <limits.h>
 #include "shared-components.c"
-#endif
+
+struct distancePosition {
+	char symbol;
+	int distance;
+};
+
+struct distancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+
 #include "heap.c"
 
-char nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+uint8_t MAX_INT = 255;
 
-void initNonTunnelArray(){
-	for(int i = 0; i<TOTAL_HEIGHT; i++){
-		for(int j = 0; j<TOTAL_WIDTH; j++){
-			if (i == 0 || i == TOTAL_HEIGHT - 1){
-				nonTunnelDistance[i][j] = '-';
+void initNonTunnelArray() {
+	for (int i = 0; i < TOTAL_HEIGHT; i++) {
+		for (int j = 0; j < TOTAL_WIDTH; j++) {
+			if (i == 0 || i == TOTAL_HEIGHT - 1) {
+				nonTunnelDistance[i][j].symbol = '-';
 			} else if (j == 0 || j == TOTAL_WIDTH - 1) {
-				nonTunnelDistance[i][j] = '|';
+				nonTunnelDistance[i][j].symbol = '|';
 			} else {
-				nonTunnelDistance[i][j] = ' ';
+				if(dungeon[i][j].hardness == 0) {
+					nonTunnelDistance[i][j].symbol = 'X';
+				} else {
+					nonTunnelDistance[i][j].symbol = ' ';
+				}
 			}
+			nonTunnelDistance[i][j].distance = MAX_INT;
 		}
 	}
 }
 
-void printArray(char dungeonMap[TOTAL_HEIGHT][TOTAL_WIDTH]){
-	for(int i = 0; i<TOTAL_HEIGHT; i++){
-		for(int j = 0; j<TOTAL_WIDTH; j++){
-			printf("%c", dungeonMap[i][j]);
+void printArray(struct distancePosition dungeonMap[TOTAL_HEIGHT][TOTAL_WIDTH]) {
+	for (int i = 0; i < TOTAL_HEIGHT; i++) {
+		for (int j = 0; j < TOTAL_WIDTH; j++) {
+			printf("%c", dungeonMap[i][j].symbol);
 		}
 		printf("\n");
 	}
 }
 
+void shortestPath() {
+	int playerX = playerPosition[0];
+	int playerY = playerPosition[1];
+	nonTunnelDistance[playerY][playerX].distance = 0;
+	nonTunnelDistance[playerY][playerX].symbol = '0';
+	Node *playerPosition = newNode(playerX, playerY);
+	Heap *h = newHeap(playerPosition);
 
-/**
- * 1) Initialize distances of all vertices as infinite.
+	while (!isEmpty(h)) {
+		Node *parent = pop(h);
+		int parentX = parent->x;
+		int parentY = parent->y;
+		int newDistance = nonTunnelDistance[parentY][parentX].distance + 1;
 
-2) Create an empty priority_queue pq.  Every item
-   of pq is a pair (weight, vertex). Weight (or
-   distance) is used used as first item  of pair
-   as first item is by default used to compare
-   two pairs
+		for (int i = -1; i <= 1; i++) {
+			for (int j = -1; j <= 1; j++) {
+				int newY = parentY + i;
+				int newX = parentX + j;
+				if (dungeon[newY][newX].hardness == 0 && newDistance < nonTunnelDistance[newY][newX].distance) {
+					nonTunnelDistance[newY][newX].distance = newDistance;
+					nonTunnelDistance[newY][newX].symbol = newDistance % 10 + '0';
+					push(h, newX, newY);
+				}
+			}
+		}
 
-3) Insert source vertex into pq and make its
-   distance as 0.
+	}
+}
 
-4) While either pq doesn't become empty
-    a) Extract minimum distance vertex from pq.
-       Let the extracted vertex be u.
-    b) Loop through all adjacent of u and do
-       following for every vertex v.
-
-           // If there is a shorter path to v
-           // through u.
-           If dist[v] > dist[u] + weight(u, v)
-
-               (i) Update distance of v, i.e., do
-                     dist[v] = dist[u] + weight(u, v)
-               (ii) Insert v into the pq (Even if v is
-                    already there)
-
-5) Print distance array dist[] to print all shortest
-   paths.
- */
-
-//void dijkstra(){
-//	static corridor_path_t path[DUNGEON_Y][DUNGEON_X], *p;
-//	static uint32_t initialized = 0;
-//	heap_t h; //1)
-//	uint32_t x, y;
-//
-//	if (!initialized) {
-//		for (y = 0; y < DUNGEON_Y; y++) {
-//			for (x = 0; x < DUNGEON_X; x++) {
-//				path[y][x].pos[dim_y] = y;
-//				path[y][x].pos[dim_x] = x;
-//			}
-//		}
-//		initialized = 1;
-//	}
-//
-//	for (y = 0; y < DUNGEON_Y; y++) {
-//		for (x = 0; x < DUNGEON_X; x++) {
-//			path[y][x].cost = INT_MAX;
-//		}
-//	}
-//
-//	heap_init(&h, corridor_path_cmp, NULL);
-//
-//	for (y = 0; y < DUNGEON_Y; y++) {
-//		for (x = 0; x < DUNGEON_X; x++) {
-//			if (mapxy(x, y) != 255) {
-//				path[y][x].hn = heap_insert(&h, &path[y][x]);
-//			} else {
-//				path[y][x].hn = NULL;
-//			}
-//		}
-//	}
-//
-//	while ((p = heap_remove_min(&h))) {
-//		p->hn = NULL;
-//
-//		if ((p->pos[dim_y] == to[dim_y]) && p->pos[dim_x] == to[dim_x]) {
-//			for (x = to[dim_x], y = to[dim_y];
-//				 (x != from[dim_x]) || (y != from[dim_y]);
-//				 p = &path[y][x], x = p->from[dim_x], y = p->from[dim_y]) {
-//				if (mapxy(x, y) != ter_floor_room) {
-//					mapxy(x, y) = ter_floor_hall;
-//					hardnessxy(x, y) = 0;
-//				}
-//			}
-//			heap_delete(&h);
-//			return;
-//		}
-//
-//		if ((path[p->pos[dim_y] - 1][p->pos[dim_x]    ].hn) &&
-//			(path[p->pos[dim_y] - 1][p->pos[dim_x]    ].cost >
-//			 p->cost + hardnesspair(p->pos))) {
-//			path[p->pos[dim_y] - 1][p->pos[dim_x]    ].cost =
-//					p->cost + hardnesspair(p->pos);
-//			path[p->pos[dim_y] - 1][p->pos[dim_x]    ].from[dim_y] = p->pos[dim_y];
-//			path[p->pos[dim_y] - 1][p->pos[dim_x]    ].from[dim_x] = p->pos[dim_x];
-//			heap_decrease_key_no_replace(&h, path[p->pos[dim_y] - 1]
-//			[p->pos[dim_x]    ].hn);
-//		}
-//		if ((path[p->pos[dim_y]    ][p->pos[dim_x] - 1].hn) &&
-//			(path[p->pos[dim_y]    ][p->pos[dim_x] - 1].cost >
-//			 p->cost + hardnesspair(p->pos))) {
-//			path[p->pos[dim_y]    ][p->pos[dim_x] - 1].cost =
-//					p->cost + hardnesspair(p->pos);
-//			path[p->pos[dim_y]    ][p->pos[dim_x] - 1].from[dim_y] = p->pos[dim_y];
-//			path[p->pos[dim_y]    ][p->pos[dim_x] - 1].from[dim_x] = p->pos[dim_x];
-//			heap_decrease_key_no_replace(&h, path[p->pos[dim_y]    ]
-//			[p->pos[dim_x] - 1].hn);
-//		}
-//		if ((path[p->pos[dim_y]    ][p->pos[dim_x] + 1].hn) &&
-//			(path[p->pos[dim_y]    ][p->pos[dim_x] + 1].cost >
-//			 p->cost + hardnesspair(p->pos))) {
-//			path[p->pos[dim_y]    ][p->pos[dim_x] + 1].cost =
-//					p->cost + hardnesspair(p->pos);
-//			path[p->pos[dim_y]    ][p->pos[dim_x] + 1].from[dim_y] = p->pos[dim_y];
-//			path[p->pos[dim_y]    ][p->pos[dim_x] + 1].from[dim_x] = p->pos[dim_x];
-//			heap_decrease_key_no_replace(&h, path[p->pos[dim_y]    ]
-//			[p->pos[dim_x] + 1].hn);
-//		}
-//		if ((path[p->pos[dim_y] + 1][p->pos[dim_x]    ].hn) &&
-//			(path[p->pos[dim_y] + 1][p->pos[dim_x]    ].cost >
-//			 p->cost + hardnesspair(p->pos))) {
-//			path[p->pos[dim_y] + 1][p->pos[dim_x]    ].cost =
-//					p->cost + hardnesspair(p->pos);
-//			path[p->pos[dim_y] + 1][p->pos[dim_x]    ].from[dim_y] = p->pos[dim_y];
-//			path[p->pos[dim_y] + 1][p->pos[dim_x]    ].from[dim_x] = p->pos[dim_x];
-//			heap_decrease_key_no_replace(&h, path[p->pos[dim_y] + 1]
-//			[p->pos[dim_x]    ].hn);
-//		}
-//	}
-//
-//
-//}
-
-void nonTunnelingDistance(){
+void nonTunnelingDistance() {
 	initNonTunnelArray();
+	shortestPath();
 	printArray(nonTunnelDistance);
 
 }
+
+#endif

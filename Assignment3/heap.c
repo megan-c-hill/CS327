@@ -1,15 +1,18 @@
 // C code to implement Priority Queue 
 // using Linked List taken from https://www.geeksforgeeks.org/priority-queue-using-linked-list/
-// modified to include references to heap instead of to the root of the heap
+// pretty drastically modified, by I still feel like I should give credit just to be safe
+#ifndef HEAP
+#define HEAP
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+#include "shared-components.c"
+#include "dijkstra.c"
 
 // Node 
 typedef struct node {
-	int data;
-
-	// Lower values indicate higher priority
-	int priority;
+	int x;
+	int y;
 
 	struct node* next;
 
@@ -20,44 +23,56 @@ typedef struct heap {
 } Heap;
 
 // Function to Create A New Node 
-Node* newNode(int d, int p)
+Node* newNode(int x, int y)
 {
 	Node* temp = (Node*)malloc(sizeof(Node));
-	temp->data = d;
-	temp->priority = p;
+	temp->x = x;
+	temp->y = y;
 	temp->next = NULL;
 
+	return temp;
+}
+
+
+Heap * newHeap(Node *head){
+	Heap * temp = (Heap*)malloc(sizeof(Node));
+	temp -> head = head;
 	return temp;
 }
 
 // Return the value at head 
 int peek(Heap *h)
 {
-	return h -> head ->data;
+	return nonTunnelDistance[h->head->y][h->head->x].distance;
 }
 
 // Removes the element with the 
 // highest priority form the list 
-void pop(Heap *h)
+Node * pop(Heap *h)
 {
+	Node* data = h->head;
 	Node* temp = h -> head;
 	h -> head = h->head->next;
 	free(temp);
+	return data;
 }
 
 // Function to push according to priority 
-void push(Heap *h, int d, int p)
+void push(Heap *h, int x, int y)
 {
+	// Create new Node
+	Node* temp = newNode(x, y);
+	if(h->head == NULL){
+		h->head = temp;
+		return;
+	}
 	Node* start = h -> head;
 
-	// Create new Node
-	Node* temp = newNode(d, p);
 
 	// Special Case: The head of list has lesser
 	// priority than new node. So insert new
 	// node before head node and change head node.
-	if (h -> head -> priority > p) {
-
+	if (nonTunnelDistance[h->head->y][h->head->x].distance > nonTunnelDistance[y][x].distance) {
 		// Insert New Node before head
 		temp->next = h -> head;
 		h -> head = temp;
@@ -66,7 +81,7 @@ void push(Heap *h, int d, int p)
 
 		// Traverse the list and find a
 		// position to insert new node
-		while (start->next != NULL && start->next->priority < p) {
+		while (start->next != NULL && nonTunnelDistance[start->next->y][start->next->x].distance < nonTunnelDistance[y][x].distance) {
 			start = start->next;
 		}
 
@@ -81,4 +96,6 @@ void push(Heap *h, int d, int p)
 int isEmpty(Heap *h)
 {
 	return h -> head == NULL;
-} 
+}
+
+#endif

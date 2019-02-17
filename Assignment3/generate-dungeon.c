@@ -1,10 +1,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
-#ifndef SHARED_COMPONENTS
-#define SHARED_COMPONENTS
 #include "shared-components.c"
-#endif
 
 #define MAX_ROOMS 8
 

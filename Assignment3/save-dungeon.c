@@ -1,7 +1,4 @@
-#ifndef SHARED_COMPONENTS
-#define SHARED_COMPONENTS
 #include "shared-components.c"
-#endif
 #include <string.h>
 #include <stdlib.h>
 

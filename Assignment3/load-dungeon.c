@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#ifndef SHARED_COMPONENTS
-#define SHARED_COMPONENTS
 #include "shared-components.c"
-#endif
 
 #ifdef __APPLE__
 

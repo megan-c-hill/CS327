@@ -1,3 +1,6 @@
+#ifndef SHARED_COMPONENTS
+#define SHARED_COMPONENTS
+
 #include <stdint.h>
 #include <stdio.h>
 
@@ -20,7 +23,6 @@ struct position {
 	uint8_t x;
 	uint8_t y;
 };
-
 struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room *rooms;
 struct position *upStairs;
@@ -48,3 +50,5 @@ void printDungeon() {
 		printf("\n");
 	}
 }
+
+#endif
