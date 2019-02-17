@@ -3,7 +3,7 @@
 #include <string.h>
 #include "generate-dungeon.c"
 #include "load-and-save-dungeon.c"
-#include "dijkstra.c"
+#include "dijkstra.h"
 
 //TECH DEBT / ENHANCEMENT Unit tests
 

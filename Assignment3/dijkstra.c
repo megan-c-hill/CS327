@@ -1,6 +1,3 @@
-#ifndef DIJKSTA
-#define DIJKSTA
-
 #include "shared-components.c"
 #include "heap.c"
 
@@ -92,5 +89,3 @@ void tunnelingDistance() {
 	shortestPath(tunnelDistance, 1);
 	printArray(tunnelDistance);
 }
-
-#endif
