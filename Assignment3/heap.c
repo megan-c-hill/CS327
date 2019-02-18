@@ -1,25 +1,11 @@
 // C code to implement Priority Queue using Linked List
 // taken from https://www.geeksforgeeks.org/priority-queue-using-linked-list/
 // pretty drastically modified, but I still feel like I should give credit just to be safe
-#ifndef HEAP
-#define HEAP
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "shared-components.c"
-
-// Node 
-typedef struct node {
-	int x;
-	int y;
-
-	struct node* next;
-
-} Node;
-
-typedef struct heap {
-	Node *head;
-} Heap;
+#include "shared-components.h"
+#include "heap.h"
 
 // Function to Create A New Node 
 Node* newNode(int x, int y)
@@ -90,5 +76,3 @@ int isEmpty(Heap *h)
 {
 	return h -> head == NULL;
 }
-
-#endif

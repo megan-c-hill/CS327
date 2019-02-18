@@ -1,5 +1,6 @@
-#include "shared-components.c"
-#include "heap.c"
+#include "shared-components.h"
+#include "heap.h"
+#include <stdio.h>
 
 uint8_t MAX_INT = 255;
 

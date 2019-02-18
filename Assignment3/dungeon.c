@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include "generate-dungeon.c"
-#include "load-and-save-dungeon.c"
+#include "generate-dungeon.h"
+#include "shared-components.h"
 #include "dijkstra.h"
 
 //TECH DEBT / ENHANCEMENT Unit tests
