@@ -1,4 +1,5 @@
-A program that either loads and/or saves dungeons depending on which switch(es) you pass in.
+A program that prints out distances between every point in the dungeon and the player character
 
-BONUS FEATURE
-If you pass in a parameter than is not either --save or --load it will save/load the dungeon to/from that location
+There are 2 map one for non-tunneling monsters and one for tunneling monsters.
+The player character is still denoted by an @ in both maps, and the immutable walls are still denoted with their border.
+In the non tunneling map any unreachable corridor is denoted with X
