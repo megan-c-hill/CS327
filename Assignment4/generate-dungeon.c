@@ -29,7 +29,6 @@ uint8_t numberOfUpstairs = 1;
 uint8_t numberOfDownstairs = 1;
 
 
-
 FILE *openFile(char *fileName, char *openType) {
 	char filePath[100] = "";
 	strcat(filePath, getenv("HOME"));
@@ -49,7 +48,7 @@ void readBasicInfo(FILE *file) {
 
 	fread(marker, sizeof(char), 12, file);
 
-	if(strcmp(marker, "RLG327-S2019") != 0){
+	if (strcmp(marker, "RLG327-S2019") != 0) {
 		fprintf(stderr, "The marker does not match the expected value\n");
 		exit(-1);
 	}
@@ -165,8 +164,8 @@ void connectRooms() {
 
 		int x = x0;
 		int y = y0;
-		int xDirection = (x1 - x0) / abs(x1 - x0);
-		int yDirection = (y1 - y0) / abs(y1 - y0);
+		int xDirection = x1 - x0 == 0 ? 0 : (x1 - x0) / abs(x1 - x0);
+		int yDirection = y1 - y0 == 0 ? 0 : (y1 - y0) / abs(y1 - y0);
 		int count;
 
 		for (count = 0; count < abs(x1 - x0); count++) {

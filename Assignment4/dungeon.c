@@ -3,7 +3,7 @@
 #include <string.h>
 #include "generate-dungeon.h"
 #include "shared-components.h"
-#include "dijkstra.h"
+#include "distance.h"
 
 //TECH DEBT / ENHANCEMENT Unit tests
 
