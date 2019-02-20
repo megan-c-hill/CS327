@@ -10,8 +10,8 @@
 
 #include <libkern/OSByteOrder.h>
 #define be16toh(x) OSSwapBigToHostInt16(x)
-#define be32toh(x) OSSwapBigToHostInt32(x)
 #define htobe16(x) OSSwapHostToBigInt16(x)
+#define be32toh(x) OSSwapBigToHostInt32(x)
 #define htobe32(x) OSSwapHostToBigInt32(x)
 #else
 #include <endian.h>
@@ -24,11 +24,9 @@
 //ENHANCEMENT make corridors more random and have less of them
 //ENHANCEMENT Validation version, number of rooms, presence of stairs?
 
-uint8_t numberOfRooms = 8;
-uint8_t numberOfUpstairs = 1;
-uint8_t numberOfDownstairs = 1;
-
-
+uint16_t numberOfRooms = 8;
+uint16_t numberOfUpstairs = 1;
+uint16_t numberOfDownstairs = 1;
 
 FILE *openFile(char *fileName, char *openType) {
 	char filePath[100] = "";
@@ -165,8 +163,8 @@ void connectRooms() {
 
 		int x = x0;
 		int y = y0;
-		int xDirection = (x1 - x0) / abs(x1 - x0);
-		int yDirection = (y1 - y0) / abs(y1 - y0);
+		int xDirection = x1 - x0 == 0 ? 0 : (x1 - x0) / abs(x1 - x0);
+		int yDirection = y1 - y0 == 0 ? 0 : (y1 - y0) / abs(y1 - y0);
 		int count;
 
 		for (count = 0; count < abs(x1 - x0); count++) {
