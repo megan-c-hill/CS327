@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 #include "shared-components.h"
 #include <string.h>
@@ -23,10 +22,12 @@
 //ENHANCEMENT Generate random number of rooms
 //ENHANCEMENT make corridors more random and have less of them
 //ENHANCEMENT Validation version, number of rooms, presence of stairs?
+//TECH DEBT Don't allow user to enter more monsters than my algorithm lets them place
+//TECH DEBT Give user helpful message if they don't give switches and command line arguments in the order I want
 
-uint8_t numberOfRooms = 8;
-uint8_t numberOfUpstairs = 1;
-uint8_t numberOfDownstairs = 1;
+uint16_t numberOfRooms = 8;
+uint16_t numberOfUpstairs = 1;
+uint16_t numberOfDownstairs = 1;
 
 
 FILE *openFile(char *fileName, char *openType) {
@@ -128,6 +129,20 @@ bool isLegalPlacement(int x, int y, int width, int height) {
 	return true;
 }
 
+void placeMonsters (int numMonsters){
+	int counter = 0;
+	uint8_t x, y;
+	while(counter < numMonsters){
+		x = rand() % (TOTAL_WIDTH - 5) + 1;
+		y = rand() % (TOTAL_HEIGHT - 4) + 1;
+
+		if(dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.'){
+			dungeon[y][x].symbol = '!';
+			counter ++;
+		}
+	}
+}
+
 void placeStairsAndPlayer() {
 	uint8_t x, y;
 	int i = 0;
@@ -206,10 +221,11 @@ void placeRoom(int roomNumber) {
 }
 
 
-void loadDungeon(char *fileName) {
+void loadDungeon(char *fileName, int numMonsters) {
 	FILE *file = openFile(fileName, "rb");
 	readBasicInfo(file);
 	readRoomsAndStairs(file);
+	placeMonsters(numMonsters);
 	fclose(file);
 }
 
@@ -250,11 +266,7 @@ void saveDungeon(char *fileName) {
 	fclose(file);
 }
 
-void generateRandomFloor() {
-	int seed = time(NULL);
-	printf("Seed: %d\n", seed);
-	srand(seed);
-
+void generateRandomFloor(int numMonsters) {
 	int i, j;
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
@@ -280,4 +292,5 @@ void generateRandomFloor() {
 	downStairs = malloc(sizeof(struct position) * numberOfDownstairs);
 	connectRooms();
 	placeStairsAndPlayer();
+	placeMonsters(numMonsters);
 }
