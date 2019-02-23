@@ -7,7 +7,6 @@
 #include "../shared-components.h"
 #include "pathFindingHeap.h"
 
-// Function to Create A New Node 
 PathFindingNode* newPathFindingNode(int x, int y)
 {
 	PathFindingNode* temp = (PathFindingNode*)malloc(sizeof(PathFindingNode));
@@ -25,8 +24,6 @@ PathFindingHeap * newPathFindingHeap(PathFindingNode *head){
 	return temp;
 }
 
-// Removes the element with the 
-// highest priority form the list 
 PathFindingNode * pop(PathFindingHeap *h)
 {
 	PathFindingNode* data = newPathFindingNode(h->head->x, h->head->y);
@@ -36,10 +33,8 @@ PathFindingNode * pop(PathFindingHeap *h)
 	return data;
 }
 
-// Function to push according to priority 
 void push(PathFindingHeap *h, int x, int y, struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH])
 {
-	// Create new Node
 	PathFindingNode* temp = newPathFindingNode(x, y);
 	if(h->head == NULL){
 		h->head = temp;
@@ -48,30 +43,20 @@ void push(PathFindingHeap *h, int x, int y, struct distancePosition distanceArr[
 	PathFindingNode* start = h -> head;
 
 
-	// Special Case: The head of list has lesser
-	// priority than new PathFindingNode. So insert new
-	// PathFindingNode before head PathFindingNode and change head PathFindingNode.
 	if (distanceArr[h->head->y][h->head->x].distance > distanceArr[y][x].distance) {
-		// Insert New Node before head
 		temp->next = h -> head;
 		h -> head = temp;
 	}
 	else {
-
-		// Traverse the list and find a
-		// position to insert new PathFindingNode
 		while (start->next != NULL && distanceArr[start->next->y][start->next->x].distance < distanceArr[y][x].distance) {
 			start = start->next;
 		}
 
-		// Either at the ends of the list
-		// or at required position
 		temp->next = start->next;
 		start->next = temp;
 	}
 }
 
-// Function to check is list is empty 
 int isEmpty(PathFindingHeap *h)
 {
 	return h -> head == NULL;

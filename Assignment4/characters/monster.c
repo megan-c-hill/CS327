@@ -2,6 +2,8 @@
 #include "monster.h"
 #include "../shared-components.h"
 
+//TECH DEBT allow more monsters than dungeon spaces
+
 #define NPC_SMART    0x00000001
 #define NPC_TELE    0x00000002
 #define NPC_TUNNEL    0x00000004
@@ -89,15 +91,16 @@ void placeMonsters (int numMonsters){
 			monster -> x = x;
 			monster -> y = y;
 			characterMap[y][x] = monster;
+			pushCharacter(playerQueue, x, y, monster->speed, 0);
 			counter ++;
 		}
 	}
 }
 
 void placePlayer(){
-	int counter = 0;
+	bool isDone = false;
 	uint8_t x, y;
-	while(counter < 1){
+	while(!isDone){
 		x = rand() % (TOTAL_WIDTH - 5) + 1;
 		y = rand() % (TOTAL_HEIGHT - 4) + 1;
 		Character *pc = generatePlayerCharacter();
@@ -108,7 +111,9 @@ void placePlayer(){
 			playerPosition[0] = x;
 			playerPosition[1] = y;
 			characterMap[y][x] = pc;
-			counter ++;
+			isDone = true;
+			CharacterNode *head = newCharacterNode(x, y, pc->speed, 0);
+			playerQueue = newCharacterHeap(head);
 		}
 	}
 }
@@ -118,6 +123,8 @@ void placePlayerWithCoords(int x, int y){
 	pc -> x = x;
 	pc -> y = y;
 	characterMap[y][x] = pc;
+	CharacterNode *head = newCharacterNode(x, y, pc->speed, 0);
+	playerQueue = newCharacterHeap(head);
 }
 
 void initCharacterMap(){

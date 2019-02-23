@@ -55,6 +55,6 @@ int main(int argc, char *argv[]) {
 
     printDungeon();
 
-    nonTunnelingDistance();
-    tunnelingDistance();
+//    nonTunnelingDistance();
+//    tunnelingDistance();
 }
