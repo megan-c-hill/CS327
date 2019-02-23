@@ -27,10 +27,10 @@
     Adding validation on marker
     Updaing CHANGELOG and README
 2/11 Init Commit for Assignment3
-	 Heap Code
+	 PathFindingHeap Code
 2/13 Add shared-components
 	 Separating files
-2/16 More Understandable heap
+2/16 More Understandable pathFindingHeap
 2/17 Distance maps for non tunneling monsters
 	 Tunneling through walls
 	 Restructuring Code
