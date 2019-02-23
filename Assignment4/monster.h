@@ -4,27 +4,28 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-struct monster {
+typedef struct monster {
 	uint8_t characteristics;
-};
+} Monster;
 
-struct player {
+typedef struct player {
 
-};
+} Player;
 
-struct character {
+typedef struct character {
 	struct monster *npm;
 	struct player *pc;
 	uint8_t x;
 	uint8_t y;
 	uint8_t speed;
 	char symbol;
-};
+} Character;
 
-struct character* generateMonsterCharacter();
-struct character* generatePlayerCharacter();
+Character* generateMonsterCharacter();
+Character* generatePlayerCharacter();
 void placeMonsters(int numMonsters);
 void placePlayer();
 void placePlayerWithCoords(int x, int y);
+void initCharacterMap();
 
 #endif //CS327_MONSTER_H

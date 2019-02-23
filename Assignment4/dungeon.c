@@ -4,6 +4,7 @@
 #include "generate-dungeon.h"
 #include "shared-components.h"
 #include "dijkstra.h"
+#include "monster.h"
 #include <time.h>
 #include <stdio.h>
 
@@ -19,6 +20,7 @@ int main(int argc, char *argv[]) {
     bool shouldSetMonsters = false;
     int numMonsters = 10;
     char fileName[100] = "dungeon";
+    initCharacterMap();
 
     for (int argIndex = 1; argIndex < argc; argIndex++) {
         if (strcmp(argv[argIndex], "--save") == 0) {

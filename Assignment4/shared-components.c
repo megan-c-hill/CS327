@@ -15,7 +15,11 @@ void printDungeon() {
 	int i, j;
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
-			printf("%c", dungeon[i][j].symbol);
+			if(characterMap[i][j] != NULL){
+				printf("%c", characterMap[i][j] -> symbol);
+			} else {
+				printf("%c", dungeon[i][j].symbol);
+			}
 		}
 		printf("\n");
 	}

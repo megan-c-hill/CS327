@@ -2,6 +2,7 @@
 #define CS327_SHARED_COMPONENTS_H
 
 #include <stdint.h>
+#include "monster.h"
 
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80
@@ -31,6 +32,7 @@ struct distancePosition {
 struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct distancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct distancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room *rooms;
 struct position *upStairs;
 struct position *downStairs;

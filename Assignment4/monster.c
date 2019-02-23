@@ -50,14 +50,14 @@ char getSymbol(int number){
 }
 
 
-struct character* generateMonsterCharacter() {
+Character* generateMonsterCharacter() {
 	uint8_t characteristics;
 	characteristics = rand() % 16;
 
-	struct monster *npm = malloc(sizeof(struct monster));
+	Monster *npm = malloc(sizeof(Monster));
 	npm -> characteristics = characteristics;
 
-	struct character *monster = malloc(sizeof(struct character));
+	Character *monster = malloc(sizeof(Character));
 	monster -> npm = npm;
 	monster -> pc = NULL;
 	monster -> symbol = getSymbol(characteristics);
@@ -65,9 +65,9 @@ struct character* generateMonsterCharacter() {
 	return monster;
 };
 
-struct character * generatePlayerCharacter() {
-	struct player *pc = malloc(sizeof(struct player));
-	struct character *playerCharacter = malloc(sizeof(struct character));
+Character * generatePlayerCharacter() {
+	Player *pc = malloc(sizeof(Player));
+	Character *playerCharacter = malloc(sizeof(Character));
 
 	playerCharacter -> pc = pc;
 	playerCharacter -> npm = NULL;
@@ -83,12 +83,13 @@ void placeMonsters (int numMonsters){
 	while(counter < numMonsters){
 		x = rand() % (TOTAL_WIDTH - 5) + 1;
 		y = rand() % (TOTAL_HEIGHT - 4) + 1;
-		struct character *monster = generateMonsterCharacter();
+		Character *monster = generateMonsterCharacter();
 
-		if(dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.'){
-			dungeon[y][x].symbol = monster -> symbol;
+		if((dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') && characterMap[y][x] == NULL){
+//			dungeon[y][x].symbol = monster -> symbol;
 			monster -> x = x;
 			monster -> y = y;
+			characterMap[y][x] = monster;
 			counter ++;
 		}
 	}
@@ -100,20 +101,30 @@ void placePlayer(){
 	while(counter < 1){
 		x = rand() % (TOTAL_WIDTH - 5) + 1;
 		y = rand() % (TOTAL_HEIGHT - 4) + 1;
-		struct character *monster = generatePlayerCharacter();
+		Character *pc = generatePlayerCharacter();
 
 		if(dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.'){
-			dungeon[y][x].symbol = monster -> symbol;
-			monster -> x = x;
-			monster -> y = y;
+//			dungeon[y][x].symbol = pc -> symbol;
+			pc -> x = x;
+			pc -> y = y;
+			characterMap[y][x] = pc;
 			counter ++;
 		}
 	}
 }
 
 void placePlayerWithCoords(int x, int y){
-	struct character *pc = generatePlayerCharacter();
-
+	Character *pc = generatePlayerCharacter();
 	pc -> x = x;
 	pc -> y = y;
+	characterMap[y][x] = pc;
+}
+
+void initCharacterMap(){
+	for(int i = 0; i<TOTAL_HEIGHT; i++){
+		for(int j = 0; j < TOTAL_WIDTH; j++){
+			characterMap[i][j] = NULL;
+		}
+
+	}
 }

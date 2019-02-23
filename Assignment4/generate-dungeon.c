@@ -113,7 +113,7 @@ void readRoomsAndStairs(FILE *file) {
 		dungeon[downStairs[k].y][downStairs[k].x].symbol = '>';
 	}
 
-	dungeon[playerPosition[1]][playerPosition[0]].symbol = '@';
+//	dungeon[playerPosition[1]][playerPosition[0]].symbol = '@';
 }
 
 bool isLegalPlacement(int x, int y, int width, int height) {
