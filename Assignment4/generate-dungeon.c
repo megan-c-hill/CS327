@@ -4,6 +4,7 @@
 #include "shared-components.h"
 #include <string.h>
 #include "shared-components.h"
+#include "monster.h"
 
 #ifdef __APPLE__
 
@@ -84,6 +85,7 @@ void readBasicInfo(FILE *file) {
 void readRoomsAndStairs(FILE *file) {
 	fseek(file, 20, SEEK_SET);
 	fread(playerPosition, 1, 2, file);
+	placePlayerWithCoords(playerPosition[0], playerPosition[1]);
 
 	fseek(file, 1702, SEEK_SET);
 	fread(&numberOfRooms, 2, 1, file);
@@ -129,24 +131,10 @@ bool isLegalPlacement(int x, int y, int width, int height) {
 	return true;
 }
 
-void placeMonsters (int numMonsters){
-	int counter = 0;
-	uint8_t x, y;
-	while(counter < numMonsters){
-		x = rand() % (TOTAL_WIDTH - 5) + 1;
-		y = rand() % (TOTAL_HEIGHT - 4) + 1;
-
-		if(dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.'){
-			dungeon[y][x].symbol = '!';
-			counter ++;
-		}
-	}
-}
-
 void placeStairsAndPlayer() {
 	uint8_t x, y;
 	int i = 0;
-	while (i < 3) {
+	while (i < 2) {
 		x = rand() % 78 + 1;
 		y = rand() % 19 + 1;
 		if (dungeon[y][x].hardness == 0) {
@@ -160,14 +148,11 @@ void placeStairsAndPlayer() {
 				upStairs[0].x = x;
 				upStairs[0].y = y;
 				dungeon[y][x].symbol = '<';
-			} else {
-				playerPosition[0] = x;
-				playerPosition[1] = y;
-				dungeon[y][x].symbol = '@';
 			}
 			i++;
 		}
 	}
+	placePlayer();
 }
 
 void connectRooms() {

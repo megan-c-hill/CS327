@@ -29,7 +29,7 @@ Heap * newHeap(Node *head){
 // highest priority form the list 
 Node * pop(Heap *h)
 {
-	Node* data = h->head;
+	Node* data = newNode(h -> head -> x, h -> head -> y);
 	Node* temp = h -> head;
 	h -> head = h->head->next;
 	free(temp);

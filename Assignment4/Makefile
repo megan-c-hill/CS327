@@ -1,5 +1,5 @@
 BIN = dungeon
-OBJS = dungeon.c shared-components.c generate-dungeon.c distance.c heap.c
+OBJS = dungeon.c shared-components.c generate-dungeon.c distance.c heap.c monster.c
 
 all: $(BIN) etags
 
