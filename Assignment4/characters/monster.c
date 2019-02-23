@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "monster.h"
-#include "shared-components.h"
+#include "../shared-components.h"
 
 #define NPC_SMART    0x00000001
 #define NPC_TELE    0x00000002
@@ -86,7 +86,6 @@ void placeMonsters (int numMonsters){
 		Character *monster = generateMonsterCharacter();
 
 		if((dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') && characterMap[y][x] == NULL){
-//			dungeon[y][x].symbol = monster -> symbol;
 			monster -> x = x;
 			monster -> y = y;
 			characterMap[y][x] = monster;
@@ -104,9 +103,10 @@ void placePlayer(){
 		Character *pc = generatePlayerCharacter();
 
 		if(dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.'){
-//			dungeon[y][x].symbol = pc -> symbol;
 			pc -> x = x;
 			pc -> y = y;
+			playerPosition[0] = x;
+			playerPosition[1] = y;
 			characterMap[y][x] = pc;
 			counter ++;
 		}

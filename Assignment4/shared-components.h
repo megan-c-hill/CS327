@@ -2,7 +2,7 @@
 #define CS327_SHARED_COMPONENTS_H
 
 #include <stdint.h>
-#include "monster.h"
+#include "characters/monster.h"
 
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80

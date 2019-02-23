@@ -3,8 +3,8 @@
 #include <string.h>
 #include "generate-dungeon.h"
 #include "shared-components.h"
-#include "dijkstra.h"
-#include "monster.h"
+#include "distance/distance.h"
+#include "characters/monster.h"
 #include <time.h>
 #include <stdio.h>
 
@@ -55,6 +55,6 @@ int main(int argc, char *argv[]) {
 
     printDungeon();
 
-//    nonTunnelingDistance();
-//    tunnelingDistance();
+    nonTunnelingDistance();
+    tunnelingDistance();
 }

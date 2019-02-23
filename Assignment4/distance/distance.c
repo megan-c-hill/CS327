@@ -1,5 +1,5 @@
-#include "shared-components.h"
-#include "heap.h"
+#include "../shared-components.h"
+#include "pathFindingHeap.h"
 #include <stdio.h>
 
 uint8_t MAX_INT = 255;
@@ -52,11 +52,11 @@ void shortestPath(struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH]
 	int playerY = playerPosition[1];
 	distanceArr[playerY][playerX].distance = 0;
 	distanceArr[playerY][playerX].symbol = '@';
-	Node *playerPosition = newNode(playerX, playerY);
-	Heap *h = newHeap(playerPosition);
+	PathFindingNode *playerPosition = newPathFindingNode(playerX, playerY);
+	PathFindingHeap *h = newPathFindingHeap(playerPosition);
 
 	while (!isEmpty(h)) {
-		Node *parent = pop(h);
+		PathFindingNode *parent = pop(h);
 		int parentX = parent->x;
 		int parentY = parent->y;
 
