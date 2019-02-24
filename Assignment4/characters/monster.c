@@ -91,7 +91,7 @@ void placeMonsters (int numMonsters){
 			monster -> x = x;
 			monster -> y = y;
 			characterMap[y][x] = monster;
-			pushCharacter(playerQueue, x, y, monster->speed, 0);
+			pushCharacter(playerQueue, monster, 0);
 			counter ++;
 		}
 	}
@@ -112,7 +112,7 @@ void placePlayer(){
 			playerPosition[1] = y;
 			characterMap[y][x] = pc;
 			isDone = true;
-			CharacterNode *head = newCharacterNode(x, y, pc->speed, 0);
+			CharacterNode *head = newCharacterNode(pc, 0);
 			playerQueue = newCharacterHeap(head);
 		}
 	}
@@ -123,7 +123,7 @@ void placePlayerWithCoords(int x, int y){
 	pc -> x = x;
 	pc -> y = y;
 	characterMap[y][x] = pc;
-	CharacterNode *head = newCharacterNode(x, y, pc->speed, 0);
+	CharacterNode *head = newCharacterNode(pc, 0);
 	playerQueue = newCharacterHeap(head);
 }
 
@@ -133,5 +133,16 @@ void initCharacterMap(){
 			characterMap[i][j] = NULL;
 		}
 
+	}
+}
+
+void randomMove(Character * character){
+
+}
+
+void move(){
+	int counter = 0;
+	while(counter < 0){
+		Character* character = popCharacterNode(playerQueue) -> character;
 	}
 }

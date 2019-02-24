@@ -7,12 +7,10 @@
 #include "../shared-components.h"
 #include "characterHeap.h"
 
-CharacterNode* newCharacterNode(int x, int y, int speed, int priority)
+CharacterNode* newCharacterNode(Character *character, int priority)
 {
 	CharacterNode* temp = (CharacterNode*)malloc(sizeof(CharacterNode));
-	temp->x = x;
-	temp->y = y;
-	temp->speed = speed;
+	temp -> character = character;
 	temp->priority = priority;
 	temp->next = NULL;
 
@@ -28,15 +26,15 @@ CharacterHeap * newCharacterHeap(CharacterNode *head){
 
 CharacterNode * popCharacterNode(CharacterHeap *h)
 {
-	CharacterNode* data = newCharacterNode(h->head->x, h->head->y, h->head->speed, h->head->priority);
+	CharacterNode* data = newCharacterNode(h->head->character, h->head->priority);
 	CharacterNode* temp = h -> head;
 	h -> head = h->head->next;
 	free(temp);
 	return data;
 }
 
-void pushCharacter(CharacterHeap* h, int x, int y, int s, int p){
-	CharacterNode* temp = newCharacterNode(x, y, s, p);
+void pushCharacter(CharacterHeap* h, Character* character, int p){
+	CharacterNode* temp = newCharacterNode(character, p);
 
 	if(h->head == NULL){
 		h->head = temp;

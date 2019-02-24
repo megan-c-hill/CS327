@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include "characters/monster.h"
+#include "characters/characterHeap.h"
 
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80
@@ -37,6 +38,7 @@ struct room *rooms;
 struct position *upStairs;
 struct position *downStairs;
 uint8_t playerPosition[2];
+CharacterHeap* playerQueue;
 
 void printDungeon();
 void drawRoom(int roomNumber);

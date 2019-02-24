@@ -3,7 +3,6 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "characterHeap.h"
 
 typedef struct monster {
 	uint8_t characteristics;
@@ -24,10 +23,10 @@ typedef struct character {
 
 Character* generateMonsterCharacter();
 Character* generatePlayerCharacter();
-CharacterHeap* playerQueue;
 void placeMonsters(int numMonsters);
 void placePlayer();
 void placePlayerWithCoords(int x, int y);
 void initCharacterMap();
+void move();
 
 #endif //CS327_MONSTER_H
