@@ -25,14 +25,14 @@ struct position {
 	uint8_t y;
 };
 
-struct distancePosition {
+typedef struct distancePosition {
 	char symbol;
 	int distance;
-};
+} DistancePosition;
 
 struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
-struct distancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
-struct distancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room *rooms;
 struct position *upStairs;

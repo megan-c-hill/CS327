@@ -3,6 +3,7 @@
 #include <zconf.h>
 #include "monster.h"
 #include "../shared-components.h"
+#include "../distance/distance.h"
 
 //TECH DEBT allow more monsters than dungeon spaces
 
@@ -69,8 +70,8 @@ char getSymbol(int number) {
 
 Character *generateMonsterCharacter() {
 	uint8_t characteristics;
-	characteristics = rand() % 16;
-//	characteristics = 4;
+//	characteristics = rand() % 16;
+	characteristics = 3;
 
 	Monster *npm = malloc(sizeof(Monster));
 	npm->characteristics = characteristics;
@@ -197,6 +198,27 @@ void goTowardsPC(Character *character) {
 	}
 }
 
+void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOTAL_WIDTH]){
+	int bestX = character -> x;
+	int bestY = character -> y;
+
+	for(int i = -1; i<= 1; i++){
+		for(int j = -1; j<= 1; j++){
+			if(distanceMap[character -> y + i][character -> x + j].distance < distanceMap[bestY][bestX].distance){
+				bestX = character -> x + j;
+				bestY = character -> y + i;
+			}
+		}
+	}
+
+	if(dungeon[bestY][bestX].hardness != 0){
+		tunnel(character, bestX, bestY);
+	} else {
+		moveToSpot(character, bestX, bestY);
+	}
+
+}
+
 void randomMove(Character *character) {
 	int changeX = 0;
 	int changeY = 0;
@@ -223,12 +245,16 @@ void makeCharacterMove(Character *character) {
 		randomMove(character);
 	} else if (isSmart(character)) {
 		if(isTelepathic(character)){
-//			useMap(character, playerPosition[0], playerPosition[1]);
+			if(isTunnelable(character)) {
+				useMap(character, tunnelDistance);
+			} else {
+				useMap(character, nonTunnelDistance);
+			}
 		} else {
 			//go to last known position
 		}
 	} else if (isTelepathic(character)) {
-		goTowardsPC(character);
+		goTowardsPC(character); //
 	} else {
 		if(pcIsVisible(character)){
 			goTowardsPC(character);
@@ -241,6 +267,9 @@ void move() {
 	while (playerIsInHeap(playerQueue) && playerQueue -> head -> next != NULL) { //Player is dead or only one player in queue
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
+//			randomMove(characterNode -> character);
+//			tunnelingDistance();
+//			nonTunnelingDistance();
 			counter++;
 			usleep(250000);
 			printDungeon();

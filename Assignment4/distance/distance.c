@@ -81,12 +81,12 @@ void shortestPath(struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH]
 void nonTunnelingDistance() {
 	initNonTunnelArray();
 	shortestPath(nonTunnelDistance, 0);
-	printArray(nonTunnelDistance);
+//	printArray(nonTunnelDistance);
 
 }
 
 void tunnelingDistance() {
 	initTunnelArray();
 	shortestPath(tunnelDistance, 1);
-	printArray(tunnelDistance);
+//	printArray(tunnelDistance);
 }
