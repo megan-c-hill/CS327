@@ -70,7 +70,7 @@ char getSymbol(int number) {
 Character *generateMonsterCharacter() {
 	uint8_t characteristics;
 	characteristics = rand() % 16;
-//	characteristics = 6;
+//	characteristics = 4;
 
 	Monster *npm = malloc(sizeof(Monster));
 	npm->characteristics = characteristics;
@@ -152,6 +152,14 @@ void initCharacterMap() {
 	}
 }
 
+bool pcIsVisible(Character* character){
+	int xDistance = abs(character->x - playerPosition[0]);
+	int yDistance = abs(character->y - playerPosition[1]);
+
+	int totalDistanceSquared = xDistance * xDistance + yDistance * yDistance;
+	return totalDistanceSquared <= 25 ? true : false;
+}
+
 void moveToSpot(Character *character, int newX, int newY) {
 	characterMap[character->y][character->x] = NULL;
 	character->x = newX;
@@ -214,18 +222,23 @@ void makeCharacterMove(Character *character) {
 	if (isErratic(character) && rand() % 2 == 1) {
 		randomMove(character);
 	} else if (isSmart(character)) {
-		//Use maps to go to last known pc unless is telepathic then go to current position
+		if(isTelepathic(character)){
+//			useMap(character, playerPosition[0], playerPosition[1]);
+		} else {
+			//go to last known position
+		}
 	} else if (isTelepathic(character)) {
 		goTowardsPC(character);
 	} else {
-		//go in straight line to pc if visible else stay still
+		if(pcIsVisible(character)){
+			goTowardsPC(character);
+		} //else do nothing
 	}
 }
 
 void move() {
 	int counter = 0;
-	//Should end immediately if there are 0 monsters
-	while (characterMap[playerPosition[1]][playerPosition[0]] -> symbol == '@' && playerQueue -> head -> next != NULL) { //Player is dead or only one player in queue
+	while (playerIsInHeap(playerQueue) && playerQueue -> head -> next != NULL) { //Player is dead or only one player in queue
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
 			counter++;
