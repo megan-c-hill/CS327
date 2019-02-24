@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include <zconf.h>
 #include "monster.h"
 #include "../shared-components.h"
 
@@ -137,12 +139,35 @@ void initCharacterMap(){
 }
 
 void randomMove(Character * character){
+	int changeX = 0;
+	int changeY = 0;
 
+	while(changeX == 0 && changeY == 0){
+		changeX = + rand() % 3 - 1;
+		changeY = + rand() % 3 - 1;
+	}
+
+	uint8_t newX = (character -> x) + changeX;
+	uint8_t newY = (character -> y) + changeY;
+
+	if(dungeon[newY][newX].hardness == 0){
+		characterMap[character->y][character->x] = NULL;
+		character -> x = newX;
+		character -> y = newY;
+		characterMap[character->y][character->x] = character;
+	} else {
+		randomMove(character);
+	}
 }
 
 void move(){
 	int counter = 0;
-	while(counter < 0){
-		Character* character = popCharacterNode(playerQueue) -> character;
+	while(counter < 10){
+		CharacterNode* characterNode = popCharacterNode(playerQueue);
+		randomMove(characterNode -> character);
+		pushCharacter(playerQueue, characterNode -> character, characterNode->priority + characterNode -> character -> speed);
+		counter ++;
+		usleep(2500000);
+		printDungeon();
 	}
 }
