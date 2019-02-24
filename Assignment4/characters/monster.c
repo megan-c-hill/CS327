@@ -11,10 +11,23 @@
 #define NPC_TUNNEL    0x00000004
 #define NPC_ERRATIC    0x00000008
 
-#define has_characteristic(character, bit) \
-    ((character) -> npm -> characteristics & NPC_##bit);
+int isErratic(Character *character) {
+	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_ERRATIC;
+}
 
-char getSymbol(int number){
+int isSmart(Character *character) {
+	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_SMART;
+}
+
+int isTelepathic(Character *character) {
+	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_TELE;
+}
+
+int isTunnelable(Character *character) {
+	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_TUNNEL;
+}
+
+char getSymbol(int number) {
 	switch (number) {
 		case 0:
 			return '0';
@@ -54,62 +67,63 @@ char getSymbol(int number){
 }
 
 
-Character* generateMonsterCharacter() {
+Character *generateMonsterCharacter() {
 	uint8_t characteristics;
-	characteristics = rand() % 16;
+//	characteristics = rand() % 16;
+characteristics = 6;
 
 	Monster *npm = malloc(sizeof(Monster));
-	npm -> characteristics = characteristics;
+	npm->characteristics = characteristics;
 
 	Character *monster = malloc(sizeof(Character));
-	monster -> npm = npm;
-	monster -> pc = NULL;
-	monster -> symbol = getSymbol(characteristics);
-	monster -> speed = rand() % 15 + 5;
+	monster->npm = npm;
+	monster->pc = NULL;
+	monster->symbol = getSymbol(characteristics);
+	monster->speed = rand() % 15 + 5;
 	return monster;
 };
 
-Character * generatePlayerCharacter() {
+Character *generatePlayerCharacter() {
 	Player *pc = malloc(sizeof(Player));
 	Character *playerCharacter = malloc(sizeof(Character));
 
-	playerCharacter -> pc = pc;
-	playerCharacter -> npm = NULL;
-	playerCharacter -> speed = 10;
-	playerCharacter -> symbol = '@';
+	playerCharacter->pc = pc;
+	playerCharacter->npm = NULL;
+	playerCharacter->speed = 10;
+	playerCharacter->symbol = '@';
 
 	return playerCharacter;
 }
 
-void placeMonsters (int numMonsters){
+void placeMonsters(int numMonsters) {
 	int counter = 0;
 	uint8_t x, y;
-	while(counter < numMonsters){
+	while (counter < numMonsters) {
 		x = rand() % (TOTAL_WIDTH - 5) + 1;
 		y = rand() % (TOTAL_HEIGHT - 4) + 1;
 		Character *monster = generateMonsterCharacter();
 
-		if((dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') && characterMap[y][x] == NULL){
-			monster -> x = x;
-			monster -> y = y;
+		if ((dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') && characterMap[y][x] == NULL) {
+			monster->x = x;
+			monster->y = y;
 			characterMap[y][x] = monster;
 			pushCharacter(playerQueue, monster, 0);
-			counter ++;
+			counter++;
 		}
 	}
 }
 
-void placePlayer(){
+void placePlayer() {
 	bool isDone = false;
 	uint8_t x, y;
-	while(!isDone){
+	while (!isDone) {
 		x = rand() % (TOTAL_WIDTH - 5) + 1;
 		y = rand() % (TOTAL_HEIGHT - 4) + 1;
 		Character *pc = generatePlayerCharacter();
 
-		if(dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.'){
-			pc -> x = x;
-			pc -> y = y;
+		if (dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') {
+			pc->x = x;
+			pc->y = y;
 			playerPosition[0] = x;
 			playerPosition[1] = y;
 			characterMap[y][x] = pc;
@@ -120,54 +134,99 @@ void placePlayer(){
 	}
 }
 
-void placePlayerWithCoords(int x, int y){
+void placePlayerWithCoords(int x, int y) {
 	Character *pc = generatePlayerCharacter();
-	pc -> x = x;
-	pc -> y = y;
+	pc->x = x;
+	pc->y = y;
 	characterMap[y][x] = pc;
 	CharacterNode *head = newCharacterNode(pc, 0);
 	playerQueue = newCharacterHeap(head);
 }
 
-void initCharacterMap(){
-	for(int i = 0; i<TOTAL_HEIGHT; i++){
-		for(int j = 0; j < TOTAL_WIDTH; j++){
+void initCharacterMap() {
+	for (int i = 0; i < TOTAL_HEIGHT; i++) {
+		for (int j = 0; j < TOTAL_WIDTH; j++) {
 			characterMap[i][j] = NULL;
 		}
 
 	}
 }
 
-void randomMove(Character * character){
+void moveToSpot(Character* character, int newX, int newY) {
+	characterMap[character->y][character->x] = NULL;
+	character->x = newX;
+	character->y = newY;
+	characterMap[character->y][character->x] = character;
+}
+
+void tunnel(Character * character, int newX, int newY) {
+	int hardness = dungeon[newY][newX].hardness - 85;
+	if(hardness <= 0){
+		dungeon[newY][newX].hardness = 0;
+		dungeon[newY][newX].symbol = '#';
+		moveToSpot(character, newX, newY);
+
+	} else {
+		dungeon[newY][newX].hardness = hardness;
+	}
+}
+
+void goTowardsPC(Character* character) {
+	int xDirection = playerPosition[0] - character ->x == 0 ? 0 : (playerPosition[0] - character ->x) / abs(playerPosition[0] - character ->x);
+	int yDirection = playerPosition[1] - character->y == 0 ? 0 : (playerPosition[1] - character->y) / abs(playerPosition[1] - character->y);
+	int newX = character->x + xDirection;
+	int newY = character->y + yDirection;
+
+	if(dungeon[newY][newX].hardness == 0){
+		moveToSpot(character, newX, newY);
+	} else if (isTunnelable(character) && dungeon[newY][newX].hardness != 255){
+		tunnel(character, newX, newY);
+	}
+}
+
+void randomMove(Character *character) {
 	int changeX = 0;
 	int changeY = 0;
 
-	while(changeX == 0 && changeY == 0){
-		changeX = + rand() % 3 - 1;
-		changeY = + rand() % 3 - 1;
+	while (changeX == 0 && changeY == 0) {
+		changeX = +rand() % 3 - 1;
+		changeY = +rand() % 3 - 1;
 	}
 
-	uint8_t newX = (character -> x) + changeX;
-	uint8_t newY = (character -> y) + changeY;
+	uint8_t newX = (character->x) + changeX;
+	uint8_t newY = (character->y) + changeY;
 
-	if(dungeon[newY][newX].hardness == 0){
-		characterMap[character->y][character->x] = NULL;
-		character -> x = newX;
-		character -> y = newY;
-		characterMap[character->y][character->x] = character;
+	if (dungeon[newY][newX].hardness == 0) {
+		moveToSpot(character, newX, newY);
+	} else if (isTunnelable(character) && dungeon[newY][newX].hardness != 255) {
+		tunnel(character, newX, newY);
 	} else {
 		randomMove(character);
 	}
 }
 
-void move(){
+void makeCharacterMove(Character *character) {
+	if (isErratic(character) && rand() % 2 == 1) {
+		randomMove(character);
+	} else if (isSmart(character)) {
+		//Use maps to go to last known pc unless is telepathic then go to current position
+	} else if (isTelepathic(character)) {
+		goTowardsPC(character);
+	} else {
+		//go in straight line to pc if visible else stay still
+	}
+}
+
+void move() {
 	int counter = 0;
-	while(counter < 10){
-		CharacterNode* characterNode = popCharacterNode(playerQueue);
-		randomMove(characterNode -> character);
-		pushCharacter(playerQueue, characterNode -> character, characterNode->priority + characterNode -> character -> speed);
-		counter ++;
-		usleep(2500000);
+	while (counter < 30) {
+		CharacterNode *characterNode = popCharacterNode(playerQueue);
+		if(characterNode -> character -> symbol == '@') {
+			counter++;
+			usleep(250000);
+		}
+		makeCharacterMove(characterNode->character);
+		pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
 		printDungeon();
 	}
 }
