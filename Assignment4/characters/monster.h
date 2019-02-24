@@ -6,6 +6,8 @@
 
 typedef struct monster {
 	uint8_t characteristics;
+	uint8_t knownPlayerX;
+	uint8_t knownPlayerY;
 } Monster;
 
 typedef struct player {

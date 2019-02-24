@@ -70,8 +70,7 @@ char getSymbol(int number) {
 
 Character *generateMonsterCharacter() {
 	uint8_t characteristics;
-//	characteristics = rand() % 16;
-	characteristics = 3;
+	characteristics = rand() % 16;
 
 	Monster *npm = malloc(sizeof(Monster));
 	npm->characteristics = characteristics;
@@ -157,8 +156,20 @@ bool pcIsVisible(Character *character) {
 	int xDistance = abs(character->x - playerPosition[0]);
 	int yDistance = abs(character->y - playerPosition[1]);
 
+	if(isTelepathic(character)){
+		character -> npm -> knownPlayerX = playerPosition[0];
+		character -> npm -> knownPlayerY = playerPosition[1];
+	}
+
 	int totalDistanceSquared = xDistance * xDistance + yDistance * yDistance;
-	return totalDistanceSquared <= 25 ? true : false;
+	if(totalDistanceSquared <= 25){
+		if(isSmart(character)){
+			character -> npm -> knownPlayerX = playerPosition[0];
+			character -> npm -> knownPlayerY = playerPosition[1];
+		}
+		return true;
+	}
+	return false;
 }
 
 void moveToSpot(Character *character, int newX, int newY) {
@@ -231,6 +242,11 @@ void randomMove(Character *character) {
 	uint8_t newX = (character->x) + changeX;
 	uint8_t newY = (character->y) + changeY;
 
+	if(character -> symbol == '@'){
+		playerPosition[0] = newX;
+		playerPosition[1] = newY;
+	}
+
 	if (dungeon[newY][newX].hardness == 0) {
 		moveToSpot(character, newX, newY);
 	} else if (isTunnelable(character) && dungeon[newY][newX].hardness != 255) {
@@ -244,24 +260,19 @@ void makeCharacterMove(Character *character) {
 	if (isErratic(character) && rand() % 2 == 1) {
 		randomMove(character);
 	} else if (isSmart(character)) {
-		if (isTelepathic(character)) {
+		pcIsVisible(character);
+		if (character -> npm -> knownPlayerX != 0) {
 			if (isTunnelable(character)) {
-				tunnelingDistance(playerPosition[0], playerPosition[1]);
+				tunnelingDistance(character -> npm -> knownPlayerX, character -> npm -> knownPlayerY);
 				useMap(character, tunnelDistance);
 			} else {
-				nonTunnelingDistance(playerPosition[0], playerPosition[1]);
+				nonTunnelingDistance(character -> npm -> knownPlayerX, character -> npm -> knownPlayerY);
 				useMap(character, nonTunnelDistance);
 			}
-		} else {
-			//go to last known position
 		}
-	} else if (isTelepathic(character)) {
-		goTowardsPC(character); //
-	} else {
-		if (pcIsVisible(character)) {
+	} else if (pcIsVisible(character) || isTelepathic(character)) {
 			goTowardsPC(character);
-		} //else do nothing
-	}
+	} // else do nothing
 }
 
 void move() {
