@@ -53,8 +53,6 @@ int main(int argc, char *argv[]) {
     free(upStairs);
     free(downStairs);
 
-    tunnelingDistance();
-    nonTunnelingDistance();
     move();
 
 }

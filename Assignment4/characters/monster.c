@@ -153,7 +153,7 @@ void initCharacterMap() {
 	}
 }
 
-bool pcIsVisible(Character* character){
+bool pcIsVisible(Character *character) {
 	int xDistance = abs(character->x - playerPosition[0]);
 	int yDistance = abs(character->y - playerPosition[1]);
 
@@ -198,20 +198,20 @@ void goTowardsPC(Character *character) {
 	}
 }
 
-void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOTAL_WIDTH]){
-	int bestX = character -> x;
-	int bestY = character -> y;
+void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOTAL_WIDTH]) {
+	int bestX = character->x;
+	int bestY = character->y;
 
-	for(int i = -1; i<= 1; i++){
-		for(int j = -1; j<= 1; j++){
-			if(distanceMap[character -> y + i][character -> x + j].distance < distanceMap[bestY][bestX].distance){
-				bestX = character -> x + j;
-				bestY = character -> y + i;
+	for (int i = -1; i <= 1; i++) {
+		for (int j = -1; j <= 1; j++) {
+			if (distanceMap[character->y + i][character->x + j].distance < distanceMap[bestY][bestX].distance) {
+				bestX = character->x + j;
+				bestY = character->y + i;
 			}
 		}
 	}
 
-	if(dungeon[bestY][bestX].hardness != 0){
+	if (dungeon[bestY][bestX].hardness != 0) {
 		tunnel(character, bestX, bestY);
 	} else {
 		moveToSpot(character, bestX, bestY);
@@ -244,10 +244,12 @@ void makeCharacterMove(Character *character) {
 	if (isErratic(character) && rand() % 2 == 1) {
 		randomMove(character);
 	} else if (isSmart(character)) {
-		if(isTelepathic(character)){
-			if(isTunnelable(character)) {
+		if (isTelepathic(character)) {
+			if (isTunnelable(character)) {
+				tunnelingDistance(playerPosition[0], playerPosition[1]);
 				useMap(character, tunnelDistance);
 			} else {
+				nonTunnelingDistance(playerPosition[0], playerPosition[1]);
 				useMap(character, nonTunnelDistance);
 			}
 		} else {
@@ -256,7 +258,7 @@ void makeCharacterMove(Character *character) {
 	} else if (isTelepathic(character)) {
 		goTowardsPC(character); //
 	} else {
-		if(pcIsVisible(character)){
+		if (pcIsVisible(character)) {
 			goTowardsPC(character);
 		} //else do nothing
 	}
@@ -264,12 +266,11 @@ void makeCharacterMove(Character *character) {
 
 void move() {
 	int counter = 0;
-	while (playerIsInHeap(playerQueue) && playerQueue -> head -> next != NULL) { //Player is dead or only one player in queue
+	while (playerIsInHeap(playerQueue) &&
+		   playerQueue->head->next != NULL) { //Player is dead or only one player in queue
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
-//			randomMove(characterNode -> character);
-//			tunnelingDistance();
-//			nonTunnelingDistance();
+			randomMove(characterNode -> character);
 			counter++;
 			usleep(250000);
 			printDungeon();

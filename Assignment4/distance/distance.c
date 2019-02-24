@@ -47,12 +47,10 @@ void printArray(struct distancePosition dungeonMap[TOTAL_HEIGHT][TOTAL_WIDTH]) {
 	}
 }
 
-void shortestPath(struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH], int isTunnelable) {
-	int playerX = playerPosition[0];
-	int playerY = playerPosition[1];
-	distanceArr[playerY][playerX].distance = 0;
-	distanceArr[playerY][playerX].symbol = '@';
-	PathFindingNode *playerPosition = newPathFindingNode(playerX, playerY);
+void shortestPath(struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH], int isTunnelable, int x, int y) {
+	distanceArr[y][x].distance = 0;
+	distanceArr[y][x].symbol = '@';
+	PathFindingNode *playerPosition = newPathFindingNode(x, y);
 	PathFindingHeap *h = newPathFindingHeap(playerPosition);
 
 	while (!isEmpty(h)) {
@@ -78,15 +76,13 @@ void shortestPath(struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH]
 	}
 }
 
-void nonTunnelingDistance() {
+void nonTunnelingDistance(int x, int y) {
 	initNonTunnelArray();
-	shortestPath(nonTunnelDistance, 0);
-//	printArray(nonTunnelDistance);
+	shortestPath(nonTunnelDistance, 0, x, y);
 
 }
 
-void tunnelingDistance() {
+void tunnelingDistance(int x, int y) {
 	initTunnelArray();
-	shortestPath(tunnelDistance, 1);
-//	printArray(tunnelDistance);
+	shortestPath(tunnelDistance, 1, x, y);
 }
