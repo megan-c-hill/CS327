@@ -53,7 +53,6 @@ int main(int argc, char *argv[]) {
     free(upStairs);
     free(downStairs);
 
-    printDungeon();
     move();
 
 //    nonTunnelingDistance();

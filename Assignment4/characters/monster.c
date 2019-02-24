@@ -69,8 +69,8 @@ char getSymbol(int number) {
 
 Character *generateMonsterCharacter() {
 	uint8_t characteristics;
-//	characteristics = rand() % 16;
-characteristics = 6;
+	characteristics = rand() % 16;
+//	characteristics = 6;
 
 	Monster *npm = malloc(sizeof(Monster));
 	npm->characteristics = characteristics;
@@ -152,16 +152,19 @@ void initCharacterMap() {
 	}
 }
 
-void moveToSpot(Character* character, int newX, int newY) {
+void moveToSpot(Character *character, int newX, int newY) {
 	characterMap[character->y][character->x] = NULL;
 	character->x = newX;
 	character->y = newY;
+	if (characterMap[newY][newX] != NULL) {
+		removeFromHeap(playerQueue, characterMap[newY][newX]);
+	}
 	characterMap[character->y][character->x] = character;
 }
 
-void tunnel(Character * character, int newX, int newY) {
+void tunnel(Character *character, int newX, int newY) {
 	int hardness = dungeon[newY][newX].hardness - 85;
-	if(hardness <= 0){
+	if (hardness <= 0) {
 		dungeon[newY][newX].hardness = 0;
 		dungeon[newY][newX].symbol = '#';
 		moveToSpot(character, newX, newY);
@@ -171,15 +174,17 @@ void tunnel(Character * character, int newX, int newY) {
 	}
 }
 
-void goTowardsPC(Character* character) {
-	int xDirection = playerPosition[0] - character ->x == 0 ? 0 : (playerPosition[0] - character ->x) / abs(playerPosition[0] - character ->x);
-	int yDirection = playerPosition[1] - character->y == 0 ? 0 : (playerPosition[1] - character->y) / abs(playerPosition[1] - character->y);
+void goTowardsPC(Character *character) {
+	int xDirection = playerPosition[0] - character->x == 0 ? 0 : (playerPosition[0] - character->x) /
+																 abs(playerPosition[0] - character->x);
+	int yDirection = playerPosition[1] - character->y == 0 ? 0 : (playerPosition[1] - character->y) /
+																 abs(playerPosition[1] - character->y);
 	int newX = character->x + xDirection;
 	int newY = character->y + yDirection;
 
-	if(dungeon[newY][newX].hardness == 0){
+	if (dungeon[newY][newX].hardness == 0) {
 		moveToSpot(character, newX, newY);
-	} else if (isTunnelable(character) && dungeon[newY][newX].hardness != 255){
+	} else if (isTunnelable(character) && dungeon[newY][newX].hardness != 255) {
 		tunnel(character, newX, newY);
 	}
 }
@@ -219,14 +224,17 @@ void makeCharacterMove(Character *character) {
 
 void move() {
 	int counter = 0;
-	while (counter < 30) {
+	//Should end immediately if there are 0 monsters
+	while (characterMap[playerPosition[1]][playerPosition[0]] -> symbol == '@' && playerQueue -> head -> next != NULL) { //Player is dead or only one player in queue
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
-		if(characterNode -> character -> symbol == '@') {
+		if (characterNode->character->symbol == '@') {
 			counter++;
 			usleep(250000);
+			printDungeon();
 		}
 		makeCharacterMove(characterNode->character);
 		pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
-		printDungeon();
 	}
+	printDungeon();
+	printf("Game Over!\n");
 }

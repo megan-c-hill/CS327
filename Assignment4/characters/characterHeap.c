@@ -64,3 +64,38 @@ int isEmptyCharacterHeap(CharacterHeap *h)
 	return h -> head == NULL;
 }
 
+bool isEqual (Character* character1, Character* character2){
+	bool xMatch = character1->x  == character2 ->x;
+	bool yMatch = character1->y  == character2 ->y;
+	bool symbolMatch = character1->symbol  == character2 ->symbol;
+	bool speedMatch = character1->speed  == character2 ->speed;
+
+	return xMatch && yMatch && symbolMatch && speedMatch;
+}
+
+void removeFromHeap(CharacterHeap *h, Character* character){
+	if(isEqual(h->head->character, character)){
+		h->head = h->head->next;
+		return;
+	}
+	CharacterNode *temp = h->head;
+	while(!isEqual(temp->next->character, character)){
+		temp = temp->next;
+	}
+
+	temp -> next = temp -> next -> next;
+}
+
+bool isInHeap(CharacterHeap *h, Character* character){
+	CharacterNode* temp = h->head;
+
+	while(temp != NULL) {
+		if (isEqual(temp->character, character)) {
+			return true;
+		}
+		temp = temp ->next;
+	}
+
+	return false;
+}
+
