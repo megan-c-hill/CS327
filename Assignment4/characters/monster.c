@@ -103,7 +103,7 @@ void placeMonsters(int numMonsters) {
 		y = rand() % (TOTAL_HEIGHT - 4) + 1;
 		Character *monster = generateMonsterCharacter();
 
-		if ((dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') && characterMap[y][x] == NULL) {
+		if (dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') {
 			monster->x = x;
 			monster->y = y;
 			characterMap[y][x] = monster;
@@ -276,19 +276,21 @@ void makeCharacterMove(Character *character) {
 }
 
 void move() {
-	int counter = 0;
-	while (playerIsInHeap(playerQueue) &&
-		   playerQueue->head->next != NULL) { //Player is dead or only one player in queue
+	while (playerIsInHeap(playerQueue) && playerQueue->head->next != NULL) { //Player is dead or only one player in queue
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
-			randomMove(characterNode -> character);
-			counter++;
 			usleep(250000);
+			randomMove(characterNode -> character);
 			printDungeon();
 		}
 		makeCharacterMove(characterNode->character);
 		pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
 	}
 	printDungeon();
-	printf("Game Over!\n");
+
+	if(playerIsInHeap(playerQueue)) {
+		printf("You Won!\n");
+	} else {
+		printf("You Lose!\n");
+	}
 }
