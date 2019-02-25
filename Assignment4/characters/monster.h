@@ -23,12 +23,18 @@ typedef struct character {
 	char symbol;
 } Character;
 
-Character* generateMonsterCharacter();
-Character* generatePlayerCharacter();
+Character *generateMonsterCharacter();
+
+Character *generatePlayerCharacter();
+
 void placeMonsters(int numMonsters);
+
 void placePlayer();
+
 void placePlayerWithCoords(int x, int y);
+
 void initCharacterMap();
+
 void move();
 
 #endif //CS327_MONSTER_H

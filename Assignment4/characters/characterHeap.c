@@ -59,11 +59,6 @@ void pushCharacter(CharacterHeap* h, Character* character, int p){
 	}
 }
 
-int isEmptyCharacterHeap(CharacterHeap *h)
-{
-	return h -> head == NULL;
-}
-
 bool isEqual (Character* character1, Character* character2){
 	bool xMatch = character1->x  == character2 ->x;
 	bool yMatch = character1->y  == character2 ->y;

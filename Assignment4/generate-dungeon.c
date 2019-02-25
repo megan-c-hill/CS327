@@ -9,6 +9,7 @@
 #ifdef __APPLE__
 
 #include <libkern/OSByteOrder.h>
+
 #define be16toh(x) OSSwapBigToHostInt16(x)
 #define be32toh(x) OSSwapBigToHostInt32(x)
 #define htobe16(x) OSSwapHostToBigInt16(x)
@@ -237,7 +238,7 @@ void saveDungeon(char *fileName) {
 	uint32_t size = 1708 + 4 * numberOfRooms + 2 * numberOfUpstairs + 2 * numberOfDownstairs;
 	uint32_t sizeToWrite = htobe32(size);
 	fwrite(&sizeToWrite, 4, 1, file);
-	uint8_t playerPosition[2] = {playerCharacter -> x, playerCharacter -> y};
+	uint8_t playerPosition[2] = {playerCharacter->x, playerCharacter->y};
 	fwrite(playerPosition, 1, 2, file);
 	fwrite(hardness, 1, 1680, file);
 	uint16_t numberOfRoomsToWrite = htobe16(numberOfRooms);

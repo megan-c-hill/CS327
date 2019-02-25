@@ -153,19 +153,19 @@ void initCharacterMap() {
 }
 
 bool pcIsVisible(Character *character) {
-	int xDistance = abs(character->x - playerCharacter -> x);
-	int yDistance = abs(character->y - playerCharacter -> y);
+	int xDistance = abs(character->x - playerCharacter->x);
+	int yDistance = abs(character->y - playerCharacter->y);
 
-	if(isTelepathic(character)){
-		character -> npm -> knownPlayerX = playerCharacter -> x;
-		character -> npm -> knownPlayerY = playerCharacter -> y;
+	if (isTelepathic(character)) {
+		character->npm->knownPlayerX = playerCharacter->x;
+		character->npm->knownPlayerY = playerCharacter->y;
 	}
 
 	int totalDistanceSquared = xDistance * xDistance + yDistance * yDistance;
-	if(totalDistanceSquared <= 25){
-		if(isSmart(character)){
-			character -> npm -> knownPlayerX = playerCharacter -> x;
-			character -> npm -> knownPlayerY = playerCharacter -> y;
+	if (totalDistanceSquared <= 25) {
+		if (isSmart(character)) {
+			character->npm->knownPlayerX = playerCharacter->x;
+			character->npm->knownPlayerY = playerCharacter->y;
 		}
 		return true;
 	}
@@ -195,10 +195,8 @@ void tunnel(Character *character, int newX, int newY) {
 }
 
 void goTowardsPC(Character *character) {
-	int xDirection = playerCharacter -> x - character->x == 0 ? 0 : (playerCharacter -> x - character->x) /
-																 abs(playerCharacter -> x - character->x);
-	int yDirection = playerCharacter -> y - character->y == 0 ? 0 : (playerCharacter -> y - character->y) /
-																 abs(playerCharacter -> y - character->y);
+	int xDirection = playerCharacter->x - character->x == 0 ? 0 : (playerCharacter->x - character->x) / abs(playerCharacter->x - character->x);
+	int yDirection = playerCharacter->y - character->y == 0 ? 0 : (playerCharacter->y - character->y) / abs(playerCharacter->y - character->y);
 	int newX = character->x + xDirection;
 	int newY = character->y + yDirection;
 
@@ -256,26 +254,26 @@ void makeCharacterMove(Character *character) {
 		randomMove(character);
 	} else if (isSmart(character)) {
 		pcIsVisible(character);
-		if (character -> npm -> knownPlayerX != 0) {
+		if (character->npm->knownPlayerX != 0) {
 			if (isTunnelable(character)) {
-				tunnelingDistance(character -> npm -> knownPlayerX, character -> npm -> knownPlayerY);
+				tunnelingDistance(character->npm->knownPlayerX, character->npm->knownPlayerY);
 				useMap(character, tunnelDistance);
 			} else {
-				nonTunnelingDistance(character -> npm -> knownPlayerX, character -> npm -> knownPlayerY);
+				nonTunnelingDistance(character->npm->knownPlayerX, character->npm->knownPlayerY);
 				useMap(character, nonTunnelDistance);
 			}
 		}
 	} else if (pcIsVisible(character) || isTelepathic(character)) {
-			goTowardsPC(character);
+		goTowardsPC(character);
 	} // else do nothing
 }
 
 void move() {
-	while (playerIsInHeap(playerQueue) && playerQueue->head->next != NULL) { //Player is dead or only one player in queue
+	while (playerIsInHeap(playerQueue) && playerQueue->head->next != NULL) {
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
 			usleep(250000);
-			randomMove(characterNode -> character);
+			randomMove(characterNode->character);
 			printDungeon();
 		}
 		makeCharacterMove(characterNode->character);
@@ -283,7 +281,7 @@ void move() {
 	}
 	printDungeon();
 
-	if(playerIsInHeap(playerQueue)) {
+	if (playerIsInHeap(playerQueue)) {
 		printf("You Won!\n");
 	} else {
 		printf("You Lose!\n");

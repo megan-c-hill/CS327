@@ -38,15 +38,6 @@ void initTunnelArray() {
 	}
 }
 
-void printArray(struct distancePosition dungeonMap[TOTAL_HEIGHT][TOTAL_WIDTH]) {
-	for (int i = 0; i < TOTAL_HEIGHT; i++) {
-		for (int j = 0; j < TOTAL_WIDTH; j++) {
-			printf("%c", dungeonMap[i][j].symbol);
-		}
-		printf("\n");
-	}
-}
-
 void shortestPath(struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH], int isTunnelable, int x, int y) {
 	distanceArr[y][x].distance = 0;
 	distanceArr[y][x].symbol = '@';

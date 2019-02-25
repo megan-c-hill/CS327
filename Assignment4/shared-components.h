@@ -37,10 +37,11 @@ Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room *rooms;
 struct position *upStairs;
 struct position *downStairs;
-CharacterHeap* playerQueue;
-Character* playerCharacter;
+CharacterHeap *playerQueue;
+Character *playerCharacter;
 
 void printDungeon();
+
 void drawRoom(int roomNumber);
 
 #endif //CS327_SHARED_COMPONENTS_H
