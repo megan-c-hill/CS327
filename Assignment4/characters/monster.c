@@ -98,17 +98,23 @@ Character *generatePlayerCharacter() {
 void placeMonsters(int numMonsters) {
 	int counter = 0;
 	uint8_t x, y;
+	int infiniteCounter = 0;
 	while (counter < numMonsters) {
-		x = rand() % (TOTAL_WIDTH - 5) + 1;
-		y = rand() % (TOTAL_HEIGHT - 4) + 1;
+		x = rand() % (TOTAL_WIDTH - 2) + 1;
+		y = rand() % (TOTAL_HEIGHT - 2) + 1;
 		Character *monster = generateMonsterCharacter();
 
-		if (dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') {
+		if (dungeon[y][x].hardness == 0 && characterMap[y][x] == NULL) {
 			monster->x = x;
 			monster->y = y;
 			characterMap[y][x] = monster;
 			pushCharacter(playerQueue, monster, 0);
 			counter++;
+			infiniteCounter = 0;
+		} else if (infiniteCounter > 2000) {
+			break;
+		} else {
+			infiniteCounter ++;
 		}
 	}
 }
@@ -273,12 +279,13 @@ void move() {
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
 			usleep(250000);
-			randomMove(characterNode->character);
 			printDungeon();
+			randomMove(characterNode->character);
 		}
 		makeCharacterMove(characterNode->character);
 		pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
 	}
+
 	printDungeon();
 
 	if (playerIsInHeap(playerQueue)) {

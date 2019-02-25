@@ -58,3 +58,4 @@
 	 Save playerCharacter instead of just position
 	 Code formatting
 	 Updating Changelog and README
+	 Handle placing of more monsters than dungeon spaces
