@@ -36,3 +36,25 @@
 	 Restructuring Code
 	 Making Header files
 2/18 Updating Changelog and README
+	 Init commit for Assignment 4
+	 Fixing bug with divide by 0
+2/20 Bug Fixes
+	 switch for num monsters
+	 Makefile improvements
+2/23 Struct for characters
+	 Add character map
+	 Make pathfinding work with new characters
+	 Add folders
+	 Make player queue
+	 Improve character node
+	 Moving using queue
+	 Telepathic Movement
+2/24 End Game
+	 Go Towards PC if visible
+	 Smart Telepathic Monsters
+	 Refactor distances to take a position
+	 Remember last known position
+2/25 Determine win/lose
+	 Save playerCharacter instead of just position
+	 Code formatting
+	 Updating Changelog and README

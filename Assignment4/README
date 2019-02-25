@@ -1,5 +1,12 @@
-A program that prints out distances between every point in the dungeon and the player character
+A program that simulates a dungeon with a variety of monsters who follow specific behavioral patterns
 
-There are 2 map one for non-tunneling monsters and one for tunneling monsters.
-The player character is still denoted by an @ in both maps, and the immutable walls are still denoted with their border.
-In the non tunneling map any unreachable corridor is denoted with X
+The number of monsters can be specified by passing a number after the --nummon switch
+
+Valid switch examples:
+	./dungeon --save --load 00.rlg327 --nummon 4 (how to correctly pass a location)
+	./dungeon --nummon 4 (only using nummon switch)
+	./dungeon --nummon --save --load 4 (switches can be in any order)
+
+Invalid switch examples
+	./dungeon --save --load --nummon 00.rlg327 10 (location must be before nummon)
+	./dungeon --nummon 4 --save --load 00.rlg327 (location still has to be before nummon)
