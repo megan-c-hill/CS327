@@ -88,14 +88,9 @@ void removeFromHeap(CharacterHeap *h, Character* character){
 
 bool playerIsInHeap(CharacterHeap *h){
 	CharacterNode* temp = h->head;
-	Character *character = malloc(sizeof(Character));
-	character -> x = playerPosition[0];
-	character -> y = playerPosition[1];
-	character -> speed = 10;
-	character -> symbol = '@';
 
 	while(temp != NULL) {
-		if (isEqual(temp->character, character)) {
+		if (isEqual(temp->character, playerCharacter)) {
 			return true;
 		}
 		temp = temp ->next;

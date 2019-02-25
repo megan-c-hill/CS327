@@ -124,12 +124,11 @@ void placePlayer() {
 		if (dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') {
 			pc->x = x;
 			pc->y = y;
-			playerPosition[0] = x;
-			playerPosition[1] = y;
 			characterMap[y][x] = pc;
 			isDone = true;
 			CharacterNode *head = newCharacterNode(pc, 0);
 			playerQueue = newCharacterHeap(head);
+			playerCharacter = pc;
 		}
 	}
 }
@@ -140,6 +139,7 @@ void placePlayerWithCoords(int x, int y) {
 	pc->y = y;
 	characterMap[y][x] = pc;
 	CharacterNode *head = newCharacterNode(pc, 0);
+	playerCharacter = pc;
 	playerQueue = newCharacterHeap(head);
 }
 
@@ -153,19 +153,19 @@ void initCharacterMap() {
 }
 
 bool pcIsVisible(Character *character) {
-	int xDistance = abs(character->x - playerPosition[0]);
-	int yDistance = abs(character->y - playerPosition[1]);
+	int xDistance = abs(character->x - playerCharacter -> x);
+	int yDistance = abs(character->y - playerCharacter -> y);
 
 	if(isTelepathic(character)){
-		character -> npm -> knownPlayerX = playerPosition[0];
-		character -> npm -> knownPlayerY = playerPosition[1];
+		character -> npm -> knownPlayerX = playerCharacter -> x;
+		character -> npm -> knownPlayerY = playerCharacter -> y;
 	}
 
 	int totalDistanceSquared = xDistance * xDistance + yDistance * yDistance;
 	if(totalDistanceSquared <= 25){
 		if(isSmart(character)){
-			character -> npm -> knownPlayerX = playerPosition[0];
-			character -> npm -> knownPlayerY = playerPosition[1];
+			character -> npm -> knownPlayerX = playerCharacter -> x;
+			character -> npm -> knownPlayerY = playerCharacter -> y;
 		}
 		return true;
 	}
@@ -195,10 +195,10 @@ void tunnel(Character *character, int newX, int newY) {
 }
 
 void goTowardsPC(Character *character) {
-	int xDirection = playerPosition[0] - character->x == 0 ? 0 : (playerPosition[0] - character->x) /
-																 abs(playerPosition[0] - character->x);
-	int yDirection = playerPosition[1] - character->y == 0 ? 0 : (playerPosition[1] - character->y) /
-																 abs(playerPosition[1] - character->y);
+	int xDirection = playerCharacter -> x - character->x == 0 ? 0 : (playerCharacter -> x - character->x) /
+																 abs(playerCharacter -> x - character->x);
+	int yDirection = playerCharacter -> y - character->y == 0 ? 0 : (playerCharacter -> y - character->y) /
+																 abs(playerCharacter -> y - character->y);
 	int newX = character->x + xDirection;
 	int newY = character->y + yDirection;
 
@@ -241,11 +241,6 @@ void randomMove(Character *character) {
 
 	uint8_t newX = (character->x) + changeX;
 	uint8_t newY = (character->y) + changeY;
-
-	if(character -> symbol == '@'){
-		playerPosition[0] = newX;
-		playerPosition[1] = newY;
-	}
 
 	if (dungeon[newY][newX].hardness == 0) {
 		moveToSpot(character, newX, newY);

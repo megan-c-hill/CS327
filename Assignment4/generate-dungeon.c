@@ -84,6 +84,7 @@ void readBasicInfo(FILE *file) {
 
 void readRoomsAndStairs(FILE *file) {
 	fseek(file, 20, SEEK_SET);
+	uint8_t playerPosition[2];
 	fread(playerPosition, 1, 2, file);
 	placePlayerWithCoords(playerPosition[0], playerPosition[1]);
 
@@ -236,6 +237,7 @@ void saveDungeon(char *fileName) {
 	uint32_t size = 1708 + 4 * numberOfRooms + 2 * numberOfUpstairs + 2 * numberOfDownstairs;
 	uint32_t sizeToWrite = htobe32(size);
 	fwrite(&sizeToWrite, 4, 1, file);
+	uint8_t playerPosition[2] = {playerCharacter -> x, playerCharacter -> y};
 	fwrite(playerPosition, 1, 2, file);
 	fwrite(hardness, 1, 1680, file);
 	uint16_t numberOfRoomsToWrite = htobe16(numberOfRooms);

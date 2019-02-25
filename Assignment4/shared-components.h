@@ -37,8 +37,8 @@ Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room *rooms;
 struct position *upStairs;
 struct position *downStairs;
-uint8_t playerPosition[2];
 CharacterHeap* playerQueue;
+Character* playerCharacter;
 
 void printDungeon();
 void drawRoom(int roomNumber);
