@@ -293,8 +293,8 @@ void displayMonsterList() {
 	for(int i = 2; i<TOTAL_HEIGHT + 3; i++){
 		CharacterNode *monster = getCharacter(playerQueue, i - 2);
 		if(monster != NULL){
-			int deltaX = monster -> character -> x - playerCharacter -> x;
-			int deltaY = monster -> character -> y - playerCharacter -> y;
+			int deltaX = playerCharacter -> x - monster -> character -> x;
+			int deltaY = playerCharacter -> y - monster -> character -> y;
 			char monsterData[81];
 			sprintf(monsterData, "%c is %d squares %s and %d squares %s of the player character", monster -> character -> symbol, abs(deltaY), deltaY >= 0 ? "north" : "south", abs(deltaX), deltaX >= 0 ? "west" : "east");
 			mvaddstr(i, 0, monsterData);
@@ -353,7 +353,7 @@ int playerMove(Character *player) {
 		mvaddstr(0, 0, "Taking the stairs ...");
 		refresh();
 		generateRandomFloor(numMonsters);
-		return 1;
+		return 0;
 	} else if (dungeon[y][x].hardness == 0 && !noOp) {
 		mvaddstr(0, 0, EMPTY_ROW_TEXT);
 		refresh();
@@ -370,16 +370,19 @@ int playerMove(Character *player) {
 
 void playGame() {
 	while (playerIsInHeap(playerQueue) && playerQueue->head->next != NULL) {
+		int status = 1;
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
 			printDungeon();
-			int status = playerMove(characterNode->character);
+			status = playerMove(characterNode->character);
 			if(status == -1){
 				return;
 			}
 		}
 		makeCharacterMove(characterNode->character);
-		pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
+		if(status != 0) {
+			pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
+		}
 	}
 
 	printDungeon();

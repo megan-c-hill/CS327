@@ -5,6 +5,7 @@
 #include <string.h>
 #include "shared-components.h"
 #include "characters/monster.h"
+#include "characters/characterHeap.h"
 
 #ifdef __APPLE__
 
