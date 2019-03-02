@@ -274,13 +274,51 @@ void makeCharacterMove(Character *character) {
 	} // else do nothing
 }
 
+void playerMove(Character* player){
+	char c = getchar();
+	int x = player->x;
+	int y = player->y;
+
+	if(c == 'y' || c == '7'){
+		x--;
+		y--;
+	} else if(c == 'k' || c == '8'){
+		y--;
+	} else if(c == 'u' || c== '9'){
+		x++;
+		y--;
+	} else if(c=='l' || c == '6'){
+		x++;
+	} else if(c == 'h' || c == '4'){
+		x--;
+	} else if(c == 'n' || c == '3'){
+		x++;
+		y++;
+	} else if(c == 'j' || c == '2'){
+		y++;
+	} else if(c == 'b' || c == '1'){
+		x--;
+		y++;
+	}
+
+	if(dungeon[y][x].hardness == 0){
+		mvaddstr(0, 0, "                                                             ");
+		moveToSpot(player, x, y);
+	} else {
+		mvaddstr(0, 0, "Your player can not move in that direction, make another move");
+		playerMove(player);
+	}
+
+}
+
 void playGame() {
 	while (playerIsInHeap(playerQueue) && playerQueue->head->next != NULL) {
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
 			usleep(250000);
 			printDungeon();
-			randomMove(characterNode->character);
+//			randomMove(characterNode->character);
+			playerMove(characterNode->character);
 		}
 		makeCharacterMove(characterNode->character);
 		pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);

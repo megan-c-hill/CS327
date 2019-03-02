@@ -17,9 +17,9 @@ void printDungeon() {
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
 			if (characterMap[i][j] != NULL) {
-				mvaddch(i + 3, j, characterMap[i][j]->symbol);
+				mvaddch(i + 1, j, characterMap[i][j]->symbol);
 			} else {
-				mvaddch(i + 3, j, dungeon[i][j].symbol);
+				mvaddch(i + 1, j, dungeon[i][j].symbol);
 			}
 		}
 
