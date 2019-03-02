@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <zconf.h>
+#include <ncurses.h>
 #include "monster.h"
 #include "../shared-components.h"
 #include "../distance/distance.h"
-
 //TECH DEBT allow more monsters than dungeon spaces
 
 #define NPC_SMART    0x00000001
@@ -274,7 +274,7 @@ void makeCharacterMove(Character *character) {
 	} // else do nothing
 }
 
-void move() {
+void playGame() {
 	while (playerIsInHeap(playerQueue) && playerQueue->head->next != NULL) {
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
@@ -289,8 +289,12 @@ void move() {
 	printDungeon();
 
 	if (playerIsInHeap(playerQueue)) {
-		printf("You Won!\n");
+		mvaddstr(0, 0, "You Won!           ");
+		refresh();
+		usleep(5000000);
 	} else {
-		printf("You Lose!\n");
+		mvaddstr(0, 0, "You Lose!          ");
+		refresh();
+		usleep(5000000);
 	}
 }

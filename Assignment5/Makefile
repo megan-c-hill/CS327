@@ -4,7 +4,7 @@ OBJS = dungeon.c shared-components.c generate-dungeon.c distance/distance.c dist
 all: $(BIN) etags
 
 $(BIN): $(OBJS)
-	gcc $(OBJS) -o $(BIN)
+	gcc $(OBJS) -o $(BIN) -lcurses
 
  clean:
 	rm -f dungeon *~

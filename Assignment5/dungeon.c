@@ -7,12 +7,17 @@
 #include "characters/monster.h"
 #include <time.h>
 #include <stdio.h>
+#include <ncurses.h>
 
 //TECH DEBT / ENHANCEMENT Unit tests
 
 int main(int argc, char *argv[]) {
+	initscr();
 	int seed = time(NULL);
-	printf("Seed: %d\n", seed);
+	char seedText[20];
+	sprintf(seedText, "Seed: %d\n", seed);
+	mvaddstr(0, 0, seedText);
+	refresh();
 	srand(seed);
 
 	bool shouldSave = false;
@@ -51,6 +56,7 @@ int main(int argc, char *argv[]) {
 	free(upStairs);
 	free(downStairs);
 
-	move();
+	playGame();
+	endwin();
 
 }

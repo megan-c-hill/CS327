@@ -1,6 +1,7 @@
 #include "shared-components.h"
 
 #include <stdio.h>
+#include <ncurses.h>
 
 void drawRoom(int roomNumber) {
 	for (int i = rooms[roomNumber].y; i < rooms[roomNumber].y + rooms[roomNumber].height; i++) {
@@ -16,11 +17,12 @@ void printDungeon() {
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
 			if (characterMap[i][j] != NULL) {
-				printf("%c", characterMap[i][j]->symbol);
+				mvaddch(i + 3, j, characterMap[i][j]->symbol);
 			} else {
-				printf("%c", dungeon[i][j].symbol);
+				mvaddch(i + 3, j, dungeon[i][j].symbol);
 			}
 		}
-		printf("\n");
+
 	}
+	refresh();
 }

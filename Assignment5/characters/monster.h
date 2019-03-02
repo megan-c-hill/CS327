@@ -35,6 +35,6 @@ void placePlayerWithCoords(int x, int y);
 
 void initCharacterMap();
 
-void move();
+void playGame();
 
 #endif //CS327_MONSTER_H
