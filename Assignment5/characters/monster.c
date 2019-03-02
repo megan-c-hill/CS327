@@ -5,6 +5,7 @@
 #include "monster.h"
 #include "../shared-components.h"
 #include "../distance/distance.h"
+#include "../generate-dungeon.h"
 //TECH DEBT allow more monsters than dungeon spaces
 
 #define NPC_SMART    0x00000001
@@ -280,7 +281,7 @@ void playerMove(Character *player) {
 	char c = getchar();
 	int x = player->x;
 	int y = player->y;
-	bool validMove = true;
+	bool noOp = false;
 
 	if (c == 'y' || c == '7') {
 		x--;
@@ -304,20 +305,30 @@ void playerMove(Character *player) {
 	} else if (c == 'b' || c == '1') {
 		x--;
 		y++;
+	} else if (c == '>' || c == '<') {
+
 	} else {
-		validMove = false;
+		noOp = true;
 	}
 
-	if (dungeon[y][x].hardness == 0 && validMove) {
+	if ((dungeon[y][x].symbol == '<' && c == '<') || (dungeon[y][x].symbol == '>' && c == '>')) {
+		int numMonsters = rand() % 15 + 5;
+
+		mvaddstr(0, 0, "Taking the stairs ...");
+		refresh();
+		generateRandomFloor(numMonsters);
+		return;
+	} else if (dungeon[y][x].hardness == 0 && !noOp) {
 		mvaddstr(0, 0, "                                                             ");
 		refresh();
 		moveToSpot(player, x, y);
 		return;
-	} else if(dungeon[y][x].hardness != 0) {
-		mvaddstr(0, 0, "Your player can not move in that direction, make another move");
+	} else if (dungeon[y][x].hardness != 0) {
+		mvaddstr(0, 0, "That is not a valid move, try again");
 		refresh();
 	}
 	playerMove(player);
+
 }
 
 void playGame() {

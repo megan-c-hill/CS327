@@ -269,6 +269,7 @@ void generateRandomFloor(int numMonsters) {
 			}
 			dungeon[i][j].symbol = value;
 			dungeon[i][j].hardness = hardness;
+			characterMap[i][j] = NULL;
 		}
 	}
 
