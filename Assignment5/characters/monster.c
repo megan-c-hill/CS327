@@ -277,7 +277,7 @@ void makeCharacterMove(Character *character) {
 	} // else do nothing
 }
 
-void playerMove(Character *player) {
+int playerMove(Character *player) {
 	char c = getchar();
 	int x = player->x;
 	int y = player->y;
@@ -307,6 +307,8 @@ void playerMove(Character *player) {
 		y++;
 	} else if (c == '>' || c == '<') {
 
+	} else if (c == 'q') {
+		return -1;
 	} else {
 		noOp = true;
 	}
@@ -317,18 +319,19 @@ void playerMove(Character *player) {
 		mvaddstr(0, 0, "Taking the stairs ...");
 		refresh();
 		generateRandomFloor(numMonsters);
-		return;
+		return 1;
 	} else if (dungeon[y][x].hardness == 0 && !noOp) {
 		mvaddstr(0, 0, "                                                             ");
 		refresh();
 		moveToSpot(player, x, y);
-		return;
+		return 1;
 	} else if (dungeon[y][x].hardness != 0) {
 		mvaddstr(0, 0, "That is not a valid move, try again");
 		refresh();
 	}
-	playerMove(player);
 
+	playerMove(player);
+	return 1;
 }
 
 void playGame() {
@@ -337,7 +340,10 @@ void playGame() {
 		if (characterNode->character->symbol == '@') {
 			usleep(250000);
 			printDungeon();
-			playerMove(characterNode->character);
+			int status = playerMove(characterNode->character);
+			if(status == -1){
+				return;
+			}
 		}
 		makeCharacterMove(characterNode->character);
 		pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
@@ -349,9 +355,11 @@ void playGame() {
 		mvaddstr(0, 0, "You Won!           ");
 		refresh();
 		usleep(5000000);
+		return;
 	} else {
 		mvaddstr(0, 0, "You Lose!          ");
 		refresh();
 		usleep(5000000);
+		return;
 	}
 }
