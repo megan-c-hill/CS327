@@ -13,6 +13,8 @@
 #define NPC_TUNNEL    0x00000004
 #define NPC_ERRATIC    0x00000008
 
+static const char EMPTY_ROW_TEXT[81] = "                                                                                 ";
+
 int isErratic(Character *character) {
 	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_ERRATIC;
 }
@@ -277,6 +279,26 @@ void makeCharacterMove(Character *character) {
 	} // else do nothing
 }
 
+void displayMonsterList() {
+	initscr();
+
+	for(int i = 0; i<TOTAL_HEIGHT + 3; i++){
+		mvaddstr(i, 0, EMPTY_ROW_TEXT);
+	}
+
+	mvaddstr(0, 0, "Monster List");
+	mvaddstr(1, 0, "------------");
+	mvaddstr(2, 0, "monsters here");
+	refresh();
+
+
+	char c = getch();
+	while(c != 27){ //27 is ASCII for esc
+		c = getch();
+	}
+
+}
+
 int playerMove(Character *player) {
 	char c = getchar();
 	int x = player->x;
@@ -307,8 +329,10 @@ int playerMove(Character *player) {
 		y++;
 	} else if (c == '>' || c == '<') {
 
-	} else if (c == 'q') {
+	} else if (c == 'q' || c == 'Q') {
 		return -1;
+	} else if (c == 'm'){
+		displayMonsterList();
 	} else {
 		noOp = true;
 	}
@@ -321,7 +345,7 @@ int playerMove(Character *player) {
 		generateRandomFloor(numMonsters);
 		return 1;
 	} else if (dungeon[y][x].hardness == 0 && !noOp) {
-		mvaddstr(0, 0, "                                                             ");
+		mvaddstr(0, 0, EMPTY_ROW_TEXT);
 		refresh();
 		moveToSpot(player, x, y);
 		return 1;
@@ -352,12 +376,14 @@ void playGame() {
 	printDungeon();
 
 	if (playerIsInHeap(playerQueue)) {
-		mvaddstr(0, 0, "You Won!           ");
+		mvaddstr(0, 0, EMPTY_ROW_TEXT);
+		mvaddstr(0, 0, "You Won!");
 		refresh();
 		usleep(5000000);
 		return;
 	} else {
-		mvaddstr(0, 0, "You Lose!          ");
+		mvaddstr(0, 0, EMPTY_ROW_TEXT);
+		mvaddstr(0, 0, "You Lose!");
 		refresh();
 		usleep(5000000);
 		return;
