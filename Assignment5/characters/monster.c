@@ -114,7 +114,7 @@ void placeMonsters(int numMonsters) {
 		} else if (infiniteCounter > 2000) {
 			break;
 		} else {
-			infiniteCounter ++;
+			infiniteCounter++;
 		}
 	}
 }
@@ -201,8 +201,10 @@ void tunnel(Character *character, int newX, int newY) {
 }
 
 void goTowardsPC(Character *character) {
-	int xDirection = playerCharacter->x - character->x == 0 ? 0 : (playerCharacter->x - character->x) / abs(playerCharacter->x - character->x);
-	int yDirection = playerCharacter->y - character->y == 0 ? 0 : (playerCharacter->y - character->y) / abs(playerCharacter->y - character->y);
+	int xDirection = playerCharacter->x - character->x == 0 ? 0 : (playerCharacter->x - character->x) /
+																  abs(playerCharacter->x - character->x);
+	int yDirection = playerCharacter->y - character->y == 0 ? 0 : (playerCharacter->y - character->y) /
+																  abs(playerCharacter->y - character->y);
 	int newX = character->x + xDirection;
 	int newY = character->y + yDirection;
 
@@ -274,41 +276,48 @@ void makeCharacterMove(Character *character) {
 	} // else do nothing
 }
 
-void playerMove(Character* player){
+void playerMove(Character *player) {
 	char c = getchar();
 	int x = player->x;
 	int y = player->y;
+	bool validMove = true;
 
-	if(c == 'y' || c == '7'){
+	if (c == 'y' || c == '7') {
 		x--;
 		y--;
-	} else if(c == 'k' || c == '8'){
+	} else if (c == 'k' || c == '8') {
 		y--;
-	} else if(c == 'u' || c== '9'){
+	} else if (c == 'u' || c == '9') {
 		x++;
 		y--;
-	} else if(c=='l' || c == '6'){
+	} else if (c == 'l' || c == '6') {
 		x++;
-	} else if(c == 'h' || c == '4'){
-		x--;
-	} else if(c == 'n' || c == '3'){
-		x++;
-		y++;
-	} else if(c == 'j' || c == '2'){
-		y++;
-	} else if(c == 'b' || c == '1'){
-		x--;
-		y++;
-	}
+	} else if (c == ' ' || c == ',' || c == '5') {
 
-	if(dungeon[y][x].hardness == 0){
-		mvaddstr(0, 0, "                                                             ");
-		moveToSpot(player, x, y);
+	} else if (c == 'h' || c == '4') {
+		x--;
+	} else if (c == 'n' || c == '3') {
+		x++;
+		y++;
+	} else if (c == 'j' || c == '2') {
+		y++;
+	} else if (c == 'b' || c == '1') {
+		x--;
+		y++;
 	} else {
-		mvaddstr(0, 0, "Your player can not move in that direction, make another move");
-		playerMove(player);
+		validMove = false;
 	}
 
+	if (dungeon[y][x].hardness == 0 && validMove) {
+		mvaddstr(0, 0, "                                                             ");
+		refresh();
+		moveToSpot(player, x, y);
+		return;
+	} else if(dungeon[y][x].hardness != 0) {
+		mvaddstr(0, 0, "Your player can not move in that direction, make another move");
+		refresh();
+	}
+	playerMove(player);
 }
 
 void playGame() {
@@ -317,7 +326,6 @@ void playGame() {
 		if (characterNode->character->symbol == '@') {
 			usleep(250000);
 			printDungeon();
-//			randomMove(characterNode->character);
 			playerMove(characterNode->character);
 		}
 		makeCharacterMove(characterNode->character);
