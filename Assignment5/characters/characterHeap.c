@@ -94,3 +94,12 @@ bool playerIsInHeap(CharacterHeap *h){
 	return false;
 }
 
+CharacterNode * getCharacter(CharacterHeap *h, int index){
+	CharacterNode *temp = h->head;
+	for(int i = 0; i<index && temp != NULL; i++){
+		temp = temp ->next;
+	}
+
+	return temp;
+}
+

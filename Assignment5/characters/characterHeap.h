@@ -27,5 +27,7 @@ void removeFromHeap(CharacterHeap *h, Character *character);
 
 bool playerIsInHeap(CharacterHeap *h);
 
+CharacterNode * getCharacter(CharacterHeap *h, int index);
+
 #endif
 

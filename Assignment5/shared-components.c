@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <ncurses.h>
+static const char EMPTY_ROW_TEXT[81] = "                                                                                 ";
 
 void drawRoom(int roomNumber) {
 	for (int i = rooms[roomNumber].y; i < rooms[roomNumber].y + rooms[roomNumber].height; i++) {
@@ -14,6 +15,7 @@ void drawRoom(int roomNumber) {
 
 void printDungeon() {
 	int i, j;
+	mvaddstr(0, 0, EMPTY_ROW_TEXT);
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
 			if (characterMap[i][j] != NULL) {
@@ -24,5 +26,7 @@ void printDungeon() {
 		}
 
 	}
+	mvaddstr(22, 0, EMPTY_ROW_TEXT);
+	mvaddstr(23, 0, EMPTY_ROW_TEXT);
 	refresh();
 }

@@ -288,15 +288,24 @@ void displayMonsterList() {
 
 	mvaddstr(0, 0, "Monster List");
 	mvaddstr(1, 0, "------------");
-	mvaddstr(2, 0, "monsters here");
 	refresh();
 
+	for(int i = 2; i<TOTAL_HEIGHT + 3; i++){
+		CharacterNode *monster = getCharacter(playerQueue, i - 2);
+		if(monster != NULL){
+			int deltaX = monster -> character -> x - playerCharacter -> x;
+			int deltaY = monster -> character -> y - playerCharacter -> y;
+			char monsterData[81];
+			sprintf(monsterData, "%c is %d squares %s and %d squares %s of the player character", monster -> character -> symbol, abs(deltaY), deltaY >= 0 ? "north" : "south", abs(deltaX), deltaX >= 0 ? "west" : "east");
+			mvaddstr(i, 0, monsterData);
+		}
+	}
 
 	char c = getch();
 	while(c != 27){ //27 is ASCII for esc
 		c = getch();
 	}
-
+	printDungeon();
 }
 
 int playerMove(Character *player) {
@@ -333,6 +342,7 @@ int playerMove(Character *player) {
 		return -1;
 	} else if (c == 'm'){
 		displayMonsterList();
+		return playerMove(player);
 	} else {
 		noOp = true;
 	}
@@ -362,7 +372,6 @@ void playGame() {
 	while (playerIsInHeap(playerQueue) && playerQueue->head->next != NULL) {
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
-			usleep(250000);
 			printDungeon();
 			int status = playerMove(characterNode->character);
 			if(status == -1){
