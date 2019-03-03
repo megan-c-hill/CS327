@@ -279,7 +279,7 @@ void makeCharacterMove(Character *character) {
 	} // else do nothing
 }
 
-void displayMonsterList() {
+int displayMonsterList(int offset) {
 	initscr();
 
 	for(int i = 0; i<TOTAL_HEIGHT + 3; i++){
@@ -291,7 +291,7 @@ void displayMonsterList() {
 	refresh();
 
 	for(int i = 2; i<TOTAL_HEIGHT + 3; i++){
-		CharacterNode *monster = getCharacter(playerQueue, i - 2);
+		CharacterNode *monster = getCharacter(playerQueue, i - 2 + offset);
 		if(monster != NULL){
 			int deltaX = playerCharacter -> x - monster -> character -> x;
 			int deltaY = playerCharacter -> y - monster -> character -> y;
@@ -301,11 +301,22 @@ void displayMonsterList() {
 		}
 	}
 
-	char c = getch();
-	while(c != 27){ //27 is ASCII for esc
+	int c = getch();
+	while(1){ //27 is ASCII for esc
+		keypad(stdscr, true);
+		if(c == KEY_UP){
+			return displayMonsterList(offset - 1 > 0 ? offset - 1 : 0);
+		}
+		if(c == KEY_DOWN){
+			return displayMonsterList(offset + 1);
+		}
+		if(c == 27){
+			printDungeon();
+			return 1;
+		}
+
 		c = getch();
 	}
-	printDungeon();
 }
 
 int playerMove(Character *player) {
@@ -341,14 +352,14 @@ int playerMove(Character *player) {
 	} else if (c == 'q' || c == 'Q') {
 		return -1;
 	} else if (c == 'm'){
-		displayMonsterList();
+		displayMonsterList(0);
 		return playerMove(player);
 	} else {
 		noOp = true;
 	}
 
 	if ((dungeon[y][x].symbol == '<' && c == '<') || (dungeon[y][x].symbol == '>' && c == '>')) {
-		int numMonsters = rand() % 15 + 5;
+		int numMonsters = rand() % 15 + 20;
 
 		mvaddstr(0, 0, "Taking the stairs ...");
 		refresh();

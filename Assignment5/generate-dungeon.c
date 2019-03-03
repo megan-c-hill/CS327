@@ -21,11 +21,9 @@
 
 #define MAX_ROOMS 8
 
-//ENHANCEMENT Generate Random Number of stairs
 //ENHANCEMENT Generate random number of rooms
 //ENHANCEMENT make corridors more random and have less of them
 //ENHANCEMENT Validation version, number of rooms, presence of stairs?
-//TECH DEBT Don't allow user to enter more monsters than my algorithm lets them place
 //TECH DEBT Give user helpful message if they don't give switches and command line arguments in the order I want
 
 uint16_t numberOfRooms = 8;
@@ -137,16 +135,17 @@ bool isLegalPlacement(int x, int y, int width, int height) {
 void placeStairsAndPlayer() {
 	uint8_t x, y;
 	int i = 0;
-	while (i < 2) {
+	int goal = rand() % 15 + 2;
+	while (i < goal) {
 		x = rand() % 78 + 1;
 		y = rand() % 19 + 1;
 		if (dungeon[y][x].hardness == 0) {
-			if (i == 0) {
+			if (i % 2 == 0) {
 				numberOfDownstairs = 1;
 				downStairs[0].x = x;
 				downStairs[0].y = y;
 				dungeon[y][x].symbol = '>';
-			} else if (i == 1) {
+			} else if (i  % 2 == 1) {
 				numberOfUpstairs = 1;
 				upStairs[0].x = x;
 				upStairs[0].y = y;
