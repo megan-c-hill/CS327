@@ -59,3 +59,15 @@
 	 Code formatting
 	 Updating Changelog and README
 	 Handle placing of more monsters than dungeon spaces
+3/1	 Init commit for Assignment 5
+3/2	 Using ncurses
+	 Basic movement
+	 Add no-ops
+	 Taking the stairs
+	 Add ability to quit
+	 Show and leave monster menu
+	 Show monster list
+	 Fix bug with PC when switching floors
+	 Scrolling through monster list
+	 Fix scrolling bug
+	 Update README and CHANGELOG
