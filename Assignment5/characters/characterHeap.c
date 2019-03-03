@@ -21,6 +21,7 @@ CharacterNode* newCharacterNode(Character *character, int priority)
 CharacterHeap * newCharacterHeap(CharacterNode *head){
 	CharacterHeap * temp = (CharacterHeap*)malloc(sizeof(CharacterNode));
 	temp -> head = head;
+	temp -> size = 1;
 	return temp;
 }
 
@@ -29,12 +30,14 @@ CharacterNode * popCharacterNode(CharacterHeap *h)
 	CharacterNode* data = newCharacterNode(h->head->character, h->head->priority);
 	CharacterNode* temp = h -> head;
 	h -> head = h->head->next;
+	h -> size--;
 	free(temp);
 	return data;
 }
 
 void pushCharacter(CharacterHeap* h, Character* character, int p){
 	CharacterNode* temp = newCharacterNode(character, p);
+	h->size++;
 
 	if(h->head == NULL){
 		h->head = temp;
@@ -68,7 +71,13 @@ bool isEqual (Character* character1, Character* character2){
 	return xMatch && yMatch && symbolMatch && speedMatch;
 }
 
+/**
+ * Disclaimer: Assumes the character is in the heap and will mess up pretty bad if it isn't
+ * @param h
+ * @param character
+ */
 void removeFromHeap(CharacterHeap *h, Character* character){
+	h->size --;
 	if(isEqual(h->head->character, character)){
 		h->head = h->head->next;
 		return;

@@ -303,14 +303,11 @@ int displayMonsterList(int offset) {
 
 	int c = getch();
 	while(1){ //27 is ASCII for esc
-		keypad(stdscr, true);
 		if(c == KEY_UP){
 			return displayMonsterList(offset - 1 > 0 ? offset - 1 : 0);
-		}
-		if(c == KEY_DOWN){
-			return displayMonsterList(offset + 1);
-		}
-		if(c == 27){
+		} else if(c == KEY_DOWN){
+			return displayMonsterList(offset + 22 < playerQueue -> size ? offset + 1 : offset);
+		} else if(c == 27){
 			printDungeon();
 			return 1;
 		}

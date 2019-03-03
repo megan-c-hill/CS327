@@ -13,6 +13,8 @@
 
 int main(int argc, char *argv[]) {
 	initscr();
+	keypad(stdscr, true);
+	refresh();
 	int seed = time(NULL);
 	char seedText[20];
 	sprintf(seedText, "Seed: %d\n", seed);

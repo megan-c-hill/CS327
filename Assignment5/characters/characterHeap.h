@@ -13,6 +13,7 @@ typedef struct characterNode {
 
 typedef struct characterHeap {
 	CharacterNode *head;
+	int size;
 } CharacterHeap;
 
 CharacterNode *newCharacterNode(Character *character, int priority);
