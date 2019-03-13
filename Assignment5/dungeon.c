@@ -14,6 +14,7 @@
 int main(int argc, char *argv[]) {
 	initscr();
 	keypad(stdscr, true);
+	curs_set(0);
 	refresh();
 	int seed = time(NULL);
 	char seedText[20];

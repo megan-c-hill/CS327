@@ -1,6 +1,8 @@
 #ifndef CS327_PATH_FINDING_HEAP_H
 #define CS327_PATH_FINDING_HEAP_H
 
+#include "../shared-components.h"
+
 typedef struct pathFindingNode {
 	int x;
 	int y;

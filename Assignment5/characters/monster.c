@@ -296,7 +296,7 @@ int displayMonsterList(int offset) {
 			int deltaX = playerCharacter -> x - monster -> character -> x;
 			int deltaY = playerCharacter -> y - monster -> character -> y;
 			char monsterData[81];
-			sprintf(monsterData, "%c is %d squares %s and %d squares %s of the player character", monster -> character -> symbol, abs(deltaY), deltaY >= 0 ? "north" : "south", abs(deltaX), deltaX >= 0 ? "west" : "east");
+			sprintf(monsterData, "%c is %2d squares %s and %2d squares %s of the player character", monster -> character -> symbol, abs(deltaY), deltaY >= 0 ? "north" : "south", abs(deltaX), deltaX >= 0 ? "west" : "east");
 			mvaddstr(i, 0, monsterData);
 		}
 	}
