@@ -1,0 +1,7 @@
+You can actually play the game now!
+
+The basic keyboard commands are implemented so you can move a player either with the numbers or specific keys.
+
+You may press m to open the monster menu which gives you information about the monsters, including their relative position to the PC using cardinal directions.
+	-North is top of screen
+	-East is right side of screen
