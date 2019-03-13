@@ -30,15 +30,15 @@ typedef struct distancePosition {
 	int distance;
 } DistancePosition;
 
-struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
-DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
-DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
-Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
-struct room *rooms;
-struct position *upStairs;
-struct position *downStairs;
-CharacterHeap *playerQueue;
-Character *playerCharacter;
+extern struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
+extern DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+extern DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+extern Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
+extern struct room *rooms;
+extern struct position *upStairs;
+extern struct position *downStairs;
+extern CharacterHeap *playerQueue;
+extern Character *playerCharacter;
 
 void printDungeon();
 

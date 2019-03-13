@@ -1,10 +1,10 @@
 BIN = dungeon
-OBJS = dungeon.c shared-components.c generate-dungeon.c distance/distance.c distance/pathFindingHeap.c characters/monster.c characters/characterHeap.c
+OBJS = dungeon.cpp shared-components.cpp generate-dungeon.cpp distance/distance.cpp distance/pathFindingHeap.cpp characters/monster.cpp characters/characterHeap.cpp
 
 all: $(BIN)
 
 $(BIN): $(OBJS)
-	gcc $(OBJS) -o $(BIN) -lcurses
+	g++ $(OBJS) -o $(BIN) -lcurses
 
  clean:
 	rm -f dungeon *~

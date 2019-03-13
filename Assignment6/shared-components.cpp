@@ -2,7 +2,17 @@
 
 #include <stdio.h>
 #include <ncurses.h>
-static const char EMPTY_ROW_TEXT[81] = "                                                                                 ";
+static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
+
+struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
+DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
+Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
+struct room *rooms;
+struct position *upStairs;
+struct position *downStairs;
+CharacterHeap *playerQueue;
+Character *playerCharacter;
 
 void drawRoom(int roomNumber) {
 	for (int i = rooms[roomNumber].y; i < rooms[roomNumber].y + rooms[roomNumber].height; i++) {

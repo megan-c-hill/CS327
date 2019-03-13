@@ -13,7 +13,7 @@
 #define NPC_TUNNEL    0x00000004
 #define NPC_ERRATIC    0x00000008
 
-static const char EMPTY_ROW_TEXT[81] = "                                                                                 ";
+static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
 int isErratic(Character *character) {
 	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_ERRATIC;
@@ -75,10 +75,10 @@ Character *generateMonsterCharacter() {
 	uint8_t characteristics;
 	characteristics = rand() % 16;
 
-	Monster *npm = malloc(sizeof(Monster));
+	Monster *npm = (Monster *)malloc(sizeof(Monster));
 	npm->characteristics = characteristics;
 
-	Character *monster = malloc(sizeof(Character));
+	Character *monster = (Character *)malloc(sizeof(Character));
 	monster->npm = npm;
 	monster->pc = NULL;
 	monster->symbol = getSymbol(characteristics);
@@ -87,8 +87,8 @@ Character *generateMonsterCharacter() {
 };
 
 Character *generatePlayerCharacter() {
-	Player *pc = malloc(sizeof(Player));
-	Character *playerCharacter = malloc(sizeof(Character));
+	Player *pc = (Player *)malloc(sizeof(Player));
+	Character *playerCharacter = (Character *)malloc(sizeof(Character));
 
 	playerCharacter->pc = pc;
 	playerCharacter->npm = NULL;
