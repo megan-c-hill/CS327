@@ -15,20 +15,20 @@
 
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
-int isErratic(Character *character) {
-	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_ERRATIC;
+int isErratic(Monster *character) {
+	return character->characteristics & NPC_ERRATIC;
 }
 
-int isSmart(Character *character) {
-	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_SMART;
+int isSmart(Monster *character) {
+	return character->characteristics & NPC_SMART;
 }
 
-int isTelepathic(Character *character) {
-	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_TELE;
+int isTelepathic(Monster *character) {
+	return character->characteristics & NPC_TELE;
 }
 
-int isTunnelable(Character *character) {
-	return character->npm == NULL ? 0 : character->npm->characteristics & NPC_TUNNEL;
+int isTunnelable(Monster *character) {
+	return character->characteristics & NPC_TUNNEL;
 }
 
 char getSymbol(int number) {
@@ -71,31 +71,24 @@ char getSymbol(int number) {
 }
 
 
-Character *generateMonsterCharacter() {
+Monster *generateMonsterCharacter() {
 	uint8_t characteristics;
 	characteristics = rand() % 16;
 
-	Monster *npm = (Monster *)malloc(sizeof(Monster));
+	Monster *npm = (Monster *) malloc(sizeof(Monster));
 	npm->characteristics = characteristics;
-
-	Character *monster = (Character *)malloc(sizeof(Character));
-	monster->npm = npm;
-	monster->pc = NULL;
-	monster->symbol = getSymbol(characteristics);
-	monster->speed = rand() % 15 + 5;
-	return monster;
+	npm->symbol = getSymbol(characteristics);
+	npm->speed = rand() % 15 + 5;
+	return npm;
 };
 
-Character *generatePlayerCharacter() {
-	Player *pc = (Player *)malloc(sizeof(Player));
-	Character *playerCharacter = (Character *)malloc(sizeof(Character));
+Player *generatePlayerCharacter() {
+	Player *pc = (Player *) malloc(sizeof(Player));
 
-	playerCharacter->pc = pc;
-	playerCharacter->npm = NULL;
-	playerCharacter->speed = 10;
-	playerCharacter->symbol = '@';
+	pc->speed = 10;
+	pc->symbol = '@';
 
-	return playerCharacter;
+	return pc;
 }
 
 void placeMonsters(int numMonsters) {
@@ -105,7 +98,7 @@ void placeMonsters(int numMonsters) {
 	while (counter < numMonsters) {
 		x = rand() % (TOTAL_WIDTH - 2) + 1;
 		y = rand() % (TOTAL_HEIGHT - 2) + 1;
-		Character *monster = generateMonsterCharacter();
+		Monster *monster = generateMonsterCharacter();
 
 		if (dungeon[y][x].hardness == 0 && characterMap[y][x] == NULL) {
 			monster->x = x;
@@ -143,7 +136,7 @@ void placePlayer() {
 }
 
 void placePlayerWithCoords(int x, int y) {
-	Character *pc = generatePlayerCharacter();
+	Player *pc = generatePlayerCharacter();
 	pc->x = x;
 	pc->y = y;
 	characterMap[y][x] = pc;
@@ -161,20 +154,20 @@ void initCharacterMap() {
 	}
 }
 
-bool pcIsVisible(Character *character) {
+bool pcIsVisible(Monster *character) {
 	int xDistance = abs(character->x - playerCharacter->x);
 	int yDistance = abs(character->y - playerCharacter->y);
 
 	if (isTelepathic(character)) {
-		character->npm->knownPlayerX = playerCharacter->x;
-		character->npm->knownPlayerY = playerCharacter->y;
+		character->knownPlayerX = playerCharacter->x;
+		character->knownPlayerY = playerCharacter->y;
 	}
 
 	int totalDistanceSquared = xDistance * xDistance + yDistance * yDistance;
 	if (totalDistanceSquared <= 25) {
 		if (isSmart(character)) {
-			character->npm->knownPlayerX = playerCharacter->x;
-			character->npm->knownPlayerY = playerCharacter->y;
+			character->knownPlayerX = playerCharacter->x;
+			character->knownPlayerY = playerCharacter->y;
 		}
 		return true;
 	}
@@ -203,7 +196,7 @@ void tunnel(Character *character, int newX, int newY) {
 	}
 }
 
-void goTowardsPC(Character *character) {
+void goTowardsPC(Monster *character) {
 	int xDirection = playerCharacter->x - character->x == 0 ? 0 : (playerCharacter->x - character->x) /
 																  abs(playerCharacter->x - character->x);
 	int yDirection = playerCharacter->y - character->y == 0 ? 0 : (playerCharacter->y - character->y) /
@@ -239,7 +232,7 @@ void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOT
 
 }
 
-void randomMove(Character *character) {
+void randomMove(Monster *character) {
 	int changeX = 0;
 	int changeY = 0;
 
@@ -260,17 +253,17 @@ void randomMove(Character *character) {
 	}
 }
 
-void makeCharacterMove(Character *character) {
+void makeCharacterMove(Monster *character) {
 	if (isErratic(character) && rand() % 2 == 1) {
 		randomMove(character);
 	} else if (isSmart(character)) {
 		pcIsVisible(character);
-		if (character->npm->knownPlayerX != 0) {
+		if (character->knownPlayerX != 0) {
 			if (isTunnelable(character)) {
-				tunnelingDistance(character->npm->knownPlayerX, character->npm->knownPlayerY);
+				tunnelingDistance(character->knownPlayerX, character->knownPlayerY);
 				useMap(character, tunnelDistance);
 			} else {
-				nonTunnelingDistance(character->npm->knownPlayerX, character->npm->knownPlayerY);
+				nonTunnelingDistance(character->knownPlayerX, character->knownPlayerY);
 				useMap(character, nonTunnelDistance);
 			}
 		}
@@ -282,7 +275,7 @@ void makeCharacterMove(Character *character) {
 int displayMonsterList(int offset) {
 	initscr();
 
-	for(int i = 0; i<TOTAL_HEIGHT + 3; i++){
+	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
 		mvaddstr(i, 0, EMPTY_ROW_TEXT);
 	}
 
@@ -290,24 +283,26 @@ int displayMonsterList(int offset) {
 	mvaddstr(1, 0, "------------");
 	refresh();
 
-	for(int i = 2; i<TOTAL_HEIGHT + 3; i++){
+	for (int i = 2; i < TOTAL_HEIGHT + 3; i++) {
 		CharacterNode *monster = getCharacter(playerQueue, i - 2 + offset);
-		if(monster != NULL){
-			int deltaX = playerCharacter -> x - monster -> character -> x;
-			int deltaY = playerCharacter -> y - monster -> character -> y;
+		if (monster != NULL) {
+			int deltaX = playerCharacter->x - monster->character->x;
+			int deltaY = playerCharacter->y - monster->character->y;
 			char monsterData[81];
-			sprintf(monsterData, "%c is %2d squares %s and %2d squares %s of the player character", monster -> character -> symbol, abs(deltaY), deltaY >= 0 ? "north" : "south", abs(deltaX), deltaX >= 0 ? "west" : "east");
+			sprintf(monsterData, "%c is %2d squares %s and %2d squares %s of the player character",
+					monster->character->symbol, abs(deltaY), deltaY >= 0 ? "north" : "south", abs(deltaX),
+					deltaX >= 0 ? "west" : "east");
 			mvaddstr(i, 0, monsterData);
 		}
 	}
 
 	int c = getch();
-	while(1){ //27 is ASCII for esc
-		if(c == KEY_UP){
+	while (1) { //27 is ASCII for esc
+		if (c == KEY_UP) {
 			return displayMonsterList(offset - 1 > 0 ? offset - 1 : 0);
-		} else if(c == KEY_DOWN){
-			return displayMonsterList(offset + 22 < playerQueue -> size ? offset + 1 : offset);
-		} else if(c == 27){
+		} else if (c == KEY_DOWN) {
+			return displayMonsterList(offset + 22 < playerQueue->size ? offset + 1 : offset);
+		} else if (c == 27) {
 			printDungeon();
 			return 1;
 		}
@@ -348,7 +343,7 @@ int playerMove(Character *player) {
 
 	} else if (c == 'q' || c == 'Q') {
 		return -1;
-	} else if (c == 'm'){
+	} else if (c == 'm') {
 		displayMonsterList(0);
 		return playerMove(player);
 	} else {
@@ -383,12 +378,15 @@ void playGame() {
 		if (characterNode->character->symbol == '@') {
 			printDungeon();
 			status = playerMove(characterNode->character);
-			if(status == -1){
+			if (status == -1) {
 				return;
 			}
 		}
-		makeCharacterMove(characterNode->character);
-		if(status != 0) {
+
+		//TODO make this cast work
+		Monster* m = dynamic_cast<Monster*>(characterNode -> character);
+		makeCharacterMove(m);
+		if (status != 0) {
 			pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
 		}
 	}

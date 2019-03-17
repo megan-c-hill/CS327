@@ -4,30 +4,30 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-class Monster {
+
+class Character {
+public:
+	uint8_t x;
+	uint8_t y;
+	uint8_t speed;
+	char symbol;
+	virtual ~Character() {}
+};
+
+class Player : public Character {
+
+};
+
+class Monster : public Character {
 public:
 	uint8_t characteristics;
 	uint8_t knownPlayerX;
 	uint8_t knownPlayerY;
 };
 
-class Player {
+Monster *generateMonsterCharacter();
 
-};
-
-class Character {
-public:
-	Monster *npm;
-	Player *pc;
-	uint8_t x;
-	uint8_t y;
-	uint8_t speed;
-	char symbol;
-};
-
-Character *generateMonsterCharacter();
-
-Character *generatePlayerCharacter();
+Player *generatePlayerCharacter();
 
 void placeMonsters(int numMonsters);
 
