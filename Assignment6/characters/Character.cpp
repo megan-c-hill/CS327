@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <zconf.h>
 #include <ncurses.h>
-#include "monster.h"
+#include "Character.h"
 #include "../shared-components.h"
 #include "../distance/distance.h"
 #include "../generate-dungeon.h"
