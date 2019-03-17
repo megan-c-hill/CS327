@@ -4,7 +4,7 @@
 #include "generate-dungeon.h"
 #include "shared-components.h"
 #include "distance/distance.h"
-#include "characters/monster.h"
+#include "characters/Character.h"
 #include <time.h>
 #include <stdio.h>
 #include <ncurses.h>

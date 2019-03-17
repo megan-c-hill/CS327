@@ -4,24 +4,26 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-typedef struct monster {
+class Monster {
+public:
 	uint8_t characteristics;
 	uint8_t knownPlayerX;
 	uint8_t knownPlayerY;
-} Monster;
+};
 
-typedef struct player {
+class Player {
 
-} Player;
+};
 
-typedef struct character {
-	struct monster *npm;
-	struct player *pc;
+class Character {
+public:
+	Monster *npm;
+	Player *pc;
 	uint8_t x;
 	uint8_t y;
 	uint8_t speed;
 	char symbol;
-} Character;
+};
 
 Character *generateMonsterCharacter();
 

@@ -1,7 +1,7 @@
 #ifndef CS327_CHARACTER_HEAP_H
 #define CS327_CHARACTER_HEAP_H
 
-#include "monster.h"
+#include "Character.h"
 
 typedef struct characterNode {
 	int priority;
