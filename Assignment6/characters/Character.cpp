@@ -381,13 +381,13 @@ void playGame() {
 			if (status == -1) {
 				return;
 			}
+		} else {
+			Monster *m = static_cast<Monster *>(characterNode->character);
+			makeCharacterMove(m);
 		}
-
-		//TODO make this cast work
-		Monster* m = dynamic_cast<Monster*>(characterNode -> character);
-		makeCharacterMove(m);
 		if (status != 0) {
-			pushCharacter(playerQueue, characterNode->character, characterNode->priority + characterNode->character->speed);
+			pushCharacter(playerQueue, characterNode->character,
+						  characterNode->priority + characterNode->character->speed);
 		}
 	}
 
