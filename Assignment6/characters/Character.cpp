@@ -6,7 +6,6 @@
 #include "../shared-components.h"
 #include "../distance/distance.h"
 #include "../generate-dungeon.h"
-//TECH DEBT allow more monsters than dungeon spaces
 
 #define NPC_SMART    0x00000001
 #define NPC_TELE    0x00000002
@@ -14,6 +13,8 @@
 #define NPC_ERRATIC    0x00000008
 
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
+
+void teleportMode(Character *pCharacter);
 
 int isErratic(Monster *character) {
 	return character->characteristics & NPC_ERRATIC;
@@ -151,6 +152,14 @@ void initCharacterMap() {
 			characterMap[i][j] = NULL;
 		}
 
+	}
+}
+
+void initTeleportMap() {
+	for (int i = 0; i < TOTAL_HEIGHT; i++) {
+		for (int j = 0; j < TOTAL_WIDTH; j++) {
+			teleportDungeon[i][j] = ' ';
+		}
 	}
 }
 
@@ -311,6 +320,63 @@ int displayMonsterList(int offset) {
 	}
 }
 
+void teleportMode(Character *player) {
+	int oldX = player->x;
+	int oldY = player->y;
+	int newX = oldX;
+	int newY = oldY;
+	teleportDungeon[oldY][oldX] = '*';
+	printDungeon();
+
+	char c = getchar();
+	while (c != 'r' && c != 't') {
+		if (c == 'y' || c == '7') {
+			newX--;
+			newY--;
+		} else if (c == 'k' || c == '8') {
+			newY--;
+		} else if (c == 'u' || c == '9') {
+			newX++;
+			newY--;
+		} else if (c == 'l' || c == '6') {
+			newX++;
+		} else if (c == ' ' || c == ',' || c == '5') {
+
+		} else if (c == 'h' || c == '4') {
+			newX--;
+		} else if (c == 'n' || c == '3') {
+			newX++;
+			newY++;
+		} else if (c == 'j' || c == '2') {
+			newY++;
+		} else if (c == 'b' || c == '1') {
+			newX--;
+			newY++;
+		}
+
+		if (newX > 0 && newX < 79 && newY > 0 && newY < 20) {
+			teleportDungeon[oldY][oldX] = ' ';
+			teleportDungeon[newY][newX] = '*';
+			oldX = newX;
+			oldY = newY;
+		} else {
+			newX = oldX;
+			newY = oldY;
+		}
+		printDungeon();
+		c = getchar();
+	}
+
+	if (c == 't') {
+		teleportDungeon[newY][newX] = ' ';
+		moveToSpot(player, newX, newY);
+		printDungeon();
+	} else {
+		teleportDungeon[newY][newX] = ' ';
+		moveToSpot(player, rand() % (TOTAL_WIDTH - 5) + 1, rand() % (TOTAL_HEIGHT - 4) + 1);
+	}
+}
+
 int playerMove(Character *player) {
 	char c = getchar();
 	int x = player->x;
@@ -346,6 +412,9 @@ int playerMove(Character *player) {
 	} else if (c == 'm') {
 		displayMonsterList(0);
 		return playerMove(player);
+	} else if (c == 't') {
+		teleportMode(player);
+		return 1;
 	} else {
 		noOp = true;
 	}
@@ -353,8 +422,6 @@ int playerMove(Character *player) {
 	if ((dungeon[y][x].symbol == '<' && c == '<') || (dungeon[y][x].symbol == '>' && c == '>')) {
 		int numMonsters = rand() % 15 + 20;
 
-		mvaddstr(0, 0, "Taking the stairs ...");
-		refresh();
 		generateRandomFloor(numMonsters);
 		return 0;
 	} else if (dungeon[y][x].hardness == 0 && !noOp) {

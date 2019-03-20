@@ -2,12 +2,14 @@
 
 #include <stdio.h>
 #include <ncurses.h>
+
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
 struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
+char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room *rooms;
 struct position *upStairs;
 struct position *downStairs;
@@ -28,10 +30,14 @@ void printDungeon() {
 	mvaddstr(0, 0, EMPTY_ROW_TEXT);
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
-			if (characterMap[i][j] != NULL) {
+			if (characterMap[i][j] != NULL && teleportDungeon[i][j] == ' ') {
 				mvaddch(i + 1, j, characterMap[i][j]->symbol);
 			} else {
-				mvaddch(i + 1, j, dungeon[i][j].symbol);
+				if (teleportDungeon[i][j] != ' ') {
+					mvaddch(i + 1, j, teleportDungeon[i][j]);
+				} else {
+					mvaddch(i + 1, j, dungeon[i][j].symbol);
+				}
 			}
 		}
 

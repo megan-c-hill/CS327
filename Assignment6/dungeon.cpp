@@ -29,6 +29,7 @@ int main(int argc, char *argv[]) {
 	int numMonsters = 10;
 	char fileName[100] = "dungeon";
 	initCharacterMap();
+	initTeleportMap();
 
 	for (int argIndex = 1; argIndex < argc; argIndex++) {
 		if (strcmp(argv[argIndex], "--save") == 0) {

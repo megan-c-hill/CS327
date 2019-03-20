@@ -11,7 +11,6 @@ public:
 	uint8_t y;
 	uint8_t speed;
 	char symbol;
-	virtual ~Character() {}
 };
 
 class Player : public Character {
@@ -36,6 +35,8 @@ void placePlayer();
 void placePlayerWithCoords(int x, int y);
 
 void initCharacterMap();
+
+void initTeleportMap();
 
 void playGame();
 
