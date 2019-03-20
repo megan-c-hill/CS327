@@ -336,6 +336,7 @@ int displayMonsterList(int offset, Player* player) {
 }
 
 void teleportMode(Character *player) {
+	bool fogOfWarStatus = fogOfWarActivated;
 	fogOfWarActivated = false;
 	int oldX = player->x;
 	int oldY = player->y;
@@ -391,7 +392,7 @@ void teleportMode(Character *player) {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, rand() % (TOTAL_WIDTH - 5) + 1, rand() % (TOTAL_HEIGHT - 4) + 1);
 	}
-	fogOfWarActivated = true;
+	fogOfWarActivated = fogOfWarStatus;
 }
 
 int playerMove(Character *player) {
@@ -431,6 +432,11 @@ int playerMove(Character *player) {
 		return playerMove(player);
 	} else if (c == 't') {
 		teleportMode(player);
+		return 1;
+	} else if (c == 'f') {
+		fogOfWarActivated = !fogOfWarActivated;
+		printDungeon(static_cast<Player *>(player));
+		playerMove(player);
 		return 1;
 	} else {
 		noOp = true;
