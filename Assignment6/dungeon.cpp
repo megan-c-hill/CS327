@@ -46,6 +46,7 @@ int main(int argc, char *argv[]) {
 			}
 		}
 	}
+	fogOfWarActivated = true;
 
 	if (shouldLoad) {
 		loadDungeon(fileName, numMonsters);

@@ -198,21 +198,6 @@ bool pcIsVisible(Monster *character) {
 	return false;
 }
 
-void rememberThings(Player* player) {
-	int x = player -> x;
-	int y = player -> y;
-
-	for(int i = y - 1; i <= y + 1; i++) {
-		for(int j = x - 1; j <= x + 1; j++) {
-			if(characterMap[i][j] != NULL) {
-				rememberedMap[i][j] = characterMap[i][j] -> symbol;
-			} else {
-				rememberedMap[i][j] = dungeon[i][j].symbol;
-			}
-		}
-	}
-}
-
 void moveToSpot(Character *character, int newX, int newY) {
 	characterMap[character->y][character->x] = NULL;
 	character->x = newX;
@@ -311,7 +296,7 @@ void makeCharacterMove(Monster *character) {
 	} // else do nothing
 }
 
-int displayMonsterList(int offset) {
+int displayMonsterList(int offset, Player* player) {
 	initscr();
 
 	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
@@ -336,13 +321,13 @@ int displayMonsterList(int offset) {
 	}
 
 	int c = getch();
-	while (1) { //27 is ASCII for esc
+	while (1) {
 		if (c == KEY_UP) {
-			return displayMonsterList(offset - 1 > 0 ? offset - 1 : 0);
+			return displayMonsterList(offset - 1 > 0 ? offset - 1 : 0, player);
 		} else if (c == KEY_DOWN) {
-			return displayMonsterList(offset + 22 < playerQueue->size ? offset + 1 : offset);
-		} else if (c == 27) {
-			printFullDungeon();
+			return displayMonsterList(offset + 22 < playerQueue->size ? offset + 1 : offset, player);
+		} else if (c == 27) { //27 is ASCII for escape
+			printDungeon(player);
 			return 1;
 		}
 
@@ -351,12 +336,13 @@ int displayMonsterList(int offset) {
 }
 
 void teleportMode(Character *player) {
+	fogOfWarActivated = false;
 	int oldX = player->x;
 	int oldY = player->y;
 	int newX = oldX;
 	int newY = oldY;
 	teleportDungeon[oldY][oldX] = '*';
-	printFullDungeon();
+	printDungeon(static_cast<Player*>(player));
 
 	char c = getchar();
 	while (c != 'r' && c != 't') {
@@ -393,18 +379,19 @@ void teleportMode(Character *player) {
 			newX = oldX;
 			newY = oldY;
 		}
-		printFullDungeon();
+		printDungeon(static_cast<Player*>(player));
 		c = getchar();
 	}
 
 	if (c == 't') {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, newX, newY);
-		printFullDungeon();
+		printDungeon(static_cast<Player*>(player));
 	} else {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, rand() % (TOTAL_WIDTH - 5) + 1, rand() % (TOTAL_HEIGHT - 4) + 1);
 	}
+	fogOfWarActivated = true;
 }
 
 int playerMove(Character *player) {
@@ -440,7 +427,7 @@ int playerMove(Character *player) {
 	} else if (c == 'q' || c == 'Q') {
 		return -1;
 	} else if (c == 'm') {
-		displayMonsterList(0);
+		displayMonsterList(0, static_cast<Player*>(player));
 		return playerMove(player);
 	} else if (c == 't') {
 		teleportMode(player);
@@ -473,8 +460,7 @@ void playGame() {
 		int status = 1;
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
-			rememberThings(static_cast<Player *>(characterNode -> character));
-			printFullDungeon();
+			printDungeon(static_cast<Player *>(characterNode->character));
 			status = playerMove(characterNode->character);
 			if (status == -1) {
 				return;

@@ -41,10 +41,11 @@ extern struct position *upStairs;
 extern struct position *downStairs;
 extern CharacterHeap *playerQueue;
 extern Character *playerCharacter;
+extern bool fogOfWarActivated;
+
+void printDungeon(Player *player);
 
 void printFullDungeon();
-
-void printRememberedDungeon();
 
 void drawRoom(int roomNumber);
 
