@@ -163,6 +163,21 @@ void initTeleportMap() {
 	}
 }
 
+//TODO combine at least two of these init maps
+void initRememberedMap() {
+	for (int y = 0; y < TOTAL_HEIGHT; y++) {
+		for (int x = 0; x < TOTAL_WIDTH; x++) {
+			if (y == 0 || y == TOTAL_HEIGHT - 1) {
+				rememberedMap[y][x] = '-';
+			} else if (x == 0 || x == TOTAL_WIDTH - 1) {
+				rememberedMap[y][x] = '|';
+			} else {
+				rememberedMap[y][x] = ' ';
+			}
+		}
+	}
+}
+
 bool pcIsVisible(Monster *character) {
 	int xDistance = abs(character->x - playerCharacter->x);
 	int yDistance = abs(character->y - playerCharacter->y);
@@ -181,6 +196,21 @@ bool pcIsVisible(Monster *character) {
 		return true;
 	}
 	return false;
+}
+
+void rememberThings(Player* player) {
+	int x = player -> x;
+	int y = player -> y;
+
+	for(int i = y - 1; i <= y + 1; i++) {
+		for(int j = x - 1; j <= x + 1; j++) {
+			if(characterMap[i][j] != NULL) {
+				rememberedMap[i][j] = characterMap[i][j] -> symbol;
+			} else {
+				rememberedMap[i][j] = dungeon[i][j].symbol;
+			}
+		}
+	}
 }
 
 void moveToSpot(Character *character, int newX, int newY) {
@@ -312,7 +342,7 @@ int displayMonsterList(int offset) {
 		} else if (c == KEY_DOWN) {
 			return displayMonsterList(offset + 22 < playerQueue->size ? offset + 1 : offset);
 		} else if (c == 27) {
-			printDungeon();
+			printFullDungeon();
 			return 1;
 		}
 
@@ -326,7 +356,7 @@ void teleportMode(Character *player) {
 	int newX = oldX;
 	int newY = oldY;
 	teleportDungeon[oldY][oldX] = '*';
-	printDungeon();
+	printFullDungeon();
 
 	char c = getchar();
 	while (c != 'r' && c != 't') {
@@ -363,14 +393,14 @@ void teleportMode(Character *player) {
 			newX = oldX;
 			newY = oldY;
 		}
-		printDungeon();
+		printFullDungeon();
 		c = getchar();
 	}
 
 	if (c == 't') {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, newX, newY);
-		printDungeon();
+		printFullDungeon();
 	} else {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, rand() % (TOTAL_WIDTH - 5) + 1, rand() % (TOTAL_HEIGHT - 4) + 1);
@@ -443,7 +473,8 @@ void playGame() {
 		int status = 1;
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
-			printDungeon();
+			rememberThings(static_cast<Player *>(characterNode -> character));
+			printFullDungeon();
 			status = playerMove(characterNode->character);
 			if (status == -1) {
 				return;
@@ -458,7 +489,7 @@ void playGame() {
 		}
 	}
 
-	printDungeon();
+	printFullDungeon();
 
 	if (playerIsInHeap(playerQueue)) {
 		mvaddstr(0, 0, EMPTY_ROW_TEXT);

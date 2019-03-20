@@ -18,7 +18,6 @@ int main(int argc, char *argv[]) {
 	refresh();
 	int seed = time(NULL);
 	char seedText[20];
-	sprintf(seedText, "Seed: %d\n", seed);
 	mvaddstr(0, 0, seedText);
 	refresh();
 	srand(seed);
@@ -30,6 +29,7 @@ int main(int argc, char *argv[]) {
 	char fileName[100] = "dungeon";
 	initCharacterMap();
 	initTeleportMap();
+	initRememberedMap();
 
 	for (int argIndex = 1; argIndex < argc; argIndex++) {
 		if (strcmp(argv[argIndex], "--save") == 0) {

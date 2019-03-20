@@ -2,8 +2,6 @@
 #define CS327_MONSTER_H
 
 #include <stdint.h>
-#include <stdbool.h>
-
 
 class Character {
 public:
@@ -37,6 +35,8 @@ void placePlayerWithCoords(int x, int y);
 void initCharacterMap();
 
 void initTeleportMap();
+
+void initRememberedMap();
 
 void playGame();
 

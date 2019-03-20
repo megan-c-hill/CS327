@@ -10,6 +10,7 @@ DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
+char rememberedMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 struct room *rooms;
 struct position *upStairs;
 struct position *downStairs;
@@ -25,24 +26,42 @@ void drawRoom(int roomNumber) {
 	}
 }
 
-void printDungeon() {
+void printRememberedDungeon() {
 	int i, j;
 	mvaddstr(0, 0, EMPTY_ROW_TEXT);
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
-			if (characterMap[i][j] != NULL && teleportDungeon[i][j] == ' ') {
-				mvaddch(i + 1, j, characterMap[i][j]->symbol);
+			if (characterMap[i][j] != NULL && characterMap [i][j] -> symbol == '@') {
+				mvaddch(i + 1, j, '@');
 			} else {
-				if (teleportDungeon[i][j] != ' ') {
-					mvaddch(i + 1, j, teleportDungeon[i][j]);
-				} else {
-					mvaddch(i + 1, j, dungeon[i][j].symbol);
-				}
+				mvaddch(i + 1, j, rememberedMap[i][j]);
 			}
 		}
-
 	}
 	mvaddstr(22, 0, EMPTY_ROW_TEXT);
 	mvaddstr(23, 0, EMPTY_ROW_TEXT);
 	refresh();
+}
+
+void printFullDungeon() {
+	printRememberedDungeon();
+//	int i, j;
+//	mvaddstr(0, 0, EMPTY_ROW_TEXT);
+//	for (i = 0; i < TOTAL_HEIGHT; i++) {
+//		for (j = 0; j < TOTAL_WIDTH; j++) {
+//			if (characterMap[i][j] != NULL && teleportDungeon[i][j] == ' ') {
+//				mvaddch(i + 1, j, characterMap[i][j]->symbol);
+//			} else {
+//				if (teleportDungeon[i][j] != ' ') {
+//					mvaddch(i + 1, j, teleportDungeon[i][j]);
+//				} else {
+//					mvaddch(i + 1, j, dungeon[i][j].symbol);
+//				}
+//			}
+//		}
+//
+//	}
+//	mvaddstr(22, 0, EMPTY_ROW_TEXT);
+//	mvaddstr(23, 0, EMPTY_ROW_TEXT);
+//	refresh();
 }

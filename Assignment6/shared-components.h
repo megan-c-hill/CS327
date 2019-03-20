@@ -35,13 +35,16 @@ extern DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
+extern char rememberedMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern struct room *rooms;
 extern struct position *upStairs;
 extern struct position *downStairs;
 extern CharacterHeap *playerQueue;
 extern Character *playerCharacter;
 
-void printDungeon();
+void printFullDungeon();
+
+void printRememberedDungeon();
 
 void drawRoom(int roomNumber);
 
