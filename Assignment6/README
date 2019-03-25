@@ -1,7 +1,10 @@
-You can actually play the game now!
+The code is now written in C++.
 
-The basic keyboard commands are implemented so you can move a player either with the numbers or specific keys.
+There were also two new features added. Those two features are fog of war and teleportation.
 
-You may press m to open the monster menu which gives you information about the monsters, including their relative position to the PC using cardinal directions.
-	-North is top of screen
-	-East is right side of screen
+Fog of War means that the player only has a 5x5 visible radius. This can be toggled with the f key.
+
+The player can now move via teleportation. To activate this feature the player presses t during their turn.
+Once in the teleportation mode an asterisk will appear representing the player's new position.
+The player can be moved with the same keys as they can when not teleporting, then press t to select that position.
+When in teleportation mode the player can press r to be teleported to a random spot, but they may teleport into rock.

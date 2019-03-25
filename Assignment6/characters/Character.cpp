@@ -482,7 +482,6 @@ void playGame() {
 	}
 
 	fogOfWarActivated = false;
-	//Still Segmentation fault when player wins
 	printFullDungeon();
 
 	if (playerIsInHeap(playerQueue)) {

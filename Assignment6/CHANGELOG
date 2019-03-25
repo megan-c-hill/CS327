@@ -72,3 +72,17 @@
 	 Fix scrolling bug
 	 Update README and CHANGELOG
 3/12 Update to fix bugs found in 1.04 grading
+3/13 Init commit for Assignment6
+	 Compiles in c++
+3/16 Create Classes
+	 Rename files
+3/17 Make classes compile
+3/19 Fix segmentation fault
+3/20 Teleportation
+	 Basic fog of war
+	 Fog of war and teleportation
+	 Manually toggle fog of war
+3/25 Remove all structs
+	 Don't let visibility loop around
+	 Print dungeon correctly at end of game
+	 Update README and CHANGELOG
