@@ -34,7 +34,7 @@ void printRememberedDungeon(Player *player) {
 
 	for (int i = y - 2; i <= y + 2; i++) {
 		for (int j = x - 2; j <= x + 2; j++) {
-			if(i >= 0 && i <= 21 && j >= 0 && j <= 80) {
+			if(i >= 0 && i < 21 && j >= 0 && j < 80) {
 				rememberedMap[i][j] = dungeon[i][j].symbol;
 			}
 		}
