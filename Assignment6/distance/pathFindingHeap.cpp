@@ -31,7 +31,7 @@ PathFindingNode *pop(PathFindingHeap *h) {
 	return data;
 }
 
-void push(PathFindingHeap *h, int x, int y, struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH]) {
+void push(PathFindingHeap *h, int x, int y, DistancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH]) {
 	PathFindingNode *temp = newPathFindingNode(x, y);
 	if (h->head == NULL) {
 		h->head = temp;

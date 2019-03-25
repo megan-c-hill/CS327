@@ -8,37 +8,41 @@
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80
 
-struct dungeonPosition {
+class DungeonPosition {
+public:
 	char symbol;
 	uint8_t hardness;
 };
 
-struct room {
+class Room {
+public:
 	uint8_t x;
 	uint8_t y;
 	uint8_t width;
 	uint8_t height;
 };
 
-struct position {
+class Position {
+public:
 	uint8_t x;
 	uint8_t y;
 };
 
-typedef struct distancePosition {
+class DistancePosition {
+public:
 	char symbol;
 	int distance;
-} DistancePosition;
+};
 
-extern struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
+extern DungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern char rememberedMap[TOTAL_HEIGHT][TOTAL_WIDTH];
-extern struct room *rooms;
-extern struct position *upStairs;
-extern struct position *downStairs;
+extern Room *rooms;
+extern Position *upStairs;
+extern Position *downStairs;
 extern CharacterHeap *playerQueue;
 extern Character *playerCharacter;
 extern bool fogOfWarActivated;

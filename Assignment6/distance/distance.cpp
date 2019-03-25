@@ -38,7 +38,7 @@ void initTunnelArray() {
 	}
 }
 
-void shortestPath(struct distancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH], int isTunnelable, int x, int y) {
+void shortestPath(DistancePosition distanceArr[TOTAL_HEIGHT][TOTAL_WIDTH], int isTunnelable, int x, int y) {
 	distanceArr[y][x].distance = 0;
 	distanceArr[y][x].symbol = '@';
 	PathFindingNode *playerPosition = newPathFindingNode(x, y);

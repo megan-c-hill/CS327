@@ -91,17 +91,17 @@ void readRoomsAndStairs(FILE *file) {
 	fseek(file, 1702, SEEK_SET);
 	fread(&numberOfRooms, 2, 1, file);
 	numberOfRooms = be16toh(numberOfRooms);
-	rooms = (struct room *)malloc(sizeof(struct room) * numberOfRooms);
+	rooms = (Room *)malloc(sizeof(Room) * numberOfRooms);
 	fread(rooms, 1, 4 * numberOfRooms, file);
 
 	fread(&numberOfUpstairs, 2, 1, file);
 	numberOfUpstairs = be16toh(numberOfUpstairs);
-	upStairs = (struct position *)malloc(sizeof(struct room) * numberOfUpstairs);
+	upStairs = (Position *)malloc(sizeof(Room) * numberOfUpstairs);
 	fread(upStairs, 1, numberOfUpstairs * 2, file);
 
 	fread(&numberOfDownstairs, 2, 1, file);
 	numberOfDownstairs = be16toh(numberOfDownstairs);
-	downStairs = (struct position *)malloc(sizeof(struct room) * numberOfDownstairs);
+	downStairs = (Position *)malloc(sizeof(Room) * numberOfDownstairs);
 	fread(downStairs, 1, numberOfDownstairs * 2, file);
 
 	for (int i = 0; i < numberOfRooms; i++) {
@@ -274,12 +274,12 @@ void generateRandomFloor(int numMonsters) {
 		}
 	}
 
-	rooms = (struct room *)malloc(sizeof(struct room) * numberOfRooms);
+	rooms = (Room*)malloc(sizeof(Room) * numberOfRooms);
 	for (i = 0; i < MAX_ROOMS; i++) {
 		placeRoom(i);
 	}
-	upStairs = (struct position *)malloc(sizeof(struct position) * numberOfUpstairs);
-	downStairs = (struct position *)malloc(sizeof(struct position) * numberOfDownstairs);
+	upStairs = (Position *)malloc(sizeof(Position) * numberOfUpstairs);
+	downStairs = (Position *)malloc(sizeof(Position) * numberOfDownstairs);
 	connectRooms();
 	placeStairsAndPlayer();
 	placeMonsters(numMonsters);

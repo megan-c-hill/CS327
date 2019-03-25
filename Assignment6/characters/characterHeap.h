@@ -3,18 +3,20 @@
 
 #include "Character.h"
 
-typedef struct characterNode {
+class CharacterNode {
+public:
 	int priority;
 
 	Character *character;
-	struct characterNode *next;
+	CharacterNode *next;
 
-} CharacterNode;
+};
 
-typedef struct characterHeap {
+class CharacterHeap {
+public:
 	CharacterNode *head;
 	int size;
-} CharacterHeap;
+};
 
 CharacterNode *newCharacterNode(Character *character, int priority);
 

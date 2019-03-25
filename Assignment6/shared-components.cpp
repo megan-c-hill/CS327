@@ -6,15 +6,15 @@
 
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
-struct dungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
+DungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 char rememberedMap[TOTAL_HEIGHT][TOTAL_WIDTH];
-struct room *rooms;
-struct position *upStairs;
-struct position *downStairs;
+Room *rooms;
+Position *upStairs;
+Position *downStairs;
 CharacterHeap *playerQueue;
 Character *playerCharacter;
 bool fogOfWarActivated;
