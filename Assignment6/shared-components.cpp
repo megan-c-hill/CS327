@@ -28,18 +28,7 @@ void drawRoom(int roomNumber) {
 	}
 }
 
-void printRememberedDungeon(Player *player) {
-	int x = player->x;
-	int y = player->y;
-
-	for (int i = y - 2; i <= y + 2; i++) {
-		for (int j = x - 2; j <= x + 2; j++) {
-			if(i >= 0 && i < 21 && j >= 0 && j < 80) {
-				rememberedMap[i][j] = dungeon[i][j].symbol;
-			}
-		}
-	}
-
+void printRememberedDungeon(int x, int y) {
 	int i, j;
 	mvaddstr(0, 0, EMPTY_ROW_TEXT);
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
@@ -79,8 +68,19 @@ void printFullDungeon() {
 }
 
 void printDungeon(Player *player) {
-	if(fogOfWarActivated) {
-		printRememberedDungeon(player);
+	int x = player->x;
+	int y = player->y;
+
+	for (int i = y - 2; i <= y + 2; i++) {
+		for (int j = x - 2; j <= x + 2; j++) {
+			if (i >= 0 && i < 21 && j >= 0 && j < 80) {
+				rememberedMap[i][j] = dungeon[i][j].symbol;
+			}
+		}
+	}
+
+	if (fogOfWarActivated) {
+		printRememberedDungeon(x, y);
 	} else {
 		printFullDungeon();
 	}
