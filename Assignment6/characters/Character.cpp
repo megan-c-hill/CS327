@@ -296,7 +296,7 @@ void makeCharacterMove(Monster *character) {
 	} // else do nothing
 }
 
-int displayMonsterList(int offset, Player* player) {
+int displayMonsterList(int offset, Player *player) {
 	initscr();
 
 	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
@@ -343,7 +343,7 @@ void teleportMode(Character *player) {
 	int newX = oldX;
 	int newY = oldY;
 	teleportDungeon[oldY][oldX] = '*';
-	printDungeon(static_cast<Player*>(player));
+	printDungeon(static_cast<Player *>(player));
 
 	char c = getchar();
 	while (c != 'r' && c != 't') {
@@ -380,14 +380,14 @@ void teleportMode(Character *player) {
 			newX = oldX;
 			newY = oldY;
 		}
-		printDungeon(static_cast<Player*>(player));
+		printDungeon(static_cast<Player *>(player));
 		c = getchar();
 	}
 
 	if (c == 't') {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, newX, newY);
-		printDungeon(static_cast<Player*>(player));
+		printDungeon(static_cast<Player *>(player));
 	} else {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, rand() % (TOTAL_WIDTH - 5) + 1, rand() % (TOTAL_HEIGHT - 4) + 1);
@@ -428,7 +428,7 @@ int playerMove(Character *player) {
 	} else if (c == 'q' || c == 'Q') {
 		return -1;
 	} else if (c == 'm') {
-		displayMonsterList(0, static_cast<Player*>(player));
+		displayMonsterList(0, static_cast<Player *>(player));
 		return playerMove(player);
 	} else if (c == 't') {
 		teleportMode(player);

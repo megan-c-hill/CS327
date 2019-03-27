@@ -91,17 +91,17 @@ void readRoomsAndStairs(FILE *file) {
 	fseek(file, 1702, SEEK_SET);
 	fread(&numberOfRooms, 2, 1, file);
 	numberOfRooms = be16toh(numberOfRooms);
-	rooms = (Room *)malloc(sizeof(Room) * numberOfRooms);
+	rooms = (Room *) malloc(sizeof(Room) * numberOfRooms);
 	fread(rooms, 1, 4 * numberOfRooms, file);
 
 	fread(&numberOfUpstairs, 2, 1, file);
 	numberOfUpstairs = be16toh(numberOfUpstairs);
-	upStairs = (Position *)malloc(sizeof(Room) * numberOfUpstairs);
+	upStairs = (Position *) malloc(sizeof(Room) * numberOfUpstairs);
 	fread(upStairs, 1, numberOfUpstairs * 2, file);
 
 	fread(&numberOfDownstairs, 2, 1, file);
 	numberOfDownstairs = be16toh(numberOfDownstairs);
-	downStairs = (Position *)malloc(sizeof(Room) * numberOfDownstairs);
+	downStairs = (Position *) malloc(sizeof(Room) * numberOfDownstairs);
 	fread(downStairs, 1, numberOfDownstairs * 2, file);
 
 	for (int i = 0; i < numberOfRooms; i++) {
@@ -113,8 +113,6 @@ void readRoomsAndStairs(FILE *file) {
 	for (int k = 0; k < numberOfDownstairs; k++) {
 		dungeon[downStairs[k].y][downStairs[k].x].symbol = '>';
 	}
-
-//	dungeon[playerPosition[1]][playerPosition[0]].symbol = '@';
 }
 
 bool isLegalPlacement(int x, int y, int width, int height) {
@@ -145,7 +143,7 @@ void placeStairsAndPlayer() {
 				downStairs[0].x = x;
 				downStairs[0].y = y;
 				dungeon[y][x].symbol = '>';
-			} else if (i  % 2 == 1) {
+			} else if (i % 2 == 1) {
 				numberOfUpstairs = 1;
 				upStairs[0].x = x;
 				upStairs[0].y = y;
@@ -274,12 +272,12 @@ void generateRandomFloor(int numMonsters) {
 		}
 	}
 
-	rooms = (Room*)malloc(sizeof(Room) * numberOfRooms);
+	rooms = (Room *) malloc(sizeof(Room) * numberOfRooms);
 	for (i = 0; i < MAX_ROOMS; i++) {
 		placeRoom(i);
 	}
-	upStairs = (Position *)malloc(sizeof(Position) * numberOfUpstairs);
-	downStairs = (Position *)malloc(sizeof(Position) * numberOfDownstairs);
+	upStairs = (Position *) malloc(sizeof(Position) * numberOfUpstairs);
+	downStairs = (Position *) malloc(sizeof(Position) * numberOfDownstairs);
 	connectRooms();
 	placeStairsAndPlayer();
 	placeMonsters(numMonsters);
