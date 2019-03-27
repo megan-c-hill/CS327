@@ -1,0 +1,10 @@
+The code is now written in C++.
+
+There were also two new features added. Those two features are fog of war and teleportation.
+
+Fog of War means that the player only has a 5x5 visible radius. This can be toggled with the f key.
+
+The player can now move via teleportation. To activate this feature the player presses t during their turn.
+Once in the teleportation mode an asterisk will appear representing the player's new position.
+The player can be moved with the same keys as they can when not teleporting, then press t to select that position.
+When in teleportation mode the player can press r to be teleported to a random spot, but they may teleport into rock.
