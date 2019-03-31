@@ -6,17 +6,17 @@
 class MonsterDescription {
 public:
 	char* name;
-	char* description;
-	char * color;
+	char description[78];
+	int color[8];
 	Dice speed;
-	char* abailities;
+	char* abilities[10];
 	Dice HP;
 	Dice damage;
 	char symbol;
 	int rarity;
 };
 
-void readFile();
+int readFile();
 
 
 #endif
