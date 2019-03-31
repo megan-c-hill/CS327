@@ -6,8 +6,13 @@
 
 using namespace std;
 
-Dice parseDice(string basic_string) {
-	return Dice();
+Dice parseDice(string diceDescription) {
+	unsigned long baseIndex = diceDescription.find_first_of('+');
+	unsigned long diceIndex = diceDescription.find_first_of('d');
+	int base = stoi(diceDescription.substr(0, baseIndex));
+	int dice = stoi(diceDescription.substr(baseIndex + 1, diceIndex));
+	int sides = stoi(diceDescription.substr(diceIndex + 1));
+	return Dice(base, dice, sides);
 }
 
 int parseLine(string basic_string, MonsterDescription *descr) {
@@ -24,6 +29,7 @@ int parseLine(string basic_string, MonsterDescription *descr) {
 			// TODO parse down to ints
 		} else if (keyword.compare("DAM") == 0) {
 			descr->damage = parseDice(data);
+//			cout << descr->damage.base << '+' << descr->damage.dice << 'd' << descr->damage.sides << endl;
 		} else if (keyword.compare("SPEED") == 0) {
 			descr->speed = parseDice(data);
 		} else if (keyword.compare("ABIL") == 0) {
