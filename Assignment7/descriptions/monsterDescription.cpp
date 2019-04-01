@@ -3,8 +3,24 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <unordered_map>
 
 using namespace std;
+
+enum color {
+	RED, GREEN, BLUE, CYAN, YELLOW, MAGENTA, WHITE, BLACK
+};
+
+static unordered_map<string, enum color> const colorMap = {
+		{"RED",     RED},
+		{"GREEN",   GREEN},
+		{"BLUE",    BLUE},
+		{"CYAN",    CYAN},
+		{"YELLOW",  YELLOW},
+		{"MAGENTA", MAGENTA},
+		{"WHITE",   WHITE},
+		{"BLACK",   BLACK}
+};
 
 Dice parseDice(string diceDescription) {
 	unsigned long baseIndex = diceDescription.find_first_of('+');
@@ -26,7 +42,17 @@ int parseLine(string basic_string, MonsterDescription *descr) {
 		} else if (keyword.compare("SYMB") == 0) {
 			descr->symbol = (char) data.at(0);
 		} else if (keyword.compare("COLOR") == 0) {
-			// TODO parse down to ints
+			unsigned long nextIndex = data.find_first_of(' ');
+			unsigned long prevIndex = 0;
+			int count = 0;
+			while (nextIndex < 100 && count < 8) {
+				enum color c = colorMap.at(data.substr(prevIndex, nextIndex));
+				descr->color[count] = c;
+				count++;
+				data = data.substr(nextIndex + 1);
+				prevIndex = nextIndex;
+				nextIndex = data.find_first_of(' ');
+			}
 		} else if (keyword.compare("DAM") == 0) {
 			descr->damage = parseDice(data);
 //			cout << descr->damage.base << '+' << descr->damage.dice << 'd' << descr->damage.sides << endl;
