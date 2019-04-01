@@ -14,6 +14,8 @@ public:
 	Dice damage;
 	char symbol;
 	int rarity;
+
+	MonsterDescription();
 };
 
 int readFile();

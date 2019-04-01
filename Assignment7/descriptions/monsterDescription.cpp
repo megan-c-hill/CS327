@@ -35,7 +35,7 @@ int parseLine(string basic_string, MonsterDescription *descr) {
 	unsigned long index = basic_string.find_first_of(' ');
 	if (index < 100) {
 		string keyword = basic_string.substr(0, index);
-		string data = basic_string.substr(index);
+		string data = basic_string.substr(index + 1);
 
 		if (keyword.compare("NAME") == 0) {
 			descr->name = (char *) data.c_str();
@@ -43,16 +43,17 @@ int parseLine(string basic_string, MonsterDescription *descr) {
 			descr->symbol = (char) data.at(0);
 		} else if (keyword.compare("COLOR") == 0) {
 			unsigned long nextIndex = data.find_first_of(' ');
-			unsigned long prevIndex = 0;
 			int count = 0;
 			while (nextIndex < 100 && count < 8) {
-				enum color c = colorMap.at(data.substr(prevIndex, nextIndex));
+				enum color c = colorMap.at(data.substr(0, nextIndex));
 				descr->color[count] = c;
 				count++;
 				data = data.substr(nextIndex + 1);
-				prevIndex = nextIndex;
+				cout << "*" << data << "*" << endl;
 				nextIndex = data.find_first_of(' ');
 			}
+			enum color c = colorMap.at(data.substr(0, nextIndex));
+			descr->color[count] = c;
 		} else if (keyword.compare("DAM") == 0) {
 			descr->damage = parseDice(data);
 //			cout << descr->damage.base << '+' << descr->damage.dice << 'd' << descr->damage.sides << endl;
@@ -112,4 +113,10 @@ int readFile() {
 		myfile.close();
 	} else cout << "File either does not exist or is incorrectly formatted" << endl;
 	return 1;
+}
+
+MonsterDescription::MonsterDescription() {
+	for(int i = 0; i< 8; i++){
+		color[i] = 9;
+	}
 }

@@ -4,7 +4,7 @@ OBJS = dungeon.cpp shared-components.cpp generate-dungeon.cpp distance/distance.
 all: $(BIN)
 
 $(BIN): $(OBJS)
-	g++ $(OBJS) -o $(BIN) -lcurses
+	g++ -std=c++11 $(OBJS) -o $(BIN) -lcurses
 
  clean:
 	rm -f dungeon *~
