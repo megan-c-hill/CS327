@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 #include <unordered_map>
 
 using namespace std;
@@ -114,6 +115,7 @@ int readFile() {
 	char filePath[100] = "";
 	strcat(filePath, getenv("HOME"));
 	strcat(filePath, "/.rlg327/monster_desc.txt");
+  cout << filePath << endl;
 
 	ifstream myfile(filePath);
 	getline(myfile, line);
@@ -121,7 +123,7 @@ int readFile() {
 	MonsterDescription *md = new MonsterDescription();
 	md->color[0] = 1;
 
-	if (myfile.is_open() && line.compare("RLG327 MONSTER DESCRIPTION 1") == 0) {
+	if (myfile.is_open()) {
 		while (getline(myfile, line)) {
 			getline(myfile, line); //Eat empty line
 			if (line.compare("BEGIN MONSTER") != 0) {
