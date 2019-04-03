@@ -15,3 +15,17 @@ Dice::Dice(int base, int dice, int sides) {
 	this->dice = dice;
 	this->sides = sides;
 }
+
+string Dice::print() {
+	string result = std::string();
+	result += std::to_string(base);
+	result += "+";
+	result += std::to_string(dice);
+	result += "d";
+	result += std::to_string(sides);
+	return result;
+}
+
+//ostream &operator<<(ostream &o, const Dice& d) {
+//	o << std::to_string(d.base) << "+" << d.dice << "d" << d.sides;
+//}

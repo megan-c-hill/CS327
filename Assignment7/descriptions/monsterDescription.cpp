@@ -7,11 +7,11 @@
 
 using namespace std;
 
-enum color {
+enum colors {
 	RED, GREEN, BLUE, CYAN, YELLOW, MAGENTA, WHITE, BLACK
 };
 
-static unordered_map<string, enum color> const colorMap = {
+static unordered_map<string, enum colors> const colorMap = {
 		{"RED",     RED},
 		{"GREEN",   GREEN},
 		{"BLUE",    BLUE},
@@ -38,30 +38,35 @@ int parseLine(string basic_string, MonsterDescription *descr) {
 		string data = basic_string.substr(index + 1);
 
 		if (keyword.compare("NAME") == 0) {
-			descr->name = (char *) data.c_str();
+			strcpy(descr->name, data.c_str());
 		} else if (keyword.compare("SYMB") == 0) {
 			descr->symbol = (char) data.at(0);
 		} else if (keyword.compare("COLOR") == 0) {
 			unsigned long nextIndex = data.find_first_of(' ');
 			int count = 0;
 			while (nextIndex < 100 && count < 8) {
-				enum color c = colorMap.at(data.substr(0, nextIndex));
+				enum colors c = colorMap.at(data.substr(0, nextIndex));
 				descr->color[count] = c;
 				count++;
 				data = data.substr(nextIndex + 1);
-				cout << "*" << data << "*" << endl;
 				nextIndex = data.find_first_of(' ');
 			}
-			enum color c = colorMap.at(data.substr(0, nextIndex));
+			enum colors c = colorMap.at(data.substr(0, nextIndex));
 			descr->color[count] = c;
 		} else if (keyword.compare("DAM") == 0) {
 			descr->damage = parseDice(data);
-//			cout << descr->damage.base << '+' << descr->damage.dice << 'd' << descr->damage.sides << endl;
 		} else if (keyword.compare("SPEED") == 0) {
 			descr->speed = parseDice(data);
 		} else if (keyword.compare("ABIL") == 0) {
-			// TODO parse further
-			descr->abilities[0] = (char *) data.c_str();
+			unsigned long nextIndex = data.find_first_of(' ');
+			int count = 0;
+			while (nextIndex < 100 && count < 9) {
+				strcpy(descr->abilities[count], data.substr(0, nextIndex).c_str());
+				count++;
+				data = data.substr(nextIndex + 1);
+				nextIndex = data.find_first_of(' ');
+			}
+			strcpy(descr->abilities[count], data.substr(0, nextIndex).c_str());
 		} else if (keyword.compare("RRTY") == 0) {
 			descr->rarity = stoi(data);
 		} else if (keyword.compare("HP") == 0) {
@@ -97,13 +102,16 @@ int readFile() {
 
 			while (getline(myfile, line)) {
 				if (line.compare("END") == 0) {
+					(*md).print();
 					return 1;
 				}
 
 				if (line.compare("DESC") == 0) {
-					getline(myfile, line);
-					md->description = (char *) line.c_str();
-					cout << "Description: " << md->description << endl;
+					int count = 0;
+					while (getline(myfile, line) && line.compare(".") != 0) {
+						strcpy(md->description[count], line.c_str());
+						count ++;
+					}
 				} else if (parseLine(line, md) == 1) {
 
 				};
@@ -112,11 +120,41 @@ int readFile() {
 		}
 		myfile.close();
 	} else cout << "File either does not exist or is incorrectly formatted" << endl;
+
 	return 1;
 }
 
 MonsterDescription::MonsterDescription() {
-	for(int i = 0; i< 8; i++){
+	for (int i = 0; i < 8; i++) {
 		color[i] = 9;
 	}
+	for (int i = 0; i < 9; i++) {
+		strcpy(abilities[i], "NONE");
+	}
+	for(int i = 0; i< 100; i++) {
+		strcpy(description[i], "NONE");
+	}
+}
+
+void MonsterDescription::print() {
+	cout << "NAME: " << name << endl;
+	cout << "DESCR: " << endl;
+	for(int i = 0; i<100 && strcmp(description[i], "NONE") != 0; i++) {
+		cout << description[i] << endl;
+	}
+	cout << "COLOR: ";
+	for (int i = 0; i < 8 && color[i] != 9; i++) {
+		cout << color[i] << " ";
+	}
+	cout << endl;
+	cout << "SPEED: " << speed.print() << endl;
+	cout << "ABIL: ";
+	for (int i = 0; i < 8 && strcmp(abilities[i], "NONE") != 0; i++) {
+		cout << abilities[i] << " ";
+	}
+	cout << endl;
+	cout << "HP: " << HP.print() << endl;
+	cout << "DAM: " << damage.print() << endl;
+	cout << "SYMB: " << symbol << endl;
+	cout << "RRTY: " << to_string(rarity) << endl;
 }
