@@ -6,7 +6,7 @@
 class MonsterDescription {
 public:
 	char name[100];
-	char description[100][77];
+	char description[100][78];
 	int color[8];
 	Dice speed;
 	char abilities[10][7];

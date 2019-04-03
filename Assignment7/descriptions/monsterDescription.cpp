@@ -84,7 +84,7 @@ int readFile() {
 	string line;
 	char filePath[100] = "";
 	strcat(filePath, getenv("HOME"));
-	strcat(filePath, "/.rlg327/monster_desc_easy.txt");
+	strcat(filePath, "/.rlg327/monster_desc.txt");
 
 	ifstream myfile(filePath);
 	getline(myfile, line);
@@ -112,7 +112,7 @@ int readFile() {
 						count ++;
 					}
 				} else if(line.compare("BEGIN MONSTER") == 0){
-
+					md = new MonsterDescription();
 				} else if (parseLine(line, md) == 1) {
 
 				};
