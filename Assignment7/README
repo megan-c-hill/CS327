@@ -1,10 +1,11 @@
-The code is now written in C++.
+Parses given monster descriptions.
 
-There were also two new features added. Those two features are fog of war and teleportation.
+My code does not check for duplicates, but limits the number of characteristics for that trait to the max number.
+Ex: There are 7 colors, (I don't handle gray), so if you pass more than 7 colors only the first 7 will be handled
+ 	COLOR BLUE BLUE BLUE BLUE BLUE BLUE RED GREEN CYAN
+ Would return:
+ 	COLOR: 2 2 2 2 2 2 0
+ With GREEN and CYAN being left of completely. Abilities is also handled in the same way.
 
-Fog of War means that the player only has a 5x5 visible radius. This can be toggled with the f key.
-
-The player can now move via teleportation. To activate this feature the player presses t during their turn.
-Once in the teleportation mode an asterisk will appear representing the player's new position.
-The player can be moved with the same keys as they can when not teleporting, then press t to select that position.
-When in teleportation mode the player can press r to be teleported to a random spot, but they may teleport into rock.
+And because I didn't have time to get description working completely correctly (with malloc) the description is limited
+to 100 lines and will stop after that, so if you want to write a description over 770 characters you are out of luck

@@ -86,3 +86,16 @@
 	 Don't let visibility loop around
 	 Print dungeon correctly at end of game
 	 Update README and CHANGELOG
+3/27 Code Formatting
+	 Init Commit for Assignment 7
+	 Ability to open a file
+3/30 Reads full lines
+3/31 Begin parsing individual lines
+	 parse dice
+4/1  WIP: try using map
+	 Parsing colors
+4/2  Parses single correctly formatted monster
+	 Handling multiple monsters
+	 Fix some bugs
+4/3  Handle monsters that are incorrectly formatted
+	 Update README and CHANGELOG
