@@ -103,7 +103,6 @@ int readFile() {
 			while (getline(myfile, line)) {
 				if (line.compare("END") == 0) {
 					(*md).print();
-					return 1;
 				}
 
 				if (line.compare("DESC") == 0) {
@@ -112,10 +111,11 @@ int readFile() {
 						strcpy(md->description[count], line.c_str());
 						count ++;
 					}
+				} else if(line.compare("BEGIN MONSTER") == 0){
+
 				} else if (parseLine(line, md) == 1) {
 
 				};
-
 			}
 		}
 		myfile.close();
@@ -131,7 +131,7 @@ MonsterDescription::MonsterDescription() {
 	for (int i = 0; i < 9; i++) {
 		strcpy(abilities[i], "NONE");
 	}
-	for(int i = 0; i< 100; i++) {
+	for (int i = 0; i < 100; i++) {
 		strcpy(description[i], "NONE");
 	}
 }
@@ -139,7 +139,7 @@ MonsterDescription::MonsterDescription() {
 void MonsterDescription::print() {
 	cout << "NAME: " << name << endl;
 	cout << "DESCR: " << endl;
-	for(int i = 0; i<100 && strcmp(description[i], "NONE") != 0; i++) {
+	for (int i = 0; i < 100 && strcmp(description[i], "NONE") != 0; i++) {
 		cout << description[i] << endl;
 	}
 	cout << "COLOR: ";
@@ -156,5 +156,5 @@ void MonsterDescription::print() {
 	cout << "HP: " << HP.print() << endl;
 	cout << "DAM: " << damage.print() << endl;
 	cout << "SYMB: " << symbol << endl;
-	cout << "RRTY: " << to_string(rarity) << endl;
+	cout << "RRTY: " << to_string(rarity) << endl << endl;
 }
