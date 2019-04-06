@@ -99,3 +99,4 @@
 	 Fix some bugs
 4/3  Handle monsters that are incorrectly formatted
 	 Update README and CHANGELOG
+	 Make it work on Linux

@@ -21,7 +21,7 @@ public:
 	void print();
 };
 
-int readFile();
+int readMonsterFile();
 
 
 #endif

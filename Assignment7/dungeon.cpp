@@ -6,6 +6,7 @@
 #include "distance/distance.h"
 #include "characters/Character.h"
 #include "descriptions/monsterDescription.h"
+#include "descriptions/itemDescription.h"
 #include <time.h>
 #include <stdio.h>
 #include <ncurses.h>
@@ -13,7 +14,8 @@
 //TECH DEBT / ENHANCEMENT Unit tests
 
 int main(int argc, char *argv[]) {
-	readFile();
+	readMonsterFile();
+	readObjectFile();
 //	initscr();
 //	keypad(stdscr, true);
 //	curs_set(0);
