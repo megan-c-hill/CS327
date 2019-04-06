@@ -1,0 +1,11 @@
+Parses given monster descriptions.
+
+My code does not check for duplicates, but limits the number of characteristics for that trait to the max number.
+Ex: There are 7 colors, (I don't handle gray), so if you pass more than 7 colors only the first 7 will be handled
+ 	COLOR BLUE BLUE BLUE BLUE BLUE BLUE RED GREEN CYAN
+ Would return:
+ 	COLOR: 2 2 2 2 2 2 0
+ With GREEN and CYAN being left of completely. Abilities is also handled in the same way.
+
+And because I didn't have time to get description working completely correctly (with malloc) the description is limited
+to 100 lines and will stop after that, so if you want to write a description over 770 characters you are out of luck
