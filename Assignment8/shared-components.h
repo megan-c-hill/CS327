@@ -4,9 +4,14 @@
 #include <stdint.h>
 #include "characters/Character.h"
 #include "characters/characterHeap.h"
+#include "descriptions/monsterDescription.h"
+#include "descriptions/itemDescription.h"
+#include <vector>
 
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80
+
+using namespace std;
 
 class DungeonPosition {
 public:
@@ -40,6 +45,8 @@ extern DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern char rememberedMap[TOTAL_HEIGHT][TOTAL_WIDTH];
+extern vector<MonsterDescription> monsters;
+extern vector<ItemDescription> items;
 extern Room *rooms;
 extern Position *upStairs;
 extern Position *downStairs;

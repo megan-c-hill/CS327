@@ -12,6 +12,8 @@ DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 char rememberedMap[TOTAL_HEIGHT][TOTAL_WIDTH];
+vector<MonsterDescription> monsters;
+vector<ItemDescription> items;
 Room *rooms;
 Position *upStairs;
 Position *downStairs;

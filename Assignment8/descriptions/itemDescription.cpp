@@ -2,6 +2,7 @@
 #include "itemDescription.h"
 #include <iostream>
 #include <fstream>
+#include "../shared-components.h"
 #include <string>
 #include <cstring>
 #include <unordered_map>
@@ -136,7 +137,6 @@ int readObjectFile() {
 	char filePath[100] = "";
 	strcat(filePath, getenv("HOME"));
 	strcat(filePath, "/.rlg327/object_desc.txt");
-  cout << filePath << endl;
 
 	ifstream myfile(filePath);
 	getline(myfile, line);
@@ -153,7 +153,7 @@ int readObjectFile() {
 
 			while (getline(myfile, line)) {
 				if (line.compare("END") == 0) {
-					(*md).print();
+					items.push_back(*md);
 				}
 
 				if (line.compare("DESC") == 0) {

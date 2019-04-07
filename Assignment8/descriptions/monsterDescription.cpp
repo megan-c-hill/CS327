@@ -1,5 +1,6 @@
 #include "dice.h"
 #include "monsterDescription.h"
+#include "../shared-components.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -115,7 +116,6 @@ int readMonsterFile() {
 	char filePath[100] = "";
 	strcat(filePath, getenv("HOME"));
 	strcat(filePath, "/.rlg327/monster_desc.txt");
-  cout << filePath << endl;
 
 	ifstream myfile(filePath);
 	getline(myfile, line);
@@ -133,7 +133,7 @@ int readMonsterFile() {
 
 			while (getline(myfile, line)) {
 				if (line.compare("END") == 0) {
-					(*md).print();
+					monsters.push_back(*md);
 				}
 
 				if (line.compare("DESC") == 0) {
