@@ -1,0 +1,119 @@
+cmake_minimum_required(VERSION 3.13)
+project(CS327)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(Assignment0)
+include_directories(Assignment1)
+include_directories(Assignment2)
+include_directories(Assignment3)
+include_directories(Assignment4)
+include_directories(Assignment4/characters)
+include_directories(Assignment4/distance)
+include_directories(Assignment5)
+include_directories(Assignment5/characters)
+include_directories(Assignment5/distance)
+include_directories(Assignment6)
+include_directories(Assignment6/characters)
+include_directories(Assignment6/distance)
+include_directories(Assignment7)
+include_directories(Assignment7/characters)
+include_directories(Assignment7/descriptions)
+include_directories(Assignment7/distance)
+include_directories(Assignment8)
+include_directories(Assignment8/characters)
+include_directories(Assignment8/descriptions)
+include_directories(Assignment8/distance)
+
+add_executable(CS327
+        Assignment0/sobel.c
+        Assignment1/dungeon.c
+        Assignment2/dungeon.c
+        Assignment3/dijkstra.c
+        Assignment3/dijkstra.h
+        Assignment3/dungeon.c
+        Assignment3/generate-dungeon.c
+        Assignment3/generate-dungeon.h
+        Assignment3/heap.c
+        Assignment3/heap.h
+        Assignment3/shared-components.c
+        Assignment3/shared-components.h
+        Assignment4/characters/characterHeap.c
+        Assignment4/characters/characterHeap.h
+        Assignment4/characters/monster.c
+        Assignment4/characters/monster.h
+        Assignment4/distance/distance.c
+        Assignment4/distance/distance.h
+        Assignment4/distance/pathFindingHeap.c
+        Assignment4/distance/pathFindingHeap.h
+        Assignment4/dungeon.c
+        Assignment4/generate-dungeon.c
+        Assignment4/generate-dungeon.h
+        Assignment4/shared-components.c
+        Assignment4/shared-components.h
+        Assignment5/characters/characterHeap.c
+        Assignment5/characters/characterHeap.h
+        Assignment5/characters/monster.c
+        Assignment5/characters/monster.h
+        Assignment5/distance/distance.c
+        Assignment5/distance/distance.h
+        Assignment5/distance/pathFindingHeap.c
+        Assignment5/distance/pathFindingHeap.h
+        Assignment5/dungeon.c
+        Assignment5/generate-dungeon.c
+        Assignment5/generate-dungeon.h
+        Assignment5/shared-components.c
+        Assignment5/shared-components.h
+        Assignment6/characters/Character.cpp
+        Assignment6/characters/Character.h
+        Assignment6/characters/characterHeap.cpp
+        Assignment6/characters/characterHeap.h
+        Assignment6/distance/distance.cpp
+        Assignment6/distance/distance.h
+        Assignment6/distance/pathFindingHeap.cpp
+        Assignment6/distance/pathFindingHeap.h
+        Assignment6/dungeon.cpp
+        Assignment6/generate-dungeon.cpp
+        Assignment6/generate-dungeon.h
+        Assignment6/shared-components.cpp
+        Assignment6/shared-components.h
+        Assignment7/characters/Character.cpp
+        Assignment7/characters/Character.h
+        Assignment7/characters/characterHeap.cpp
+        Assignment7/characters/characterHeap.h
+        Assignment7/descriptions/dice.cpp
+        Assignment7/descriptions/dice.h
+        Assignment7/descriptions/itemDescription.cpp
+        Assignment7/descriptions/itemDescription.h
+        Assignment7/descriptions/monsterDescription.cpp
+        Assignment7/descriptions/monsterDescription.h
+        Assignment7/distance/distance.cpp
+        Assignment7/distance/distance.h
+        Assignment7/distance/pathFindingHeap.cpp
+        Assignment7/distance/pathFindingHeap.h
+        Assignment7/dungeon.cpp
+        Assignment7/generate-dungeon.cpp
+        Assignment7/generate-dungeon.h
+        Assignment7/shared-components.cpp
+        Assignment7/shared-components.h
+        Assignment8/characters/Character.cpp
+        Assignment8/characters/Character.h
+        Assignment8/characters/characterHeap.cpp
+        Assignment8/characters/characterHeap.h
+        Assignment8/descriptions/dice.cpp
+        Assignment8/descriptions/dice.h
+        Assignment8/descriptions/itemDescription.cpp
+        Assignment8/descriptions/itemDescription.h
+        Assignment8/descriptions/monsterDescription.cpp
+        Assignment8/descriptions/monsterDescription.h
+        Assignment8/distance/distance.cpp
+        Assignment8/distance/distance.h
+        Assignment8/distance/pathFindingHeap.cpp
+        Assignment8/distance/pathFindingHeap.h
+        Assignment8/dungeon.cpp
+        Assignment8/generate-dungeon.cpp
+        Assignment8/generate-dungeon.h
+        Assignment8/shared-components.cpp
+        Assignment8/shared-components.h
+        ClassNotes/febFifteen.c
+        ClassNotes/midterm-ec.c)
