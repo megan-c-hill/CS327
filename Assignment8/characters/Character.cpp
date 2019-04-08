@@ -24,15 +24,15 @@ using namespace std;
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
 static unordered_map<string, int> const abilMap = {
-		{"SMART", NPC_SMART},
-		{"TELE", NPC_TELE},
-		{"TUNNEL", NPC_TUNNEL},
+		{"SMART",   NPC_SMART},
+		{"TELE",    NPC_TELE},
+		{"TUNNEL",  NPC_TUNNEL},
 		{"ERRATIC", NPC_ERRATIC},
-		{"PASS", NPC_PASS},
-		{"PICKUP", NPC_PICKUP},
+		{"PASS",    NPC_PASS},
+		{"PICKUP",  NPC_PICKUP},
 		{"DESTROY", NPC_DESTROY},
-		{"UNIQ", NPC_UNIQ},
-		{"BOSS", NPC_BOSS},
+		{"UNIQ",    NPC_UNIQ},
+		{"BOSS",    NPC_BOSS},
 		{"NONE", 0}
 };
 
@@ -88,28 +88,25 @@ char getSymbol(int number) {
 }
 
 Monster *generateMonsterCharacter() {
-	int characteristics;
 	MonsterDescription md;
 	bool hasMonster = false;
-	while(!hasMonster) {
+	while (!hasMonster) {
 		int prob = rand() % 100 + 1;
 		int randIndex = rand() % monsters.size();
 
 		md = monsters.at(randIndex);
-		if(prob > md.rarity) {
+		if (prob > md.rarity) {
 			hasMonster = true;
 		}
 	}
 
-	characteristics = parseCharacteristics(md.abilities);
-
 	Monster *npm = (Monster *) malloc(sizeof(Monster));
-	npm->characteristics = characteristics;
+	npm->characteristics = parseCharacteristics(md.abilities);
 	strcpy(npm->name, md.name);
 	npm->symbol = md.symbol;
 	npm->speed = md.speed.getValue();
 	npm->color = md.color[0];
-	for(int i = 0; i<100; i++){
+	for (int i = 0; i < 100; i++) {
 		strcpy(npm->description[i], md.description[i]);
 	}
 	npm->HP = md.HP.getValue();
@@ -350,11 +347,12 @@ int displayMonsterList(int offset, Player *player) {
 			int deltaX = playerCharacter->x - monster->character->x;
 			int deltaY = playerCharacter->y - monster->character->y;
 			char monsterData[81];
-			sprintf(monsterData, "%c (%s) is %2d squares %s and %2d squares %s of the player character",
+			sprintf(monsterData, "%c (%s) %d is %2d squares %s and %2d squares %s of the player character",
 					monster->character->symbol,
 					monster->character->name,
-					abs(deltaY),deltaY >= 0 ? "north" : "south",
-					abs(deltaX),deltaX >= 0 ? "west" : "east");
+					monster->character->speed,
+					abs(deltaY), deltaY >= 0 ? "north" : "south",
+					abs(deltaX), deltaX >= 0 ? "west" : "east");
 			mvaddstr(i, 0, monsterData);
 		}
 	}

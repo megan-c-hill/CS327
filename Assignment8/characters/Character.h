@@ -21,7 +21,6 @@ class Player : public Character {
 class Monster : public Character {
 public:
 	char description[100][78];
-	int speed;
 	int HP;
 	Dice damage;
 	int rarity;
