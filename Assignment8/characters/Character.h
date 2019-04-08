@@ -1,5 +1,5 @@
-#ifndef CS327_MONSTER_H
-#define CS327_MONSTER_H
+#ifndef CS327_CHARACTER_H
+#define CS327_CHARACTER_H
 
 #include <stdint.h>
 #include "../descriptions/dice.h"
@@ -18,22 +18,7 @@ class Player : public Character {
 
 };
 
-class Monster : public Character {
-public:
-	char description[100][78];
-	int HP;
-	Dice damage;
-	int rarity;
-	int characteristics;
-	uint8_t knownPlayerX;
-	uint8_t knownPlayerY;
-};
-
-Monster *generateMonsterCharacter();
-
 Player *generatePlayerCharacter();
-
-void placeMonsters(int numMonsters);
 
 void placePlayer();
 
@@ -45,6 +30,12 @@ void initTeleportMap();
 
 void initRememberedMap();
 
+void moveToSpot(Character *character, int newX, int newY);
+
+void tunnel(Character *character, int newX, int newY);
+
 void playGame();
 
-#endif //CS327_MONSTER_H
+//void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOTAL_WIDTH]);
+
+#endif //CS327_CHARACTER_H

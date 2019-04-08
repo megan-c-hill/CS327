@@ -2,11 +2,12 @@
 #define CS327_SHARED_COMPONENTS_H
 
 #include <stdint.h>
-#include "characters/Character.h"
+#include <vector>
+
 #include "characters/characterHeap.h"
 #include "descriptions/monsterDescription.h"
 #include "descriptions/itemDescription.h"
-#include <vector>
+#include "characters/Character.h"
 
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80
