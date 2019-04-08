@@ -108,10 +108,7 @@ Monster *generateMonsterCharacter() {
 	strcpy(npm->name, md.name);
 	npm->symbol = md.symbol;
 	npm->speed = md.speed.getValue();
-	for(int i = 0; i<8; i++){
-		cout << md.color[i] << endl;
-		npm->color[i] = md.color[i];
-	}
+	npm->color = md.color[0];
 	for(int i = 0; i<100; i++){
 		strcpy(npm->description[i], md.description[i]);
 	}
@@ -127,7 +124,7 @@ Player *generatePlayerCharacter() {
 	pc->speed = 10;
 	pc->symbol = '@';
 	strcpy(pc->name, "You");
-	pc->color[0] = COLOR_BLUE;
+	pc->color = COLOR_BLUE;
 
 	return pc;
 }

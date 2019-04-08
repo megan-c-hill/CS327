@@ -6,22 +6,19 @@
 #include <string>
 #include <cstring>
 #include <unordered_map>
+#include <ncurses.h>
 
 using namespace std;
 
-enum colors {
-	RED, GREEN, BLUE, CYAN, YELLOW, MAGENTA, WHITE, BLACK
-};
-
-static unordered_map<string, enum colors> const colorMap = {
-		{"RED",     RED},
-		{"GREEN",   GREEN},
-		{"BLUE",    BLUE},
-		{"CYAN",    CYAN},
-		{"YELLOW",  YELLOW},
-		{"MAGENTA", MAGENTA},
-		{"WHITE",   WHITE},
-		{"BLACK",   BLACK}
+static unordered_map<string, int> const colorMap = {
+		{"WHITE", 	COLOR_WHITE},
+		{"RED",     COLOR_RED},
+		{"GREEN",   COLOR_GREEN},
+		{"BLUE",    COLOR_BLUE},
+		{"CYAN",    COLOR_CYAN},
+		{"YELLOW",  COLOR_YELLOW},
+		{"MAGENTA", COLOR_MAGENTA},
+		{"BLACK",   COLOR_BLACK}
 };
 
 Dice parseDice(string diceDescription) {
@@ -59,13 +56,13 @@ void parseLine(string basic_string, MonsterDescription *descr) {
 			unsigned long nextIndex = data.find_first_of(' ');
 			int count = 0;
 			while (nextIndex < 100 && count < 8) {
-				enum colors c = colorMap.at(data.substr(0, nextIndex));
+				int c = colorMap.at(data.substr(0, nextIndex));
 				descr->color[count] = c;
 				count++;
 				data = data.substr(nextIndex + 1);
 				nextIndex = data.find_first_of(' ');
 			}
-			enum colors c = colorMap.at(data.substr(0, nextIndex));
+			int c = colorMap.at(data.substr(0, nextIndex));
 			descr->color[count] = c;
 		} else if (keyword.compare("DAM") == 0) {
 			if (descr->assignedFields[6]) {

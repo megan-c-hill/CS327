@@ -7,7 +7,7 @@
 class Character {
 public:
 	char name[100];
-	int color[8];
+	int color;
 	uint8_t x;
 	uint8_t y;
 	uint8_t speed;
