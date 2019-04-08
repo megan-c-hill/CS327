@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
 	readObjectFile();
 	initscr();
 	keypad(stdscr, true);
+	start_color();
 	curs_set(0);
 	refresh();
 	int seed = time(NULL);
@@ -25,6 +26,14 @@ int main(int argc, char *argv[]) {
 	mvaddstr(0, 0, seedText);
 	refresh();
 	srand(seed);
+
+	init_pair(COLOR_CYAN, COLOR_CYAN, COLOR_BLACK);
+	init_pair(COLOR_RED, COLOR_RED, COLOR_BLACK);
+	init_pair(COLOR_GREEN, COLOR_GREEN, COLOR_BLACK);
+	init_pair(COLOR_BLUE, COLOR_BLUE, COLOR_BLACK);
+	init_pair(COLOR_BLACK, COLOR_WHITE, COLOR_BLACK);
+	init_pair(COLOR_YELLOW, COLOR_YELLOW, COLOR_BLACK);
+	init_pair(COLOR_MAGENTA, COLOR_MAGENTA, COLOR_BLACK);
 
 	bool shouldSave = false;
 	bool shouldLoad = false;
