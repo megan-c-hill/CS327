@@ -1,7 +1,3 @@
-//
-// Created by Megan's ISU on 2019-03-27.
-//
-
 #include "dice.h"
 
 Dice::Dice() {
@@ -26,6 +22,10 @@ string Dice::print() {
 	return result;
 }
 
-//ostream &operator<<(ostream &o, const Dice& d) {
-//	o << std::to_string(d.base) << "+" << d.dice << "d" << d.sides;
-//}
+int Dice::getValue() {
+	int sum = base;
+	for(int i = 0; i < dice; i++) {
+		sum += rand() % sides + 1;
+	};
+	return sum;
+}

@@ -18,7 +18,7 @@ public:
 	Dice();
 	Dice(int base, int dice, int sides);
 	string print();
-	friend ostream &operator<<(ostream &o, const Dice d);
+	int getValue();
 };
 
 

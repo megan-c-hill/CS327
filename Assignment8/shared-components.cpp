@@ -36,11 +36,10 @@ void printRememberedDungeon(int x, int y) {
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
 			if (characterMap[i][j] != NULL && abs(y - i) <= 2 && abs(x - j) <= 2) {
-				attron(COLOR_PAIR(COLOR_GREEN));
+				attron(COLOR_PAIR(characterMap[i][j]->color[0]));
 				mvaddch(i + 1, j, characterMap[i][j]->symbol);
-				attroff(COLOR_PAIR(COLOR_GREEN));
+				attroff(COLOR_PAIR(characterMap[i][j]->color[0]));
 			} else {
-				init_pair(COLOR_BLACK, COLOR_BLACK, COLOR_WHITE);
 				attron(COLOR_PAIR(COLOR_BLACK));
 				mvaddch(i + 1, j, rememberedMap[i][j]);
 				attroff(COLOR_PAIR(COLOR_BLACK));
@@ -58,12 +57,18 @@ void printFullDungeon() {
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
 			if (characterMap[i][j] != NULL && teleportDungeon[i][j] == ' ') {
+				attron(COLOR_PAIR(characterMap[i][j]->color[0]));
 				mvaddch(i + 1, j, characterMap[i][j]->symbol);
+				attroff(COLOR_PAIR(characterMap[i][j]->color[0]));
 			} else {
 				if (teleportDungeon[i][j] != ' ') {
+					attron(COLOR_PAIR(COLOR_BLUE));
 					mvaddch(i + 1, j, teleportDungeon[i][j]);
+					attroff(COLOR_PAIR(COLOR_BLUE));
 				} else {
+					attron(COLOR_PAIR(COLOR_BLACK));
 					mvaddch(i + 1, j, dungeon[i][j].symbol);
+					attroff(COLOR_PAIR(COLOR_BLACK));
 				}
 			}
 		}

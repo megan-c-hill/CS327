@@ -74,12 +74,34 @@ char getSymbol(int number) {
 
 Monster *generateMonsterCharacter() {
 	uint8_t characteristics;
+	MonsterDescription md;
+	bool hasMonster = false;
+	while(!hasMonster) {
+		int prob = rand() % 100 + 1;
+		int randIndex = rand() % monsters.size();
+
+		md = monsters.at(randIndex);
+		if(prob > md.rarity) {
+			hasMonster = true;
+		}
+	}
+	// TODO get these from abilities
 	characteristics = rand() % 16;
 
 	Monster *npm = (Monster *) malloc(sizeof(Monster));
 	npm->characteristics = characteristics;
-	npm->symbol = getSymbol(characteristics);
-	npm->speed = rand() % 15 + 5;
+	strcpy(npm->name, md.name);
+	npm->symbol = md.symbol;
+	npm->speed = md.speed.getValue();
+	for(int i = 0; i<8; i++){
+		npm->color[i] = md.color[i];
+	}
+	for(int i = 0; i<100; i++){
+		strcpy(npm->description[i], md.description[i]);
+	}
+	npm->HP = md.HP.getValue();
+	npm->damage = md.damage;
+	npm->rarity = md.rarity;
 	return npm;
 };
 
@@ -88,6 +110,8 @@ Player *generatePlayerCharacter() {
 
 	pc->speed = 10;
 	pc->symbol = '@';
+	strcpy(pc->name, "You");
+	pc->color[0] = COLOR_BLUE;
 
 	return pc;
 }
