@@ -31,9 +31,10 @@ int main(int argc, char *argv[]) {
 	init_pair(COLOR_RED, COLOR_RED, COLOR_BLACK);
 	init_pair(COLOR_GREEN, COLOR_GREEN, COLOR_BLACK);
 	init_pair(COLOR_BLUE, COLOR_BLUE, COLOR_BLACK);
-	init_pair(COLOR_BLACK, COLOR_WHITE, COLOR_BLACK);
+	init_pair(COLOR_BLACK, COLOR_BLACK, COLOR_WHITE);
 	init_pair(COLOR_YELLOW, COLOR_YELLOW, COLOR_BLACK);
 	init_pair(COLOR_MAGENTA, COLOR_MAGENTA, COLOR_BLACK);
+	init_pair(COLOR_WHITE, COLOR_WHITE, COLOR_BLACK);
 
 	bool shouldSave = false;
 	bool shouldLoad = false;

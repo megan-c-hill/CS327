@@ -6,30 +6,46 @@
 #include "../shared-components.h"
 #include "../distance/distance.h"
 #include "../generate-dungeon.h"
+#include <unordered_map>
+#include <iostream>
+
+using namespace std;
 
 #define NPC_SMART    0x00000001
 #define NPC_TELE    0x00000002
 #define NPC_TUNNEL    0x00000004
 #define NPC_ERRATIC    0x00000008
+#define NPC_PASS    0x00000016
+#define NPC_PICKUP    0x00000032
+#define NPC_DESTROY    0x00000064
+#define NPC_UNIQ    0x00000128
+#define NPC_BOSS    0x00000256
 
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
-void teleportMode(Character *pCharacter);
+static unordered_map<string, int> const abilMap = {
+		{"SMART", NPC_SMART},
+		{"TELE", NPC_TELE},
+		{"TUNNEL", NPC_TUNNEL},
+		{"ERRATIC", NPC_ERRATIC},
+		{"PASS", NPC_PASS},
+		{"PICKUP", NPC_PICKUP},
+		{"DESTROY", NPC_DESTROY},
+		{"UNIQ", NPC_UNIQ},
+		{"BOSS", NPC_BOSS},
+		{"NONE", 0}
+};
 
-int isErratic(Monster *character) {
-	return character->characteristics & NPC_ERRATIC;
+int hasCharacteristic(Monster *character, int characteristic) {
+	return character->characteristics & characteristic;
 }
 
-int isSmart(Monster *character) {
-	return character->characteristics & NPC_SMART;
-}
-
-int isTelepathic(Monster *character) {
-	return character->characteristics & NPC_TELE;
-}
-
-int isTunnelable(Monster *character) {
-	return character->characteristics & NPC_TUNNEL;
+int parseCharacteristics(char abilities[10][8]) {
+	int characteristics = 0;
+	for (int i = 0; i < 10 && strcmp(abilities[i], "NONE") != 0; i++) {
+		characteristics += abilMap.at(abilities[i]);
+	}
+	return characteristics;
 }
 
 char getSymbol(int number) {
@@ -71,9 +87,8 @@ char getSymbol(int number) {
 	}
 }
 
-
 Monster *generateMonsterCharacter() {
-	uint8_t characteristics;
+	int characteristics;
 	MonsterDescription md;
 	bool hasMonster = false;
 	while(!hasMonster) {
@@ -85,8 +100,8 @@ Monster *generateMonsterCharacter() {
 			hasMonster = true;
 		}
 	}
-	// TODO get these from abilities
-	characteristics = rand() % 16;
+
+	characteristics = parseCharacteristics(md.abilities);
 
 	Monster *npm = (Monster *) malloc(sizeof(Monster));
 	npm->characteristics = characteristics;
@@ -94,6 +109,7 @@ Monster *generateMonsterCharacter() {
 	npm->symbol = md.symbol;
 	npm->speed = md.speed.getValue();
 	for(int i = 0; i<8; i++){
+		cout << md.color[i] << endl;
 		npm->color[i] = md.color[i];
 	}
 	for(int i = 0; i<100; i++){
@@ -206,14 +222,14 @@ bool pcIsVisible(Monster *character) {
 	int xDistance = abs(character->x - playerCharacter->x);
 	int yDistance = abs(character->y - playerCharacter->y);
 
-	if (isTelepathic(character)) {
+	if (hasCharacteristic(character, NPC_TELE)) {
 		character->knownPlayerX = playerCharacter->x;
 		character->knownPlayerY = playerCharacter->y;
 	}
 
 	int totalDistanceSquared = xDistance * xDistance + yDistance * yDistance;
 	if (totalDistanceSquared <= 25) {
-		if (isSmart(character)) {
+		if (hasCharacteristic(character, NPC_SMART)) {
 			character->knownPlayerX = playerCharacter->x;
 			character->knownPlayerY = playerCharacter->y;
 		}
@@ -254,7 +270,7 @@ void goTowardsPC(Monster *character) {
 
 	if (dungeon[newY][newX].hardness == 0) {
 		moveToSpot(character, newX, newY);
-	} else if (isTunnelable(character) && dungeon[newY][newX].hardness != 255) {
+	} else if (hasCharacteristic(character, NPC_TELE) && dungeon[newY][newX].hardness != 255) {
 		tunnel(character, newX, newY);
 	}
 }
@@ -294,7 +310,7 @@ void randomMove(Monster *character) {
 
 	if (dungeon[newY][newX].hardness == 0) {
 		moveToSpot(character, newX, newY);
-	} else if (isTunnelable(character) && dungeon[newY][newX].hardness != 255) {
+	} else if (hasCharacteristic(character, NPC_TELE) && dungeon[newY][newX].hardness != 255) {
 		tunnel(character, newX, newY);
 	} else {
 		randomMove(character);
@@ -302,12 +318,12 @@ void randomMove(Monster *character) {
 }
 
 void makeCharacterMove(Monster *character) {
-	if (isErratic(character) && rand() % 2 == 1) {
+	if (hasCharacteristic(character, NPC_ERRATIC) && rand() % 2 == 1) {
 		randomMove(character);
-	} else if (isSmart(character)) {
+	} else if (hasCharacteristic(character, NPC_SMART)) {
 		pcIsVisible(character);
 		if (character->knownPlayerX != 0) {
-			if (isTunnelable(character)) {
+			if (hasCharacteristic(character, NPC_TUNNEL)) {
 				tunnelingDistance(character->knownPlayerX, character->knownPlayerY);
 				useMap(character, tunnelDistance);
 			} else {
@@ -315,7 +331,7 @@ void makeCharacterMove(Monster *character) {
 				useMap(character, nonTunnelDistance);
 			}
 		}
-	} else if (pcIsVisible(character) || isTelepathic(character)) {
+	} else if (pcIsVisible(character) || hasCharacteristic(character, NPC_TELE)) {
 		goTowardsPC(character);
 	} // else do nothing
 }
@@ -337,9 +353,11 @@ int displayMonsterList(int offset, Player *player) {
 			int deltaX = playerCharacter->x - monster->character->x;
 			int deltaY = playerCharacter->y - monster->character->y;
 			char monsterData[81];
-			sprintf(monsterData, "%c is %2d squares %s and %2d squares %s of the player character",
-					monster->character->symbol, abs(deltaY), deltaY >= 0 ? "north" : "south", abs(deltaX),
-					deltaX >= 0 ? "west" : "east");
+			sprintf(monsterData, "%c (%s) is %2d squares %s and %2d squares %s of the player character",
+					monster->character->symbol,
+					monster->character->name,
+					abs(deltaY),deltaY >= 0 ? "north" : "south",
+					abs(deltaX),deltaX >= 0 ? "west" : "east");
 			mvaddstr(i, 0, monsterData);
 		}
 	}

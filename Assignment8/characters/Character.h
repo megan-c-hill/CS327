@@ -25,7 +25,7 @@ public:
 	int HP;
 	Dice damage;
 	int rarity;
-	uint8_t characteristics;
+	int characteristics;
 	uint8_t knownPlayerX;
 	uint8_t knownPlayerY;
 };
