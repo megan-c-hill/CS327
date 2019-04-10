@@ -1,4 +1,5 @@
 #include "Object.h"
+#include <string.h>
 #include "../descriptions/itemDescription.h"
 #include "../shared-components.h"
 
@@ -9,6 +10,10 @@ Object *generateObject() {
 		int randIndex = rand() % items.size();
 
 		id = items.at(randIndex);
+		if(strcmp(id.art, "TRUE") == 0) {
+			items.erase(items.begin() + randIndex);
+		}
+
 		if (prob < id.rarity) {
 			return id.createObject();
 		}

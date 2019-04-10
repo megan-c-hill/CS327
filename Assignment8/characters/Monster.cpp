@@ -2,6 +2,9 @@
 #include <unordered_map>
 #include "../distance/distance.h"
 #include "../shared-components.h"
+#include <iostream>
+#include <ncurses.h>
+#include <zconf.h>
 
 using namespace std;
 
@@ -9,11 +12,11 @@ using namespace std;
 #define NPC_TELE    0x00000002
 #define NPC_TUNNEL    0x00000004
 #define NPC_ERRATIC    0x00000008
-#define NPC_PASS    0x00000016
-#define NPC_PICKUP    0x00000032
-#define NPC_DESTROY    0x00000064
-#define NPC_UNIQ    0x00000128
-#define NPC_BOSS    0x00000256
+#define NPC_PASS    0x00000010
+#define NPC_PICKUP    0x00000020
+#define NPC_DESTROY    0x00000040
+#define NPC_UNIQ    0x0000080
+#define NPC_BOSS    0x00000100
 
 
 static unordered_map<string, int> const abilMap = {
@@ -44,11 +47,12 @@ int parseCharacteristics(char abilities[10][8]) {
 Monster *generateMonsterCharacter() {
 	MonsterDescription md;
 	bool hasMonster = false;
+	int index = 1;
 	while (!hasMonster) {
 		int prob = rand() % 100 + 1;
-		int randIndex = rand() % monsters.size();
+		index = rand() % monsters.size();
 
-		md = monsters.at(randIndex);
+		md = monsters.at(index);
 		if (prob < md.rarity) {
 			hasMonster = true;
 		}
@@ -66,6 +70,11 @@ Monster *generateMonsterCharacter() {
 	npm->HP = md.HP.getValue();
 	npm->damage = md.damage;
 	npm->rarity = md.rarity;
+
+	if (hasCharacteristic(npm, NPC_UNIQ)) {
+		monsters.erase(monsters.begin() + index);
+	}
+
 	return npm;
 };
 
