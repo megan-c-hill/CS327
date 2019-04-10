@@ -39,7 +39,9 @@ int main(int argc, char *argv[]) {
 	bool shouldSave = false;
 	bool shouldLoad = false;
 	bool shouldSetMonsters = false;
+	bool shouldSetItems = false;
 	int numMonsters = 10;
+	int numItems = 15;
 	char fileName[100] = "dungeon";
 	initCharacterMap();
 	initTeleportMap();
@@ -52,8 +54,12 @@ int main(int argc, char *argv[]) {
 			shouldLoad = true;
 		} else if (strcmp(argv[argIndex], "--nummon") == 0) {
 			shouldSetMonsters = true;
+		} else if (strcmp(argv[argIndex], "--numitems") == 0) {
+			shouldSetItems = true;
 		} else {
-			if (shouldSetMonsters) {
+			if(shouldSetItems) {
+				numItems = (int) strtol(argv[argIndex], (char**) NULL, 10);
+			} else if (shouldSetMonsters) {
 				numMonsters = (int) strtol(argv[argIndex], (char **) NULL, 10);
 			} else {
 				strcpy(fileName, argv[argIndex]);
@@ -65,7 +71,7 @@ int main(int argc, char *argv[]) {
 	if (shouldLoad) {
 		loadDungeon(fileName, numMonsters);
 	} else {
-		generateRandomFloor(numMonsters);
+		generateRandomFloor(numMonsters, numItems);
 	}
 	if (shouldSave) {
 		saveDungeon(fileName);

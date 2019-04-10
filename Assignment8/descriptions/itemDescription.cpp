@@ -226,3 +226,27 @@ void ItemDescription::print() {
 		cout << endl;
 	}
 }
+
+Object* ItemDescription::createObject() {
+	Object *obj = new Object();
+	strcpy(obj->name, name);
+	for(int i = 0; i<100 && strcmp(description[i], "NONE") != 0; i++) {
+		strcpy(obj->description[i], description[i]);
+	}
+	for(int i = 0; i<10 && strcmp(type[i], "NONE") != 0; i++) {
+		strcpy(obj->type[i], type[i]);
+	}
+	obj->color = color;
+	obj->hit = hit.getValue();
+	obj->damage = damage;
+	obj->dodge = dodge.getValue();
+	obj->def = def.getValue();
+	obj->weight = weight.getValue();
+	obj->speed = speed.getValue();
+	obj->attr = attr.getValue();
+	obj->value = value.getValue();
+	strcpy(obj->art, art);
+	obj->rarity = rarity;
+
+	return obj;
+}

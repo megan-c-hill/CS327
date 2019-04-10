@@ -256,9 +256,10 @@ int playerMove(Character *player) {
 	}
 
 	if ((dungeon[y][x].symbol == '<' && c == '<') || (dungeon[y][x].symbol == '>' && c == '>')) {
-		int numMonsters = rand() % 15 + 20;
+		int numMonsters = rand() % 15 + 10;
+		int numItems = rand() % 10 + 15;
 
-		generateRandomFloor(numMonsters);
+		generateRandomFloor(numMonsters, numItems);
 		return 0;
 	} else if (dungeon[y][x].hardness == 0 && !noOp) {
 		mvaddstr(0, 0, EMPTY_ROW_TEXT);

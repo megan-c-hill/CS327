@@ -2,6 +2,7 @@
 #define CS327_ITEMDESCRIPTION_H
 
 #include "dice.h"
+#include "../characters/Object.h"
 
 class ItemDescription {
 public:
@@ -24,6 +25,7 @@ public:
 
 	ItemDescription();
 	void print();
+	Object* createObject();
 };
 
 int readObjectFile();

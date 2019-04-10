@@ -44,6 +44,7 @@ extern DungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
+extern Object *objectMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern char rememberedMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 extern vector<MonsterDescription> monsters;

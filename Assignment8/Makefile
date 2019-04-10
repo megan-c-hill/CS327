@@ -1,5 +1,5 @@
 BIN = dungeon
-OBJS = dungeon.cpp shared-components.cpp generate-dungeon.cpp distance/distance.cpp distance/pathFindingHeap.cpp characters/Character.cpp characters/characterHeap.cpp characters/Monster.cpp descriptions/dice.cpp descriptions/monsterDescription.cpp descriptions/itemDescription.cpp
+OBJS = dungeon.cpp shared-components.cpp generate-dungeon.cpp distance/distance.cpp distance/pathFindingHeap.cpp characters/Character.cpp characters/characterHeap.cpp characters/Monster.cpp characters/Object.cpp descriptions/dice.cpp descriptions/monsterDescription.cpp descriptions/itemDescription.cpp
 
 all: $(BIN)
 

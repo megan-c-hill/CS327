@@ -10,6 +10,7 @@ DungeonPosition dungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 DistancePosition nonTunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 DistancePosition tunnelDistance[TOTAL_HEIGHT][TOTAL_WIDTH];
 Character *characterMap[TOTAL_HEIGHT][TOTAL_WIDTH];
+Object *objectMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 char teleportDungeon[TOTAL_HEIGHT][TOTAL_WIDTH];
 char rememberedMap[TOTAL_HEIGHT][TOTAL_WIDTH];
 vector<MonsterDescription> monsters;
@@ -56,26 +57,29 @@ void printFullDungeon() {
 	mvaddstr(0, 0, EMPTY_ROW_TEXT);
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
-			if (characterMap[i][j] != NULL && teleportDungeon[i][j] == ' ') {
+			if (objectMap[i][j] != NULL) {
+				attron(COLOR_PAIR(objectMap[i][j]->color));
+				mvaddch(i + 1, j, '*');
+				attroff(COLOR_PAIR(objectMap[i][j]->color));
+			} else if (characterMap[i][j] != NULL) {
 				attron(COLOR_PAIR(characterMap[i][j]->color));
 				mvaddch(i + 1, j, characterMap[i][j]->symbol);
 				attroff(COLOR_PAIR(characterMap[i][j]->color));
+			} else if (teleportDungeon[i][j] != ' ') {
+				attron(COLOR_PAIR(COLOR_BLUE));
+				mvaddch(i + 1, j, teleportDungeon[i][j]);
+				attroff(COLOR_PAIR(COLOR_BLUE));
 			} else {
-				if (teleportDungeon[i][j] != ' ') {
-					attron(COLOR_PAIR(COLOR_BLUE));
-					mvaddch(i + 1, j, teleportDungeon[i][j]);
-					attroff(COLOR_PAIR(COLOR_BLUE));
-				} else {
-					attron(COLOR_PAIR(COLOR_BLACK));
-					mvaddch(i + 1, j, dungeon[i][j].symbol);
-					attroff(COLOR_PAIR(COLOR_BLACK));
-				}
+				attron(COLOR_PAIR(COLOR_BLACK));
+				mvaddch(i + 1, j, dungeon[i][j].symbol);
+				attroff(COLOR_PAIR(COLOR_BLACK));
 			}
 		}
 
 	}
 	mvaddstr(22, 0, EMPTY_ROW_TEXT);
 	mvaddstr(23, 0, EMPTY_ROW_TEXT);
+
 	refresh();
 }
 

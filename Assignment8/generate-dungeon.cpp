@@ -6,6 +6,7 @@
 #include "shared-components.h"
 #include "characters/Character.h"
 #include "characters/Monster.h"
+#include "characters/Object.h"
 #include "characters/characterHeap.h"
 
 #ifdef __APPLE__
@@ -253,7 +254,7 @@ void saveDungeon(char *fileName) {
 	fclose(file);
 }
 
-void generateRandomFloor(int numMonsters) {
+void generateRandomFloor(int numMonsters, int numItems) {
 	int i, j;
 	for (i = 0; i < TOTAL_HEIGHT; i++) {
 		for (j = 0; j < TOTAL_WIDTH; j++) {
@@ -282,4 +283,5 @@ void generateRandomFloor(int numMonsters) {
 	connectRooms();
 	placeStairsAndPlayer();
 	placeMonsters(numMonsters);
+	placeItems(numItems);
 }
