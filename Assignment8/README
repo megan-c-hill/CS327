@@ -1,11 +1,14 @@
-Parses given monster descriptions.
+Loads monster description which we parsed in the previous assignment.
 
-My code does not check for duplicates, but limits the number of characteristics for that trait to the max number.
-Ex: There are 7 colors, (I don't handle gray), so if you pass more than 7 colors only the first 7 will be handled
- 	COLOR BLUE BLUE BLUE BLUE BLUE BLUE RED GREEN CYAN
- Would return:
- 	COLOR: 2 2 2 2 2 2 0
- With GREEN and CYAN being left of completely. Abilities is also handled in the same way.
+Loads in the basic characteristics. Once a monster with the trait UNIQ or
+an artifact object has been placed in the dungeon once it can not be placed in the dungeon again.
 
-And because I didn't have time to get description working completely correctly (with malloc) the description is limited
-to 100 lines and will stop after that, so if you want to write a description over 770 characters you are out of luck
+Visible Effects: This adds colors to the dungeon, new symbols for monsters, as well as adding their names to the
+monster description  list
+
+You can specify the number of items with a switch, but that switches must be in this order
+
+./dungeon --nummon # --numitems #
+
+NOTE: For colors, and object types only the first one is accounted for. In addition in my implementation Objects can not stack.
+

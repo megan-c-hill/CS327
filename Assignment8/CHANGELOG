@@ -100,3 +100,21 @@
 4/3  Handle monsters that are incorrectly formatted
 	 Update README and CHANGELOG
 	 Make it work on Linux
+4/6  Parse item descriptions
+	 Init commit for Assignment8
+4/7  Use vector to store descriptions
+	 Ability to play game again
+	 Fix CMake error
+	 Adding colors
+	 Generate loaded monsters
+4/8  Parsing characters
+	 Make colors work
+	 Fix speed bug
+	 Print useful info in monster list
+	 Seperate monster and character
+4/9	 Show Items
+	 Rendering in Correct Order
+	 Correct Symbols
+4/10 Handling Unique
+	 Clear items when switching floors
+	 Update README and CHANGELOG
