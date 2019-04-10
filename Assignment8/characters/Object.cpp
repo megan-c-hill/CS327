@@ -9,7 +9,7 @@ Object *generateObject() {
 		int randIndex = rand() % items.size();
 
 		id = items.at(randIndex);
-		if (prob > id.rarity) {
+		if (prob < id.rarity) {
 			return id.createObject();
 		}
 	}

@@ -49,7 +49,7 @@ Monster *generateMonsterCharacter() {
 		int randIndex = rand() % monsters.size();
 
 		md = monsters.at(randIndex);
-		if (prob > md.rarity) {
+		if (prob < md.rarity) {
 			hasMonster = true;
 		}
 	}

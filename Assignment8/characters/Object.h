@@ -18,6 +18,7 @@ public:
 	int attr;
 	int value;
 	char art[6];
+	char symbol;
 	int rarity;
 	int x;
 	int y;

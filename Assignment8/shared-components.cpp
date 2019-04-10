@@ -42,7 +42,7 @@ void printRememberedDungeon(int x, int y) {
 				attroff(COLOR_PAIR(characterMap[i][j]->color));
 			} else if (objectMap[i][j] != NULL && abs(y - i) <= 2 && abs(x - j) <= 2) {
 				attron(COLOR_PAIR(objectMap[i][j]->color));
-				mvaddch(i + 1, j, '*');
+				mvaddch(i + 1, j, objectMap[i][j]->symbol);
 				attroff(COLOR_PAIR(objectMap[i][j]->color));
 			} else {
 				attron(COLOR_PAIR(COLOR_BLACK));
@@ -67,7 +67,7 @@ void printFullDungeon() {
 				attroff(COLOR_PAIR(COLOR_BLUE));
 			} else if (objectMap[i][j] != NULL) {
 				attron(COLOR_PAIR(objectMap[i][j]->color));
-				mvaddch(i + 1, j, '*');
+				mvaddch(i + 1, j, objectMap[i][j]->symbol);
 				attroff(COLOR_PAIR(objectMap[i][j]->color));
 			} else if (characterMap[i][j] != NULL) {
 				attron(COLOR_PAIR(characterMap[i][j]->color));
