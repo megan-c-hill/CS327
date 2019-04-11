@@ -8,6 +8,7 @@
 #include "characters/Monster.h"
 #include "characters/Object.h"
 #include "characters/characterHeap.h"
+#include <iostream>
 
 #ifdef __APPLE__
 
@@ -22,6 +23,8 @@
 #endif
 
 #define MAX_ROOMS 8
+
+using namespace std;
 
 //ENHANCEMENT Generate random number of rooms
 //ENHANCEMENT make corridors more random and have less of them

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <zconf.h>
 #include <ncurses.h>
+#include <cstring>
 #include "Character.h"
 #include "../shared-components.h"
 #include "../distance/distance.h"
