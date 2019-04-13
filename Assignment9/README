@@ -1,0 +1,14 @@
+Loads monster description which we parsed in the previous assignment.
+
+Loads in the basic characteristics. Once a monster with the trait UNIQ or
+an artifact object has been placed in the dungeon once it can not be placed in the dungeon again.
+
+Visible Effects: This adds colors to the dungeon, new symbols for monsters, as well as adding their names to the
+monster description  list
+
+You can specify the number of items with a switch, but that switches must be in this order
+
+./dungeon --nummon # --numitems #
+
+NOTE: For colors, and object types only the first one is accounted for. In addition in my implementation Objects can not stack.
+

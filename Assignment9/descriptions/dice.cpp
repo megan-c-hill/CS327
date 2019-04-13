@@ -21,3 +21,11 @@ string Dice::print() {
 	result += std::to_string(sides);
 	return result;
 }
+
+int Dice::getValue() {
+	int sum = base;
+	for(int i = 0; i < dice; i++) {
+		sum += rand() % sides + 1;
+	};
+	return sum;
+}

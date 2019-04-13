@@ -2,28 +2,44 @@
 #include "itemDescription.h"
 #include <iostream>
 #include <fstream>
+#include "../shared-components.h"
 #include <string>
 #include <cstring>
 #include <unordered_map>
-#include <descriptions/itemDescription.h>
-#include "../characters/Object.h"
-
+#include <ncurses.h>
 
 using namespace std;
 
-enum colors {
-	RED, GREEN, BLUE, CYAN, YELLOW, MAGENTA, WHITE, BLACK
+static unordered_map<string, char> const symbolMap = {
+		{"WEAPON",     '|'},
+		{"OFFHAND",    ')'},
+		{"RANGED",     '}'},
+		{"ARMOR",      '['},
+		{"HELMET",     ']'},
+		{"CLOAK",      '('},
+		{"GLOVES",     '{'},
+		{"BOOTS",      '\\'},
+		{"RING",       '}'},
+		{"AMULET",     '\"'},
+		{"LIGHT",      '_'},
+		{"SCROLL",     '~'},
+		{"BOOK",       '?'},
+		{"GOLD",       '$'},
+		{"AMMUNITION", '/'},
+		{"FOOD",       ','},
+		{"WAND",       '-'},
+		{"CONTAINER",  '%'}
 };
 
-static unordered_map<string, enum colors> const colorMap = {
-		{"RED",     RED},
-		{"GREEN",   GREEN},
-		{"BLUE",    BLUE},
-		{"CYAN",    CYAN},
-		{"YELLOW",  YELLOW},
-		{"MAGENTA", MAGENTA},
-		{"WHITE",   WHITE},
-		{"BLACK",   BLACK}
+static unordered_map<string, int> const colorMap = {
+		{"WHITE",   COLOR_WHITE},
+		{"RED",     COLOR_RED},
+		{"GREEN",   COLOR_GREEN},
+		{"BLUE",    COLOR_BLUE},
+		{"CYAN",    COLOR_CYAN},
+		{"YELLOW",  COLOR_YELLOW},
+		{"MAGENTA", COLOR_MAGENTA},
+		{"BLACK",   COLOR_BLACK}
 };
 
 Dice parseDice2(string diceDescription) {
@@ -61,13 +77,12 @@ void parseLine(string basic_string, ItemDescription *descr) {
 				nextIndex = data.find_first_of(' ');
 			}
 			strcpy(descr->type[count], data.substr(0, nextIndex).c_str());
-		}else if (keyword.compare("COLOR") == 0) {
+		} else if (keyword.compare("COLOR") == 0) {
 			if (descr->assignedFields[3]) {
 				descr->fieldDoubleAssigned = true;
 			}
 			descr->assignedFields[3] = true;
-			enum colors c = colorMap.at(data);
-			descr->color = c;
+			descr->color = colorMap.at(data);
 		} else if (keyword.compare("HIT") == 0) {
 			if (descr->assignedFields[4]) {
 				descr->fieldDoubleAssigned = true;
@@ -86,13 +101,13 @@ void parseLine(string basic_string, ItemDescription *descr) {
 			}
 			descr->assignedFields[6] = true;
 			descr->dodge = parseDice2(data);
-		}else if (keyword.compare("DEF") == 0) {
+		} else if (keyword.compare("DEF") == 0) {
 			if (descr->assignedFields[7]) {
 				descr->fieldDoubleAssigned = true;
 			}
 			descr->assignedFields[7] = true;
 			descr->def = parseDice2(data);
-		}else if (keyword.compare("WEIGHT") == 0) {
+		} else if (keyword.compare("WEIGHT") == 0) {
 			if (descr->assignedFields[8]) {
 				descr->fieldDoubleAssigned = true;
 			}
@@ -104,13 +119,13 @@ void parseLine(string basic_string, ItemDescription *descr) {
 			}
 			descr->assignedFields[9] = true;
 			descr->speed = parseDice2(data);
-		}else if (keyword.compare("ATTR") == 0) {
+		} else if (keyword.compare("ATTR") == 0) {
 			if (descr->assignedFields[10]) {
 				descr->fieldDoubleAssigned = true;
 			}
 			descr->assignedFields[10] = true;
 			descr->attr = parseDice2(data);
-		}else if (keyword.compare("VAL") == 0) {
+		} else if (keyword.compare("VAL") == 0) {
 			if (descr->assignedFields[11]) {
 				descr->fieldDoubleAssigned = true;
 			}
@@ -139,7 +154,6 @@ int readObjectFile() {
 	char filePath[100] = "";
 	strcat(filePath, getenv("HOME"));
 	strcat(filePath, "/.rlg327/object_desc.txt");
-  cout << filePath << endl;
 
 	ifstream myfile(filePath);
 	getline(myfile, line);
@@ -156,7 +170,7 @@ int readObjectFile() {
 
 			while (getline(myfile, line)) {
 				if (line.compare("END") == 0) {
-					(*md).print();
+					items.push_back(*md);
 				}
 
 				if (line.compare("DESC") == 0) {
@@ -200,11 +214,11 @@ ItemDescription::ItemDescription() {
 void ItemDescription::print() {
 	bool allFieldsAssigned = true;
 	for (int i = 0; i < 9; i++) {
-		if(!assignedFields[i]) {
+		if (!assignedFields[i]) {
 			allFieldsAssigned = false;
 		}
 	}
-	if(allFieldsAssigned && !fieldDoubleAssigned) {
+	if (allFieldsAssigned && !fieldDoubleAssigned) {
 		cout << "NAME: " << name << endl;
 		cout << "DESCR: " << endl;
 		for (int i = 0; i < 100 && strcmp(description[i], "NONE") != 0; i++) {
@@ -228,4 +242,29 @@ void ItemDescription::print() {
 		cout << "RARITY: " << rarity << endl;
 		cout << endl;
 	}
+}
+
+Object *ItemDescription::createObject() {
+	Object *obj = new Object();
+	strcpy(obj->name, name);
+	for (int i = 0; i < 100 && strcmp(description[i], "NONE") != 0; i++) {
+		strcpy(obj->description[i], description[i]);
+	}
+	for (int i = 0; i < 10 && strcmp(type[i], "NONE") != 0; i++) {
+		strcpy(obj->type[i], type[i]);
+	}
+	obj->color = color;
+	obj->hit = hit.getValue();
+	obj->damage = damage;
+	obj->dodge = dodge.getValue();
+	obj->def = def.getValue();
+	obj->weight = weight.getValue();
+	obj->speed = speed.getValue();
+	obj->attr = attr.getValue();
+	obj->value = value.getValue();
+	strcpy(obj->art, art);
+	obj->symbol = symbolMap.at(type[0]);
+	obj->rarity = rarity;
+
+	return obj;
 }
