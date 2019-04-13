@@ -13,6 +13,8 @@ public:
 	void displayEquipment();
 	void wearItem();
 	void takeOffEquipment();
+	void expungeItem();
+	void dropItem();
 };
 
 Player *generatePlayerCharacter();

@@ -7,16 +7,16 @@
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
 static unordered_map<string, int> const equipmentTypeIndexMap = {
-		{"WEAPON",   0},
-		{"OFFHAND",    1},
+		{"WEAPON",  0},
+		{"OFFHAND", 1},
 		{"RANGED",  2},
-		{"ARMOR", 3},
-		{"HELMET",    4},
-		{"CLOAK",  5},
-		{"GLOVES", 6},
-		{"BOOTS",    7},
-		{"AMULET",    8},
-		{"LIGHT", 9},
+		{"ARMOR",   3},
+		{"HELMET",  4},
+		{"CLOAK",   5},
+		{"GLOVES",  6},
+		{"BOOTS",   7},
+		{"AMULET",  8},
+		{"LIGHT",   9},
 		{"RING",    10}
 };
 
@@ -196,6 +196,12 @@ int playerMove(Player *player) {
 	} else if (c == 't') {
 		(*player).takeOffEquipment();
 		return playerMove(player);
+	} else if (c == 'x') {
+		(*player).expungeItem();
+		return playerMove(player);
+	} else if (c == 'd') {
+		(*player).dropItem();
+		return playerMove(player);
 	} else if (c == 'f') {
 		fogOfWarActivated = !fogOfWarActivated;
 		printDungeon(player);
@@ -286,7 +292,7 @@ void Player::wearItem() {
 
 	int c = getch();
 
-	if(inventory[c-48] != NULL) {
+	if (inventory[c - 48] != NULL) {
 		int equipmentIndex = equipmentTypeIndexMap.at(inventory[c - 48]->type[0]);
 
 		Object *temp = equipment[equipmentIndex];
@@ -294,7 +300,7 @@ void Player::wearItem() {
 		inventory[c - 48] = temp;
 
 		showEquipment();
-		while(getch() != 27);
+		while (getch() != 27);
 	}
 
 	printDungeon(this);
@@ -305,17 +311,50 @@ void Player::takeOffEquipment() {
 
 	int c = getch();
 
-	if(equipment[c-97] != NULL) {
+	if (equipment[c - 97] != NULL) {
 		for (int i = 0; i < 10; i++) {
 			if (inventory[i] == NULL) {
-				inventory[i] = equipment[c-97];
-				equipment[c-97] = NULL;
+				inventory[i] = equipment[c - 97];
+				equipment[c - 97] = NULL;
 				showInventory();
 
-				while(getch() != 27);
+				while (getch() != 27);
 				break;
 			}
 		}
+	}
+
+	printDungeon(this);
+}
+
+void Player::expungeItem() {
+	showInventory();
+
+	int c = getch();
+
+	free(inventory[c - 48]);
+	inventory[c - 48] = NULL;
+
+	showInventory();
+
+	while (getch() != 27);
+
+	printDungeon(this);
+}
+
+void Player::dropItem() {
+	showInventory();
+
+	int c = getch();
+
+	if (inventory[c - 48] != NULL && objectMap[y][x] == NULL) {
+		objectMap[y][x] = inventory[c - 48];
+		inventory[c - 48] = NULL;
+
+		showInventory();
+
+		while (getch() != 27);
+
 	}
 
 	printDungeon(this);
