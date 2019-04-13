@@ -7,8 +7,6 @@
 class Monster : public Character {
 public:
 	char description[100][78];
-	int HP;
-	Dice damage;
 	int rarity;
 	int characteristics;
 	uint8_t knownPlayerX;

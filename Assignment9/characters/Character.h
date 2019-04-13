@@ -3,11 +3,15 @@
 
 #include <stdint.h>
 #include "../descriptions/dice.h"
+#include "./Object.h"
+#include <iostream>
 
 class Character {
 public:
 	char name[100];
 	int color;
+	int HP;
+	Dice damage;
 	uint8_t x;
 	uint8_t y;
 	uint8_t speed;
@@ -15,7 +19,9 @@ public:
 };
 
 class Player : public Character {
-
+public:
+	Object* equipment[12];
+	Object* inventory[10];
 };
 
 Player *generatePlayerCharacter();
@@ -24,9 +30,7 @@ void placePlayer();
 
 void placePlayerWithCoords(int x, int y);
 
-void initCharacterMap();
-
-void initTeleportMap();
+void initMaps();
 
 void initRememberedMap();
 

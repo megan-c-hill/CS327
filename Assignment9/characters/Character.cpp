@@ -16,11 +16,27 @@ Player *generatePlayerCharacter() {
 	Player *pc = (Player *) malloc(sizeof(Player));
 
 	pc->speed = 10;
+	pc->HP = 100;
+	pc->damage = Dice(0, 1, 4);
 	pc->symbol = '@';
 	strcpy(pc->name, "You");
 	pc->color = COLOR_BLUE;
 
 	return pc;
+}
+
+void pickup(Player *player) {
+	if(objectMap[player->y][player->x] != NULL) {
+		cout << "Has object" << endl;
+		for(int i = 0; i < 10; i++) {
+			if(player->inventory[i] == NULL) {
+				cout << "Has room in inventory" << endl;
+				player->inventory[i] = objectMap[player->x][player->y];
+				objectMap[player->y][player->x] = NULL;
+				return;
+			}
+		}
+	}
 }
 
 void placePlayer() {
@@ -53,24 +69,16 @@ void placePlayerWithCoords(int x, int y) {
 	playerQueue = newCharacterHeap(head);
 }
 
-void initCharacterMap() {
-	for (int i = 0; i < TOTAL_HEIGHT; i++) {
-		for (int j = 0; j < TOTAL_WIDTH; j++) {
-			characterMap[i][j] = NULL;
-		}
-
-	}
-}
-
-void initTeleportMap() {
+void initMaps() {
 	for (int i = 0; i < TOTAL_HEIGHT; i++) {
 		for (int j = 0; j < TOTAL_WIDTH; j++) {
 			teleportDungeon[i][j] = ' ';
+			characterMap[i][j] = NULL;
+			objectMap[i][j] = NULL;
 		}
 	}
 }
 
-//TODO combine at least two of these init maps
 void initRememberedMap() {
 	for (int y = 0; y < TOTAL_HEIGHT; y++) {
 		for (int x = 0; x < TOTAL_WIDTH; x++) {
@@ -93,6 +101,16 @@ void moveToSpot(Character *character, int newX, int newY) {
 		removeFromHeap(playerQueue, characterMap[newY][newX]);
 	}
 	characterMap[character->y][character->x] = character;
+}
+void playerMoveToSpot(Player *character, int newX, int newY) {
+	characterMap[character->y][character->x] = NULL;
+	character->x = newX;
+	character->y = newY;
+	if (characterMap[newY][newX] != NULL) {
+		removeFromHeap(playerQueue, characterMap[newY][newX]);
+	}
+	characterMap[character->y][character->x] = character;
+	pickup(character);
 }
 
 void tunnel(Character *character, int newX, int newY) {
@@ -265,7 +283,7 @@ int playerMove(Character *player) {
 	} else if (dungeon[y][x].hardness == 0 && !noOp) {
 		mvaddstr(0, 0, EMPTY_ROW_TEXT);
 		refresh();
-		moveToSpot(player, x, y);
+		playerMoveToSpot(static_cast<Player *>(player), x, y);
 		return 1;
 	} else if (dungeon[y][x].hardness != 0) {
 		mvaddstr(0, 0, "That is not a valid move, try again");
