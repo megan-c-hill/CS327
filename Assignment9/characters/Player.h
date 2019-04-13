@@ -7,6 +7,11 @@ class Player : public Character {
 public:
 	Object* equipment[12];
 	Object* inventory[10];
+	void showInventory();
+	void showEquipment();
+	void displayInventory();
+	void displayEquipment();
+	void wearItem();
 };
 
 Player *generatePlayerCharacter();

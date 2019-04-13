@@ -2,8 +2,23 @@
 #include <ncurses.h>
 #include "../shared-components.h"
 #include "../generate-dungeon.h"
+#include <unordered_map>
 
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
+
+static unordered_map<string, int> const equipmentTypeIndexMap = {
+		{"WEAPON",   0},
+		{"OFFHAND",    1},
+		{"RANGED",  2},
+		{"ARMOR", 3},
+		{"HELMET",    4},
+		{"CLOAK",  5},
+		{"GLOVES", 6},
+		{"BOOTS",    7},
+		{"AMULET",    8},
+		{"LIGHT", 9},
+		{"RING",    10}
+};
 
 Player *generatePlayerCharacter() {
 	Player *pc = (Player *) malloc(sizeof(Player));
@@ -39,10 +54,10 @@ void placePlayer() {
 }
 
 void pickup(Player *player) {
-	if(objectMap[player->y][player->x] != NULL) {
-		for(int i = 0; i < 10; i++) {
-			if(player->inventory[i] == NULL) {
-				player->inventory[i] = objectMap[player->x][player->y];
+	if (objectMap[player->y][player->x] != NULL) {
+		for (int i = 0; i < 10; i++) {
+			if (player->inventory[i] == NULL) {
+				player->inventory[i] = objectMap[player->y][player->x];
 				objectMap[player->y][player->x] = NULL;
 				return;
 			}
@@ -71,7 +86,7 @@ void playerMoveToSpot(Player *character, int newX, int newY) {
 	pickup(character);
 }
 
-void teleportMode(Character *player) {
+void teleportMode(Player *player) {
 	bool fogOfWarStatus = fogOfWarActivated;
 	fogOfWarActivated = false;
 	int oldX = player->x;
@@ -79,7 +94,7 @@ void teleportMode(Character *player) {
 	int newX = oldX;
 	int newY = oldY;
 	teleportDungeon[oldY][oldX] = '*';
-	printDungeon(static_cast<Player *>(player));
+	printDungeon(player);
 
 	char c = getchar();
 	while (c != 'r' && c != 't') {
@@ -116,14 +131,14 @@ void teleportMode(Character *player) {
 			newX = oldX;
 			newY = oldY;
 		}
-		printDungeon(static_cast<Player *>(player));
+		printDungeon(player);
 		c = getchar();
 	}
 
 	if (c == 't') {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, newX, newY);
-		printDungeon(static_cast<Player *>(player));
+		printDungeon(player);
 	} else {
 		teleportDungeon[newY][newX] = ' ';
 		moveToSpot(player, rand() % (TOTAL_WIDTH - 5) + 1, rand() % (TOTAL_HEIGHT - 4) + 1);
@@ -164,14 +179,23 @@ int playerMove(Player *player) {
 	} else if (c == 'q' || c == 'Q') {
 		return -1;
 	} else if (c == 'm') {
-		displayMonsterList(0, static_cast<Player *>(player));
+		displayMonsterList(0, player);
 		return playerMove(player);
 	} else if (c == 't') {
 		teleportMode(player);
 		return 1;
+	} else if (c == 'i') {
+		(*player).displayInventory();
+		return playerMove(player);
+	} else if (c == 'e') {
+		(*player).displayEquipment();
+		return playerMove(player);
+	} else if (c == 'w') {
+		(*player).wearItem();
+		return playerMove(player);
 	} else if (c == 'f') {
 		fogOfWarActivated = !fogOfWarActivated;
-		printDungeon(static_cast<Player *>(player));
+		printDungeon(player);
 		playerMove(player);
 		return 1;
 	} else {
@@ -187,7 +211,7 @@ int playerMove(Player *player) {
 	} else if (dungeon[y][x].hardness == 0 && !noOp) {
 		mvaddstr(0, 0, EMPTY_ROW_TEXT);
 		refresh();
-		playerMoveToSpot(static_cast<Player *>(player), x, y);
+		playerMoveToSpot(player, x, y);
 		return 1;
 	} else if (dungeon[y][x].hardness != 0) {
 		mvaddstr(0, 0, "That is not a valid move, try again");
@@ -196,4 +220,80 @@ int playerMove(Player *player) {
 
 	playerMove(player);
 	return 1;
+}
+
+void Player::showInventory() {
+	initscr();
+
+	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
+		mvaddstr(i, 0, EMPTY_ROW_TEXT);
+	}
+
+	mvaddstr(0, 0, "Player Inventory");
+	mvaddstr(1, 0, "----------------");
+
+	for (int i = 0; i < 10; i++) {
+		char itemData[81];
+		sprintf(itemData, "%c) %s",
+				48 + i,
+				inventory[i] ? inventory[i]->name : "");
+		mvaddstr(i + 3, 0, itemData);
+	}
+	refresh();
+}
+
+void Player::showEquipment() {
+	initscr();
+
+	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
+		mvaddstr(i, 0, EMPTY_ROW_TEXT);
+	}
+
+	mvaddstr(0, 0, "Player Equipment");
+	mvaddstr(1, 0, "----------------");
+
+	for (int i = 0; i < 12; i++) {
+		char itemData[81];
+		sprintf(itemData, "%c) %s",
+				97 + i,
+				equipment[i] ? equipment[i]->name : "");
+		mvaddstr(i + 3, 0, itemData);
+	}
+	refresh();
+}
+
+void Player::displayInventory() {
+	showInventory();
+
+	while (getch() != 27);
+
+	printDungeon(this);
+}
+
+void Player::displayEquipment() {
+	showEquipment();
+
+	while (getch() != 27);
+
+	printDungeon(this);
+}
+
+void Player::wearItem() {
+	showInventory();
+
+	int c = getch();
+
+
+	if(inventory[c-48] != NULL) {
+		int equipmentIndex = equipmentTypeIndexMap.at(inventory[c - 48]->type[0]);
+
+		Object *temp = equipment[equipmentIndex];
+		equipment[equipmentIndex] = inventory[c - 48];
+		inventory[c - 48] = temp;
+
+		showEquipment();
+		while(getch() != 27);
+	}
+
+	printDungeon(this);
 }
