@@ -12,6 +12,7 @@ public:
 	void displayInventory();
 	void displayEquipment();
 	void wearItem();
+	void takeOffEquipment();
 };
 
 Player *generatePlayerCharacter();

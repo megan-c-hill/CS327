@@ -181,7 +181,7 @@ int playerMove(Player *player) {
 	} else if (c == 'm') {
 		displayMonsterList(0, player);
 		return playerMove(player);
-	} else if (c == 't') {
+	} else if (c == 'g') {
 		teleportMode(player);
 		return 1;
 	} else if (c == 'i') {
@@ -192,6 +192,9 @@ int playerMove(Player *player) {
 		return playerMove(player);
 	} else if (c == 'w') {
 		(*player).wearItem();
+		return playerMove(player);
+	} else if (c == 't') {
+		(*player).takeOffEquipment();
 		return playerMove(player);
 	} else if (c == 'f') {
 		fogOfWarActivated = !fogOfWarActivated;
@@ -283,7 +286,6 @@ void Player::wearItem() {
 
 	int c = getch();
 
-
 	if(inventory[c-48] != NULL) {
 		int equipmentIndex = equipmentTypeIndexMap.at(inventory[c - 48]->type[0]);
 
@@ -293,6 +295,27 @@ void Player::wearItem() {
 
 		showEquipment();
 		while(getch() != 27);
+	}
+
+	printDungeon(this);
+}
+
+void Player::takeOffEquipment() {
+	showEquipment();
+
+	int c = getch();
+
+	if(equipment[c-97] != NULL) {
+		for (int i = 0; i < 10; i++) {
+			if (inventory[i] == NULL) {
+				inventory[i] = equipment[c-97];
+				equipment[c-97] = NULL;
+				showInventory();
+
+				while(getch() != 27);
+				break;
+			}
+		}
 	}
 
 	printDungeon(this);
