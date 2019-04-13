@@ -18,18 +18,6 @@ public:
 	char symbol;
 };
 
-class Player : public Character {
-public:
-	Object* equipment[12];
-	Object* inventory[10];
-};
-
-Player *generatePlayerCharacter();
-
-void placePlayer();
-
-void placePlayerWithCoords(int x, int y);
-
 void initMaps();
 
 void initRememberedMap();

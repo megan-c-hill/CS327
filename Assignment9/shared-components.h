@@ -8,6 +8,7 @@
 #include "descriptions/monsterDescription.h"
 #include "descriptions/itemDescription.h"
 #include "characters/Character.h"
+#include "characters/Player.h"
 
 #define TOTAL_HEIGHT 21
 #define TOTAL_WIDTH 80
@@ -62,4 +63,4 @@ void printFullDungeon();
 
 void drawRoom(int roomNumber);
 
-#endif //CS327_SHARED_COMPONENTS_H
+#endif

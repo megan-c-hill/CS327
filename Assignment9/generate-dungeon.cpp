@@ -6,6 +6,7 @@
 #include "shared-components.h"
 #include "characters/Character.h"
 #include "characters/Monster.h"
+#include "characters/Player.h"
 #include "characters/Object.h"
 #include "characters/characterHeap.h"
 #include <iostream>
