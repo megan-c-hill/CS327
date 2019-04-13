@@ -24,6 +24,8 @@ void initRememberedMap();
 
 void moveToSpot(Character *character, int newX, int newY);
 
+int displayMonsterList(int offset, Character *player);
+
 void tunnel(Character *character, int newX, int newY);
 
 void playGame();

@@ -15,5 +15,7 @@ void placePlayer();
 
 void placePlayerWithCoords(int x, int y);
 
+int playerMove(Player* player);
+
 
 #endif //CS327_PLAYER_H
