@@ -22,6 +22,7 @@ public:
 	int rarity;
 	int x;
 	int y;
+	void showDetails();
 };
 
 Object* generateObject();

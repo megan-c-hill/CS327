@@ -247,10 +247,10 @@ void ItemDescription::print() {
 Object *ItemDescription::createObject() {
 	Object *obj = new Object();
 	strcpy(obj->name, name);
-	for (int i = 0; i < 100 && strcmp(description[i], "NONE") != 0; i++) {
+	for (int i = 0; i < 100; i++) {
 		strcpy(obj->description[i], description[i]);
 	}
-	for (int i = 0; i < 10 && strcmp(type[i], "NONE") != 0; i++) {
+	for (int i = 0; i < 10; i++) {
 		strcpy(obj->type[i], type[i]);
 	}
 	obj->color = color;

@@ -15,6 +15,7 @@ public:
 	void takeOffEquipment();
 	void expungeItem();
 	void dropItem();
+	void inspectItem();
 };
 
 Player *generatePlayerCharacter();

@@ -202,6 +202,9 @@ int playerMove(Player *player) {
 	} else if (c == 'd') {
 		(*player).dropItem();
 		return playerMove(player);
+	} else if (c == 'I') {
+		(*player).inspectItem();
+		return playerMove(player);
 	} else if (c == 'f') {
 		fogOfWarActivated = !fogOfWarActivated;
 		printDungeon(player);
@@ -355,6 +358,20 @@ void Player::dropItem() {
 
 		while (getch() != 27);
 
+	}
+
+	printDungeon(this);
+}
+
+void Player::inspectItem() {
+	showInventory();
+
+	int c = getch();
+
+	if(inventory[c-48] != NULL) {
+		(*inventory[c-48]).showDetails();
+
+		while (getch() != 27);
 	}
 
 	printDungeon(this);
