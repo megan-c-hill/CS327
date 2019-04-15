@@ -367,8 +367,12 @@ void Player::wearItem() {
 
 	if (inventory[c - 48] != NULL) {
 		int equipmentIndex = equipmentTypeIndexMap.at(inventory[c - 48]->type[0]);
+		speed += inventory[c-48]->speed;
 
 		Object *temp = equipment[equipmentIndex];
+		if(temp != NULL) {
+			speed -= temp->speed;
+		}
 		equipment[equipmentIndex] = inventory[c - 48];
 		inventory[c - 48] = temp;
 
@@ -388,6 +392,7 @@ void Player::takeOffEquipment() {
 		for (int i = 0; i < 10; i++) {
 			if (inventory[i] == NULL) {
 				inventory[i] = equipment[c - 97];
+				speed -= equipment[c-97]->speed;
 				equipment[c - 97] = NULL;
 				showInventory();
 

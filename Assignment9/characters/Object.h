@@ -22,6 +22,10 @@ public:
 	int rarity;
 	int x;
 	int y;
+	int getSpeed() {
+		return speed;
+	}
+
 	void showDetails();
 };
 
