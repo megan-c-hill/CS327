@@ -24,6 +24,10 @@ Player *generatePlayerCharacter() {
 	Player *pc = (Player *) malloc(sizeof(Player));
 
 	pc->speed = 10;
+	strcpy(pc->description[0], "This is you!");
+	for(int i = 1; i < 100; i++) {
+		strcpy(pc->description[i], "NONE");
+	}
 	pc->HP = 100;
 	pc->damage = Dice(0, 1, 4);
 	pc->symbol = '@';
@@ -146,6 +150,69 @@ void teleportMode(Player *player) {
 	fogOfWarActivated = fogOfWarStatus;
 }
 
+void targetMode(Player *player) {
+	bool fogOfWarStatus = fogOfWarActivated;
+	fogOfWarActivated = false;
+	int oldX = player->x;
+	int oldY = player->y;
+	int newX = oldX;
+	int newY = oldY;
+	teleportDungeon[oldY][oldX] = '*';
+	printDungeon(player);
+
+	char c = getchar();
+	while (c != 't' && c!=27) {
+		if (c == 'y' || c == '7') {
+			newX--;
+			newY--;
+		} else if (c == 'k' || c == '8') {
+			newY--;
+		} else if (c == 'u' || c == '9') {
+			newX++;
+			newY--;
+		} else if (c == 'l' || c == '6') {
+			newX++;
+		} else if (c == ' ' || c == ',' || c == '5') {
+
+		} else if (c == 'h' || c == '4') {
+			newX--;
+		} else if (c == 'n' || c == '3') {
+			newX++;
+			newY++;
+		} else if (c == 'j' || c == '2') {
+			newY++;
+		} else if (c == 'b' || c == '1') {
+			newX--;
+			newY++;
+		}
+
+		if (newX > 0 && newX < 79 && newY > 0 && newY < 20) {
+			teleportDungeon[oldY][oldX] = ' ';
+			teleportDungeon[newY][newX] = '*';
+			oldX = newX;
+			oldY = newY;
+		} else {
+			newX = oldX;
+			newY = oldY;
+		}
+		printDungeon(player);
+		c = getchar();
+	}
+
+	if (c == 't') {
+		teleportDungeon[newY][newX] = ' ';
+		if(characterMap[newY][newX] != NULL) {
+			(*characterMap[newY][newX]).displayCharacter();
+
+			while(getch() != 27);
+		}
+	}
+
+	teleportDungeon[newY][newX] = ' ';
+	fogOfWarActivated = fogOfWarStatus;
+	printDungeon(player);
+}
+
 int playerMove(Player *player) {
 	char c = getchar();
 	int x = player->x;
@@ -204,6 +271,9 @@ int playerMove(Player *player) {
 		return playerMove(player);
 	} else if (c == 'I') {
 		(*player).inspectItem();
+		return playerMove(player);
+	} else if (c == 'L') {
+		targetMode(player);
 		return playerMove(player);
 	} else if (c == 'f') {
 		fogOfWarActivated = !fogOfWarActivated;

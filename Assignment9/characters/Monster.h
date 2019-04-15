@@ -6,7 +6,6 @@
 
 class Monster : public Character {
 public:
-	char description[100][78];
 	int rarity;
 	int characteristics;
 	uint8_t knownPlayerX;

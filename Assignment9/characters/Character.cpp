@@ -138,3 +138,31 @@ void playGame() {
 		return;
 	}
 }
+
+void Character::displayCharacter() {
+	initscr();
+
+	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
+		mvaddstr(i, 0, EMPTY_ROW_TEXT);
+	}
+
+	mvaddstr(0, 0, "Character Details");
+	mvaddstr(1, 0, "-----------------");
+
+	mvprintw(2, 0, "NAME: %s", name);
+	mvprintw(3, 0, "DESC: ");
+	int index = 4;
+
+	for (int i = 0; i < 100 && strcmp(description[i], "NONE") != 0; i++) {
+		mvprintw(index, 0, description[i]);
+		index ++;
+	}
+	index ++;
+	mvprintw(index, 0, "SYMB: %c", symbol);
+	mvprintw(index + 1, 0, "COLOR: %d", color);
+	mvprintw(index + 2, 0, "HP: %d", HP);
+	mvprintw(index + 3, 0, "DAMAGE: %s", damage.print().c_str());
+	mvprintw(index + 4, 0, "SPEED: %d", speed);
+	mvprintw(index + 5, 0, "POSITION: (%d, %d)", x, y);
+	refresh();
+}

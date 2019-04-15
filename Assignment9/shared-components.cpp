@@ -65,14 +65,14 @@ void printFullDungeon() {
 				attron(COLOR_PAIR(COLOR_BLUE));
 				mvaddch(i + 1, j, teleportDungeon[i][j]);
 				attroff(COLOR_PAIR(COLOR_BLUE));
-			} else if (objectMap[i][j] != NULL) {
-				attron(COLOR_PAIR(objectMap[i][j]->color));
-				mvaddch(i + 1, j, objectMap[i][j]->symbol);
-				attroff(COLOR_PAIR(objectMap[i][j]->color));
 			} else if (characterMap[i][j] != NULL) {
 				attron(COLOR_PAIR(characterMap[i][j]->color));
 				mvaddch(i + 1, j, characterMap[i][j]->symbol);
 				attroff(COLOR_PAIR(characterMap[i][j]->color));
+			} else if (objectMap[i][j] != NULL) {
+				attron(COLOR_PAIR(objectMap[i][j]->color));
+				mvaddch(i + 1, j, objectMap[i][j]->symbol);
+				attroff(COLOR_PAIR(objectMap[i][j]->color));
 			} else {
 				attron(COLOR_PAIR(COLOR_BLACK));
 				mvaddch(i + 1, j, dungeon[i][j].symbol);

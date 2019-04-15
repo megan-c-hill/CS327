@@ -9,13 +9,15 @@
 class Character {
 public:
 	char name[100];
+	char description[100][78];
+	char symbol;
 	int color;
 	int HP;
 	Dice damage;
+	uint8_t speed;
 	uint8_t x;
 	uint8_t y;
-	uint8_t speed;
-	char symbol;
+	void displayCharacter();
 };
 
 void initMaps();
