@@ -155,13 +155,17 @@ void Character::displayCharacter() {
 
 	for (int i = 0; i < 100 && strcmp(description[i], "NONE") != 0; i++) {
 		mvprintw(index, 0, description[i]);
-		index ++;
+		index++;
 	}
-	index ++;
+	index++;
 	mvprintw(index, 0, "SYMB: %c", symbol);
 	mvprintw(index + 1, 0, "COLOR: %d", color);
 	mvprintw(index + 2, 0, "HP: %d", HP);
-	mvprintw(index + 3, 0, "DAMAGE: %s", damage.print().c_str());
+	mvprintw(index + 3, 0, "DAMAGE: ");
+	for (int i = 0; i < damage.size(); i++) {
+		mvprintw(index + 3, 7 + 8 * i, "%s", damage.at(i).print().c_str());
+	}
+
 	mvprintw(index + 4, 0, "SPEED: %d", speed);
 	mvprintw(index + 5, 0, "POSITION: (%d, %d)", x, y);
 	refresh();

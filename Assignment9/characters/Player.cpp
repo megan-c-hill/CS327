@@ -3,6 +3,7 @@
 #include "../shared-components.h"
 #include "../generate-dungeon.h"
 #include <unordered_map>
+#include <algorithm>
 
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
@@ -29,7 +30,7 @@ Player *generatePlayerCharacter() {
 		strcpy(pc->description[i], "NONE");
 	}
 	pc->HP = 100;
-	pc->damage = Dice(0, 1, 4);
+	pc->damage.push_back(Dice(0, 1, 4));
 	pc->symbol = '@';
 	strcpy(pc->name, "You");
 	pc->color = COLOR_BLUE;
@@ -368,10 +369,18 @@ void Player::wearItem() {
 	if (inventory[c - 48] != NULL) {
 		int equipmentIndex = equipmentTypeIndexMap.at(inventory[c - 48]->type[0]);
 		speed += inventory[c-48]->speed;
+		damage.push_back(inventory[c-48]->damage);
 
 		Object *temp = equipment[equipmentIndex];
 		if(temp != NULL) {
 			speed -= temp->speed;
+			int pos = 0;
+			for (int j = 0; j<damage.size(); j++) {
+				if(damage.at(j).base == temp->damage.base && damage.at(j).sides == temp->damage.sides && damage.at(j).dice == temp->damage.dice) {
+					pos = j;
+				}
+			}
+			damage.erase(damage.begin() + pos);
 		}
 		equipment[equipmentIndex] = inventory[c - 48];
 		inventory[c - 48] = temp;
@@ -393,6 +402,13 @@ void Player::takeOffEquipment() {
 			if (inventory[i] == NULL) {
 				inventory[i] = equipment[c - 97];
 				speed -= equipment[c-97]->speed;
+				int pos;
+				for (int j = 0; j<damage.size(); j++) {
+					if(damage.at(j).base == equipment[c-97]->damage.base && damage.at(j).sides == equipment[c-97]->damage.sides && damage.at(j).dice == equipment[c-97]->damage.dice) {
+						pos = j;
+					}
+				}
+				damage.erase(damage.begin() + pos);
 				equipment[c - 97] = NULL;
 				showInventory();
 

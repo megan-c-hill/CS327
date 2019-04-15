@@ -5,6 +5,9 @@
 #include "../descriptions/dice.h"
 #include "./Object.h"
 #include <iostream>
+#include <vector>
+
+using namespace std;
 
 class Character {
 public:
@@ -13,7 +16,7 @@ public:
 	char symbol;
 	int color;
 	int HP;
-	Dice damage;
+	vector<Dice> damage;
 	uint8_t speed;
 	uint8_t x;
 	uint8_t y;
