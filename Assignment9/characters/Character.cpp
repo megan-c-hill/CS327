@@ -39,11 +39,18 @@ void initRememberedMap() {
 
 void moveToSpot(Character *character, int newX, int newY) {
 	characterMap[character->y][character->x] = NULL;
+	if (characterMap[newY][newX] != NULL) {
+		if (character->symbol == '@' || characterMap[newY][newX]->symbol == '@') {
+			// Battle
+		} else {
+			Character *temp = characterMap[newY][newX];
+			temp->x = character->x;
+			temp->y = character->y;
+			characterMap[temp->y][temp->x] = temp;
+		}
+	}
 	character->x = newX;
 	character->y = newY;
-	if (characterMap[newY][newX] != NULL) {
-		removeFromHeap(playerQueue, characterMap[newY][newX]);
-	}
 	characterMap[character->y][character->x] = character;
 }
 
