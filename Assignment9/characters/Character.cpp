@@ -38,20 +38,33 @@ void initRememberedMap() {
 }
 
 void moveToSpot(Character *character, int newX, int newY) {
-	characterMap[character->y][character->x] = NULL;
 	if (characterMap[newY][newX] != NULL) {
 		if (character->symbol == '@' || characterMap[newY][newX]->symbol == '@') {
-			// Battle
+			int damage = (*character).getDamage();
+			Character* victim = characterMap[newY][newX];
+			victim->HP -= damage;
+			mvprintw(0, 0, "Damage: %d", damage);
+			refresh();
+			usleep(500000);
+			if(victim->HP <= 0) {
+				removeFromHeap(playerQueue, victim);
+				characterMap[victim->y][victim->x] = NULL;
+			}
 		} else {
 			Character *temp = characterMap[newY][newX];
 			temp->x = character->x;
 			temp->y = character->y;
 			characterMap[temp->y][temp->x] = temp;
+			character->x = newX;
+			character->y = newY;
+			characterMap[character->y][character->x] = character;
 		}
+	} else {
+		characterMap[character->y][character->x] = NULL;
+		character->x = newX;
+		character->y = newY;
+		characterMap[character->y][character->x] = character;
 	}
-	character->x = newX;
-	character->y = newY;
-	characterMap[character->y][character->x] = character;
 }
 
 void tunnel(Character *character, int newX, int newY) {
@@ -176,4 +189,12 @@ void Character::displayCharacter() {
 	mvprintw(index + 4, 0, "SPEED: %d", speed);
 	mvprintw(index + 5, 0, "POSITION: (%d, %d)", x, y);
 	refresh();
+}
+
+int Character::getDamage() {
+	int totalDamage = 0;
+	for(int i = 0; i < damage.size(); i++) {
+		totalDamage += damage.at(i).getValue();
+	}
+	return totalDamage;
 }

@@ -29,7 +29,7 @@ Player *generatePlayerCharacter() {
 	for(int i = 1; i < 100; i++) {
 		strcpy(pc->description[i], "NONE");
 	}
-	pc->HP = 100;
+	pc->HP = 500;
 	pc->damage.push_back(Dice(0, 1, 4));
 	pc->symbol = '@';
 	strcpy(pc->name, "You");
@@ -81,13 +81,7 @@ void placePlayerWithCoords(int x, int y) {
 }
 
 void playerMoveToSpot(Player *character, int newX, int newY) {
-	characterMap[character->y][character->x] = NULL;
-	character->x = newX;
-	character->y = newY;
-	if (characterMap[newY][newX] != NULL) {
-		removeFromHeap(playerQueue, characterMap[newY][newX]);
-	}
-	characterMap[character->y][character->x] = character;
+	moveToSpot(character, newX, newY);
 	pickup(character);
 }
 
@@ -142,7 +136,7 @@ void teleportMode(Player *player) {
 
 	if (c == 't') {
 		teleportDungeon[newY][newX] = ' ';
-		moveToSpot(player, newX, newY);
+		playerMoveToSpot(player, newX, newY);
 		printDungeon(player);
 	} else {
 		teleportDungeon[newY][newX] = ' ';
