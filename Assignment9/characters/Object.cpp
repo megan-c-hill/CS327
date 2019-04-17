@@ -16,11 +16,11 @@ Object *generateObject() {
 		int randIndex = rand() % items.size();
 
 		id = items.at(randIndex);
-		if(strcmp(id.art, "TRUE") == 0) {
-			items.erase(items.begin() + randIndex);
-		}
 
 		if (prob < id.rarity) {
+			if (strcmp(id.art, "TRUE") == 0) {
+				items.erase(items.begin() + randIndex);
+			}
 			return id.createObject();
 		}
 	}
@@ -33,9 +33,9 @@ void placeItems(int numItems) {
 	while (counter < numItems) {
 		x = rand() % (TOTAL_WIDTH - 2) + 1;
 		y = rand() % (TOTAL_HEIGHT - 2) + 1;
-		Object *object = generateObject();
 
 		if (dungeon[y][x].hardness == 0 && objectMap[y][x] == NULL) {
+			Object *object = generateObject();
 			object->x = x;
 			object->y = y;
 			objectMap[y][x] = object;
@@ -65,10 +65,10 @@ void Object::showDetails() {
 
 	for (int i = 0; i < 100 && strcmp(description[i], "NONE") != 0; i++) {
 		mvprintw(index, 0, description[i]);
-		index ++;
+		index++;
 	}
 	mvprintw(index, 0, "TYPE: %s", type[0]);
-	index ++;
+	index++;
 	mvprintw(index, 0, "SYMB: %c", symbol);
 	mvprintw(index + 1, 0, "COLOR: %d", color);
 	mvprintw(index + 2, 0, "HIT: %d", hit);

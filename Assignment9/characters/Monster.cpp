@@ -86,9 +86,9 @@ void placeMonsters(int numMonsters) {
 	while (counter < numMonsters) {
 		x = rand() % (TOTAL_WIDTH - 2) + 1;
 		y = rand() % (TOTAL_HEIGHT - 2) + 1;
-		Monster *monster = generateMonsterCharacter();
 
 		if (dungeon[y][x].hardness == 0 && characterMap[y][x] == NULL) {
+			Monster *monster = generateMonsterCharacter();
 			monster->x = x;
 			monster->y = y;
 			characterMap[y][x] = monster;
