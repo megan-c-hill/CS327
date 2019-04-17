@@ -47,13 +47,21 @@ void placePlayer() {
 		Character *pc = generatePlayerCharacter();
 
 		if (dungeon[y][x].symbol == '#' || dungeon[y][x].symbol == '.') {
-			pc->x = x;
-			pc->y = y;
-			characterMap[y][x] = pc;
-			isDone = true;
-			CharacterNode *head = newCharacterNode(pc, 0);
-			playerQueue = newCharacterHeap(head);
-			playerCharacter = pc;
+			if(playerQueue == NULL) {
+				pc->x = x;
+				pc->y = y;
+				characterMap[y][x] = pc;
+				CharacterNode *head = newCharacterNode(pc, 0);
+				playerQueue = newCharacterHeap(head);
+				playerCharacter = pc;
+			} else {
+				playerCharacter->x = x;
+				playerCharacter->y = y;
+				characterMap[y][x] = playerCharacter;
+				CharacterNode *head = newCharacterNode(playerCharacter, 0);
+				playerQueue = newCharacterHeap(head);
+			}
+				isDone = true;
 		}
 	}
 }
