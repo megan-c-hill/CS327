@@ -1,14 +1,24 @@
-Loads monster description which we parsed in the previous assignment.
+Updated Combat Schematics and Object handling
 
-Loads in the basic characteristics. Once a monster with the trait UNIQ or
-an artifact object has been placed in the dungeon once it can not be placed in the dungeon again.
+In my implementation objects related moves (equipping items, etc.) do not take a turn.
 
-Visible Effects: This adds colors to the dungeon, new symbols for monsters, as well as adding their names to the
-monster description  list
+If an action can not be completed, because of the current state or invalid user input it is handled "gracefully" (takes you back to last screen),
+but does not give any indication that happened.
+
+If a player has an item with large amounts of damage equipped it may be cropped off when examining the character, but it only
+said you had to show the description.
+
+In the current implementation it is impossible to have negative speed, but my code would have undefined behavior if you
+were to equip items such that your speed went under 0.
+
+If you teleport onto a spot where a monster is it initiates a fight with that monster, and the player
+reverts back to their previous spot.
+
+NOTE:
 
 You can specify the number of items with a switch, but that switches must be in this order
 
 ./dungeon --nummon # --numitems #
 
-NOTE: For colors, and object types only the first one is accounted for. In addition in my implementation Objects can not stack.
+For colors, and object types only the first one is accounted for. In addition in my implementation Objects can not stack.
 

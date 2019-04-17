@@ -119,3 +119,22 @@
 	 Clear items when switching floors
 	 Update README and CHANGELOG
 	 Make work on Linux
+4/12 Init commit for Assignment 9
+4/13 Pickup items
+	 Split player into own files
+	 More code for player
+	 Equip Items
+	 Take off Items
+	 Expunge and Drop items
+4/14 Show item descriptions
+4/15 Inspect Monsters
+	 Equipped Objects alter speed
+	 Damage bonus from items
+	 Monsters don't attack eachother
+	 Updated combat
+4/16 Killing boss ends game
+	 Works in Linux
+4/17 PC lasts between floow
+	 Wear two rings
+	 Fix Unique/Artifact bug
+	 Update README and CHANGELOG
