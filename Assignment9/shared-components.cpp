@@ -21,6 +21,7 @@ Position *downStairs;
 CharacterHeap *playerQueue;
 Character *playerCharacter;
 bool fogOfWarActivated;
+bool bossKilled;
 
 void drawRoom(int roomNumber) {
 	for (int i = rooms[roomNumber].y; i < rooms[roomNumber].y + rooms[roomNumber].height; i++) {

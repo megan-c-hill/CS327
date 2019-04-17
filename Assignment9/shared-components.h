@@ -56,6 +56,7 @@ extern Position *downStairs;
 extern CharacterHeap *playerQueue;
 extern Character *playerCharacter;
 extern bool fogOfWarActivated;
+extern bool bossKilled;
 
 void printDungeon(Player *player);
 

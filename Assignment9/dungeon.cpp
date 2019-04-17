@@ -40,6 +40,7 @@ int main(int argc, char *argv[]) {
 	bool shouldLoad = false;
 	bool shouldSetMonsters = false;
 	bool shouldSetItems = false;
+	bossKilled = false;
 	int numMonsters = 10;
 	int numItems = 15;
 	char fileName[100] = "dungeon";

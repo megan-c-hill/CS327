@@ -13,6 +13,14 @@
 
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
+int isBoss(Character *character) {
+	if (character->symbol == '@') {
+		return 0;
+	}
+
+	return static_cast<Monster*>(character)->characteristics & 0x00000100;
+}
+
 void initMaps() {
 	for (int i = 0; i < TOTAL_HEIGHT; i++) {
 		for (int j = 0; j < TOTAL_WIDTH; j++) {
@@ -41,12 +49,15 @@ void moveToSpot(Character *character, int newX, int newY) {
 	if (characterMap[newY][newX] != NULL) {
 		if (character->symbol == '@' || characterMap[newY][newX]->symbol == '@') {
 			int damage = (*character).getDamage();
-			Character* victim = characterMap[newY][newX];
+			Character *victim = characterMap[newY][newX];
 			victim->HP -= damage;
 			mvprintw(0, 0, "Damage: %d", damage);
 			refresh();
 			usleep(500000);
-			if(victim->HP <= 0) {
+			if (victim->HP <= 0) {
+				if (isBoss(victim)) {
+					bossKilled = true;
+				}
 				removeFromHeap(playerQueue, victim);
 				characterMap[victim->y][victim->x] = NULL;
 			}
@@ -122,7 +133,7 @@ int displayMonsterList(int offset, Character *player) {
 }
 
 void playGame() {
-	while (playerIsInHeap(playerQueue) && playerQueue->head->next != NULL) {
+	while (playerIsInHeap(playerQueue) && !bossKilled) {
 		int status = 1;
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
@@ -193,7 +204,7 @@ void Character::displayCharacter() {
 
 int Character::getDamage() {
 	int totalDamage = 0;
-	for(int i = 0; i < damage.size(); i++) {
+	for (int i = 0; i < damage.size(); i++) {
 		totalDamage += damage.at(i).getValue();
 	}
 	return totalDamage;
