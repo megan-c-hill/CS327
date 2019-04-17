@@ -370,6 +370,9 @@ void Player::wearItem() {
 
 	if (inventory[c - 48] != NULL) {
 		int equipmentIndex = equipmentTypeIndexMap.at(inventory[c - 48]->type[0]);
+		if(equipmentIndex == 10 && equipment[10] != NULL) {
+			equipmentIndex = 11;
+		}
 		speed += inventory[c-48]->speed;
 		damage.push_back(inventory[c-48]->damage);
 
