@@ -31,4 +31,4 @@ add_executable(CS327
         Assignment9/characters/Monster.cpp
         Assignment9/characters/Monster.h
         Assignment9/characters/Object.cpp
-        Assignment9/characters/Object.h)
+        Assignment9/characters/Object.h Assignment9/characters/Player.cpp Assignment9/characters/Player.h)
