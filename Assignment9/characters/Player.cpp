@@ -2,6 +2,7 @@
 #include <ncurses.h>
 #include "../shared-components.h"
 #include "../generate-dungeon.h"
+#include <cstring>
 #include <unordered_map>
 #include <algorithm>
 
