@@ -1,0 +1,4 @@
+#Mon Apr 22 15:53:33 CDT 2019
+base.0=/Users/megansISU/Desktop/android-ndk/native-activity/app/build/intermediates/dex/release/mergeDexRelease/out
+path.0=classes.dex
+renamed.0=classes.dex

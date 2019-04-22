@@ -1,0 +1,4 @@
+/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/native-activity.dir
+/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/native_app_glue.dir

@@ -1,0 +1,4 @@
+#Mon Apr 22 17:28:29 CDT 2019
+base.0=/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/dex/debug/mergeDexDebug/out
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,62 @@
+{
+  "stringTable": {
+    "0": "/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/debug/arm64-v8a",
+    "1": "--target=aarch64-none-linux-android21 --gcc-toolchain=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_activity_EXPORTS -I/Users/megansISU/Library/Android/sdk/ndk-bundle/sources/android/native_app_glue -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++ -std=gnu++11 -Wall -Werror -O0 -fno-limit-debug-info -fPIC",
+    "2": "--target=aarch64-none-linux-android21 --gcc-toolchain=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "3": "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC  "
+  },
+  "buildFiles": [
+    "/Users/megansISU/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/Users/megansISU/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/debug/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "native-activity-Debug-arm64-v8a": {
+      "buildCommand": "/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/debug/arm64-v8a --target native-activity",
+      "buildType": "debug",
+      "toolchain": "3012804384",
+      "abi": "arm64-v8a",
+      "artifactName": "native-activity",
+      "files": [
+        {
+          "src": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/main.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so"
+    },
+    "native_app_glue-Debug-arm64-v8a": {
+      "buildCommand": "/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/debug/arm64-v8a --target native_app_glue",
+      "buildType": "debug",
+      "toolchain": "3012804384",
+      "abi": "arm64-v8a",
+      "artifactName": "native_app_glue",
+      "files": [
+        {
+          "src": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/Users/megansISU/Library/Android/sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c",
+          "flagsOrdinal": 3,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/debug/arm64-v8a/libnative_app_glue.a"
+    }
+  },
+  "toolchains": {
+    "3012804384": {
+      "cCompilerExecutable": "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+      "cppCompilerExecutable": "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

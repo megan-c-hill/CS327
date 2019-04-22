@@ -1,0 +1,7 @@
+# ninja log v5
+0	221	1555971359	CMakeFiles/native_app_glue.dir/Users/megansISU/Library/Android/sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c.o	ea24b1d7b042b121
+223	316	1555971359	libnative_app_glue.a	829d918a454c920b
+0	631	1555971359	CMakeFiles/native-activity.dir/main.cpp.o	b9aaf673e4a6d19a
+632	829	1555971359	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/x86/libnative-activity.so	cbc05f01ffb79028
+3	3487	1555972103	CMakeFiles/native-activity.dir/main.cpp.o	b9aaf673e4a6d19a
+3487	3768	1555972103	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/x86/libnative-activity.so	cbc05f01ffb79028
