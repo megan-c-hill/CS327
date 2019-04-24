@@ -1,0 +1,2 @@
+[1/2] Building C object CMakeFiles/hello-jni.dir/hello-jni.c.o
+[2/2] Linking C shared library /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/release/obj/x86/libhello-jni.so

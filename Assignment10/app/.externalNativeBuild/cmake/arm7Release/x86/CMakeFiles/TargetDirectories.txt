@@ -1,0 +1,3 @@
+/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/arm7Release/x86/CMakeFiles/rebuild_cache.dir
+/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/arm7Release/x86/CMakeFiles/edit_cache.dir
+/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/arm7Release/x86/CMakeFiles/hello-jni.dir
