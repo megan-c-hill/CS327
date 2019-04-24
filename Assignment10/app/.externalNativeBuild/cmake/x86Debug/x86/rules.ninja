@@ -20,16 +20,6 @@ rule CUSTOM_COMMAND
 
 
 #############################################
-# Rule for compiling C files.
-
-rule C_COMPILER__hello-jni
-  depfile = $DEP_FILE
-  deps = gcc
-  command = /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android23 --gcc-toolchain=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
-  description = Building C object $out
-
-
-#############################################
 # Rule for compiling CXX files.
 
 rule CXX_COMPILER__hello-jni

@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include "characters/Character.h"
 #include "shared-components.h"
 
 #ifdef __cplusplus
@@ -28,8 +29,8 @@ Java_com_example_hellojni_HelloJni_main(JNIEnv *env, jobject thiz) {
 	bossKilled = false;
 	int numMonsters = 10;
 	int numItems = 15;
-////	initMaps();
-////	initRememberedMap();
+	initMaps();
+//	initRememberedMap();
 
 	fogOfWarActivated = true;
 

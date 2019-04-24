@@ -29,3 +29,12 @@
 1903	2091	1556145934	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	bbd4092179c80943
 2	1668	1556145968	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
 1668	1866	1556145969	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	bbd4092179c80943
+3	1702	1556146060	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+2	1497	1556146085	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+3	1592	1556146132	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+3	1742	1556146213	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+4	2291	1556146427	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	7b15a87c2b9e7373
+2	2343	1556146427	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+3	2390	1556146427	CMakeFiles/hello-jni.dir/shared-components.cpp.o	7c8b27ce15ccf8e2
+3	2713	1556146428	CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o	4acf4728b12afbf9
+2713	2913	1556146428	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	30c6c9ec244b0c87

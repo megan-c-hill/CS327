@@ -6,8 +6,8 @@ add_library(hello-jni SHARED
         generate-dungeon.h
         shared-components.cpp
         shared-components.h
-#        characters/Character.cpp
-#        characters/Character.h
+        characters/Character.cpp
+        characters/Character.h
 #        characters/Monster.cpp
 #        characters/Player.cpp
 #        characters/characterHeap.cpp
