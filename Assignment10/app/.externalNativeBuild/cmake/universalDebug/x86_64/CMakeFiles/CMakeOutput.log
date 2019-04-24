@@ -3,17 +3,17 @@ The host system is: Darwin - 18.5.0 - x86_64
 Determining if the C compiler works passed with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_3e8c7"
-[1/2] Building C object CMakeFiles/cmTC_3e8c7.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_3e8c7
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_51324"
+[1/2] Building C object CMakeFiles/cmTC_51324.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_51324
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_dd0ac"
-[1/2] Building C object CMakeFiles/cmTC_dd0ac.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_dd0ac
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_fe23f"
+[1/2] Building C object CMakeFiles/cmTC_fe23f.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_fe23f
 Android (5058415 based on r339409) clang version 8.0.2 (https://android.googlesource.com/toolchain/clang 40173bab62ec746213857d083c0e8b0abb568790) (https://android.googlesource.com/toolchain/llvm 7a6618d69e7e8111e1d49dc9e7813767c5ca756a) (based on LLVM 8.0.2svn)
 Target: x86_64-none-linux-android23
 Thread model: posix
@@ -23,16 +23,16 @@ Found candidate GCC installation: /Users/megansISU/Library/Android/sdk/ndk-bundl
 Selected GCC installation: /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld" --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_dd0ac /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections CMakeFiles/cmTC_dd0ac.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtend_android.o
+ "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld" --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_fe23f /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections CMakeFiles/cmTC_fe23f.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(x86_64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_dd0ac"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_dd0ac.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_dd0ac]
+  ignore line: [Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_fe23f"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_fe23f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_fe23f]
   ignore line: [Android (5058415 based on r339409) clang version 8.0.2 (https://android.googlesource.com/toolchain/clang 40173bab62ec746213857d083c0e8b0abb568790) (https://android.googlesource.com/toolchain/llvm 7a6618d69e7e8111e1d49dc9e7813767c5ca756a) (based on LLVM 8.0.2svn)]
   ignore line: [Target: x86_64-none-linux-android23]
   ignore line: [Thread model: posix]
@@ -44,7 +44,7 @@ Parsed C implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld" --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_dd0ac /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections CMakeFiles/cmTC_dd0ac.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtend_android.o]
+  link line: [ "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld" --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_fe23f /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections CMakeFiles/cmTC_fe23f.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtend_android.o]
     arg [/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld] ==> ignore
     arg [--sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -55,7 +55,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_dd0ac] ==> ignore
+    arg [cmTC_fe23f] ==> ignore
     arg [/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o] ==> ignore
     arg [-L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64] ==> dir [/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64]
     arg [-L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x] ==> dir [/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x]
@@ -76,7 +76,7 @@ Parsed C implicit link information from above output:
     arg [-zrelro] ==> ignore
     arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_dd0ac.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_fe23f.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
@@ -100,9 +100,9 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_10772"
-[1/2] Building C object CMakeFiles/cmTC_10772.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_10772
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_e266c"
+[1/2] Building C object CMakeFiles/cmTC_e266c.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_e266c
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -114,9 +114,9 @@ Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_068e7"
-[1/2] Building C object CMakeFiles/cmTC_068e7.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_068e7
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_33729"
+[1/2] Building C object CMakeFiles/cmTC_33729.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_33729
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -128,9 +128,9 @@ Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_b142a"
-[1/2] Building C object CMakeFiles/cmTC_b142a.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_b142a
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_321c5"
+[1/2] Building C object CMakeFiles/cmTC_321c5.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_321c5
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -140,17 +140,17 @@ Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_551eb"
-[1/2] Building CXX object CMakeFiles/cmTC_551eb.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_551eb
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_8ef9f"
+[1/2] Building CXX object CMakeFiles/cmTC_8ef9f.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_8ef9f
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d2449"
-[1/2] Building CXX object CMakeFiles/cmTC_d2449.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_d2449
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_2607b"
+[1/2] Building CXX object CMakeFiles/cmTC_2607b.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_2607b
 Android (5058415 based on r339409) clang version 8.0.2 (https://android.googlesource.com/toolchain/clang 40173bab62ec746213857d083c0e8b0abb568790) (https://android.googlesource.com/toolchain/llvm 7a6618d69e7e8111e1d49dc9e7813767c5ca756a) (based on LLVM 8.0.2svn)
 Target: x86_64-none-linux-android23
 Thread model: posix
@@ -160,16 +160,16 @@ Found candidate GCC installation: /Users/megansISU/Library/Android/sdk/ndk-bundl
 Selected GCC installation: /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld" --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_d2449 /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections CMakeFiles/cmTC_d2449.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtend_android.o
+ "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld" --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_2607b /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections CMakeFiles/cmTC_2607b.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(x86_64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d2449"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_d2449.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_d2449]
+  ignore line: [Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_2607b"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_2607b.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_2607b]
   ignore line: [Android (5058415 based on r339409) clang version 8.0.2 (https://android.googlesource.com/toolchain/clang 40173bab62ec746213857d083c0e8b0abb568790) (https://android.googlesource.com/toolchain/llvm 7a6618d69e7e8111e1d49dc9e7813767c5ca756a) (based on LLVM 8.0.2svn)]
   ignore line: [Target: x86_64-none-linux-android23]
   ignore line: [Thread model: posix]
@@ -181,7 +181,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld" --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_d2449 /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections CMakeFiles/cmTC_d2449.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtend_android.o]
+  link line: [ "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld" --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_2607b /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23 -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections CMakeFiles/cmTC_2607b.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtend_android.o]
     arg [/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld] ==> ignore
     arg [--sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -192,7 +192,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_d2449] ==> ignore
+    arg [cmTC_2607b] ==> ignore
     arg [/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/23/crtbegin_dynamic.o] ==> ignore
     arg [-L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64] ==> dir [/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/8.0.2/lib/linux/x86_64]
     arg [-L/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x] ==> dir [/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x]
@@ -213,7 +213,7 @@ Parsed CXX implicit link information from above output:
     arg [-zrelro] ==> ignore
     arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_d2449.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_2607b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-Bstatic] ==> ignore
     arg [-lc++] ==> lib [c++]
     arg [-Bdynamic] ==> ignore
@@ -243,9 +243,9 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_b4424"
-[1/2] Building CXX object CMakeFiles/cmTC_b4424.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_b4424
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_872a1"
+[1/2] Building CXX object CMakeFiles/cmTC_872a1.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_872a1
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -310,9 +310,9 @@ Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_9e0f7"
-[1/2] Building CXX object CMakeFiles/cmTC_9e0f7.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_9e0f7
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_9b9de"
+[1/2] Building CXX object CMakeFiles/cmTC_9b9de.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_9b9de
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -377,9 +377,9 @@ Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_98b7b"
-[1/2] Building CXX object CMakeFiles/cmTC_98b7b.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_98b7b
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_43269"
+[1/2] Building CXX object CMakeFiles/cmTC_43269.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_43269
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -444,9 +444,9 @@ Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/universalDebug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_161cc"
-[1/2] Building CXX object CMakeFiles/cmTC_161cc.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_161cc
+Run Build Command:"/Users/megansISU/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_6b564"
+[1/2] Building CXX object CMakeFiles/cmTC_6b564.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_6b564
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

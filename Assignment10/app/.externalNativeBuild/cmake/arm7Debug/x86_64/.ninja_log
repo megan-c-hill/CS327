@@ -1,3 +1,3 @@
 # ninja log v5
-0	205	1556138782	CMakeFiles/hello-jni.dir/hello-jni.c.o	12db937ff339360e
-206	268	1556138782	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86_64/libhello-jni.so	12ebf0df07c63118
+0	173	1556140851	CMakeFiles/hello-jni.dir/hello-jni.c.o	12db937ff339360e
+174	219	1556140851	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86_64/libhello-jni.so	12ebf0df07c63118
