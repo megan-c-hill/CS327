@@ -3,3 +3,9 @@
 401	595	1555971358	libnative_app_glue.a	6dba32d25b8cffc8
 1	867	1555971358	CMakeFiles/native-activity.dir/main.cpp.o	b864b3368596f290
 867	987	1555971358	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/x86_64/libnative-activity.so	9329beb6438340bc
+2	1760	1556074743	CMakeFiles/native-activity.dir/main.cpp.o	b864b3368596f290
+1760	1925	1556074743	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/x86_64/libnative-activity.so	9329beb6438340bc
+7	931	1556074840	CMakeFiles/native_app_glue.dir/Users/megansISU/Library/Android/sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c.o	2a5a0ee5c7eef7fb
+931	1140	1556074840	libnative_app_glue.a	6dba32d25b8cffc8
+3	1786	1556074841	CMakeFiles/native-activity.dir/main.cpp.o	b864b3368596f290
+1787	1964	1556074841	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/x86_64/libnative-activity.so	9329beb6438340bc

@@ -1,1 +1,2 @@
-ninja: no work to do.
+[1/2] Building CXX object CMakeFiles/native-activity.dir/main.cpp.o
+[2/2] Linking CXX shared library /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/x86/libnative-activity.so

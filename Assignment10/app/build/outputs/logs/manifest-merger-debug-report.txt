@@ -4,33 +4,33 @@ ADDED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManif
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml:3:1-31:12
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml:3:1-31:12
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml:3:1-31:12
-MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/6c10d7454b80802c64acca30c20dd76e/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/c89983f92327ec78ddf7bc621aa7af9d/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.fragment:fragment:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/3e6ce52a0bbba80679a39e51be83d093/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/b85883ee6dda4624be1b28abd82742a6/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/d33f93a391c28cea78fc93c563905092/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/86a7b80f8ce17ca7410b550471762ea5/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/37855f0bd84c5053da5efafcbb142212/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/1593e15557b2232fe33b521e6fd0ec8d/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/55e85040ecdcbf81946b1403c9d28780/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/11a69501a699c9fc81d3d811a893368d/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/b614e1515876d1743f85d4745367ec31/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/00caa81991c873f8fca8705d4511a82f/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.customview:customview:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/0deda383d74c25f95a2345af8ab40548/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/29c944bff7222d2f5a3fc07c071b42e1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/1e9d57e434cf9a1603d5aa02fa0a1d47/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/fda7ec9d1e2c72465d2cad23de731a97/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/7537bb7c61b47edcc6ccef55b7766d16/AndroidManifest.xml:17:1-25:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/09715480c445e404c9f84bf34b26a146/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/e441d20e4ee848c3cabd5d5197cede49/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/ce782386451690fdb65974401b79e6e5/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/7400ac688619d7b045d554bc2ef71338/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/884505a235bcbf7d937a87ed3fbfb2e8/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/d1ccf5d20a55bc063546f21b1bb37022/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/563d2c14d565d22ff34dff44027835a2/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/ea4c953c8453921a90436e2fe2f963af/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/2d54973a6381e851ba653b4a563f9dd1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/3a4f40a5db104805b5007cc19648e95b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/fa6e2065480ba026cc214d1627ee8918/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/19b7db715d59b9cfb7f7f2e3c686abf4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/86718192ba6c42798347b4b217e76148/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/926b39e4f83bb3a2fb87d9de26404f51/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/58ec340650ed93e548216fea9b6c340c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/33541b3a1a0869ccddd8ed1371c9de40/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/f081e2cd906acace2a3dfc4dc0530cda/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/e2a3f8d9a94ec56fbdda70ed91ff4c5b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/6432e6c50fe80e7c833ffc2e27de7a8c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/a8ecd5f1b257bbf6f37b31744dc63771/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/3bb0ce4c4bbf141ae5b18834c267caa2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/dd5936b0bfb77c7fe86ec079e46e41b1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/abebff292e38860b072c1ca364aa02b8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/254578dc1fc5e3f8914f60fd51e16430/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/75a445e11d46f8979a9d7d14b05c14d9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/9e31e7dcd764e7f92e3db070c8d2c30b/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/ac1957e534d913406ee8d6056717c5e9/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/481ffecd2cb363c4d5f6f377e831dd5a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/94d33ce26f6f96a309a8b91d0dba4942/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/3be685cb9038d5dfbc5187257dc72049/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/b0801a0e8fde4dbaa0582b900950296b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/ceec2092147d6e12814beb6c87ff0ba3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/61456c20d3fc60ad4e54634f1cdbc418/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/542cea7ad78adfbd2126b1ac31daeb9c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/264295442bcba83cea763afd1bfe54f1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/bb7da942a873905972451e93527447fb/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/6feaac104c90b8da6fa7a67bffe56ecd/AndroidManifest.xml:17:1-22:12
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml:3:1-31:12
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml:3:1-31:12
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml:3:1-31:12
@@ -50,14 +50,14 @@ INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidMa
 		INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml
 application
 ADDED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml:9:3-29:17
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/c89983f92327ec78ddf7bc621aa7af9d/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/c89983f92327ec78ddf7bc621aa7af9d/AndroidManifest.xml:9:5-20
-MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/fda7ec9d1e2c72465d2cad23de731a97/AndroidManifest.xml:22:5-89
-MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/fda7ec9d1e2c72465d2cad23de731a97/AndroidManifest.xml:22:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/7537bb7c61b47edcc6ccef55b7766d16/AndroidManifest.xml:22:5-23:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/7537bb7c61b47edcc6ccef55b7766d16/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/19b7db715d59b9cfb7f7f2e3c686abf4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/19b7db715d59b9cfb7f7f2e3c686abf4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/9e31e7dcd764e7f92e3db070c8d2c30b/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/9e31e7dcd764e7f92e3db070c8d2c30b/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/ac1957e534d913406ee8d6056717c5e9/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/ac1957e534d913406ee8d6056717c5e9/AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/fda7ec9d1e2c72465d2cad23de731a97/AndroidManifest.xml:22:18-86
+		ADDED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/9e31e7dcd764e7f92e3db070c8d2c30b/AndroidManifest.xml:22:18-86
 	android:label
 		ADDED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml:13:7-39
 	android:hasCode
@@ -96,60 +96,60 @@ uses-sdk
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml
-MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/6c10d7454b80802c64acca30c20dd76e/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/6c10d7454b80802c64acca30c20dd76e/AndroidManifest.xml:20:5-44
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/c89983f92327ec78ddf7bc621aa7af9d/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/c89983f92327ec78ddf7bc621aa7af9d/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.fragment:fragment:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/3e6ce52a0bbba80679a39e51be83d093/AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/3e6ce52a0bbba80679a39e51be83d093/AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/b85883ee6dda4624be1b28abd82742a6/AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/b85883ee6dda4624be1b28abd82742a6/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/d33f93a391c28cea78fc93c563905092/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/d33f93a391c28cea78fc93c563905092/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/86a7b80f8ce17ca7410b550471762ea5/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/86a7b80f8ce17ca7410b550471762ea5/AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/37855f0bd84c5053da5efafcbb142212/AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/37855f0bd84c5053da5efafcbb142212/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/1593e15557b2232fe33b521e6fd0ec8d/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/1593e15557b2232fe33b521e6fd0ec8d/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/55e85040ecdcbf81946b1403c9d28780/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/55e85040ecdcbf81946b1403c9d28780/AndroidManifest.xml:20:5-44
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/11a69501a699c9fc81d3d811a893368d/AndroidManifest.xml:20:5-44
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/11a69501a699c9fc81d3d811a893368d/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/b614e1515876d1743f85d4745367ec31/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/b614e1515876d1743f85d4745367ec31/AndroidManifest.xml:20:5-44
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/00caa81991c873f8fca8705d4511a82f/AndroidManifest.xml:20:5-44
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/00caa81991c873f8fca8705d4511a82f/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/0deda383d74c25f95a2345af8ab40548/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/0deda383d74c25f95a2345af8ab40548/AndroidManifest.xml:20:5-44
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/29c944bff7222d2f5a3fc07c071b42e1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/29c944bff7222d2f5a3fc07c071b42e1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/1e9d57e434cf9a1603d5aa02fa0a1d47/AndroidManifest.xml:20:5-44
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/1e9d57e434cf9a1603d5aa02fa0a1d47/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/fda7ec9d1e2c72465d2cad23de731a97/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/fda7ec9d1e2c72465d2cad23de731a97/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/7537bb7c61b47edcc6ccef55b7766d16/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/7537bb7c61b47edcc6ccef55b7766d16/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/09715480c445e404c9f84bf34b26a146/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/09715480c445e404c9f84bf34b26a146/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/e441d20e4ee848c3cabd5d5197cede49/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/e441d20e4ee848c3cabd5d5197cede49/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/ce782386451690fdb65974401b79e6e5/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/ce782386451690fdb65974401b79e6e5/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/7400ac688619d7b045d554bc2ef71338/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/7400ac688619d7b045d554bc2ef71338/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/884505a235bcbf7d937a87ed3fbfb2e8/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/884505a235bcbf7d937a87ed3fbfb2e8/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/d1ccf5d20a55bc063546f21b1bb37022/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/d1ccf5d20a55bc063546f21b1bb37022/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/563d2c14d565d22ff34dff44027835a2/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/563d2c14d565d22ff34dff44027835a2/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/ea4c953c8453921a90436e2fe2f963af/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/ea4c953c8453921a90436e2fe2f963af/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/2d54973a6381e851ba653b4a563f9dd1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/2d54973a6381e851ba653b4a563f9dd1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/3a4f40a5db104805b5007cc19648e95b/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/megansISU/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/3a4f40a5db104805b5007cc19648e95b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/fa6e2065480ba026cc214d1627ee8918/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/fa6e2065480ba026cc214d1627ee8918/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/19b7db715d59b9cfb7f7f2e3c686abf4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/19b7db715d59b9cfb7f7f2e3c686abf4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/86718192ba6c42798347b4b217e76148/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/86718192ba6c42798347b4b217e76148/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/926b39e4f83bb3a2fb87d9de26404f51/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/926b39e4f83bb3a2fb87d9de26404f51/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/58ec340650ed93e548216fea9b6c340c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/58ec340650ed93e548216fea9b6c340c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/33541b3a1a0869ccddd8ed1371c9de40/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/33541b3a1a0869ccddd8ed1371c9de40/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/f081e2cd906acace2a3dfc4dc0530cda/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/f081e2cd906acace2a3dfc4dc0530cda/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/e2a3f8d9a94ec56fbdda70ed91ff4c5b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/e2a3f8d9a94ec56fbdda70ed91ff4c5b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/6432e6c50fe80e7c833ffc2e27de7a8c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/6432e6c50fe80e7c833ffc2e27de7a8c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/a8ecd5f1b257bbf6f37b31744dc63771/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/a8ecd5f1b257bbf6f37b31744dc63771/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/3bb0ce4c4bbf141ae5b18834c267caa2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/3bb0ce4c4bbf141ae5b18834c267caa2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/dd5936b0bfb77c7fe86ec079e46e41b1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/dd5936b0bfb77c7fe86ec079e46e41b1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/abebff292e38860b072c1ca364aa02b8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/abebff292e38860b072c1ca364aa02b8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/254578dc1fc5e3f8914f60fd51e16430/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/254578dc1fc5e3f8914f60fd51e16430/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/75a445e11d46f8979a9d7d14b05c14d9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/75a445e11d46f8979a9d7d14b05c14d9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/9e31e7dcd764e7f92e3db070c8d2c30b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/9e31e7dcd764e7f92e3db070c8d2c30b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/ac1957e534d913406ee8d6056717c5e9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/ac1957e534d913406ee8d6056717c5e9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/481ffecd2cb363c4d5f6f377e831dd5a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/481ffecd2cb363c4d5f6f377e831dd5a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/94d33ce26f6f96a309a8b91d0dba4942/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/94d33ce26f6f96a309a8b91d0dba4942/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/3be685cb9038d5dfbc5187257dc72049/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/3be685cb9038d5dfbc5187257dc72049/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/b0801a0e8fde4dbaa0582b900950296b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/b0801a0e8fde4dbaa0582b900950296b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/ceec2092147d6e12814beb6c87ff0ba3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/ceec2092147d6e12814beb6c87ff0ba3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/61456c20d3fc60ad4e54634f1cdbc418/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/61456c20d3fc60ad4e54634f1cdbc418/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/542cea7ad78adfbd2126b1ac31daeb9c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/542cea7ad78adfbd2126b1ac31daeb9c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/264295442bcba83cea763afd1bfe54f1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/264295442bcba83cea763afd1bfe54f1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/bb7da942a873905972451e93527447fb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/bb7da942a873905972451e93527447fb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/6feaac104c90b8da6fa7a67bffe56ecd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/megansISU/.gradle/caches/transforms-2/files-2.1/6feaac104c90b8da6fa7a67bffe56ecd/AndroidManifest.xml:20:5-44
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml
 INJECTED from /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Apr 22 17:16:15 CDT 2019
+#Tue Apr 23 22:19:15 CDT 2019
 2.base=/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/dex/debug/mergeDexDebug/out
 0.path=lib/x86/libnative-activity.so
 2.baseType=DIRECTORY

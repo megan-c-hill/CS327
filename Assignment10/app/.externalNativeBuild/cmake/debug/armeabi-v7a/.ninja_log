@@ -3,3 +3,9 @@
 312	416	1555971361	libnative_app_glue.a	446a46967cea9268
 0	739	1555971361	CMakeFiles/native-activity.dir/main.cpp.o	377a16a4abbe797d
 740	899	1555971361	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so	76607126288bca31
+2	993	1556074746	CMakeFiles/native-activity.dir/main.cpp.o	377a16a4abbe797d
+993	1176	1556074746	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so	76607126288bca31
+2	491	1556074845	CMakeFiles/native_app_glue.dir/Users/megansISU/Library/Android/sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c.o	c6567ee7d6008da0
+491	604	1556074845	libnative_app_glue.a	446a46967cea9268
+4	1391	1556074846	CMakeFiles/native-activity.dir/main.cpp.o	377a16a4abbe797d
+1392	1568	1556074846	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so	76607126288bca31
