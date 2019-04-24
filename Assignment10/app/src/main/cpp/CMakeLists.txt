@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 add_library(hello-jni SHARED
-            hello-jni.c
+        hello-jni.cpp
         generate-dungeon.cpp
         generate-dungeon.h
         shared-components.cpp
