@@ -1,5 +1,4 @@
 #include "Player.h"
-#include <ncurses.h>
 #include "../shared-components.h"
 #include "../generate-dungeon.h"
 #include <cstring>
@@ -34,7 +33,7 @@ Player *generatePlayerCharacter() {
 	pc->damage.push_back(Dice(0, 1, 4));
 	pc->symbol = '@';
 	strcpy(pc->name, "You");
-	pc->color = COLOR_BLUE;
+//	pc->color = COLOR_BLUE;
 
 	return pc;
 }
@@ -295,13 +294,13 @@ int playerMove(Player *player) {
 		generateRandomFloor(numMonsters, numItems);
 		return 0;
 	} else if (dungeon[y][x].hardness == 0 && !noOp) {
-		mvaddstr(0, 0, EMPTY_ROW_TEXT);
-		refresh();
+//		mvaddstr(0, 0, EMPTY_ROW_TEXT);
+//		refresh();
 		playerMoveToSpot(player, x, y);
 		return 1;
 	} else if (dungeon[y][x].hardness != 0) {
-		mvaddstr(0, 0, "That is not a valid move, try again");
-		refresh();
+//		mvaddstr(0, 0, "That is not a valid move, try again");
+//		refresh();
 	}
 
 	playerMove(player);
@@ -309,43 +308,43 @@ int playerMove(Player *player) {
 }
 
 void Player::showInventory() {
-	initscr();
-
-	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
-		mvaddstr(i, 0, EMPTY_ROW_TEXT);
-	}
-
-	mvaddstr(0, 0, "Player Inventory");
-	mvaddstr(1, 0, "----------------");
-
-	for (int i = 0; i < 10; i++) {
-		char itemData[81];
-		sprintf(itemData, "%c) %s",
-				48 + i,
-				inventory[i] ? inventory[i]->name : "");
-		mvaddstr(i + 3, 0, itemData);
-	}
-	refresh();
+//	initscr();
+//
+//	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
+//		mvaddstr(i, 0, EMPTY_ROW_TEXT);
+//	}
+//
+//	mvaddstr(0, 0, "Player Inventory");
+//	mvaddstr(1, 0, "----------------");
+//
+//	for (int i = 0; i < 10; i++) {
+//		char itemData[81];
+//		sprintf(itemData, "%c) %s",
+//				48 + i,
+//				inventory[i] ? inventory[i]->name : "");
+//		mvaddstr(i + 3, 0, itemData);
+//	}
+//	refresh();
 }
 
 void Player::showEquipment() {
-	initscr();
-
-	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
-		mvaddstr(i, 0, EMPTY_ROW_TEXT);
-	}
-
-	mvaddstr(0, 0, "Player Equipment");
-	mvaddstr(1, 0, "----------------");
-
-	for (int i = 0; i < 12; i++) {
-		char itemData[81];
-		sprintf(itemData, "%c) %s",
-				97 + i,
-				equipment[i] ? equipment[i]->name : "");
-		mvaddstr(i + 3, 0, itemData);
-	}
-	refresh();
+//	initscr();
+//
+//	for (int i = 0; i < TOTAL_HEIGHT + 3; i++) {
+//		mvaddstr(i, 0, EMPTY_ROW_TEXT);
+//	}
+//
+//	mvaddstr(0, 0, "Player Equipment");
+//	mvaddstr(1, 0, "----------------");
+//
+//	for (int i = 0; i < 12; i++) {
+//		char itemData[81];
+//		sprintf(itemData, "%c) %s",
+//				97 + i,
+//				equipment[i] ? equipment[i]->name : "");
+//		mvaddstr(i + 3, 0, itemData);
+//	}
+//	refresh();
 }
 
 void Player::displayInventory() {

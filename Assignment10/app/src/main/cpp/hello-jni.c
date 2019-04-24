@@ -10,3 +10,27 @@ Java_com_example_hellojni_HelloJni_showString(JNIEnv *env, jobject thiz, jint y,
     sprintf(char_arr, "%d", intChar);
     return (*env)->NewStringUTF(env, char_arr);
 }
+
+JNIEXPORT void JNICALL
+Java_com_example_hellojni_HelloJni_main(JNIEnv *env, jobject thiz) {
+////	readMonsterFile();
+////	readObjectFile();
+//	int seed = time(NULL);
+//	srand(seed);
+//
+//	bossKilled = false;
+//	int numMonsters = 10;
+//	int numItems = 15;
+////	initMaps();
+////	initRememberedMap();
+//
+//	fogOfWarActivated = true;
+//
+////	generateRandomFloor(numMonsters, numItems);
+//
+////	free(rooms);
+////	free(upStairs);
+////	free(downStairs);
+//
+////	playGame();
+}

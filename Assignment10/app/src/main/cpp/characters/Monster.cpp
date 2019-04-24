@@ -3,7 +3,6 @@
 #include "../distance/distance.h"
 #include "../shared-components.h"
 #include <iostream>
-#include <ncurses.h>
 #include <cstring>
 #include <zconf.h>
 

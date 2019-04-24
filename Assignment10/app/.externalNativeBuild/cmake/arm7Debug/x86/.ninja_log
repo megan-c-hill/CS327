@@ -1,3 +1,23 @@
 # ninja log v5
 0	69	1556140852	CMakeFiles/hello-jni.dir/hello-jni.c.o	4884e3eeb4d4366e
 69	112	1556140852	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	9ac7dfd1940cb63b
+0	636	1556142964	CMakeFiles/hello-jni.dir/hello-jni.c.o	4884e3eeb4d4366e
+636	766	1556142964	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	9ac7dfd1940cb63b
+4	3417	1556143517	CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o	4acf4728b12afbf9
+4	2556	1556143719	CMakeFiles/hello-jni.dir/shared-components.cpp.o	7c8b27ce15ccf8e2
+3	1490	1556143804	CMakeFiles/hello-jni.dir/dungeon.cpp.o	c6c52a40873f3ea9
+2	1270	1556143834	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	7b15a87c2b9e7373
+4	1599	1556143925	CMakeFiles/hello-jni.dir/characters/characterHeap.cpp.o	b62d40dcb501c45f
+3	2595	1556144013	CMakeFiles/hello-jni.dir/characters/Monster.cpp.o	dc4362e69a181c62
+3	434	1556144140	CMakeFiles/hello-jni.dir/dungeon.cpp.o	c6c52a40873f3ea9
+2	1435	1556144173	CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o	4acf4728b12afbf9
+2	2688	1556144200	CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o	4acf4728b12afbf9
+2688	2850	1556144200	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	b18256f1a46e2a8c
+3	555	1556144287	CMakeFiles/hello-jni.dir/dungeon.cpp.o	c6c52a40873f3ea9
+555	713	1556144287	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	b18256f1a46e2a8c
+1	667	1556144411	CMakeFiles/hello-jni.dir/dungeon.cpp.o	c6c52a40873f3ea9
+667	852	1556144411	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	b18256f1a46e2a8c
+3	438	1556144503	CMakeFiles/hello-jni.dir/dungeon.cpp.o	c6c52a40873f3ea9
+2	453	1556144503	CMakeFiles/hello-jni.dir/hello-jni.c.o	4884e3eeb4d4366e
+454	590	1556144503	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	b18256f1a46e2a8c
+3	405	1556144616	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	c04c5cc6196152d7

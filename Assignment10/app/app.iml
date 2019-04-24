@@ -34,6 +34,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/cpp/characters" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/arm7/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/aidl_source_output_dir/arm7Debug/compileArm7DebugAidl/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/arm7/debug" isTestSource="false" generated="true" />

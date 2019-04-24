@@ -30,9 +30,15 @@ public class HelloJni extends AppCompatActivity {
                 textViews[i][j] = initialTextView;
             }
         }
+
+        System.out.println("Entering main");
+        main();
+        System.out.println("Done with main");
     }
 
     public native String showString(int y, int x);
+
+    public native void main();
 
     static {
         System.loadLibrary("hello-jni");

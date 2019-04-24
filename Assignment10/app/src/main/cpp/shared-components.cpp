@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 #include <cstdlib>
-#include <ncurses.h>
 
 static const char EMPTY_ROW_TEXT[81] = "                                                                                ";
 
@@ -33,59 +32,59 @@ void drawRoom(int roomNumber) {
 }
 
 void printRememberedDungeon(int x, int y) {
-	int i, j;
-	mvaddstr(0, 0, EMPTY_ROW_TEXT);
-	for (i = 0; i < TOTAL_HEIGHT; i++) {
-		for (j = 0; j < TOTAL_WIDTH; j++) {
-			if (characterMap[i][j] != NULL && abs(y - i) <= 2 && abs(x - j) <= 2) {
-				attron(COLOR_PAIR(characterMap[i][j]->color));
-				mvaddch(i + 1, j, characterMap[i][j]->symbol);
-				attroff(COLOR_PAIR(characterMap[i][j]->color));
-			} else if (objectMap[i][j] != NULL && abs(y - i) <= 2 && abs(x - j) <= 2) {
-				attron(COLOR_PAIR(objectMap[i][j]->color));
-				mvaddch(i + 1, j, objectMap[i][j]->symbol);
-				attroff(COLOR_PAIR(objectMap[i][j]->color));
-			} else {
-				attron(COLOR_PAIR(COLOR_BLACK));
-				mvaddch(i + 1, j, rememberedMap[i][j]);
-				attroff(COLOR_PAIR(COLOR_BLACK));
-			}
-		}
-	}
-	mvaddstr(22, 0, EMPTY_ROW_TEXT);
-	mvaddstr(23, 0, EMPTY_ROW_TEXT);
-	refresh();
+//	int i, j;
+//	mvaddstr(0, 0, EMPTY_ROW_TEXT);
+//	for (i = 0; i < TOTAL_HEIGHT; i++) {
+//		for (j = 0; j < TOTAL_WIDTH; j++) {
+//			if (characterMap[i][j] != NULL && abs(y - i) <= 2 && abs(x - j) <= 2) {
+//				attron(COLOR_PAIR(characterMap[i][j]->color));
+//				mvaddch(i + 1, j, characterMap[i][j]->symbol);
+//				attroff(COLOR_PAIR(characterMap[i][j]->color));
+//			} else if (objectMap[i][j] != NULL && abs(y - i) <= 2 && abs(x - j) <= 2) {
+//				attron(COLOR_PAIR(objectMap[i][j]->color));
+//				mvaddch(i + 1, j, objectMap[i][j]->symbol);
+//				attroff(COLOR_PAIR(objectMap[i][j]->color));
+//			} else {
+//				attron(COLOR_PAIR(COLOR_BLACK));
+//				mvaddch(i + 1, j, rememberedMap[i][j]);
+//				attroff(COLOR_PAIR(COLOR_BLACK));
+//			}
+//		}
+//	}
+//	mvaddstr(22, 0, EMPTY_ROW_TEXT);
+//	mvaddstr(23, 0, EMPTY_ROW_TEXT);
+//	refresh();
 }
 
 void printFullDungeon() {
-	int i, j;
-	mvaddstr(0, 0, EMPTY_ROW_TEXT);
-	for (i = 0; i < TOTAL_HEIGHT; i++) {
-		for (j = 0; j < TOTAL_WIDTH; j++) {
-			if (teleportDungeon[i][j] != ' ') {
-				attron(COLOR_PAIR(COLOR_BLUE));
-				mvaddch(i + 1, j, teleportDungeon[i][j]);
-				attroff(COLOR_PAIR(COLOR_BLUE));
-			} else if (characterMap[i][j] != NULL) {
-				attron(COLOR_PAIR(characterMap[i][j]->color));
-				mvaddch(i + 1, j, characterMap[i][j]->symbol);
-				attroff(COLOR_PAIR(characterMap[i][j]->color));
-			} else if (objectMap[i][j] != NULL) {
-				attron(COLOR_PAIR(objectMap[i][j]->color));
-				mvaddch(i + 1, j, objectMap[i][j]->symbol);
-				attroff(COLOR_PAIR(objectMap[i][j]->color));
-			} else {
-				attron(COLOR_PAIR(COLOR_BLACK));
-				mvaddch(i + 1, j, dungeon[i][j].symbol);
-				attroff(COLOR_PAIR(COLOR_BLACK));
-			}
-		}
-
-	}
-	mvaddstr(22, 0, EMPTY_ROW_TEXT);
-	mvaddstr(23, 0, EMPTY_ROW_TEXT);
-
-	refresh();
+//	int i, j;
+//	mvaddstr(0, 0, EMPTY_ROW_TEXT);
+//	for (i = 0; i < TOTAL_HEIGHT; i++) {
+//		for (j = 0; j < TOTAL_WIDTH; j++) {
+//			if (teleportDungeon[i][j] != ' ') {
+//				attron(COLOR_PAIR(COLOR_BLUE));
+//				mvaddch(i + 1, j, teleportDungeon[i][j]);
+//				attroff(COLOR_PAIR(COLOR_BLUE));
+//			} else if (characterMap[i][j] != NULL) {
+//				attron(COLOR_PAIR(characterMap[i][j]->color));
+//				mvaddch(i + 1, j, characterMap[i][j]->symbol);
+//				attroff(COLOR_PAIR(characterMap[i][j]->color));
+//			} else if (objectMap[i][j] != NULL) {
+//				attron(COLOR_PAIR(objectMap[i][j]->color));
+//				mvaddch(i + 1, j, objectMap[i][j]->symbol);
+//				attroff(COLOR_PAIR(objectMap[i][j]->color));
+//			} else {
+//				attron(COLOR_PAIR(COLOR_BLACK));
+//				mvaddch(i + 1, j, dungeon[i][j].symbol);
+//				attroff(COLOR_PAIR(COLOR_BLACK));
+//			}
+//		}
+//
+//	}
+//	mvaddstr(22, 0, EMPTY_ROW_TEXT);
+//	mvaddstr(23, 0, EMPTY_ROW_TEXT);
+//
+//	refresh();
 }
 
 void printDungeon(Player *player) {
