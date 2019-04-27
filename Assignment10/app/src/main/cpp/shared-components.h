@@ -11,7 +11,7 @@
 #include "characters/Character.h"
 #include "characters/Player.h"
 
-#define TOTAL_HEIGHT 16
+#define TOTAL_HEIGHT 18
 #define TOTAL_WIDTH 26
 
 using namespace std;
