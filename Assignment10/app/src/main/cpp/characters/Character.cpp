@@ -132,7 +132,7 @@ void initRememberedMap() {
 //return 1;
 //}
 //
-//void playGame() {
+void playGame() {
 //	while (playerIsInHeap(playerQueue) && !bossKilled) {
 //		int status = 1;
 //		CharacterNode *characterNode = popCharacterNode(playerQueue);
@@ -168,7 +168,7 @@ void initRememberedMap() {
 ////		usleep(5000000);
 //		return;
 //	}
-//}
+}
 //
 //void Character::displayCharacter() {
 ////	initscr();

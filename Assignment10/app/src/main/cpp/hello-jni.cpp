@@ -12,16 +12,8 @@
 extern "C" {
 #endif
 
-JNIEXPORT jstring JNICALL Java_com_example_hellojni_HelloJni_showString(JNIEnv *env, jobject thiz, jint y, jint x) {
-    char char_arr [2] = "B";
-    int intChar = ((int)x + (int)y) % 10;
-    sprintf(char_arr, "%d", intChar);
-    return env->NewStringUTF(char_arr);
-}
-
-
 JNIEXPORT void JNICALL
-Java_com_example_hellojni_HelloJni_main(JNIEnv *env, jobject thiz) {
+Java_com_example_hellojni_HelloJni_main(JNIEnv *jenv, jobject thiz) {
 	readMonsterFile();
 	readObjectFile();
 	int seed = time(NULL);
@@ -33,15 +25,18 @@ Java_com_example_hellojni_HelloJni_main(JNIEnv *env, jobject thiz) {
 	initMaps();
 	initRememberedMap();
 
-	fogOfWarActivated = true;
+	fogOfWarActivated = false;
 
 	generateRandomFloor(numMonsters, numItems);
 
+	env = jenv;
+	obj = thiz;
+
+//	playGame();
+    printFullDungeon();
 	free(rooms);
 	free(upStairs);
 	free(downStairs);
-
-//	playGame();
 }
 
 #ifdef __cplusplus

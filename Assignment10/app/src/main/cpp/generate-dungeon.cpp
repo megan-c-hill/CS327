@@ -23,7 +23,7 @@
 #include <endian.h>
 #endif
 
-#define MAX_ROOMS 8
+#define MAX_ROOMS 6
 
 using namespace std;
 
@@ -194,10 +194,10 @@ void connectRooms() {
 }
 
 void placeRoom(int roomNumber) {
-	uint8_t x = rand() % (TOTAL_WIDTH - 5) + 1;
-	uint8_t y = rand() % (TOTAL_HEIGHT - 4) + 1;
-	uint8_t width = rand() % 8 + 4;
-	uint8_t height = rand() % 6 + 3;
+	uint8_t x = rand() % (TOTAL_WIDTH - 3) + 1;
+	uint8_t y = rand() % (TOTAL_HEIGHT - 3) + 1;
+	uint8_t width = rand() % 4 + 3;
+	uint8_t height = rand() % 3 + 3;
 	numberOfRooms = roomNumber + 1;
 
 	if (isLegalPlacement(x, y, width, height)) {

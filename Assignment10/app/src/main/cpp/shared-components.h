@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <vector>
+#include <jni.h>
 
 #include "characters/characterHeap.h"
 #include "descriptions/monsterDescription.h"
@@ -10,8 +11,8 @@
 #include "characters/Character.h"
 #include "characters/Player.h"
 
-#define TOTAL_HEIGHT 21
-#define TOTAL_WIDTH 80
+#define TOTAL_HEIGHT 16
+#define TOTAL_WIDTH 26
 
 using namespace std;
 
@@ -57,11 +58,15 @@ extern CharacterHeap *playerQueue;
 extern Character *playerCharacter;
 extern bool fogOfWarActivated;
 extern bool bossKilled;
+extern JNIEnv *env;
+extern jobject obj;
 
 void printDungeon(Player *player);
 
 void printFullDungeon();
 
 void drawRoom(int roomNumber);
+
+void drawChar(int y, int x, char c);
 
 #endif

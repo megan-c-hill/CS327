@@ -21,6 +21,17 @@ CharacterHeap *playerQueue;
 Character *playerCharacter;
 bool fogOfWarActivated;
 bool bossKilled;
+JNIEnv *env;
+jobject obj;
+
+void drawChar(int y, int x, char c) {
+	char string[2] = "";
+	string[0] = c;
+	jstring jstr = env->NewStringUTF(string);
+	jclass clazz = env->FindClass("com/example/hellojni/HelloJni");
+	jmethodID displayChar = env->GetMethodID(clazz, "displayChar", "(IILjava/lang/String;)V");
+	env->CallVoidMethod(obj, displayChar , y, x, jstr);
+}
 
 void drawRoom(int roomNumber) {
 	for (int i = rooms[roomNumber].y; i < rooms[roomNumber].y + rooms[roomNumber].height; i++) {
@@ -57,33 +68,33 @@ void printRememberedDungeon(int x, int y) {
 }
 
 void printFullDungeon() {
-//	int i, j;
+	int i, j;
 //	mvaddstr(0, 0, EMPTY_ROW_TEXT);
-//	for (i = 0; i < TOTAL_HEIGHT; i++) {
-//		for (j = 0; j < TOTAL_WIDTH; j++) {
-//			if (teleportDungeon[i][j] != ' ') {
+	for (i = 0; i < TOTAL_HEIGHT; i++) {
+		for (j = 0; j < TOTAL_WIDTH; j++) {
+			if (teleportDungeon[i][j] != ' ') {
 //				attron(COLOR_PAIR(COLOR_BLUE));
-//				mvaddch(i + 1, j, teleportDungeon[i][j]);
+				drawChar(i + 1, j, teleportDungeon[i][j]);
 //				attroff(COLOR_PAIR(COLOR_BLUE));
-//			} else if (characterMap[i][j] != NULL) {
+			} else if (characterMap[i][j] != NULL) {
 //				attron(COLOR_PAIR(characterMap[i][j]->color));
-//				mvaddch(i + 1, j, characterMap[i][j]->symbol);
+				drawChar(i + 1, j, characterMap[i][j]->symbol);
 //				attroff(COLOR_PAIR(characterMap[i][j]->color));
-//			} else if (objectMap[i][j] != NULL) {
+			} else if (objectMap[i][j] != NULL) {
 //				attron(COLOR_PAIR(objectMap[i][j]->color));
-//				mvaddch(i + 1, j, objectMap[i][j]->symbol);
+				drawChar(i + 1, j, objectMap[i][j]->symbol);
 //				attroff(COLOR_PAIR(objectMap[i][j]->color));
-//			} else {
+			} else {
 //				attron(COLOR_PAIR(COLOR_BLACK));
-//				mvaddch(i + 1, j, dungeon[i][j].symbol);
+				drawChar(i + 1, j, dungeon[i][j].symbol);
 //				attroff(COLOR_PAIR(COLOR_BLACK));
-//			}
-//		}
-//
-//	}
+			}
+		}
+
+	}
 //	mvaddstr(22, 0, EMPTY_ROW_TEXT);
 //	mvaddstr(23, 0, EMPTY_ROW_TEXT);
-//
+
 //	refresh();
 }
 

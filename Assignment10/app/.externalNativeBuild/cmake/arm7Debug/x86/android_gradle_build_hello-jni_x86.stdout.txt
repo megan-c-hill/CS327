@@ -1,3 +1,2 @@
-[1/3] Building CXX object CMakeFiles/hello-jni.dir/hello-jni.cpp.o
-[2/3] Building CXX object CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o
-[3/3] Linking CXX shared library /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so
+[1/2] Building CXX object CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o
+[2/2] Linking CXX shared library /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so

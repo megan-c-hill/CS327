@@ -34,7 +34,7 @@ void initRememberedMap();
 
 //void tunnel(Character *character, int newX, int newY);
 
-//void playGame();
+void playGame();
 
 //void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOTAL_WIDTH]);
 

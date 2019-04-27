@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 public class HelloJni extends AppCompatActivity {
     public static final int SIZE = 55;
+    TextView[][] textViews = new TextView[19][26];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +16,6 @@ public class HelloJni extends AppCompatActivity {
 
         setContentView(R.layout.activity_hello_jni);
         ConstraintLayout cv = (ConstraintLayout)findViewById(R.id.activity_hello_jni);
-        TextView[][] textViews = new TextView[19][26];
         for(int i = 0; i < 19; i++) {
             for(int j = 0; j < 26; j++) {
                 TextView initialTextView = new TextView(this);
@@ -23,7 +23,7 @@ public class HelloJni extends AppCompatActivity {
                 initialTextView.setWidth(SIZE);
                 initialTextView.setY((SIZE + 20) * i);
                 initialTextView.setHeight(SIZE + 20);
-                initialTextView.setText(showString(i, j));
+                initialTextView.setText(" ");
                 initialTextView.setTextSize(20);
                 initialTextView.setTextColor(Color.parseColor("#000000"));
                 cv.addView(initialTextView);
@@ -36,7 +36,9 @@ public class HelloJni extends AppCompatActivity {
         System.out.println("Done with main");
     }
 
-    public native String showString(int y, int x);
+    public void displayChar(int y, int x, String c) {
+        textViews[y][x].setText(c);
+    }
 
     public native void main();
 
