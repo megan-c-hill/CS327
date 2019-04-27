@@ -6,7 +6,7 @@
 #include <string>
 #include <cstring>
 #include <unordered_map>
-#include <ncurses.h>
+//#include <ncurses.h>
 
 using namespace std;
 
@@ -32,14 +32,14 @@ static unordered_map<string, char> const symbolMap = {
 };
 
 static unordered_map<string, int> const colorMap = {
-		{"WHITE",   COLOR_WHITE},
-		{"RED",     COLOR_RED},
-		{"GREEN",   COLOR_GREEN},
-		{"BLUE",    COLOR_BLUE},
-		{"CYAN",    COLOR_CYAN},
-		{"YELLOW",  COLOR_YELLOW},
-		{"MAGENTA", COLOR_MAGENTA},
-		{"BLACK",   COLOR_BLACK}
+		{"WHITE",   0},
+		{"RED",     1},
+		{"GREEN",   2},
+		{"BLUE",    3},
+		{"CYAN",    4},
+		{"YELLOW",  5},
+		{"MAGENTA", 6},
+		{"BLACK",   7}
 };
 
 Dice parseDice2(string diceDescription) {
@@ -151,9 +151,7 @@ void parseLine(string basic_string, ItemDescription *descr) {
 
 int readObjectFile() {
 	string line;
-	char filePath[100] = "";
-	strcat(filePath, getenv("HOME"));
-	strcat(filePath, "/.rlg327/object_desc.txt");
+	char filePath[100] = "./descriptions/item_desc.txt";
 
 	ifstream myfile(filePath);
 	getline(myfile, line);

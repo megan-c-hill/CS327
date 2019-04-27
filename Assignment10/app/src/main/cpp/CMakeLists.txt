@@ -8,6 +8,12 @@ add_library(hello-jni SHARED
         shared-components.h
         characters/Character.cpp
         characters/Character.h
+        descriptions/monsterDescription.cpp
+        descriptions/monsterDescription.h
+        descriptions/itemDescription.cpp
+        descriptions/itemDescription.h
+        descriptions/dice.cpp
+        descriptions/dice.h
 #        characters/Monster.cpp
 #        characters/Player.cpp
 #        characters/characterHeap.cpp

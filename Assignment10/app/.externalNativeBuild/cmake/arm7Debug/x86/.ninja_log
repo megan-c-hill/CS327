@@ -46,3 +46,17 @@
 2292	2483	1556338261	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	30c6c9ec244b0c87
 2	1293	1556338572	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
 1293	1455	1556338572	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	30c6c9ec244b0c87
+3	1812	1556339087	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+3	6274	1556339205	CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o	81437d99b91435b2
+3	1274	1556339267	CMakeFiles/hello-jni.dir/descriptions/dice.cpp.o	87e41fd0a1c57896
+2	1310	1556339267	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+1311	1666	1556339267	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	27537a3e608d8c74
+2	4180	1556339436	CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o	81437d99b91435b2
+4181	4556	1556339436	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	27537a3e608d8c74
+4	2600	1556341238	CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o	81437d99b91435b2
+2601	3043	1556341239	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	27537a3e608d8c74
+3	5154	1556341333	CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o	81437d99b91435b2
+5154	5537	1556341334	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	27537a3e608d8c74
+4	1114	1556341495	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+7	2743	1556341497	CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o	fec504fa8e24504c
+2743	3125	1556341497	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	b20f482ca2bc7046

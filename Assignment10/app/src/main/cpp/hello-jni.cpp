@@ -22,8 +22,8 @@ JNIEXPORT jstring JNICALL Java_com_example_hellojni_HelloJni_showString(JNIEnv *
 
 JNIEXPORT void JNICALL
 Java_com_example_hellojni_HelloJni_main(JNIEnv *env, jobject thiz) {
-//	readMonsterFile();
-//	readObjectFile();
+	readMonsterFile();
+	readObjectFile();
 	int seed = time(NULL);
 	srand(seed);
 
