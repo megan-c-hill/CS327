@@ -1,3 +1,8 @@
 # ninja log v5
 0	173	1556140851	CMakeFiles/hello-jni.dir/hello-jni.c.o	12db937ff339360e
 174	219	1556140851	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86_64/libhello-jni.so	12ebf0df07c63118
+3	2058	1556336682	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	c1ab69a69cc5eb78
+1	2119	1556336682	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	85ae5bc3f460b9fa
+2	2158	1556336682	CMakeFiles/hello-jni.dir/shared-components.cpp.o	2374fedadf77c2e0
+2	2464	1556336682	CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o	b9d49e17b3287923
+2464	2688	1556336682	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86_64/libhello-jni.so	f6280a0b22fa660e

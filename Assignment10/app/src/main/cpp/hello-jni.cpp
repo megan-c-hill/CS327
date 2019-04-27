@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "characters/Character.h"
 #include "shared-components.h"
+#include "generate-dungeon.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -21,8 +22,8 @@ JNIEXPORT jstring JNICALL Java_com_example_hellojni_HelloJni_showString(JNIEnv *
 
 JNIEXPORT void JNICALL
 Java_com_example_hellojni_HelloJni_main(JNIEnv *env, jobject thiz) {
-////	readMonsterFile();
-////	readObjectFile();
+//	readMonsterFile();
+//	readObjectFile();
 	int seed = time(NULL);
 	srand(seed);
 
@@ -30,17 +31,17 @@ Java_com_example_hellojni_HelloJni_main(JNIEnv *env, jobject thiz) {
 	int numMonsters = 10;
 	int numItems = 15;
 	initMaps();
-//	initRememberedMap();
+	initRememberedMap();
 
 	fogOfWarActivated = true;
 
-////	generateRandomFloor(numMonsters, numItems);
+	generateRandomFloor(numMonsters, numItems);
 
-////	free(rooms);
-////	free(upStairs);
-////	free(downStairs);
+	free(rooms);
+	free(upStairs);
+	free(downStairs);
 
-////	playGame();
+//	playGame();
 }
 
 #ifdef __cplusplus

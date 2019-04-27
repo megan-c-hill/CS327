@@ -15,5 +15,11 @@
   "directory": "/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/x86Release/x86",
   "command": "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --gcc-toolchain=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dhello_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O2 -DNDEBUG  -fPIC   -o CMakeFiles/hello-jni.dir/shared-components.cpp.o -c /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/shared-components.cpp",
   "file": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/shared-components.cpp"
+},
+
+{
+  "directory": "/Users/megansISU/Desktop/CS327/Assignment10/app/.externalNativeBuild/cmake/x86Release/x86",
+  "command": "/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --gcc-toolchain=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/megansISU/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dhello_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O2 -DNDEBUG  -fPIC   -o CMakeFiles/hello-jni.dir/characters/Character.cpp.o -c /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/characters/Character.cpp",
+  "file": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/characters/Character.cpp"
 }
 ]
