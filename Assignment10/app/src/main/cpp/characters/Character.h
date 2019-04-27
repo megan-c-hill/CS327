@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 //#include "../descriptions/dice.h"
-//#include "./Object.h"
+#include "./Object.h"
 //#include <iostream>
-//#include <vector>
+#include <vector>
 
 using namespace std;
 
@@ -16,7 +16,7 @@ public:
 	char symbol;
 	int color;
 	int HP;
-//	vector<Dice> damage;
+	vector<Dice> damage;
 	uint8_t speed;
 	uint8_t x;
 	uint8_t y;

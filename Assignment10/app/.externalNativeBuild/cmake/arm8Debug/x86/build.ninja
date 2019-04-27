@@ -86,6 +86,30 @@ build CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o: CXX_COMPIL
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O0 -fno-limit-debug-info  -fPIC
   OBJECT_DIR = CMakeFiles/hello-jni.dir
   OBJECT_FILE_DIR = CMakeFiles/hello-jni.dir/descriptions
+build CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o: CXX_COMPILER__hello-jni /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/descriptions/itemDescription.cpp || cmake_object_order_depends_target_hello-jni
+  DEFINES = -Dhello_jni_EXPORTS
+  DEP_FILE = CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O0 -fno-limit-debug-info  -fPIC
+  OBJECT_DIR = CMakeFiles/hello-jni.dir
+  OBJECT_FILE_DIR = CMakeFiles/hello-jni.dir/descriptions
+build CMakeFiles/hello-jni.dir/descriptions/dice.cpp.o: CXX_COMPILER__hello-jni /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/descriptions/dice.cpp || cmake_object_order_depends_target_hello-jni
+  DEFINES = -Dhello_jni_EXPORTS
+  DEP_FILE = CMakeFiles/hello-jni.dir/descriptions/dice.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O0 -fno-limit-debug-info  -fPIC
+  OBJECT_DIR = CMakeFiles/hello-jni.dir
+  OBJECT_FILE_DIR = CMakeFiles/hello-jni.dir/descriptions
+build CMakeFiles/hello-jni.dir/characters/Player.cpp.o: CXX_COMPILER__hello-jni /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/characters/Player.cpp || cmake_object_order_depends_target_hello-jni
+  DEFINES = -Dhello_jni_EXPORTS
+  DEP_FILE = CMakeFiles/hello-jni.dir/characters/Player.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O0 -fno-limit-debug-info  -fPIC
+  OBJECT_DIR = CMakeFiles/hello-jni.dir
+  OBJECT_FILE_DIR = CMakeFiles/hello-jni.dir/characters
+build CMakeFiles/hello-jni.dir/characters/Object.cpp.o: CXX_COMPILER__hello-jni /Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/characters/Object.cpp || cmake_object_order_depends_target_hello-jni
+  DEFINES = -Dhello_jni_EXPORTS
+  DEP_FILE = CMakeFiles/hello-jni.dir/characters/Object.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O0 -fno-limit-debug-info  -fPIC
+  OBJECT_DIR = CMakeFiles/hello-jni.dir
+  OBJECT_FILE_DIR = CMakeFiles/hello-jni.dir/characters
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target hello-jni
@@ -94,7 +118,7 @@ build CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o: CXX_COMPIL
 #############################################
 # Link the shared library /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm8/debug/obj/x86/libhello-jni.so
 
-build /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm8/debug/obj/x86/libhello-jni.so: CXX_SHARED_LIBRARY_LINKER__hello-jni CMakeFiles/hello-jni.dir/hello-jni.cpp.o CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o CMakeFiles/hello-jni.dir/shared-components.cpp.o CMakeFiles/hello-jni.dir/characters/Character.cpp.o CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o
+build /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm8/debug/obj/x86/libhello-jni.so: CXX_SHARED_LIBRARY_LINKER__hello-jni CMakeFiles/hello-jni.dir/hello-jni.cpp.o CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o CMakeFiles/hello-jni.dir/shared-components.cpp.o CMakeFiles/hello-jni.dir/characters/Character.cpp.o CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o CMakeFiles/hello-jni.dir/descriptions/dice.cpp.o CMakeFiles/hello-jni.dir/characters/Player.cpp.o CMakeFiles/hello-jni.dir/characters/Object.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now
   LINK_LIBRARIES = -landroid -llog -latomic -lm

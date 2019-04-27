@@ -14,12 +14,12 @@ add_library(hello-jni SHARED
         descriptions/itemDescription.h
         descriptions/dice.cpp
         descriptions/dice.h
-#        characters/Monster.cpp
-#        characters/Player.cpp
-#        characters/characterHeap.cpp
-#        characters/Monster.h
-#        characters/Player.h
-#        characters/characterHeap.h
+        characters/Player.cpp
+        characters/Player.h
+        characters/Object.cpp
+        characters/Object.h
+        characters/characterHeap.cpp
+        characters/characterHeap.h
         )
 
 # Include libraries needed for hello-jni lib
