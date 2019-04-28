@@ -1,2 +1,2 @@
-[1/2] Building CXX object CMakeFiles/hello-jni.dir/hello-jni.cpp.o
+[1/2] Building CXX object CMakeFiles/hello-jni.dir/shared-components.cpp.o
 [2/2] Linking CXX shared library /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so

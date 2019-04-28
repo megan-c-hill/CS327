@@ -20,12 +20,12 @@ Java_com_example_hellojni_HelloJni_setup(JNIEnv *jenv, jobject thiz) {
     srand(seed);
 
     bossKilled = false;
-    int numMonsters = 20;
+    int numMonsters = 10;
     int numItems = 15;
     initMaps();
     initRememberedMap();
 
-    fogOfWarActivated = false;
+    fogOfWarActivated = true;
 
     generateRandomFloor(numMonsters, numItems);
 
@@ -44,16 +44,16 @@ Java_com_example_hellojni_HelloJni_cleanup(JNIEnv *jenv, jobject thiz) {
     printFullDungeon();
 
 //    if (playerIsInHeap(playerQueue)) {
-////		mvaddstr(0, 0, EMPTY_ROW_TEXT);
-////		mvaddstr(0, 0, "You Won!");
-////		refresh();
-////		usleep(5000000);
+//		mvaddstr(0, 0, EMPTY_ROW_TEXT);
+//		mvaddstr(0, 0, "You Won!");
+//		refresh();
+//		usleep(5000000);
 //        return;
 //    } else {
-////		mvaddstr(0, 0, EMPTY_ROW_TEXT);
-////		mvaddstr(0, 0, "You Lose!");
-////		refresh();
-////		usleep(5000000);
+//		mvaddstr(0, 0, EMPTY_ROW_TEXT);
+//		mvaddstr(0, 0, "You Lose!");
+//		refresh();
+//		usleep(5000000);
 //        return;
 //    }
 }
