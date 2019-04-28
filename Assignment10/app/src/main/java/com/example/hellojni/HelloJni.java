@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.TextView;
 
 public class HelloJni extends AppCompatActivity {
@@ -32,10 +33,29 @@ public class HelloJni extends AppCompatActivity {
                 textViews[i][j] = initialTextView;
             }
         }
+    }
 
-        System.out.println("Entering main");
-        main();
-        System.out.println("Done with main");
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent KEvent) {
+        int keyaction = KEvent.getAction();
+
+        if(keyaction == KeyEvent.ACTION_UP)
+        {
+            int keycode = KEvent.getKeyCode();
+            int keyunicode = KEvent.getUnicodeChar(KEvent.getMetaState() );
+            char character = (char) keyunicode;
+
+            if(((Character) character).equals('s')) {
+                System.out.println("Entering main");
+                main();
+                System.out.println("Done with main");
+            }
+
+            System.out.println("DEBUG MESSAGE KEY=" + character + " KEYCODE=" +  keycode);
+        }
+
+        return super.dispatchKeyEvent(KEvent);
     }
 
     public void displayChar(int y, int x, String c) {
