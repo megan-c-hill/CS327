@@ -1,54 +1,31 @@
-Hello JNI
-=========
-Hello JNI is an Android sample that uses JNI to call C code from a Android Java Activity.
+Assignment 10: Megan Hill
 
-This sample uses the new [Android Studio CMake plugin](http://tools.android.com/tech-docs/external-c-builds) with C++ support.
-For how to use Android Studio, refer to [Hello-CMake codelab](https://codelabs.developers.google.com/codelabs/android-studio-cmake/index.html)
+I chose to port my rougelike game to Android.
 
-Pre-requisites
---------------
-- Android Studio 2.2+ with [NDK](https://developer.android.com/ndk/) bundle.
+I was able to maintain a lot of the features, but because there was a time constraint and this was more difficult than I
+anticipated I did loose a few features some of which are what actually make the game interesting.
 
-Getting Started
----------------
-1. [Download Android Studio](http://developer.android.com/sdk/index.html)
-1. Launch Android Studio.
-1. Open the sample directory.
-1. Open *File/Project Structure...*
-  - Click *Download* or *Select NDK location*.
-1. Click *Tools/Android/Sync Project with Gradle Files*.
-1. Click *Run/Run 'app'*.
+Features kept:
+- Reading Description Files (kind of, it had to be significantly modified to work on Android)
+- Generating Dungeon Features
+- Monsters obey characteristics (including using distance maps)
+- Game finishes when player or boss (Spongebob or Hardware bug is killed)
+- Combat schematics (kind of, vectors were causing crashes so everyone has a damage of 10)
+- Fog of War
 
-Screenshots
------------
-![screenshot](screenshot.png)
+Lost features:
+- Load and save (No practical way to accomplish on Android)
+- Colors
+- Control player movement, and anything useful with items (Basically keyboard presses do nothing)
+  Depending on when this assignment actually gets closed I might come back and try to add this in because the game is pretty boring
 
-Support
--------
-If you've found an error in these samples, please [file an issue](https://github.com/googlesamples/android-ndk/issues/new).
+Things to know:
+    When the game starts you will see a blank screen, then a keyboard will pop up. Press s on the keyboard to start game play.
+    The board dimensions have been reduced to 17x26 in order to actually look okay on a mobile device.
+    During this time the player will move around like a crazy person, with fog of war. There are objects on the floor, but there is no
+    way to pick them up. When the game finishes the whole screen will be shown and all movement will be stop, but there is no message
+    telling you the game is over. At this point you can press s again to start a new game.
 
-Patches are encouraged, and may be submitted by [forking this project](https://github.com/googlesamples/android-ndk/fork) and
-submitting a pull request through GitHub. Please see [CONTRIBUTING.md](../CONTRIBUTING.md) for more details.
+I personally tested this on a portrait mode Pixel 2XL emulator. I did not try to make this scalable, so I'm sure it looks terrible on
+almost any other device, that is not similar in dimensions. I have never tested this on a physical device, and have no idea what the result would be.
 
-- [Stack Overflow](http://stackoverflow.com/questions/tagged/android-ndk)
-- [Google+ Community](https://plus.google.com/communities/105153134372062985968)
-- [Android Tools Feedbacks](http://tools.android.com/feedback)
-
-License
--------
-Copyright 2015 Google, Inc.
-
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations under
-the License.

@@ -37,17 +37,12 @@ public class HelloJni extends AppCompatActivity {
 
 	@Override
 	public boolean dispatchKeyEvent(KeyEvent KEvent) {
-		int keyaction = KEvent.getAction();
-
-		if (keyaction == KeyEvent.ACTION_UP) {
-			int keyunicode = KEvent.getUnicodeChar(KEvent.getMetaState());
-			char character = (char) keyunicode;
+		if (KEvent.getAction()== KeyEvent.ACTION_UP) {
+			char character = (char) KEvent.getUnicodeChar(KEvent.getMetaState());
 
 			if (((Character) character).equals('s')) {
 				startGame();
 			}
-
-			System.out.println("DEBUG MESSAGE KEY=" + character);
 		}
 
 		return super.dispatchKeyEvent(KEvent);
@@ -57,16 +52,13 @@ public class HelloJni extends AppCompatActivity {
 		Thread gameThread = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				System.out.println("Entering main");
 				setup();
 				while (isOver() == 1) {
 					playGame();
 				}
 				cleanup();
-				System.out.println("Done");
 			}
 		});
-		System.out.println("About to start game");
 		gameThread.start();
 	}
 

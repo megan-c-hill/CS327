@@ -1,0 +1,166 @@
+1/25 Init Commit
+1/27 Prints Empty Room
+1/28 Creating Multiple Rooms
+     Clean up Print Statements
+     Adding Corridors
+     Do corridors correctly
+     Clean up code
+1/29 Adding Stairs
+1/30 Refactor to add constants and global vars
+     Adjusting room size
+1/31 Add README and Changelog
+2/2 Update to use structs
+    Clean up
+2/3 Init commit for Assignment2
+    Read info from dungeon file
+    Load all data
+    Drawing dungeon
+    Removing old code
+2/4 Add corridors when loading
+2/6 16 bit stair and room nums
+    Cleaning up load functions
+    Load dungeons to disk
+2/8 Adding toggle switch functionality
+2/9 Change rooms to structs
+    Changing stairs to structs
+    Using malloc
+    Adding validation on marker
+    Updaing CHANGELOG and README
+2/11 Init Commit for Assignment3
+	 Heap Code
+2/13 Add shared-components
+	 Separating files
+2/16 More Understandable heap
+2/17 Distance maps for non tunneling monsters
+	 Tunneling through walls
+	 Restructuring Code
+	 Making Header files
+2/18 Updating Changelog and README
+	 Init commit for Assignment 4
+	 Fixing bug with divide by 0
+2/20 Bug Fixes
+	 switch for num monsters
+	 Makefile improvements
+2/23 Struct for characters
+	 Add character map
+	 Make pathfinding work with new characters
+	 Add folders
+	 Make player queue
+	 Improve character node
+	 Moving using queue
+	 Telepathic Movement
+2/24 End Game
+	 Go Towards PC if visible
+	 Smart Telepathic Monsters
+	 Refactor distances to take a position
+	 Remember last known position
+2/25 Determine win/lose
+	 Save playerCharacter instead of just position
+	 Code formatting
+	 Updating Changelog and README
+	 Handle placing of more monsters than dungeon spaces
+3/1	 Init commit for Assignment 5
+3/2	 Using ncurses
+	 Basic movement
+	 Add no-ops
+	 Taking the stairs
+	 Add ability to quit
+	 Show and leave monster menu
+	 Show monster list
+	 Fix bug with PC when switching floors
+	 Scrolling through monster list
+	 Fix scrolling bug
+	 Update README and CHANGELOG
+3/12 Update to fix bugs found in 1.04 grading
+3/13 Init commit for Assignment6
+	 Compiles in c++
+3/16 Create Classes
+	 Rename files
+3/17 Make classes compile
+3/19 Fix segmentation fault
+3/20 Teleportation
+	 Basic fog of war
+	 Fog of war and teleportation
+	 Manually toggle fog of war
+3/25 Remove all structs
+	 Don't let visibility loop around
+	 Print dungeon correctly at end of game
+	 Update README and CHANGELOG
+3/27 Code Formatting
+	 Init Commit for Assignment 7
+	 Ability to open a file
+3/30 Reads full lines
+3/31 Begin parsing individual lines
+	 parse dice
+4/1  WIP: try using map
+	 Parsing colors
+4/2  Parses single correctly formatted monster
+	 Handling multiple monsters
+	 Fix some bugs
+4/3  Handle monsters that are incorrectly formatted
+	 Update README and CHANGELOG
+	 Make it work on Linux
+4/6  Parse item descriptions
+	 Init commit for Assignment8
+4/7  Use vector to store descriptions
+	 Ability to play game again
+	 Fix CMake error
+	 Adding colors
+	 Generate loaded monsters
+4/8  Parsing characters
+	 Make colors work
+	 Fix speed bug
+	 Print useful info in monster list
+	 Seperate monster and character
+4/9	 Show Items
+	 Rendering in Correct Order
+	 Correct Symbols
+4/10 Handling Unique
+	 Clear items when switching floors
+	 Update README and CHANGELOG
+	 Make work on Linux
+4/12 Init commit for Assignment 9
+4/13 Pickup items
+	 Split player into own files
+	 More code for player
+	 Equip Items
+	 Take off Items
+	 Expunge and Drop items
+4/14 Show item descriptions
+4/15 Inspect Monsters
+	 Equipped Objects alter speed
+	 Damage bonus from items
+	 Monsters don't attack eachother
+	 Updated combat
+4/16 Killing boss ends game
+	 Works in Linux
+4/17 PC lasts between floow
+	 Wear two rings
+	 Fix Unique/Artifact bug
+	 Update README and CHANGELOG
+	 Init Commit for Assignment 10
+4/22 Something that actually works
+     Deleting code
+     No java for activity
+4/23 Starting to understand openGL
+     Something actually working
+     Merge weirdness
+     Working project
+     Importing rogue code
+     Calls an empty main
+     Actually doing something in main
+     Calls a main that does some stuff
+4/26 Showing Keyboard
+4/27 Load descriptions
+     Display Dungeon
+     Bigger board
+     Add player and stairs
+     Show monster
+     Better font and height
+4/28 Loading objects
+     Kind of works but can't see game as it plays
+     Get keypress
+     Everyone moves around randomly
+     Fog of War
+     Monsters using their characteristcs
+     Update README and CHANGELOG
