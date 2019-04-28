@@ -240,6 +240,6 @@ void generateRandomFloor(int numMonsters, int numItems) {
 	downStairs = (Position *) malloc(sizeof(Position) * numberOfDownstairs);
 	connectRooms();
 	placeStairsAndPlayer();
-//	placeMonsters(numMonsters);
+	placeMonsters(numMonsters);
 //	placeItems(numItems);
 }

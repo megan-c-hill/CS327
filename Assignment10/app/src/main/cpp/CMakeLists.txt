@@ -20,6 +20,10 @@ add_library(hello-jni SHARED
         characters/Object.h
         characters/characterHeap.cpp
         characters/characterHeap.h
+        characters/Monster.cpp
+        characters/Monster.h
+        descriptions/monsterDescriptionFile.cpp
+        descriptions/monsterDescriptionFile.h
         )
 
 # Include libraries needed for hello-jni lib

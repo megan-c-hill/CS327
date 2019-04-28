@@ -6,6 +6,8 @@
 #include <string>
 #include <cstring>
 #include <unordered_map>
+#include <android/asset_manager.h>
+#include "monsterDescriptionFile.h"
 //#include <ncurses.h>
 
 using namespace std;
@@ -110,23 +112,25 @@ void parseLine(string basic_string, MonsterDescription *descr) {
 
 int readMonsterFile() {
 	string line;
-    char filePath[100] = "./descriptions/monster_desc.txt";
-
-	ifstream myfile(filePath);
-	getline(myfile, line);
+	initMonsterDescriptionFile();
+//    char filePath[100] = "../monster_desc.txt";
+//
+//	ifstream myfile(filePath);
+//	getline(myfile, line);
 
 	MonsterDescription *md = new MonsterDescription();
 	md->color[0] = 1;
+	int i = 2;
 
-	if (myfile.is_open()) {
-		while (getline(myfile, line)) {
-			getline(myfile, line); //Eat empty line
+		while (i < 350) { //Hardcoded for length
+			line = descriptionFile[i];
+			i++;
 			if (line.compare("BEGIN MONSTER") != 0) {
 				cout << "Doesn't start with BEGIN MONSTER" << endl;
 				return -1;
 			}
 
-			while (getline(myfile, line)) {
+			while (i < 350) {
 				if (line.compare("END") == 0) {
 					monsters.push_back(*md);
 				}
@@ -137,7 +141,9 @@ int readMonsterFile() {
 					}
 					md->assignedFields[1] = true;
 					int count = 0;
-					while (getline(myfile, line) && line.compare(".") != 0) {
+					while (i < 350 && strcmp(descriptionFile[i], ".") != 0) {
+					    line = descriptionFile[i];
+					    i++;
 						strcpy(md->description[count], line.c_str());
 						count++;
 					}
@@ -145,13 +151,11 @@ int readMonsterFile() {
 					md = new MonsterDescription();
 				} else {
 					parseLine(line, md);
-
-
 				};
+                line = descriptionFile[i];
+                i++;
 			}
 		}
-		myfile.close();
-	} else cout << "File either does not exist or is incorrectly formatted" << endl;
 
 	return 1;
 }

@@ -15,7 +15,7 @@ extern "C" {
 JNIEXPORT void JNICALL
 Java_com_example_hellojni_HelloJni_main(JNIEnv *jenv, jobject thiz) {
 	readMonsterFile();
-	readObjectFile();
+//	readObjectFile();
 	int seed = time(NULL);
 	srand(seed);
 

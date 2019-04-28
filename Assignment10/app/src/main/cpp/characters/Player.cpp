@@ -30,7 +30,7 @@ Player *generatePlayerCharacter() {
 		strcpy(pc->description[i], "NONE");
 	}
 	pc->HP = 500;
-	pc->damage.push_back(Dice(0, 1, 4));
+//	pc->damage.push_back(Dice(0, 1, 4));
 	pc->symbol = '@';
 	strcpy(pc->name, "You");
 //	pc->color = COLOR_BLUE;
