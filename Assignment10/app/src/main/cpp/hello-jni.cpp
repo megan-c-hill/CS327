@@ -32,7 +32,7 @@ Java_com_example_hellojni_HelloJni_main(JNIEnv *jenv, jobject thiz) {
 	env = jenv;
 	obj = thiz;
 
-//	playGame();
+	playGame();
     printFullDungeon();
 	free(rooms);
 	free(upStairs);

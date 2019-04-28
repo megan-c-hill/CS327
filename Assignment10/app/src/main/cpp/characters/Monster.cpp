@@ -68,7 +68,7 @@ Monster *generateMonsterCharacter() {
 		strcpy(npm->description[i], md.description[i]);
 	}
 	npm->HP = md.HP.getValue();
-	npm->damage.push_back(md.damage);
+//	npm->damage.push_back(md.damage); TODO: figure out why sigsegv
 	npm->rarity = md.rarity;
 
 	if (hasCharacteristic(npm, NPC_UNIQ)) {
@@ -138,25 +138,25 @@ void goTowardsPC(Monster *character) {
 //	}
 }
 
-void randomMove(Monster *character) {
-//	int changeX = 0;
-//	int changeY = 0;
-//
-//	while (changeX == 0 && changeY == 0) {
-//		changeX = +rand() % 3 - 1;
-//		changeY = +rand() % 3 - 1;
-//	}
-//
-//	uint8_t newX = (character->x) + changeX;
-//	uint8_t newY = (character->y) + changeY;
-//
-//	if (dungeon[newY][newX].hardness == 0) {
-//		moveToSpot(character, newX, newY);
+void randomMove(Character *character) {
+	int changeX = 0;
+	int changeY = 0;
+
+	while (changeX == 0 && changeY == 0) {
+		changeX = +rand() % 3 - 1;
+		changeY = +rand() % 3 - 1;
+	}
+
+	uint8_t newX = (character->x) + changeX;
+	uint8_t newY = (character->y) + changeY;
+
+	if (dungeon[newY][newX].hardness == 0) {
+		moveToSpot(character, newX, newY);
 //	} else if (hasCharacteristic(character, NPC_TELE) && dungeon[newY][newX].hardness != 255) {
 //		tunnel(character, newX, newY);
-//	} else {
-//		randomMove(character);
-//	}
+	} else {
+		randomMove(character);
+	}
 }
 
 void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOTAL_WIDTH]) {
@@ -182,7 +182,7 @@ void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOT
 
 void makeCharacterMove(Monster *character) {
 //	if (hasCharacteristic(character, NPC_ERRATIC) && rand() % 2 == 1) {
-//		randomMove(character);
+		randomMove(character);
 //	} else if (hasCharacteristic(character, NPC_SMART)) {
 //		pcIsVisible(character);
 //		if (character->knownPlayerX != 0) {

@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Monster.h"
 #include "../shared-components.h"
 #include "../generate-dungeon.h"
 #include <cstring>
@@ -304,6 +305,7 @@ int playerMove(Player *player) {
 //	}
 //
 //	playerMove(player);
+randomMove(player);
 	return 1;
 }
 

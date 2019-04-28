@@ -18,4 +18,6 @@ void placeMonsters(int numMonsters);
 
 void makeCharacterMove(Monster *m);
 
+void randomMove(Character * character);
+
 #endif

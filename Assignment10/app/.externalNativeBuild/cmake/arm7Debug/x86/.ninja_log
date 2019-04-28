@@ -20,3 +20,16 @@
 1400	1816	1556427704	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
 3	2904	1556428304	CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o	fec504fa8e24504c
 2904	3265	1556428304	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
+6	2920	1556471274	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+9	2945	1556471274	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	7b15a87c2b9e7373
+11	3610	1556471275	CMakeFiles/hello-jni.dir/characters/Monster.cpp.o	dc4362e69a181c62
+5	2252	1556471344	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	7b15a87c2b9e7373
+4	2259	1556471344	CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o	4acf4728b12afbf9
+5	2799	1556471344	CMakeFiles/hello-jni.dir/characters/Monster.cpp.o	dc4362e69a181c62
+3	2632	1556471374	CMakeFiles/hello-jni.dir/characters/Player.cpp.o	65f7bf4869ce7371
+2632	3100	1556471374	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
+3	2049	1556471523	CMakeFiles/hello-jni.dir/characters/Monster.cpp.o	dc4362e69a181c62
+2050	2440	1556471524	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
+3	1618	1556471821	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	7b15a87c2b9e7373
+4	2052	1556471822	CMakeFiles/hello-jni.dir/characters/Monster.cpp.o	dc4362e69a181c62
+2052	2488	1556471822	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
