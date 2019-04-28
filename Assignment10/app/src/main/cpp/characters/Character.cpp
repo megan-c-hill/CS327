@@ -138,7 +138,7 @@ void playGame() {
 		int status = 1;
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
-			usleep(100000);
+			usleep(175000);
 			printDungeon(static_cast<Player *>(characterNode->character));
 			status = playerMove(static_cast<Player *>(characterNode->character));
 			if (status == -1) {

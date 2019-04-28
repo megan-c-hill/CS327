@@ -83,6 +83,16 @@
           "src": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/descriptions/itemDescriptionFile.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/distance/distance.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/distance/pathFindingHeap.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [
@@ -132,6 +142,14 @@
         },
         {
           "header": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/descriptions/itemDescriptionFile.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/distance/distance.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "/Users/megansISU/Desktop/CS327/Assignment10/app/src/main/cpp/distance/pathFindingHeap.h",
           "workingDirectoryOrdinal": 0
         }
       ],

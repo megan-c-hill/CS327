@@ -83,3 +83,17 @@
 1424	1846	1556491998	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
 3	1736	1556492069	CMakeFiles/hello-jni.dir/shared-components.cpp.o	7c8b27ce15ccf8e2
 1737	2232	1556492069	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
+4	1873	1556492154	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	7b15a87c2b9e7373
+1873	2260	1556492154	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
+4	2184	1556492233	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	7b15a87c2b9e7373
+19	2608	1556492234	CMakeFiles/hello-jni.dir/characters/Monster.cpp.o	dc4362e69a181c62
+2608	3008	1556492234	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
+3	2015	1556492357	CMakeFiles/hello-jni.dir/characters/Monster.cpp.o	dc4362e69a181c62
+2015	2412	1556492358	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	f91a893838a50524
+3	2090	1556492463	CMakeFiles/hello-jni.dir/characters/Monster.cpp.o	dc4362e69a181c62
+2	1106	1556492520	CMakeFiles/hello-jni.dir/distance/pathFindingHeap.cpp.o	5a0075cd2db3bcfd
+2	1107	1556492520	CMakeFiles/hello-jni.dir/distance/distance.cpp.o	7755e2bdacbf0727
+1107	1538	1556492521	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	191cc527f79ce1de
+4	3822	1556492666	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+6	3899	1556492666	CMakeFiles/hello-jni.dir/characters/Character.cpp.o	7b15a87c2b9e7373
+3899	4458	1556492666	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	191cc527f79ce1de

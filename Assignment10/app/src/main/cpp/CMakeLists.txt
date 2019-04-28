@@ -26,6 +26,10 @@ add_library(hello-jni SHARED
         descriptions/monsterDescriptionFile.h
         descriptions/itemDescriptionFile.h
         descriptions/itemDescriptionFile.cpp
+        distance/distance.h
+        distance/distance.cpp
+        distance/pathFindingHeap.cpp
+        distance/pathFindingHeap.h
         )
 
 # Include libraries needed for hello-jni lib

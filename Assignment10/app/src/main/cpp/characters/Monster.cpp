@@ -181,20 +181,20 @@ void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOT
 }
 
 void makeCharacterMove(Monster *character) {
-//	if (hasCharacteristic(character, NPC_ERRATIC) && rand() % 2 == 1) {
+	if (hasCharacteristic(character, NPC_ERRATIC) && rand() % 2 == 1) {
 		randomMove(character);
-//	} else if (hasCharacteristic(character, NPC_SMART)) {
-//		pcIsVisible(character);
-//		if (character->knownPlayerX != 0) {
-//			if (hasCharacteristic(character, NPC_TUNNEL)) {
-//				tunnelingDistance(character->knownPlayerX, character->knownPlayerY);
-//				useMap(character, tunnelDistance);
-//			} else {
-//				nonTunnelingDistance(character->knownPlayerX, character->knownPlayerY);
-//				useMap(character, nonTunnelDistance);
-//			}
-//		}
-//	} else if (pcIsVisible(character) || hasCharacteristic(character, NPC_TELE)) {
-//		goTowardsPC(character);
-//	} // else do nothing
+	} else if (hasCharacteristic(character, NPC_SMART)) {
+		pcIsVisible(character);
+		if (character->knownPlayerX != 0) {
+			if (hasCharacteristic(character, NPC_TUNNEL)) {
+				tunnelingDistance(character->knownPlayerX, character->knownPlayerY);
+				useMap(character, tunnelDistance);
+			} else {
+				nonTunnelingDistance(character->knownPlayerX, character->knownPlayerY);
+				useMap(character, nonTunnelDistance);
+			}
+		}
+	} else if (pcIsVisible(character) || hasCharacteristic(character, NPC_TELE)) {
+		goTowardsPC(character);
+	} // else do nothing
 }
