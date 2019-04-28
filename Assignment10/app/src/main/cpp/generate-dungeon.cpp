@@ -241,5 +241,5 @@ void generateRandomFloor(int numMonsters, int numItems) {
 	connectRooms();
 	placeStairsAndPlayer();
 	placeMonsters(numMonsters);
-//	placeItems(numItems);
+	placeItems(numItems);
 }

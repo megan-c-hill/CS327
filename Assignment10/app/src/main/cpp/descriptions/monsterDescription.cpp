@@ -113,17 +113,13 @@ void parseLine(string basic_string, MonsterDescription *descr) {
 int readMonsterFile() {
 	string line;
 	initMonsterDescriptionFile();
-//    char filePath[100] = "../monster_desc.txt";
-//
-//	ifstream myfile(filePath);
-//	getline(myfile, line);
 
 	MonsterDescription *md = new MonsterDescription();
 	md->color[0] = 1;
 	int i = 2;
 
 		while (i < 350) { //Hardcoded for length
-			line = descriptionFile[i];
+			line = monsterDescriptionFile[i];
 			i++;
 			if (line.compare("BEGIN MONSTER") != 0) {
 				cout << "Doesn't start with BEGIN MONSTER" << endl;
@@ -141,8 +137,8 @@ int readMonsterFile() {
 					}
 					md->assignedFields[1] = true;
 					int count = 0;
-					while (i < 350 && strcmp(descriptionFile[i], ".") != 0) {
-					    line = descriptionFile[i];
+					while (i < 350 && strcmp(monsterDescriptionFile[i], ".") != 0) {
+					    line = monsterDescriptionFile[i];
 					    i++;
 						strcpy(md->description[count], line.c_str());
 						count++;
@@ -152,7 +148,7 @@ int readMonsterFile() {
 				} else {
 					parseLine(line, md);
 				};
-                line = descriptionFile[i];
+                line = monsterDescriptionFile[i];
                 i++;
 			}
 		}

@@ -1,7 +1,7 @@
 #ifndef ASSIGNMENT10_MONSTERDESCRIPTIONFILE_H
 #define ASSIGNMENT10_MONSTERDESCRIPTIONFILE_H
 
-char* descriptionFile[350];
+char* monsterDescriptionFile[350];
 
 void initMonsterDescriptionFile();
 

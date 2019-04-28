@@ -1,11 +1,2 @@
-[1/11] Building CXX object CMakeFiles/hello-jni.dir/characters/Character.cpp.o
-[2/11] Building CXX object CMakeFiles/hello-jni.dir/hello-jni.cpp.o
-[3/11] Building CXX object CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o
-[4/11] Building CXX object CMakeFiles/hello-jni.dir/shared-components.cpp.o
-[5/11] Building CXX object CMakeFiles/hello-jni.dir/characters/Object.cpp.o
-[6/11] Building CXX object CMakeFiles/hello-jni.dir/characters/characterHeap.cpp.o
-[7/11] Building CXX object CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o
-[8/11] Building CXX object CMakeFiles/hello-jni.dir/characters/Player.cpp.o
-[9/11] Building CXX object CMakeFiles/hello-jni.dir/characters/Monster.cpp.o
-[10/11] Building CXX object CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o
-[11/11] Linking CXX shared library /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so
+[1/2] Building CXX object CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o
+[2/2] Linking CXX shared library /Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so

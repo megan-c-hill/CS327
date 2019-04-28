@@ -1,7 +1,7 @@
 #include <cstring>
 #include <stdlib.h>
 
-extern char* descriptionFile[350];
+extern char* monsterDescriptionFile[350];
 
 void initMonsterDescriptionFile(){
     const char* descriptionFileInfo[350] = {
@@ -361,6 +361,6 @@ void initMonsterDescriptionFile(){
     for(i = 0; i < 350; i++) {
         char* descriptionString = (char *)malloc(sizeof(descriptionFileInfo));
         strcpy(descriptionString, descriptionFileInfo[i]);
-        descriptionFile[i] = descriptionString;
+        monsterDescriptionFile[i] = descriptionString;
     }
 };
