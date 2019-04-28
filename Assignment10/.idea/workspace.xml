@@ -27,161 +27,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fc44258-03f1-48d2-8f45-d8497852f26e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/cpp/descriptions/monsterDescriptionFile.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/cpp/descriptions/monsterDescriptionFile.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/compile_commands.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Monster.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Monster.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Object.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Object.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Player.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Player.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/characterHeap.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/characterHeap.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/dungeon.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/main.c.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/shared-components.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/shared-components.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/android_gradle_build_hello-jni_x86.stdout 3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/android_gradle_build_hello-jni_x86.stdout 5.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/android_gradle_build_hello-jni_x86.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/android_gradle_build_hello-jni_x86.stdout.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/cmake_build_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/shared-components.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/shared-components.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/android_gradle_build_hello-jni_x86_64.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/android_gradle_build_hello-jni_x86_64.stdout.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/arm64-v8a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/arm64-v8a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/arm64-v8a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86_64/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Release/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/arm64-v8a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/arm64-v8a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/arm64-v8a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86_64/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Debug/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/arm64-v8a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/arm64-v8a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/arm64-v8a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86_64/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm8Release/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/arm64-v8a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/arm64-v8a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/arm64-v8a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86_64/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalDebug/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/arm64-v8a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/arm64-v8a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/arm64-v8a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/arm64-v8a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/armeabi-v7a/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/armeabi-v7a/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86_64/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/universalRelease/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Debug/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Debug/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Debug/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Debug/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Debug/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Debug/x86/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Debug/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Debug/x86/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Release/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Release/x86/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Release/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Release/x86/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Release/x86/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Release/x86/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Release/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86Release/x86/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Debug/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Debug/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Debug/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Debug/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Debug/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Debug/x86_64/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Debug/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Release/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Release/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Release/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Release/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Release/x86_64/cmake_server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Release/x86_64/cmake_server_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Release/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/x86_64Release/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/cpp/characters/Character.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/characters/Character.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/cpp/characters/Monster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/characters/Monster.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/descriptions/monsterDescription.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/descriptions/monsterDescription.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/descriptions/monster_desc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/shared-components.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/shared-components.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java" afterDir="false" />
     </list>
     <ignored path="Assignment9.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -210,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="94">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -232,18 +98,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/descriptions/monsterDescriptionFile.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="360" selection-start-line="360" selection-end-line="360" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -252,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Character.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="105">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
               <folding>
                 <element signature="e#53#72#0" expanded="true" />
               </folding>
@@ -265,10 +119,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="87" column="48" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+              <folding>
+                <element signature="e#69#88#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Monster.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="71" column="28" lean-forward="true" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+            <state relative-caret-position="180">
+              <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -276,11 +154,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/memory">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="1811" selection-start-line="1811" selection-end-line="1811" />
+            <state relative-caret-position="179">
+              <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -295,19 +173,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/vector">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1554" selection-start-line="1554" selection-end-line="1554" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/descriptions/monsterDescriptionFile.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="177">
+              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -335,12 +207,8 @@
         <option value="$PROJECT_DIR$/app/src/main/cpp/descriptions/itemDescription.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/descriptions/item_desc.txt" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Character.cpp" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/shared-components.cpp" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/shared-components.h" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Object.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Player.h" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/descriptions/monsterDescriptionFile.h" />
@@ -348,8 +216,12 @@
         <option value="$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/descriptions/monsterDescription.cpp" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Monster.cpp" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Character.h" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Monster.cpp" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/shared-components.cpp" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/shared-components.h" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java" />
       </list>
     </option>
   </component>
@@ -621,14 +493,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.28554216" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.28554216" />
-      <window_info anchor="bottom" id="Logcat" order="10" weight="0.44216868" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="10" visible="true" weight="0.44216868" />
       <window_info anchor="bottom" id="Android Profiler" order="11" />
       <window_info anchor="bottom" id="Build" order="12" weight="0.32891566" />
       <window_info anchor="right" id="Preview" order="0" weight="0.3297568" />
@@ -664,13 +536,12 @@
           <line>69</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
-        <breakpoint enabled="true" type="OCSymbolicBreakpointType">
-          <properties>
-            <option name="moduleName" value="libart.so" />
-            <option name="symbolPattern" value="art_sigsegv_fault" />
-          </properties>
-          <option name="timeStamp" value="29" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java</url>
+          <line>15</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -720,27 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="e#1437#1438#0" expanded="true" />
-            <element signature="e#1479#1480#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="87" column="48" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Object.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="687">
@@ -762,16 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/descriptions/monster_desc.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -786,16 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="350" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
-          <folding>
-            <element signature="e#69#88#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -840,16 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -888,23 +708,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Monster.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="71" column="28" lean-forward="true" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+        <state relative-caret-position="180">
+          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="87" column="48" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Character.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        <state relative-caret-position="105">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
             <element signature="e#53#72#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="e#69#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
         </state>
       </provider>
     </entry>

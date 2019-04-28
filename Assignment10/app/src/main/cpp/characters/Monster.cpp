@@ -68,7 +68,7 @@ Monster *generateMonsterCharacter() {
 		strcpy(npm->description[i], md.description[i]);
 	}
 	npm->HP = md.HP.getValue();
-//	npm->damage.push_back(md.damage);
+	npm->damage.push_back(md.damage);
 	npm->rarity = md.rarity;
 
 	if (hasCharacteristic(npm, NPC_UNIQ)) {

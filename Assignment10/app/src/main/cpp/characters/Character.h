@@ -16,7 +16,7 @@ public:
 	char symbol;
 	int color;
 	int HP;
-//	vector<Dice> damage;
+	vector<Dice> damage;
 	uint8_t speed;
 	uint8_t x;
 	uint8_t y;
