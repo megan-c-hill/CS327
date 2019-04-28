@@ -35,29 +35,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/arm64-v8a/CMakeFiles/hello-jni.dir/shared-components.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/armeabi-v7a/CMakeFiles/hello-jni.dir/shared-components.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/characters/Monster.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/characters/Object.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/characters/Player.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/characters/characterHeap.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/descriptions/dice.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/descriptions/itemDescription.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/descriptions/itemDescriptionFile.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/descriptions/monsterDescription.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/descriptions/monsterDescriptionFile.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/generate-dungeon.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86_64/CMakeFiles/hello-jni.dir/shared-components.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Character.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Player.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/characters/Player.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/CMakeFiles/hello-jni.dir/hello-jni.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/android_gradle_build_hello-jni_x86.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/arm7Debug/x86/android_gradle_build_hello-jni_x86.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/characters/Character.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/characters/Character.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java" afterDir="false" />
     </list>
     <ignored path="Assignment9.iws" />
@@ -87,8 +74,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="347">
+              <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -99,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Character.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="138" column="69" selection-start-line="138" selection-start-column="69" selection-end-line="138" selection-end-column="69" />
+            <state relative-caret-position="332">
+              <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -108,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
+            <state relative-caret-position="840">
               <caret line="56" column="75" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
             </state>
           </provider>
@@ -117,7 +116,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="330">
               <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -126,16 +125,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+            <state relative-caret-position="393">
+              <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1554#1555#0" expanded="true" />
-                <element signature="e#1596#1597#0" expanded="true" />
+                <element signature="e#1718#1931#0" expanded="true" />
+                <element signature="e#1930#1931#0" expanded="true" />
+                <element signature="e#2087#2088#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="213" column="18" selection-start-line="213" selection-start-column="18" selection-end-line="213" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -176,17 +194,17 @@
         <option value="$PROJECT_DIR$/app/src/main/cpp/descriptions/itemDescriptionFile.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/descriptions/itemDescription.cpp" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Monster.h" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Monster.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Character.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="25" />
     <option name="y" value="54" />
     <option name="width" value="1400" />
@@ -198,9 +216,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,6 +297,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,7 +307,7 @@
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="instant.run" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1556138888548" />
   </component>
   <component name="PsdUISettings">
@@ -431,7 +449,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2446352" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -478,13 +495,11 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="OCSymbolicBreakpointType">
-          <properties>
-            <option name="moduleName" value="libart.so" />
-            <option name="symbolPattern" value="art_sigsegv_fault" />
-          </properties>
-          <option name="timeStamp" value="51" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp</url>
+          <line>25</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -526,13 +541,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/descriptions/monster_desc.txt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/descriptions/monster_desc.txt" />
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="56" column="75" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/c++/v1/new">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -549,18 +557,6 @@
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
             <element signature="e#53#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1554#1555#0" expanded="true" />
-            <element signature="e#1596#1597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -640,39 +636,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/descriptions/itemDescriptionFile.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="228" column="38" lean-forward="true" selection-start-line="228" selection-start-column="38" selection-end-line="228" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -725,16 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="308" selection-start-line="308" selection-end-line="308" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/descriptions/dice.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -742,10 +701,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="75" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/shared-components.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hellojni/HelloJni.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1718#1931#0" expanded="true" />
+            <element signature="e#1930#1931#0" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="213" column="18" selection-start-line="213" selection-start-column="18" selection-end-line="213" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/generate-dungeon.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Character.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="138" column="69" selection-start-line="138" selection-start-column="69" selection-end-line="138" selection-end-column="69" />
+        <state relative-caret-position="332">
+          <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/hello-jni.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/characters/Player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

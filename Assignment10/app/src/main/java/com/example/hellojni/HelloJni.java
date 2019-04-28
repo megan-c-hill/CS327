@@ -9,62 +9,80 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 
 public class HelloJni extends AppCompatActivity {
-    public static final int SIZE = 55;
-    TextView[][] textViews = new TextView[17][26];
+	public static final int SIZE = 55;
+	TextView[][] textViews = new TextView[17][26];
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_hello_jni);
-        ConstraintLayout cv = (ConstraintLayout)findViewById(R.id.activity_hello_jni);
-        for(int i = 0; i < textViews.length; i++) {
-            for(int j = 0; j < textViews[0].length; j++) {
-                TextView initialTextView = new TextView(this);
-                initialTextView.setX(SIZE * j);
-                initialTextView.setWidth(SIZE);
-                initialTextView.setY((SIZE + 30) * i);
-                initialTextView.setTypeface(Typeface.MONOSPACE);
-                initialTextView.setHeight(SIZE + 30);
-                initialTextView.setText(" ");
-                initialTextView.setTextSize(20);
-                initialTextView.setTextColor(Color.parseColor("#000000"));
-                cv.addView(initialTextView);
-                textViews[i][j] = initialTextView;
-            }
-        }
-    }
+		setContentView(R.layout.activity_hello_jni);
+		ConstraintLayout cv = (ConstraintLayout) findViewById(R.id.activity_hello_jni);
+		for (int i = 0; i < textViews.length; i++) {
+			for (int j = 0; j < textViews[0].length; j++) {
+				TextView initialTextView = new TextView(this);
+				initialTextView.setX(SIZE * j);
+				initialTextView.setWidth(SIZE);
+				initialTextView.setY((SIZE + 30) * i);
+				initialTextView.setTypeface(Typeface.MONOSPACE);
+				initialTextView.setHeight(SIZE + 30);
+				initialTextView.setText(" ");
+				initialTextView.setTextSize(20);
+				initialTextView.setTextColor(Color.parseColor("#000000"));
+				cv.addView(initialTextView);
+				textViews[i][j] = initialTextView;
+			}
+		}
+	}
 
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent KEvent) {
+		int keyaction = KEvent.getAction();
 
-    @Override
-    public boolean dispatchKeyEvent(KeyEvent KEvent) {
-        int keyaction = KEvent.getAction();
+		if (keyaction == KeyEvent.ACTION_UP) {
+			int keyunicode = KEvent.getUnicodeChar(KEvent.getMetaState());
+			char character = (char) keyunicode;
 
-        if(keyaction == KeyEvent.ACTION_UP)
-        {
-            int keycode = KEvent.getKeyCode();
-            int keyunicode = KEvent.getUnicodeChar(KEvent.getMetaState() );
-            char character = (char) keyunicode;
+			if (((Character) character).equals('s')) {
+				startGame();
+			}
 
-            if(((Character) character).equals('s')) {
-                System.out.println("Entering main");
-                main();
-                System.out.println("Done with main");
-            }
+			System.out.println("DEBUG MESSAGE KEY=" + character);
+		}
 
-            System.out.println("DEBUG MESSAGE KEY=" + character + " KEYCODE=" +  keycode);
-        }
+		return super.dispatchKeyEvent(KEvent);
+	}
 
-        return super.dispatchKeyEvent(KEvent);
-    }
+	private void startGame() {
+		Thread gameThread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("Entering main");
+				setup();
+				while (isOver() == 1) {
+					playGame();
+				}
+				cleanup();
+				System.out.println("Done");
+			}
+		});
+		System.out.println("About to start game");
+		gameThread.start();
+	}
 
-    public void displayChar(int y, int x, String c) {
-        textViews[y][x].setText(c);
-    }
+	public void displayChar(int y, int x, String c) {
+		textViews[y][x].setText(c);
+	}
 
-    public native void main();
+	public native void setup();
 
-    static {
-        System.loadLibrary("hello-jni");
-    }
+	public native int isOver();
+
+	public native void playGame();
+
+	public native void cleanup();
+
+	static {
+		System.loadLibrary("hello-jni");
+	}
 }

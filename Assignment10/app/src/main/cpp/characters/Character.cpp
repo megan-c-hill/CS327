@@ -134,7 +134,7 @@ return 1;
 }
 
 void playGame() {
-	while (playerIsInHeap(playerQueue) && !bossKilled) {
+//	while (playerIsInHeap(playerQueue) && !bossKilled) {
 		int status = 1;
 		CharacterNode *characterNode = popCharacterNode(playerQueue);
 		if (characterNode->character->symbol == '@') {
@@ -152,24 +152,7 @@ void playGame() {
 			pushCharacter(playerQueue, characterNode->character,
 						  characterNode->priority + characterNode->character->speed);
 		}
-	}
-
-	fogOfWarActivated = false;
-	printFullDungeon();
-
-	if (playerIsInHeap(playerQueue)) {
-////		mvaddstr(0, 0, EMPTY_ROW_TEXT);
-////		mvaddstr(0, 0, "You Won!");
-////		refresh();
-////		usleep(5000000);
-		return;
-	} else {
-////		mvaddstr(0, 0, EMPTY_ROW_TEXT);
-////		mvaddstr(0, 0, "You Lose!");
-////		refresh();
-////		usleep(5000000);
-		return;
-	}
+//	}
 }
 
 void Character::displayCharacter() {

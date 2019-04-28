@@ -30,7 +30,7 @@ Player *generatePlayerCharacter() {
 	for(int i = 1; i < 100; i++) {
 		strcpy(pc->description[i], "NONE");
 	}
-	pc->HP = 500;
+	pc->HP = 100;
 //	pc->damage.push_back(Dice(0, 1, 4));
 	pc->symbol = '@';
 	strcpy(pc->name, "You");

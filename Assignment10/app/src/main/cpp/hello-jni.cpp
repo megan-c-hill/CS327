@@ -13,30 +13,61 @@ extern "C" {
 #endif
 
 JNIEXPORT void JNICALL
-Java_com_example_hellojni_HelloJni_main(JNIEnv *jenv, jobject thiz) {
-	readMonsterFile();
-	readObjectFile();
-	int seed = time(NULL);
-	srand(seed);
+Java_com_example_hellojni_HelloJni_setup(JNIEnv *jenv, jobject thiz) {
+    readMonsterFile();
+    readObjectFile();
+    int seed = time(NULL);
+    srand(seed);
 
-	bossKilled = false;
-	int numMonsters = 10;
-	int numItems = 15;
-	initMaps();
-	initRememberedMap();
+    bossKilled = false;
+    int numMonsters = 20;
+    int numItems = 15;
+    initMaps();
+    initRememberedMap();
 
-	fogOfWarActivated = false;
+    fogOfWarActivated = false;
 
-	generateRandomFloor(numMonsters, numItems);
+    generateRandomFloor(numMonsters, numItems);
 
-	env = jenv;
-	obj = thiz;
+    env = jenv;
+    obj = thiz;
+}
 
-	playGame();
+
+JNIEXPORT void JNICALL
+Java_com_example_hellojni_HelloJni_cleanup(JNIEnv *jenv, jobject thiz) {
+    free(rooms);
+    free(upStairs);
+    free(downStairs);
+
+    fogOfWarActivated = false;
     printFullDungeon();
-	free(rooms);
-	free(upStairs);
-	free(downStairs);
+
+//    if (playerIsInHeap(playerQueue)) {
+////		mvaddstr(0, 0, EMPTY_ROW_TEXT);
+////		mvaddstr(0, 0, "You Won!");
+////		refresh();
+////		usleep(5000000);
+//        return;
+//    } else {
+////		mvaddstr(0, 0, EMPTY_ROW_TEXT);
+////		mvaddstr(0, 0, "You Lose!");
+////		refresh();
+////		usleep(5000000);
+//        return;
+//    }
+}
+
+
+JNIEXPORT void JNICALL
+Java_com_example_hellojni_HelloJni_playGame(JNIEnv *jenv, jobject thiz) {
+    playGame();
+}
+
+
+JNIEXPORT jint JNICALL
+Java_com_example_hellojni_HelloJni_isOver(JNIEnv *jenv, jobject thiz) {
+    return playerIsInHeap(playerQueue) && !bossKilled;
 }
 
 #ifdef __cplusplus
