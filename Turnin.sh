@@ -56,16 +56,6 @@ then
     exit 1
 fi
 
-if [ ! -f $ASSIGNMENT/Makefile ]
-then
-    echo "Makefile not found!"
-    exit 1
-fi
-
-#clean directory
-cd $ASSIGNMENT
-make clean
-cd ..
 
 # Copy directory
 cp -R $ASSIGNMENT/ ${FNAME}_${LNAME}.assignment-$ASSIGNMENT_NUMBER
