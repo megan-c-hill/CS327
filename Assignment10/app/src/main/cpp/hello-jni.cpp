@@ -20,7 +20,7 @@ Java_com_example_hellojni_HelloJni_setup(JNIEnv *jenv, jobject thiz) {
     srand(seed);
 
     bossKilled = false;
-    int numMonsters = 15;
+    int numMonsters = 10;
     int numItems = 15;
     initMaps();
     initRememberedMap();
