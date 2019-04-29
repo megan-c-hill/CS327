@@ -36,6 +36,14 @@ int hasCharacteristic(Monster *character, int characteristic) {
 	return character->characteristics & characteristic;
 }
 
+int isTele(Character * character) {
+	if (character->symbol == '@') {
+		return 0;
+	}
+
+	return static_cast<Monster*>(character)->characteristics & NPC_TELE;
+}
+
 int parseCharacteristics(char abilities[10][8]) {
 	int characteristics = 0;
 	for (int i = 0; i < 10 && strcmp(abilities[i], "NONE") != 0; i++) {
@@ -103,39 +111,39 @@ void placeMonsters(int numMonsters) {
 }
 
 bool pcIsVisible(Monster *character) {
-//	int xDistance = abs(character->x - playerCharacter->x);
-//	int yDistance = abs(character->y - playerCharacter->y);
-//
-//	if (hasCharacteristic(character, NPC_TELE)) {
-//		character->knownPlayerX = playerCharacter->x;
-//		character->knownPlayerY = playerCharacter->y;
-//	}
-//
-//	int totalDistanceSquared = xDistance * xDistance + yDistance * yDistance;
-//	if (totalDistanceSquared <= 25) {
-//		if (hasCharacteristic(character, NPC_SMART)) {
-//			character->knownPlayerX = playerCharacter->x;
-//			character->knownPlayerY = playerCharacter->y;
-//		}
-//		return true;
-//	}
-//	return false;
+	int xDistance = abs(character->x - playerCharacter->x);
+	int yDistance = abs(character->y - playerCharacter->y);
+
+	if (hasCharacteristic(character, NPC_TELE)) {
+		character->knownPlayerX = playerCharacter->x;
+		character->knownPlayerY = playerCharacter->y;
+	}
+
+	int totalDistanceSquared = xDistance * xDistance + yDistance * yDistance;
+	if (totalDistanceSquared <= 25) {
+		if (hasCharacteristic(character, NPC_SMART)) {
+			character->knownPlayerX = playerCharacter->x;
+			character->knownPlayerY = playerCharacter->y;
+		}
+		return true;
+	}
+	return false;
 return true;
 }
 
 void goTowardsPC(Monster *character) {
-//	int xDirection = playerCharacter->x - character->x == 0 ? 0 : (playerCharacter->x - character->x) /
-//																  abs(playerCharacter->x - character->x);
-//	int yDirection = playerCharacter->y - character->y == 0 ? 0 : (playerCharacter->y - character->y) /
-//																  abs(playerCharacter->y - character->y);
-//	int newX = character->x + xDirection;
-//	int newY = character->y + yDirection;
-//
-//	if (dungeon[newY][newX].hardness == 0) {
-//		moveToSpot(character, newX, newY);
-//	} else if (hasCharacteristic(character, NPC_TELE) && dungeon[newY][newX].hardness != 255) {
-//		tunnel(character, newX, newY);
-//	}
+	int xDirection = playerCharacter->x - character->x == 0 ? 0 : (playerCharacter->x - character->x) /
+																  abs(playerCharacter->x - character->x);
+	int yDirection = playerCharacter->y - character->y == 0 ? 0 : (playerCharacter->y - character->y) /
+																  abs(playerCharacter->y - character->y);
+	int newX = character->x + xDirection;
+	int newY = character->y + yDirection;
+
+	if (dungeon[newY][newX].hardness == 0) {
+		moveToSpot(character, newX, newY);
+	} else if (hasCharacteristic(character, NPC_TELE) && dungeon[newY][newX].hardness != 255) {
+		tunnel(character, newX, newY);
+	}
 }
 
 void randomMove(Character *character) {
@@ -152,31 +160,31 @@ void randomMove(Character *character) {
 
 	if (dungeon[newY][newX].hardness == 0) {
 		moveToSpot(character, newX, newY);
-//	} else if (hasCharacteristic(character, NPC_TELE) && dungeon[newY][newX].hardness != 255) {
-//		tunnel(character, newX, newY);
+	} else if (isTele(character) && dungeon[newY][newX].hardness != 255) {
+		tunnel(character, newX, newY);
 	} else {
 		randomMove(character);
 	}
 }
 
 void useMap(Character *character, DistancePosition distanceMap[TOTAL_HEIGHT][TOTAL_WIDTH]) {
-//	int bestX = character->x;
-//	int bestY = character->y;
-//
-//	for (int i = -1; i <= 1; i++) {
-//		for (int j = -1; j <= 1; j++) {
-//			if (distanceMap[character->y + i][character->x + j].distance < distanceMap[bestY][bestX].distance) {
-//				bestX = character->x + j;
-//				bestY = character->y + i;
-//			}
-//		}
-//	}
-//
-//	if (dungeon[bestY][bestX].hardness != 0) {
-//		tunnel(character, bestX, bestY);
-//	} else {
-//		moveToSpot(character, bestX, bestY);
-//	}
+	int bestX = character->x;
+	int bestY = character->y;
+
+	for (int i = -1; i <= 1; i++) {
+		for (int j = -1; j <= 1; j++) {
+			if (distanceMap[character->y + i][character->x + j].distance < distanceMap[bestY][bestX].distance) {
+				bestX = character->x + j;
+				bestY = character->y + i;
+			}
+		}
+	}
+
+	if (dungeon[bestY][bestX].hardness != 0) {
+		tunnel(character, bestX, bestY);
+	} else {
+		moveToSpot(character, bestX, bestY);
+	}
 
 }
 
@@ -193,6 +201,8 @@ void makeCharacterMove(Monster *character) {
 				nonTunnelingDistance(character->knownPlayerX, character->knownPlayerY);
 				useMap(character, nonTunnelDistance);
 			}
+		} else if (pcIsVisible(character) || hasCharacteristic(character, NPC_TELE)) {
+		    goTowardsPC(character);
 		}
 	} else if (pcIsVisible(character) || hasCharacteristic(character, NPC_TELE)) {
 		goTowardsPC(character);
