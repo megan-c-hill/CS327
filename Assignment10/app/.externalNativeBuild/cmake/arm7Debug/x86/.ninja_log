@@ -17,3 +17,7 @@
 4224	7061	1556489252	CMakeFiles/hello-jni.dir/characters/characterHeap.cpp.o	b62d40dcb501c45f
 3	1333	1556496186	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
 1333	1845	1556496186	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	191cc527f79ce1de
+4	11573	1556519542	CMakeFiles/hello-jni.dir/hello-jni.cpp.o	a01d12424162551f
+11573	13160	1556519543	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	191cc527f79ce1de
+4	502	1556520035	CMakeFiles/hello-jni.dir/descriptions/monsterDescriptionFile.cpp.o	25b74175fadc007e
+503	993	1556520035	/Users/megansISU/Desktop/CS327/Assignment10/app/build/intermediates/cmake/arm7/debug/obj/x86/libhello-jni.so	191cc527f79ce1de

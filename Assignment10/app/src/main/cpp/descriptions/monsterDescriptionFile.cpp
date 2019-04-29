@@ -134,7 +134,7 @@ void initMonsterDescriptionFile(){
         "SYMB C",
         "COLOR GREEN",
         "NAME C Program",
-        "ABIL SMART",
+        "ABIL SMART UNIQ",
         "RRTY 80",
         "END",
         "",

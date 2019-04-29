@@ -29,8 +29,7 @@ Things to know:
 I personally tested this on a portrait mode Pixel 2XL emulator. I did not try to make this scalable, so I'm sure it looks terrible on
 almost any other device, that is not similar in dimensions. I have never tested this on a physical device, and have no idea what the result would be.
 
-Also I don't know if this will zip properly in a tarball, though I tested it and it works for me.
-I have my CS327 projects on GitHub. The repository will be kept private until the submission for the final assignment is closed,
-per instructions given by Dr. Shaeffer at the beginning of the semester,
-but if for some reason this did not zip correctly and you need another way to access this code it can be found at the following link
-https://github.com/megan-c-hill/CS327
+In addition I know how much of a pain it is to set up an android environment, especially if you don't regularly do Android development.
+This is why I have included a video of my program running titled DemoVideo.mp4. It only shows one round of the game, so if there is anything
+else you would like to see that is not included in this video and you can't/don't want to set up an android environment let me know
+by emailing me at mchill@iastate.edu and I would be more than happy to send you videos of other scenarios.
