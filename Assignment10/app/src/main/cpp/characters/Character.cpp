@@ -48,7 +48,7 @@ void moveToSpot(Character *character, int newX, int newY) {
 	if (characterMap[newY][newX] != NULL) {
 		if (character->symbol == '@' || characterMap[newY][newX]->symbol == '@') {
 //			int damage = (*character).getDamage();
-int damage = 10; // TODO use real damage
+			int damage = 10; // TODO use real damage
 			Character *victim = characterMap[newY][newX];
 			victim->HP -= damage;
 //			mvprintw(0, 0, "Damage: %d", damage);

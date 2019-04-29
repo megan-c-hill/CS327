@@ -43,19 +43,19 @@ Java_com_example_hellojni_HelloJni_cleanup(JNIEnv *jenv, jobject thiz) {
     fogOfWarActivated = false;
     printFullDungeon();
 
-//    if (playerIsInHeap(playerQueue)) {
+    if (playerIsInHeap(playerQueue)) {
 //		mvaddstr(0, 0, EMPTY_ROW_TEXT);
-//		mvaddstr(0, 0, "You Won!");
+		drawString(0, 0, "You Won!");
 //		refresh();
 //		usleep(5000000);
-//        return;
-//    } else {
+        return;
+    } else {
 //		mvaddstr(0, 0, EMPTY_ROW_TEXT);
-//		mvaddstr(0, 0, "You Lose!");
+		drawString(0, 0, "You Lose!");
 //		refresh();
 //		usleep(5000000);
-//        return;
-//    }
+        return;
+    }
 }
 
 

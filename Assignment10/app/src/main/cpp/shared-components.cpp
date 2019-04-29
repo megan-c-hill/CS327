@@ -24,6 +24,12 @@ bool bossKilled;
 JNIEnv *env;
 jobject obj;
 
+void drawString(int y, int x, string c) {
+	for(int i = 0; i<c.length(); i++) {
+		drawChar(y, x + i, c.at(i));
+	}
+}
+
 void drawChar(int y, int x, char c) {
 	char string[2] = "";
 	string[0] = c;

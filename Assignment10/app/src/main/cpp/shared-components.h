@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <vector>
 #include <jni.h>
+#include <string>
 
 #include "characters/characterHeap.h"
 #include "descriptions/monsterDescription.h"
@@ -68,5 +69,7 @@ void printFullDungeon();
 void drawRoom(int roomNumber);
 
 void drawChar(int y, int x, char c);
+
+void drawString(int y, int x, string c);
 
 #endif

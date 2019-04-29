@@ -23,8 +23,8 @@ Things to know:
     When the game starts you will see a blank screen, then a keyboard will pop up. Press s on the keyboard to start game play.
     The board dimensions have been reduced to 17x26 in order to actually look okay on a mobile device.
     During this time the player will move around like a crazy person, with fog of war. There are objects on the floor, but there is no
-    way to pick them up. When the game finishes the whole screen will be shown and all movement will be stop, but there is no message
-    telling you the game is over. At this point you can press s again to start a new game.
+    way to pick them up. When the game finishes the whole screen will be shown and all movement will be stop, and a message will tell
+    you whether you won or lost. At this point you can press s again to start a new game.
 
 I personally tested this on a portrait mode Pixel 2XL emulator. I did not try to make this scalable, so I'm sure it looks terrible on
 almost any other device, that is not similar in dimensions. I have never tested this on a physical device, and have no idea what the result would be.
